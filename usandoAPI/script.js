@@ -58,7 +58,7 @@ function carregando(){
     
     else{
         botao.style.display = 'inline-block'
-        inputs.style.display = 'block'
+        inputs.style.display = 'none'
 
         rodando = true
         rodar()
