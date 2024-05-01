@@ -12,8 +12,4 @@ function clicou(num){
     }
 }
 function result(){
-    if (num == 11){
-        tela.innerHTML = ''
-    }
-    tela.innerHTML = memoria
 }
