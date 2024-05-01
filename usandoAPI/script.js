@@ -723,17 +723,17 @@ function animar(input){
     switch (input){
         case 1:
             lab[0].style.fontSize = '1em'
-            ape.style.translate = '0px -23px'
+            ape.style.translate = '-5px -23px'
             break
             
         case 2:
             lab[1].style.fontSize = '1em'
-            doce.style.translate = '-3px -23px'
+            doce.style.translate = '-9px -23px'
             break
         
         case 3:
             lab[2].style.fontSize = '1em'
-            filme.style.translate = '0px -23px'
+            filme.style.translate = '-6px -23px'
             break
     }
 }

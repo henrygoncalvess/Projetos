@@ -65,9 +65,9 @@ h2{
     font-size: 1.2em;
 }
 
-.ape{ transform: translate(-30px, 32px); }
-.doce{ transform: translate( 0px, 32px); }
-.filme{ transform: translate(-9px, 32px); }
+.ape{ transform: translate(-40px, 32px); }
+.doce{ transform: translate(-10px, 32px); }
+.filme{ transform: translate(-19px, 32px); }
 
 mark{
     padding: 0px 5px;
@@ -76,7 +76,7 @@ mark{
 }
 
 .info{
-    width: max(22%, 220px);
+    width: max(22%, 250px);
     height: 45px;
     font-size: 1em;
     border-radius: 6px;
