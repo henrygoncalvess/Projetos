@@ -13,37 +13,36 @@
             </div>
             <table>
                 <tr>
-                    <td onclick="identify(1)">1</td>
-                    <td onclick="identify(2)">2</td>
-                    <td onclick="identify(3)">3</td>
-                    <td onclick="identify('x')">x</td>
+                    <td onclick="identify(7)">7</td>
+                    <td onclick="identify(8)">8</td>
+                    <td onclick="identify(9)">9</td>
+                    <td onclick="identify()">x</td>
                 </tr>
                 <tr>
                     <td onclick="identify(4)">4</td>
                     <td onclick="identify(5)">5</td>
                     <td onclick="identify(6)">6</td>
-                    <td onclick="identify('-')">-</td>
+                    <td onclick="identify()">-</td>
                 </tr>
                 <tr>
-                    <td onclick="identify(7)">7</td>
-                    <td onclick="identify(8)">8</td>
-                    <td onclick="identify(9)">9</td>
-                    <td onclick="identify('+')">+</td>
+                    <td onclick="identify(1)">1</td>
+                    <td onclick="identify(2)">2</td>
+                    <td onclick="identify(3)">3</td>
+                    <td onclick="identify()">+</td>
                 <tr>
                     <td onclick="identify(0)">0</td>
-                    <td onclick="identify('.')">.</td>
-                    <td onclick="identify(111)">=</td>
-                    <td onclick="identify(11)">del</td>
+                    <td onclick="identify()">.</td>
+                    <td onclick="identify()">=</td>
+                    <td onclick="identify()">del</td>
                 </tr>
             </table>
         </section>
     </main>
     <script>
-
         var tela = document.getElementById('tela')
-        function identify(memoria){
-            tela.innerText += memoria
-            if (memoria == 11 || memoria == 111){
+        function identify(num=''){
+            tela.innerText += num
+            if (num == ''){
                 tela.innerText = ''
             }
         }
