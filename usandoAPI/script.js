@@ -709,7 +709,7 @@ async function criar(apelido, comida, serie){
 }
 
 function verif(tam){
-    nomecustom.innerHTML = `<em class="c">&diams;</em> ${tam.value} <em class="c">&diams;</em>`
+    nomecustom.innerHTML = `<em class="c">&diams;</em> ${nome.value} <em class="c">&diams;</em>`
 
     if (tam.value.length < 2){
         tam.style.border = '2px solid rgb(251, 87, 87)'
