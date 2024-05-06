@@ -125,6 +125,10 @@ em{
     font-size: 1.4em;
 }
 
+.c{
+    color: white;
+}
+
 #nomecustom{
     display: block;
     margin: 0px 0px 10px 0px;
