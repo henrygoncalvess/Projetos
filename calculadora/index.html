@@ -30,18 +30,21 @@
                     <td onclick="identify(9)">9</td>
                     <td onclick="identify('+')">+</td>
                 <tr>
-                    <td onclick="identify()">0</td>
+                    <td onclick="identify(0)">0</td>
                     <td onclick="identify('.')">.</td>
                     <td>=</td>
-                    <td>del</td>
+                    <td onclick="identify(11)">del</td>
                 </tr>
             </table>
         </section>
     </main>
     <script>
         var tela = document.getElementById('tela')
-        function identify(n=0){
+        function identify(n=''){
             tela.innerText += n
+            if (n == 11){
+                tela.innerText = ''
+            }
         }
     </script>
 </body>
