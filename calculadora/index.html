@@ -16,24 +16,24 @@
                     <td onclick="identify(1)">1</td>
                     <td onclick="identify(2)">2</td>
                     <td onclick="identify(3)">3</td>
-                    <td>x</td>
+                    <td onclick="identify('x')">x</td>
                 </tr>
                 <tr>
                     <td onclick="identify(4)">4</td>
                     <td onclick="identify(5)">5</td>
                     <td onclick="identify(6)">6</td>
-                    <td>-</td>
+                    <td onclick="identify('-')">-</td>
                 </tr>
                 <tr>
                     <td onclick="identify(7)">7</td>
                     <td onclick="identify(8)">8</td>
                     <td onclick="identify(9)">9</td>
-                    <td>+</td>
+                    <td onclick="identify('+')">+</td>
                 <tr>
                     <td onclick="identify()">0</td>
-                    <td>.</td>
+                    <td onclick="identify('.')">.</td>
                     <td>=</td>
-                    <td onclick="clear()">del</td>
+                    <td>del</td>
                 </tr>
             </table>
         </section>
@@ -42,9 +42,6 @@
         var tela = document.getElementById('tela')
         function identify(n=0){
             tela.innerText += n
-        }
-        function clear(){
-            tela.innerHTML += ''
         }
     </script>
 </body>
