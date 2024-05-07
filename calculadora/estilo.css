@@ -46,7 +46,7 @@ td{
     padding: 8px 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.717);
     border-radius: 20px;
-    background-color: rgb(81, 151, 175);
+    background-color: rgb(4, 110, 224);
     border: 2px solid rgb(33, 113, 242);
     width: 74px;
     margin: 5px;
@@ -54,5 +54,8 @@ td{
 }
 td:hover{
     scale: 1.1;
+}
+.others{
+    background-color: rgb(7, 182, 217);
 }
     
