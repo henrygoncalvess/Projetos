@@ -63,12 +63,12 @@ function carregando(){
         rodando = true
         tela.style.display = 'block'
         rodar()
-        setTimeout(() => {
-            rodando = false
-            inputs.style.display = 'block'
-            tela.style.display = 'none'
-            nome.focus()
-        }, 1000);
+        // setTimeout(() => {
+        //     rodando = false
+        //     inputs.style.display = 'block'
+        //     tela.style.display = 'none'
+        //     nome.focus()
+        // }, 1000);
     
     
         urlava = `https://api.dicebear.com/9.x/pixel-art/svg?scale=90`
@@ -585,6 +585,7 @@ async function acessar(){
         const response = await fetch(`https://api.airtable.com/v0/${js.base}/${js.table}`, get)
 
         if(!response.ok){
+            window.alert('erro no servidor, tente novamente mais tarde')
             throw new Error(`erro na requisição: ${response.status}`)
         }
         else{
@@ -596,6 +597,18 @@ async function acessar(){
 
             
             dados.records.map((element, pos, arr) => {
+                let span = document.createElement('span')
+    
+                span.innerHTML = `
+                <em>&diams;</em> <strong>${element.fields.nome}</strong> <em>&diams;</em> <br>
+                <img src="${element.fields.url}" id="visitas"> <br>
+                <em>&#x1F37D &#xFE0F</em> ${element.fields.comida_fav} <br>
+                <em>&#x1F3AC&#x1F37F</em> ${element.fields.serie_fav} <br>
+                <hr>
+                `
+
+                div.appendChild(span)
+
                 if (pos == arr.length -1){
                     if (localStorage.getItem('criou') == 'sim'){
                         inputs.style.display = 'none'
@@ -611,31 +624,6 @@ async function acessar(){
                         tela.style.display = 'none'
                         nome.focus()
                     }
-
-                    let span = document.createElement('span')
-    
-                    span.innerHTML = `
-                    <em>&diams;</em> <strong>${element.fields.nome}</strong> <em>&diams;</em> <br>
-                    <img src="${element.fields.url}" id="visitas"> <br>
-                    <em>&#x1F37D &#xFE0F</em> ${element.fields.comida_fav} <br>
-                    <em>&#x1F3AC&#x1F37F</em> ${element.fields.serie_fav} <br>
-                    <hr>
-                    `
-    
-                    div.appendChild(span)
-                }
-                else{
-                    let span = document.createElement('span')
-    
-                    span.innerHTML = `
-                    <em>&diams;</em> <strong>${element.fields.nome}</strong> <em>&diams;</em> <br>
-                    <img src="${element.fields.url}" id="visitas"> <br>
-                    <em>&#x1F37D &#xFE0F</em> ${element.fields.comida_fav} <br>
-                    <em>&#x1F3AC&#x1F37F</em> ${element.fields.serie_fav} <br>
-                    <hr>
-                    `
-    
-                    div.appendChild(span)
                 }
             });
         }
@@ -698,6 +686,7 @@ async function criar(nome, comida, serie){
             const response = await fetch(`https://api.airtable.com/v0/${js.base}/${js.table}`, post)
     
             if(!response.ok){
+                window.alert('erro no servidor, tente novamente mais tarde')
                 throw new Error(`erro na requisição: ${response.status}`)
             }
             else{
