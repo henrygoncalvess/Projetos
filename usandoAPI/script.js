@@ -35,10 +35,10 @@ function carregando(){
         inputs.style.display = 'none'
         botao.style.display = 'none'
 
-        setTimeout(() => {
-            rodando = false
-            tela.style.display = 'none'
-        }, 6000);
+        // setTimeout(() => {
+        //     rodando = false
+        //     tela.style.display = 'none'
+        // }, 6000);
 
         personalizar.innerHTML = `
         <section id="bloco2" style="font-size: 0.8em;">
@@ -63,12 +63,12 @@ function carregando(){
         rodando = true
         tela.style.display = 'block'
         rodar()
-        // setTimeout(() => {
-        //     rodando = false
-        //     inputs.style.display = 'block'
-        //     tela.style.display = 'none'
-        //     nome.focus()
-        // }, 6000);
+        setTimeout(() => {
+            rodando = false
+            inputs.style.display = 'block'
+            tela.style.display = 'none'
+            nome.focus()
+        }, 1000);
     
     
         urlava = `https://api.dicebear.com/9.x/pixel-art/svg?scale=90`
@@ -419,6 +419,13 @@ function avatar(pos){
     }
 
     conectar()
+    setTimeout(() => {
+        conectar()
+    }, 300);
+
+    setTimeout(() => {
+        conectar()
+    }, 600);
 }
 
 let id2;
@@ -630,11 +637,11 @@ async function acessar(){
     
                     div.appendChild(span)
                 }
-
             });
         }
     }
     catch(erro){
+        window.alert('erro no servidor, tente novamente mais tarde')
         console.log(`erro na requisição. status: ${erro}`)
     }
 }
@@ -714,6 +721,7 @@ async function criar(nome, comida, serie){
             }
         }
         catch(erro){
+            window.alert('erro no servidor, tente novamente mais tarde')
             console.log(`erro na requisição. status: ${erro}`)
         }
     }
