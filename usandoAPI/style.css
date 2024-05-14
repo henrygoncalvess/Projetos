@@ -125,7 +125,6 @@ hr{
 }
 
 input { 
-    translate: -5px; 
     background-color: rgba(255, 143, 143, 0.253);
 }
 
@@ -173,6 +172,7 @@ img{
     width: 60px;
     padding: 5px;
     border-radius: 10px;
+    margin: 0px 0px 0px -5px;
 }
 
 button{
