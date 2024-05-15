@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <title>Calculadora</title>
+    
+    <meta charset="utf-8">
+
+</head>
+<style>
+*{
+    margin:0px;
+    padding:0px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    width: 100vw;
+    height:100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+section{
+    background-color:white;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 8px;
+    width: max-content;
+    height: 90vh;
+    box-shadow:3px 3px 4px black;
+    border:1px solid black;
+}
+header{
+    background-color: black;
+    width: 89vw;
+    height: 32vh;
+    margin: 5px;
+    border-radius: 25px;
+    font-size: 3em;
+    box-shadow:2px 2px 3px gray;
+    color: white;
+}
+p{
+    padding: 30% 2% 0% 0%;
+    text-align: right;
+    }
+button{
+    padding:5px;
+    width: 21vw;
+    height: 13vh;
+    border-radius: 25px;
+    margin: 3px;
+    background-color: lightgray;
+    font-size: 4em;
+    box-shadow:1px 1px 2px gray;
+}
+button:active{
+    background-color: gray;
+}
+#igual{
+    width: 43vw;
+}
+.del{
+    width: 10vw;
+}
+.cor{
+    background-color: lightskyblue;
+}
+</style>
+
+<body>
+
+    <section>
+        <header>
+            <p id="tela"></p>
+        </header>
+        <div>
+            <button onclick="cliquei(9)">9</button>
+            <button onclick="cliquei(8)">8</button>
+            <button onclick="cliquei(7)">7</button>
+            <button class="cor" onclick="calcular('x')">x</button>
+        </div>
+        <div>
+            <button onclick="cliquei(6)">6</button>
+            <button onclick="cliquei(5)">5</button>
+            <button onclick="cliquei(4)">4</button>
+            <button class="cor" onclick="calcular('-')">-</button>
+        </div>
+        <div>
+            <button onclick="cliquei(3)">3</button>
+            <button onclick="cliquei(2)">2</button>
+            <button onclick="cliquei(1)">1</button>
+            <button class="cor" onclick="calcular('+')">+</button>
+        </div>
+        <div>
+            <button onclick="cliquei(0)">0</button>
+            <button id="igual" class="cor" onclick="calcular('=')"> = </button>
+            <button class="cor" onclick="cliquei(11)">del</button>
+        </div>
+    </section>
+    
+    <script>
+        var lista = []
+        var tela = document.getElementById('tela')
+        function cliquei(num=''){
+            tela.innerText += num
+                if (num == 11){
+                tela.innerText = ''
+                lista = []
+                lista2 = []
+                }
+        }
+        function calcular(conta){
+            var res = 0
+            switch (conta){
+                case '+':
+                    lista.push(tela.innerText)
+                    tela.innerText = ''
+                    break
+                case '=':
+                    lista.push(tela.innerText)
+                    for (var pos in lista){
+                        res += Number(lista[pos])
+                    }
+                    tela.innerText = res
+                    lista.pop()
+                    break
+            }
+        }
+    </script>
+</body>
+</html>
