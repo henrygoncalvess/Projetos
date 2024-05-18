@@ -21,11 +21,11 @@
             Preencha os campos abaixo para participar
             <br>
             <br>
-            <input type="text" id="nome" placeholder="Nome/Apelido" maxlength="18" autocomplete="off" i class="info"><br><br>
+            <input type="text" id="nome" placeholder="Nome/Apelido" maxlength="18" autocomplete="off" class="info" oninput="verif(nome)"><br><br>
 
-            <input type="text" id="comida" placeholder="Doce/Comida favorita" maxlength="18" autocomplete="off" class="info"><br><br>
+            <input type="text" id="comida" placeholder="Doce/Comida favorita" maxlength="18" autocomplete="off" class="info" oninput="verif(comida)"><br><br>
 
-            <input type="text" id="serie" placeholder="Filme/Série favorita" maxlength="18" autocomplete="off"  class="info"><br><br>
+            <input type="text" id="serie" placeholder="Filme/Série favorita" maxlength="18" autocomplete="off"  class="info" oninput="verif(serie)"><br><br>
         </section>
 
         
@@ -37,12 +37,12 @@
             </div> 
             
             <br>
-            <i style="font-size: 0.7em;">se algum avatar não carregar -> clique denovo</i>
+            <i style="font-size: 0.7em; color: red;">se algum avatar não carregar -> clique novamente</i>
             <br>
             <br>
 
             <p id="normal">
-                - - - Cor da Pele - - -<br>
+                Cor da Pele<br>
                 <label for="p1" onclick="avatar(1)">
                     <img><input type="radio" id="p1" name="pele" checked>
                 </label>
@@ -57,7 +57,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - - - - - - - Cabelo (Feminino) - - - - - - - - -<br>
+                Cabelo (Feminino)<br>
                 
                 <label for="c1" onclick="avatar(4)">
                     <img><input type="radio" id="c1" name="cabelo">
@@ -77,11 +77,11 @@
 
                 <label for="c5" onclick="avatar(8)">
                     <img><input type="radio" id="c5" name="cabelo">
-                </label>
+                </label> <br>
 
                 <label for="c6" onclick="avatar(9)">
                     <img><input type="radio" id="c6" name="cabelo">
-                </label> <br>
+                </label>
 
                 <label for="c7" onclick="avatar(10)">
                     <img><input type="radio" id="c7" name="cabelo">
@@ -97,7 +97,7 @@
 
                 <label for="c10" onclick="avatar(13)">
                     <img><input type="radio" id="c10" name="cabelo">
-                </label>
+                </label> <br>
 
                 <label for="c11" onclick="avatar(14)">
                     <img><input type="radio" id="c11" name="cabelo">
@@ -105,7 +105,7 @@
 
                 <label for="c12" onclick="avatar(15)">
                     <img><input type="radio" id="c12" name="cabelo">
-                </label> <br>
+                </label>
 
                 <label for="c13" onclick="avatar(16)">
                     <img><input type="radio" id="c13" name="cabelo">
@@ -117,7 +117,7 @@
 
                 <label for="c15" onclick="avatar(18)">
                     <img><input type="radio" id="c15" name="cabelo">
-                </label>
+                </label> <br>
 
                 <label for="c16" onclick="avatar(19)">
                     <img><input type="radio" id="c16" name="cabelo">
@@ -127,7 +127,7 @@
                     <img><input type="radio" id="c17" name="cabelo">
                 </label> <br><br><br>
 
-                - - - - - - - - - Cabelo (Masculino) - - - - - - - - -<br>
+                Cabelo (Masculino)<br>
                 <label for="c18" onclick="avatar(21)">
                     <img><input type="radio" id="c18" name="cabelo">
                 </label>
@@ -146,11 +146,11 @@
 
                 <label for="c22" onclick="avatar(25)">
                     <img><input type="radio" id="c22" name="cabelo">
-                </label>
+                </label> <br>
 
                 <label for="c23" onclick="avatar(26)">
                     <img><input type="radio" id="c23" name="cabelo">
-                </label> <br>
+                </label>
 
                 <label for="c24" onclick="avatar(27)">
                     <img><input type="radio" id="c24" name="cabelo">
@@ -166,7 +166,7 @@
 
                 <label for="c27" onclick="avatar(30)">
                     <img><input type="radio" id="c27" name="cabelo">
-                </label>
+                </label> <br>
 
                 <label for="c28" onclick="avatar(31)">
                     <img><input type="radio" id="c28" name="cabelo" checked>
@@ -174,7 +174,7 @@
 
                 <label for="c29" onclick="avatar(32)">
                     <img><input type="radio" id="c29" name="cabelo">
-                </label> <br>
+                </label> 
 
                 <label for="c30" onclick="avatar(33)">
                     <img><input type="radio" id="c30" name="cabelo">
@@ -186,7 +186,7 @@
 
                 <label for="c32" onclick="avatar(35)">
                     <img><input type="radio" id="c32" name="cabelo">
-                </label>
+                </label> <br>
 
                 <label for="c33" onclick="avatar(36)">
                     <img><input type="radio" id="c33" name="cabelo">
@@ -198,7 +198,7 @@
             </p>
 
             <p id="normal">
-                - - - - - - - - - Cor do Cabelo - - - - - - - - -<br>
+                Cor do Cabelo<br>
                 <label for="cc1" onclick="avatar(38)">
                     <img><input type="radio" id="cc1" name="ccabelo" checked>
                 </label>
@@ -209,7 +209,7 @@
 
                 <label for="cc3" onclick="avatar(40)">
                     <img><input type="radio" id="cc3" name="ccabelo">
-                </label>
+                </label> <br>
 
                 <label for="cc4" onclick="avatar(41)"> 
                     <img><input type="radio" id="cc4" name="ccabelo">
@@ -217,7 +217,7 @@
 
                 <label for="cc5" onclick="avatar(42)">
                     <img><input type="radio" id="cc5" name="ccabelo">
-                </label> <br>
+                </label>
 
                 <label for="cc6" onclick="avatar(43)"> 
                     <img><input type="radio" id="cc6" name="ccabelo">
@@ -225,7 +225,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - - - - - - - - - - - Olho - - - - - - - - - - - - -<br>
+                Olho<br>
                 <label for="o1" onclick="avatar(44)">
                     <img><input type="radio" id="o1" name="olho" checked>
                 </label>
@@ -236,7 +236,7 @@
 
                 <label for="o3" onclick="avatar(46)"> 
                     <img><input type="radio" id="o3" name="olho">
-                </label>
+                </label> <br>
 
                 <label for="o4" onclick="avatar(47)"> 
                     <img><input type="radio" id="o4" name="olho">
@@ -248,7 +248,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - - - - - - - - Cor do Olho - - - - - - - - - -<br>
+                Cor do Olho<br>
                 <label for="co1" onclick="avatar(49)">
                     <img><input type="radio" id="co1" name="corolho" checked>
                 </label>
@@ -259,7 +259,7 @@
 
                 <label for="co3" onclick="avatar(51)"> 
                     <img><input type="radio" id="co3" name="corolho">
-                </label>
+                </label> <br>
 
                 <label for="co4" onclick="avatar(52)"> 
                     <img><input type="radio" id="co4" name="corolho">
@@ -271,7 +271,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - - Boca - - - -<br>
+                Boca<br>
                 <label for="b1" onclick="avatar(54)">
                     <img><input type="radio" id="b1" name="boca" checked>
                 </label>
@@ -282,7 +282,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - Cor da boca - - -<br>
+                Cor da boca<br>
                 <label for="cb1" onclick="avatar(56)">
                     <img><input type="radio" id="cb1" name="corboca" checked>
                 </label>
@@ -297,7 +297,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - - - - - - roupa - - - - - - - -<br>
+                roupa<br>
                 <label for="r1" onclick="avatar(59)">
                     <img><input type="radio" id="r1" name="roupa" checked>
                 </label>
@@ -332,7 +332,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - - - - cor da roupa - - - - - - <br>
+                cor da roupa <br>
                 <label for="cr1" onclick="avatar(67)">
                     <img><input type="radio" id="cr1" name="croupa">
                 </label>
@@ -375,7 +375,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - - - - - acessórios - - - - - - -<br>
+                acessórios<br>
                 <label for="a1" onclick="avatar(77)">
                     <img><input type="radio" id="a1" name="acess" checked>
                 </label>
@@ -394,7 +394,7 @@
             </p> <br>
 
             <p id="normal">
-                - - - - - - cor de fundo - - - - - -<br>
+                cor de fundo<br>
                 <label for="f1" onclick="avatar(81)">
                     <img><input type="radio" id="f1" name="fundo" checked>
                 </label>

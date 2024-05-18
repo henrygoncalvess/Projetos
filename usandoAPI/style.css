@@ -14,7 +14,7 @@
     position: fixed;
     display: none;
     text-align: center;
-    padding-top: 200px;
+    padding-top: calc(30vh - 5%);
     font-weight: bold;
     color: blue;
     text-shadow: 2px 2px 0px black;
@@ -106,17 +106,17 @@ td{
     border: 1px solid black;
     text-align: center;
     width: max(65%, 200px);
-    background-color: rgba(117, 209, 255, 0.299);
+    background-color: rgba(117, 209, 255, 0.222);
     border-radius: 10px;
 }
 
 #visitas{
-    width: 60px;
+    width: 80px;
     border-radius: 50%;
 }
 
 span{
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 hr{
@@ -124,15 +124,14 @@ hr{
     margin-top: 15px;
 }
 
-input { translate: -5px; }
-
-input:focus{
-    background-color: rgb(231, 231, 231);
+input { 
+    translate: -5px; 
+    background-color: rgba(255, 143, 143, 0.253);
 }
 
 em{
     font-style: normal;
-    font-size: 1.1em;
+    font-size: 1.4em;
 }
 
 #customizar{

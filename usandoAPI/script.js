@@ -1,3 +1,4 @@
+// validação
 var div = document.getElementById('lista')
 var botao = document.getElementById('botao')
 var personalizar = document.getElementById('bloco2')
@@ -29,51 +30,60 @@ var corboca = `&mouthColor=be7054`
 var roupa = `&clothing=variant03`
 var corroupa = `&clothingColor=428bca`
 var acess = ``
-var fundo = `&backgroundColor=ffb162`
+var fundo = `&backgroundColor=b6e3f4`
 
+acessar()
 async function carregando(){
     if (localStorage.getItem('criou') == 'sim'){
+        rodando = true
+        tela.style.display = 'block'
+        rodar()
+
+        inputs.style.display = 'none'
+        botao.style.display = 'none'
+
         setTimeout(() => {
             rodando = false
             tela.style.display = 'none'
-            inputs.style.display = 'none'
-        }, 6002);
+        }, 6000);
 
-        botao.style.display = 'none'
-        inputs.style.display = 'none'
         personalizar.innerHTML = `
-        <p>
-        &#x2728 Prontinho &#x2728 
-        <br>
-        seu nome já está na lista...
-        <br>
-        <br>
-        &#x1F447 compartilhe esta página com seus amigos &#x1F447
-        <p style="color: blue; font-size: 1em;">https://henrygoncalvess.github.io/Projetos/usandoAPI/</p>
-        </p>`
-    }else{
-        botao.style.display = 'inline-block'
-        inputs.style.display = 'block'
+        <section id="bloco2" style="font-size: 0.8em;">
+            <p>
+            &#x2728 Prontinho &#x2728
+            <br>
+            seu nome já está na lista...
+            <br>
+            <br>
+            &#x1F447 compartilhe esta página &#x1F447
+            <br>
+            com seus amigos
+            <p style="color: blue; font-size: 1em;">https://henrygoncalvess.github.io/Projetos/usandoAPI/</p>
+            </p>
+        </section>`
     }
-
     
-    rodando = true
-    tela.style.display = 'block'
-    inputs.style.display = 'none'
-    rodar()
-    setTimeout(() => {
-        rodando = false
-        tela.style.display = 'none'
-        inputs.style.display = 'block'
-        nome.focus()
-    }, 6000);
+    else{
+        botao.style.display = 'inline-block'
+        inputs.style.display = 'none'
 
-
-    urlava = `https://api.dicebear.com/9.x/pixel-art/svg?scale=90`
-
-    custom.setAttribute('src', `${urlava}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}${fundo}`)
-
-    await conectar(5000)
+        rodando = true
+        tela.style.display = 'block'
+        rodar()
+        setTimeout(() => {
+            rodando = false
+            inputs.style.display = 'block'
+            tela.style.display = 'none'
+            nome.focus()
+        }, 6000);
+    
+    
+        urlava = `https://api.dicebear.com/9.x/pixel-art/svg?scale=90`
+    
+        custom.setAttribute('src', `${urlava}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}${fundo}`)
+    
+        await conectar(5000)
+    }
 }
 
 async function avatar(pos){
@@ -403,11 +413,11 @@ async function avatar(pos){
             break
 
         case 81:
-            fundo = `&backgroundColor=ffb162`
+            fundo = `&backgroundColor=b6e3f4`
             break
 
         case 82:
-            fundo = `&backgroundColor=b6e3f4`
+            fundo = `&backgroundColor=ffb162`
             break
 
         case 83:
@@ -533,8 +543,9 @@ function conectar(tempo){
         img[83].setAttribute('height', '50px')
         img[84].setAttribute('height', '50px')
 
-        img[81].style.background = `#ffb162`
-        img[82].style.background = `#b6e3f4`
+        // COR DE FUNDO
+        img[81].style.background = `#b6e3f4`
+        img[82].style.background = `#ffb162`
         img[83].style.background = `#d1d4f9`
         img[84].style.background = `#909090`
 
@@ -592,7 +603,7 @@ async function acessar(){
                 let span = document.createElement('span')
 
                 span.innerHTML = `
-                &diams; <strong>${element.fields.nome}</strong> &diams; <br>
+                <em>&diams;</em> <strong>${element.fields.nome}</strong> <em>&diams;</em> <br>
                 <img src="${element.fields.url}" id="visitas"> <br>
                 <em>&#x1F37D &#xFE0F</em> ${element.fields.comida_fav} <br>
                 <em>&#x1F3AC&#x1F37F</em> ${element.fields.serie_fav} <br>
@@ -607,73 +618,91 @@ async function acessar(){
         console.log(`erro na requisição. status: ${erro}`)
     }
 }
-acessar()
 
 async function criar(nome, comida, serie){
-    localStorage.setItem('criou', 'sim')
-    botao.style.display = 'none'
-    inputs.style.display = 'none'
-    personalizar.innerHTML = `
-    <p>
-    &#x2728 Prontinho &#x2728 
-    <br>
-    seu nome já está na lista...
-    <br>
-    <br>
-    &#x1F447 compartilhe esta página com seus amigos &#x1F447
-    <p style="color: blue; font-size: 1em;">https://henrygoncalvess.github.io/Projetos/usandoAPI/</p>
-    </p>`
-
-    const res = await fetch('https://render-teste-qe28.onrender.com')
-
-    const js = await res.json()
-
-    let post = {
-        method: 'POST',
+    if(nome.length < 2 || comida.length < 2 || serie.length < 2){
+        window.alert('Por favor, preencha todos os campos corretamente antes de entrar na lista')
+        apelido.focus()
+    }
     
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${js.tok}`
-        },
-
-        body: JSON.stringify({
-            fields: {
-                url: custom.attributes[1].value,
-                nome: `${nome}`,
-                comida_fav: `${comida}`,
-                serie_fav: `${serie}`
+    else{
+        localStorage.setItem('criou', 'sim')
+        botao.style.display = 'none'
+        inputs.style.display = 'none'
+        personalizar.innerHTML = `
+        <section id="bloco2" style="font-size: 0.8em;">
+            <p>
+            &#x2728 Prontinho &#x2728
+            <br>
+            seu nome já está na lista...
+            <br>
+            <br>
+            &#x1F447 compartilhe esta página &#x1F447
+            <br>
+            com seus amigos
+            <p style="color: blue; font-size: 1em;">https://henrygoncalvess.github.io/Projetos/usandoAPI/</p>
+            </p>
+        </section>`
+    
+        const res = await fetch('https://render-teste-qe28.onrender.com')
+    
+        const js = await res.json()
+    
+        let post = {
+            method: 'POST',
+        
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${js.tok}`
+            },
+    
+            body: JSON.stringify({
+                fields: {
+                    url: custom.attributes[1].value,
+                    nome: `${nome}`,
+                    comida_fav: `${comida}`,
+                    serie_fav: `${serie}`
+                }
+            })
+        }
+    
+        try{
+            const response = await fetch(`https://api.airtable.com/v0/${js.base}/${js.table}`, post)
+    
+            if(!response.ok){
+                throw new Error(`erro na requisição: ${response.status}`)
             }
-        })
-    }
-
-    try{
-        const response = await fetch(`https://api.airtable.com/v0/${js.base}/${js.table}`, post)
-
-        if(!response.ok){
-            throw new Error(`erro na requisição: ${response.status}`)
-        }
-        else{
-            
-            const dados = await response.json()
-    
-            console.log(dados)
-
+            else{
                 
-            let span = document.createElement('span')
-
-            span.innerHTML = `
-            &diams; <strong>${dados.fields.nome}</strong> &diams; <br>
-            <img src="${dados.fields.url}" id="visitas"> <br>
-            <em>&#x1F37D &#xFE0F</em> ${dados.fields.comida_fav} <br>
-            <em>&#x1F3AC&#x1F37F</em> ${dados.fields.serie_fav} <br>
-            <hr>
-            `
-
-            div.appendChild(span)
+                const dados = await response.json()
+        
+                console.log(dados)
+    
+                    
+                let span = document.createElement('span')
+    
+                span.innerHTML = `
+                &diams; <strong>${dados.fields.nome}</strong> &diams; <br>
+                <img src="${dados.fields.url}" id="visitas"> <br>
+                <em>&#x1F37D &#xFE0F</em> ${dados.fields.comida_fav} <br>
+                <em>&#x1F3AC&#x1F37F</em> ${dados.fields.serie_fav} <br>
+                <hr>
+                `
+    
+                div.appendChild(span)
+            }
+        }
+        catch(erro){
+            console.log(`erro na requisição. status: ${erro}`)
         }
     }
-    catch(erro){
-        console.log(`erro na requisição. status: ${erro}`)
+}
+
+function verif(tam){
+    if (tam.value.length < 2){
+        tam.style.background = 'rgba(255, 143, 143, 0.253)'
+    }else{
+        tam.style.background = 'rgba(113, 255, 113, 0.253)'
     }
 }
