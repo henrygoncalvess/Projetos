@@ -1,46 +1,61 @@
 @charset "UTF-8";
 
 *{
-    margin:0px;
-    padding:0px;
-    font-family:Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 body{
     width: 100vw;
     height:100vh;
-    background: linear-gradient(245deg, rgb(250, 177, 41), rgb(54, 54, 255)) no-repeat fixed;
+    background: linear-gradient(245deg, rgb(254, 166, 4), rgb(13, 1, 255)) no-repeat fixed;
     display: flex;
     justify-content: center;
     align-items:center;
-    padding: 10px 23px 10px 10px;
+    padding: 0px 20px 20px 10px;
 }
 section{
-    background-color:rgb(144, 144, 144);
+    background-color:rgba(144, 144, 144, 0);
+    background-color: rgba(255, 255, 255, 0.291);
     border-radius: 25px;
     overflow: hidden;
     padding: 8px;
-    width: 400px;
-    max-height: 600px;
+    width: 380px;
     box-shadow:3px 3px 4px rgba(0, 0, 0, 0.552);
     border:1px solid black;
 }
 header{
-    background-color: rgb(233, 233, 233);
-    max-width: 400px;
-    height: 225px;
+    background-color: rgba(233, 233, 233, 0.835);
+    max-width: 390px;
+    height: 200px;
     border-radius: 25px;
     font-size: 3em;
     box-shadow:2px 2px 3px rgba(1, 1, 1, 0.4);
     color: black;
-    padding: 170px 10px 0px 0px;
     margin-bottom: 5px;
+    padding: 95px 5px 0px 20px;
 }
-p{
+#igual{
     text-align: right;
+    font-size: .8em;
+    color: rgba(0, 0, 0, 0.637);
+}
+#info{
+    text-align: left;
+    font-size: 0.5em;
+    color: rgba(0, 0, 0, 0.637);
+}
+header > #tela{
+    color: black;
+    text-align: right;
+    font-size: 1em;
 }
 td{
-    padding: 10px 5px;
+    cursor: pointer;
+    color: rgb(0, 0, 47);
+    text-shadow: 2px 2px 3px rgba(27, 27, 27, 0.562);
+    padding: 8px;
     border-radius: 25px;
     width: 100px;
     background-color: rgb(167, 213, 254);
@@ -49,7 +64,12 @@ td{
     text-align: center;
 }
 td:active{
-    background-color: rgb(50, 170, 245);
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+}
+td:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
 }
 .cor{
     background-color: rgb(86, 190, 255);
