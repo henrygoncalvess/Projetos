@@ -5,23 +5,29 @@ function cliquei(num=''){
         if (num == 11){
         tela.innerText = ''
         lista = []
-        lista2 = []
         }
 }
 function calcular(conta){
     var res = 0
     switch (conta){
         case '+':
-            lista.push(tela.innerText)
+            lista[0] = tela.innerText
+            tela.innerText = ''
+            break
+        case '-':
+            lista[0] = tela.innerText
+            tela.innerText = ''
+            break
+        case 'x':
+            lista[0] = tela.innerText
             tela.innerText = ''
             break
         case '=':
-            lista.push(tela.innerText)
+            lista[1] = tela.innerText
             for (var pos in lista){
                 res += Number(lista[pos])
             }
             tela.innerText = res
-            lista.pop()
             break
     }
 }

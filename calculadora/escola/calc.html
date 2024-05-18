@@ -11,29 +11,31 @@
         <header>
             <p id="tela"></p>
         </header>
-        <div>
-            <button onclick="cliquei(9)">9</button>
-            <button onclick="cliquei(8)">8</button>
-            <button onclick="cliquei(7)">7</button>
-            <button class="cor" onclick="calcular('x')">x</button>
-        </div>
-        <div>
-            <button onclick="cliquei(6)">6</button>
-            <button onclick="cliquei(5)">5</button>
-            <button onclick="cliquei(4)">4</button>
-            <button class="cor" onclick="calcular('-')">-</button>
-        </div>
-        <div>
-            <button onclick="cliquei(3)">3</button>
-            <button onclick="cliquei(2)">2</button>
-            <button onclick="cliquei(1)">1</button>
-            <button class="cor" onclick="calcular('+')">+</button>
-        </div>
-        <div>
-            <button onclick="cliquei(0)">0</button>
-            <button id="igual" class="cor" onclick="calcular('=')"> = </button>
-            <button class="cor" onclick="cliquei(11)">del</button>
-        </div>
+        <table>
+            <tr>
+                <td onclick="cliquei(9)">9</td>
+                <td onclick="cliquei(8)">8</td>
+                <td onclick="cliquei(7)">7</td>
+                <td class="cor" onclick="calcular('x')">x</td>
+            </tr>
+            <tr>
+                <td onclick="cliquei(6)">6</td>
+                <td onclick="cliquei(5)">5</td>
+                <td onclick="cliquei(4)">4</td>
+                <td class="cor" onclick="calcular('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="cliquei(3)">3</td>
+                <td onclick="cliquei(2)">2</td>
+                <td onclick="cliquei(1)">1</td>
+                <td class="cor" onclick="calcular('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="cliquei(0)" class="maior">0</td>
+                <td class="cor" onclick="calcular('=')" colspan="2"> = </td>
+                <td class="cor" onclick="cliquei(11)" style="font-size: 2em;">del</td>
+            </tr>
+        </table>
     </section>
     <script src="script.js"></script>
 </body>
