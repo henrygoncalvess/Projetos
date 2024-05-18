@@ -15,27 +15,30 @@
         </header>
         <table>
             <tr>
+                <td colspan="2" class="apagar" onclick="cliquei(11)">C</td>
+                <td class="cor" onclick="cliquei('/')">÷</td>
+                <td class="cor" onclick="cliquei('*')">x</td>
+            </tr>
+            <tr>
                 <td onclick="cliquei(9)">9</td>
                 <td onclick="cliquei(8)">8</td>
                 <td onclick="cliquei(7)">7</td>
-                <td class="cor" onclick="calcular('x')">x</td>
+                <td class="cor" onclick="cliquei('-')">-</td>
             </tr>
             <tr>
                 <td onclick="cliquei(6)">6</td>
                 <td onclick="cliquei(5)">5</td>
                 <td onclick="cliquei(4)">4</td>
-                <td class="cor" onclick="calcular('-')">-</td>
+                <td class="cor" onclick="cliquei('+')">+</td>
             </tr>
             <tr>
                 <td onclick="cliquei(3)">3</td>
                 <td onclick="cliquei(2)">2</td>
                 <td onclick="cliquei(1)">1</td>
-                <td class="cor" onclick="calcular('+')">+</td>
+                <td rowspan="2" class="cor" onclick="calcular()"> = </td>
             </tr>
             <tr>
-                <td onclick="cliquei(0)" class="maior">0</td>
-                <td class="cor" onclick="calcular('=')" colspan="2"> = </td>
-                <td class="cor" onclick="cliquei(11)" style="font-size: 2em;">del</td>
+                <td colspan="3" onclick="cliquei(0)">0</td>
             </tr>
         </table>
     </section>

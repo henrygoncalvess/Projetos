@@ -28,13 +28,13 @@ section{
 header{
     background-color: rgba(233, 233, 233, 0.835);
     max-width: 390px;
-    height: 200px;
+    height: 150px;
     border-radius: 25px;
     font-size: 3em;
     box-shadow:2px 2px 3px rgba(1, 1, 1, 0.4);
     color: black;
     margin-bottom: 5px;
-    padding: 95px 5px 0px 20px;
+    padding: 50px 5px 0px 20px;
 }
 #igual{
     text-align: right;
@@ -63,14 +63,13 @@ td{
     box-shadow:1px 1px 2px rgba(0, 0, 0, 0.422);
     text-align: center;
 }
-td:active{
-    color: white;
-    background-color: rgba(0, 0, 0, 0);
-}
 td:hover{
     color: white;
     background-color: rgba(0, 0, 0, 0);
 }
 .cor{
     background-color: rgb(86, 190, 255);
+}
+.apagar{
+    background-color: rgb(255, 144, 100);
 }
