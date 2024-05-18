@@ -13,7 +13,7 @@ function cliquei(num=''){
 }
 function calcular(conta){
     var res = 0
-    var res2 = 0
+    var res2 = lista2[0] * 2
     var res3 = 1
     switch (conta){
         case '+':
@@ -32,14 +32,14 @@ function calcular(conta){
             lista.push(tela.innerText)
             lista2.push(tela.innerText)
             lista3.push(tela.innerText)
-            for (var pos in lista){
+            for (let pos in lista){
                 res += Number(lista[pos])
             }
-            for (var pos in lista2){
-                res2 = Number(lista2[0]) - Number(lista2[pos])
+            for (let pos in lista2){
+                res2 -= Number(lista2[pos])
             }
-            for (var pos in lista3){
-                res3 = Number(lista3[0]) * Number(lista3[pos])
+            for (let pos in lista3){
+                res3 *= Number(lista3[pos])
             }
             if (lista.length > 1){
                 igual.innerText = res
