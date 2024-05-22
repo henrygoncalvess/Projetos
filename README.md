@@ -1,8 +1,9 @@
-# meus-projetos
- vou criar coisas aleatórias usando o que eu sei
+# Meus Projetos
 
-<a href="https://henrygoncalvess.github.io/meus-projetos/desafios/desafios">-Resolução de Desafios-</a>
+## vou criar ideias que vierem em mente conforme eu for aprendendo
+
+[-Resolução de Desafios-](https://henrygoncalvess.github.io/meus-projetos/desafios/desafios)
 
 Mini Projetos:
 
-1- <a href="https://henrygoncalvess.github.io/meus-projetos/calculadora/escola/calc">Calculadora</a>
+1- [Calculadora](https://henrygoncalvess.github.io/meus-projetos/calculadora/escola/calc)
