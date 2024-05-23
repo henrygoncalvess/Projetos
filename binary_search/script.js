@@ -48,7 +48,7 @@ function trocar() {
         <p>
             Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre todos os valores dentro de uma lista comparando as posições com os valores dos elementos.
             <br>
-            Se a <mark>chave</mark> for igual a algum dos valores, a busca retorna a posição correspondente na lista
+            Se a <mark>chave</mark> for igual a algum dos valores, a busca retorna a posição correspondente na lista (Retorna -1 se não encontrar)
             <br>
             <br>
             <mark>Chave:</mark> <strong>7</strong>
@@ -67,9 +67,40 @@ function trocar() {
             break
         case 3:
             setTimeout(() => {
+                avan.style.opacity = 0
+            }, 1200);
+            setTimeout(() => {
                 titulo.innerHTML = `<strong>Desvantagem</strong>`
-                parag.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
+                parag.innerHTML = `
+        <p>
+            A partir do momento em que nós temos muitos dados para manipular, a busca sequencial já deixa de ser tão útil assim.
+            <br>
+            <br>
+            Imagine que o valor que você procura é o último valor de uma lista com <strong>1000 elementos</strong>... O Algoritmo vai ser executado muitas vezes, e ainda há chances desse valor não existir na lista.
+            <br>
+            <br>
+            
+        </p>
+                `
             }, 1100)
+            break
+        case 4:
+            titulo.style.translate = '0px'
+            parag.style.translate = '0px'
+
+            titulo.style.opacity = 100
+            parag.style.opacity = 100
+
+            setTimeout(() => {
+                titulo.style.translate = '0px'
+                parag.style.translate = '0px'
+                tam2.style.transition = '0ms'
+            }, 600);
+
+            setTimeout(() => {
+                avan.style.opacity = 0
+            }, 1200);
+            pos -= 1
             break
     }
 }
@@ -129,7 +160,7 @@ function voltar() {
         <p>
             Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre todos os valores dentro de uma lista comparando as posições com os valores dos elementos.
             <br>
-            Se a <mark>chave</mark> for igual a algum dos valores, a busca retorna a posição correspondente na lista
+            Se a <mark>chave</mark> for igual a algum dos valores, a busca retorna a posição correspondente na lista (Retorna -1 se não encontrar)
             <br>
             <br>
             <mark>Chave:</mark> <strong>7</strong>
