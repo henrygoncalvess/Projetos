@@ -6,10 +6,6 @@ function cliquei(num=''){
     if (num == 11){
         tela.innerText = ''
     }
-    if (num == '%'){
-        tela.innerText = tela.innerText.replace('%', ' ')
-        tela.innerText += '/100'
-    }
 }
 
 function calcular(){
