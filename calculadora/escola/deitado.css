@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@media screen and (max-height: 580px){
+@media screen and (max-height: 600px){
     section{
         max-width: 250px;
         max-height: max-content;
@@ -16,7 +16,7 @@
     }
 }
 
-@media screen and (max-height: 440px){
+@media screen and (max-height: 500px){
     section{
         max-width: 220px;
         max-height: max-content;
