@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="carregando()">
+    <div id="especial">CARREGANDO IMAGENS<span id="circulo"></span></div>
+
+    <main>
+        <h1>VISITANTES DA PÁGINA</h1>
+
+        <section id="bloco1">
+            <div id="lista">
+            </div>
+        </section>
+
+        <section id="inputs">
+            Preencha os campos abaixo para participar
+            <br>
+            <br>
+            <input type="text" id="nome" placeholder="Nome/Apelido" maxlength="18" autocomplete="off" i class="info"><br><br>
+
+            <input type="text" id="comida" placeholder="Doce/Comida favorita" maxlength="18" autocomplete="off" class="info"><br><br>
+
+            <input type="text" id="serie" placeholder="Filme/Série favorita" maxlength="18" autocomplete="off"  class="info"><br><br>
+        </section>
+
+        
+        <section id="bloco2">
+            <p>PERSONALIZAR AVATAR</p>
+            
+            <div id="customizar">
+                <img id="custom">
+            </div> 
+            
+            <br>
+            <i style="font-size: 0.7em;">se algum avatar não carregar -> clique denovo</i>
+            <br>
+            <br>
+
+            <p id="normal">
+                - - - Cor da Pele - - -<br>
+                <label for="p1" onclick="avatar(1)">
+                    <img><input type="radio" id="p1" name="pele" checked>
+                </label>
+
+                <label for="p2" onclick="avatar(2)"> 
+                    <img><input type="radio" id="p2" name="pele">
+                </label>
+
+                <label for="p3" onclick="avatar(3)">
+                    <img><input type="radio" id="p3" name="pele">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - - - - - - - Cabelo (Feminino) - - - - - - - - -<br>
+                
+                <label for="c1" onclick="avatar(4)">
+                    <img><input type="radio" id="c1" name="cabelo">
+                </label>
+
+                <label for="c2" onclick="avatar(5)">
+                    <img><input type="radio" id="c2" name="cabelo">
+                </label>
+
+                <label for="c3" onclick="avatar(6)">
+                    <img><input type="radio" id="c3" name="cabelo">
+                </label>
+
+                <label for="c4" onclick="avatar(7)">
+                    <img><input type="radio" id="c4" name="cabelo">
+                </label>
+
+                <label for="c5" onclick="avatar(8)">
+                    <img><input type="radio" id="c5" name="cabelo">
+                </label>
+
+                <label for="c6" onclick="avatar(9)">
+                    <img><input type="radio" id="c6" name="cabelo">
+                </label> <br>
+
+                <label for="c7" onclick="avatar(10)">
+                    <img><input type="radio" id="c7" name="cabelo">
+                </label>
+
+                <label for="c8" onclick="avatar(11)">
+                    <img><input type="radio" id="c8" name="cabelo">
+                </label>
+
+                <label for="c9" onclick="avatar(12)">
+                    <img><input type="radio" id="c9" name="cabelo">
+                </label>
+
+                <label for="c10" onclick="avatar(13)">
+                    <img><input type="radio" id="c10" name="cabelo">
+                </label>
+
+                <label for="c11" onclick="avatar(14)">
+                    <img><input type="radio" id="c11" name="cabelo">
+                </label>
+
+                <label for="c12" onclick="avatar(15)">
+                    <img><input type="radio" id="c12" name="cabelo">
+                </label> <br>
+
+                <label for="c13" onclick="avatar(16)">
+                    <img><input type="radio" id="c13" name="cabelo">
+                </label>
+
+                <label for="c14" onclick="avatar(17)">
+                    <img><input type="radio" id="c14" name="cabelo">
+                </label>
+
+                <label for="c15" onclick="avatar(18)">
+                    <img><input type="radio" id="c15" name="cabelo">
+                </label>
+
+                <label for="c16" onclick="avatar(19)">
+                    <img><input type="radio" id="c16" name="cabelo">
+                </label>
+
+                <label for="c17" onclick="avatar(20)">
+                    <img><input type="radio" id="c17" name="cabelo">
+                </label> <br><br><br>
+
+                - - - - - - - - - Cabelo (Masculino) - - - - - - - - -<br>
+                <label for="c18" onclick="avatar(21)">
+                    <img><input type="radio" id="c18" name="cabelo">
+                </label>
+
+                <label for="c19" onclick="avatar(22)">
+                    <img><input type="radio" id="c19" name="cabelo">
+                </label>
+
+                <label for="c20" onclick="avatar(23)">
+                    <img><input type="radio" id="c20" name="cabelo">
+                </label>
+
+                <label for="c21" onclick="avatar(24)">
+                    <img><input type="radio" id="c21" name="cabelo">
+                </label>
+
+                <label for="c22" onclick="avatar(25)">
+                    <img><input type="radio" id="c22" name="cabelo">
+                </label>
+
+                <label for="c23" onclick="avatar(26)">
+                    <img><input type="radio" id="c23" name="cabelo">
+                </label> <br>
+
+                <label for="c24" onclick="avatar(27)">
+                    <img><input type="radio" id="c24" name="cabelo">
+                </label>
+
+                <label for="c25" onclick="avatar(28)">
+                    <img><input type="radio" id="c25" name="cabelo">
+                </label>
+
+                <label for="c26" onclick="avatar(29)">
+                    <img><input type="radio" id="c26" name="cabelo">
+                </label>
+
+                <label for="c27" onclick="avatar(30)">
+                    <img><input type="radio" id="c27" name="cabelo">
+                </label>
+
+                <label for="c28" onclick="avatar(31)">
+                    <img><input type="radio" id="c28" name="cabelo" checked>
+                </label>
+
+                <label for="c29" onclick="avatar(32)">
+                    <img><input type="radio" id="c29" name="cabelo">
+                </label> <br>
+
+                <label for="c30" onclick="avatar(33)">
+                    <img><input type="radio" id="c30" name="cabelo">
+                </label>
+
+                <label for="c31" onclick="avatar(34)">
+                    <img><input type="radio" id="c31" name="cabelo">
+                </label>
+
+                <label for="c32" onclick="avatar(35)">
+                    <img><input type="radio" id="c32" name="cabelo">
+                </label>
+
+                <label for="c33" onclick="avatar(36)">
+                    <img><input type="radio" id="c33" name="cabelo">
+                </label>
+
+                <label for="c34" onclick="avatar(37)">
+                    <img><input type="radio" id="c34" name="cabelo">
+                </label>
+            </p>
+
+            <p id="normal">
+                - - - - - - - - - Cor do Cabelo - - - - - - - - -<br>
+                <label for="cc1" onclick="avatar(38)">
+                    <img><input type="radio" id="cc1" name="ccabelo" checked>
+                </label>
+
+                <label for="cc2" onclick="avatar(39)"> 
+                    <img><input type="radio" id="cc2" name="ccabelo">
+                </label>
+
+                <label for="cc3" onclick="avatar(40)">
+                    <img><input type="radio" id="cc3" name="ccabelo">
+                </label>
+
+                <label for="cc4" onclick="avatar(41)"> 
+                    <img><input type="radio" id="cc4" name="ccabelo">
+                </label>
+
+                <label for="cc5" onclick="avatar(42)">
+                    <img><input type="radio" id="cc5" name="ccabelo">
+                </label> <br>
+
+                <label for="cc6" onclick="avatar(43)"> 
+                    <img><input type="radio" id="cc6" name="ccabelo">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - - - - - - - - - - - Olho - - - - - - - - - - - - -<br>
+                <label for="o1" onclick="avatar(44)">
+                    <img><input type="radio" id="o1" name="olho" checked>
+                </label>
+
+                <label for="o2" onclick="avatar(45)"> 
+                    <img><input type="radio" id="o2" name="olho">
+                </label>
+
+                <label for="o3" onclick="avatar(46)"> 
+                    <img><input type="radio" id="o3" name="olho">
+                </label>
+
+                <label for="o4" onclick="avatar(47)"> 
+                    <img><input type="radio" id="o4" name="olho">
+                </label>
+
+                <label for="o5" onclick="avatar(48)"> 
+                    <img><input type="radio" id="o5" name="olho">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - - - - - - - - Cor do Olho - - - - - - - - - -<br>
+                <label for="co1" onclick="avatar(49)">
+                    <img><input type="radio" id="co1" name="corolho" checked>
+                </label>
+
+                <label for="co2" onclick="avatar(50)"> 
+                    <img><input type="radio" id="co2" name="corolho">
+                </label>
+
+                <label for="co3" onclick="avatar(51)"> 
+                    <img><input type="radio" id="co3" name="corolho">
+                </label>
+
+                <label for="co4" onclick="avatar(52)"> 
+                    <img><input type="radio" id="co4" name="corolho">
+                </label>
+
+                <label for="co5" onclick="avatar(53)"> 
+                    <img><input type="radio" id="co5" name="corolho">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - - Boca - - - -<br>
+                <label for="b1" onclick="avatar(54)">
+                    <img><input type="radio" id="b1" name="boca" checked>
+                </label>
+
+                <label for="b2" onclick="avatar(55)"> 
+                    <img><input type="radio" id="b2" name="boca">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - Cor da boca - - -<br>
+                <label for="cb1" onclick="avatar(56)">
+                    <img><input type="radio" id="cb1" name="corboca" checked>
+                </label>
+
+                <label for="cb2" onclick="avatar(57)"> 
+                    <img><input type="radio" id="cb2" name="corboca">
+                </label>
+
+                <label for="cb3" onclick="avatar(58)"> 
+                    <img><input type="radio" id="cb3" name="corboca">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - - - - - - roupa - - - - - - - -<br>
+                <label for="r1" onclick="avatar(59)">
+                    <img><input type="radio" id="r1" name="roupa" checked>
+                </label>
+
+                <label for="r2" onclick="avatar(60)"> 
+                    <img><input type="radio" id="r2" name="roupa">
+                </label>
+
+                <label for="r3" onclick="avatar(61)"> 
+                    <img><input type="radio" id="r3" name="roupa">
+                </label>
+
+                <label for="r4" onclick="avatar(62)"> 
+                    <img><input type="radio" id="r4" name="roupa">
+                </label> <br>
+
+                <label for="r5" onclick="avatar(63)">
+                    <img><input type="radio" id="r5" name="roupa">
+                </label>
+
+                <label for="r6" onclick="avatar(64)"> 
+                    <img><input type="radio" id="r6" name="roupa">
+                </label>
+
+                <label for="r7" onclick="avatar(65)"> 
+                    <img><input type="radio" id="r7" name="roupa">
+                </label>
+
+                <label for="r8" onclick="avatar(66)"> 
+                    <img><input type="radio" id="r8" name="roupa">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - - - - cor da roupa - - - - - - <br>
+                <label for="cr1" onclick="avatar(67)">
+                    <img><input type="radio" id="cr1" name="croupa">
+                </label>
+
+                <label for="cr2" onclick="avatar(68)"> 
+                    <img><input type="radio" id="cr2" name="croupa">
+                </label>
+
+                <label for="cr3" onclick="avatar(69)"> 
+                    <img><input type="radio" id="cr3" name="croupa">
+                </label>
+
+                <label for="cr4" onclick="avatar(70)"> 
+                    <img><input type="radio" id="cr4" name="croupa">
+                </label> <br>
+
+                <label for="cr5" onclick="avatar(71)">
+                    <img><input type="radio" id="cr5" name="croupa">
+                </label>
+
+                <label for="cr6" onclick="avatar(72)"> 
+                    <img><input type="radio" id="cr6" name="croupa" checked>
+                </label>
+
+                <label for="cr7" onclick="avatar(73)"> 
+                    <img><input type="radio" id="cr7" name="croupa">
+                </label>
+
+                <label for="cr8" onclick="avatar(74)"> 
+                    <img><input type="radio" id="cr8" name="croupa">
+                </label> <br>
+
+                <label for="cr9" onclick="avatar(75)"> 
+                    <img><input type="radio" id="cr9" name="croupa">
+                </label>
+
+                <label for="cr10" onclick="avatar(76)"> 
+                    <img><input type="radio" id="cr10" name="croupa">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - - - - - acessórios - - - - - - -<br>
+                <label for="a1" onclick="avatar(77)">
+                    <img><input type="radio" id="a1" name="acess" checked>
+                </label>
+
+                <label for="a2" onclick="avatar(78)"> 
+                    <img><input type="radio" id="a2" name="acess">
+                </label>
+
+                <label for="a3" onclick="avatar(79)"> 
+                    <img><input type="radio" id="a3" name="acess">
+                </label>
+
+                <label for="a4" onclick="avatar(80)"> 
+                    <img><input type="radio" id="a4" name="acess">
+                </label>
+            </p> <br>
+
+            <p id="normal">
+                - - - - - - cor de fundo - - - - - -<br>
+                <label for="f1" onclick="avatar(81)">
+                    <img><input type="radio" id="f1" name="fundo" checked>
+                </label>
+
+                <label for="f2" onclick="avatar(82)"> 
+                    <img><input type="radio" id="f2" name="fundo">
+                </label>
+
+                <label for="f3" onclick="avatar(83)"> 
+                    <img><input type="radio" id="f3" name="fundo">
+                </label>
+
+                <label for="f4" onclick="avatar(84)"> 
+                    <img><input type="radio" id="f4" name="fundo">
+                </label>
+            </p> <br>
+            <i style="color: red;">
+                ATENÇÃO!!!
+                <br>
+                após entrar na lista não é possível personalizar denovo
+            </i>
+        </section>
+
+        <button onclick="criar(
+            nome.value,
+            comida.value,
+            serie.value
+        )" id="botao">
+            PARTICIPAR DA LISTA
+        </button>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
