@@ -6,4 +6,5 @@
 
 Mini Projetos:
 
-1- [Calculadora](https://henrygoncalvess.github.io/meus-projetos/calculadora/escola/calc)
+1. [Calculadora](https://henrygoncalvess.github.io/meus-projetos/calculadora/escola/calc)<br>
+1. Explicando um algoritmo -> [Binary Search](https://henrygoncalvess.github.io/meus-projetos/binary_search/index)
