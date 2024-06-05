@@ -15,10 +15,10 @@ body{
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
+    padding: 10px;
 }
 main{
-    padding: 8% 5% 5% 5%;
-    margin: 15px;
+    padding: 30px 35px 35px 35px;
     flex: 0 1 500px;
     background-color: white;
     height: max-content;
@@ -28,8 +28,8 @@ main{
 h1{
     font-size: 1.5em;
     text-align: center;
-    line-height: 1.5em;
-    margin-bottom: 60px;
+    line-height: 1.3em;
+    margin-bottom: 50px;
     text-shadow: 1px 1px 1px rgba(31, 31, 31, 0.157);
 }
 p{
@@ -70,131 +70,177 @@ pre{
     box-shadow: none;
     color: black;
 }
-.cod{
-    font-size: 1.6em;
+.cod, .cod2{
+    font-size: min(1.6em, 5vw);
     font-weight: lighter;
     padding: 0px;
     background-color: white;
     border-radius: none;
     box-shadow: none;
     color: black;
+}
+.cod2{
+    font-size: min(1.2em, 3.5vw);;
 }
 .a{
     font-size: 1em;
     font-weight: lighter;
     padding: 0px;
     background-color: white;
-    border-radius: none;
+    border-radius: 50%;
     box-shadow: none;
     color: black;
 }
 #a1{
     animation-name: lista;
-    animation-delay: 0s;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-duration: 11s;
+    animation-iteration-count: 10;
+    padding: 0px 7px;
 }
 #a2{
     animation-name: lista2;
-    animation-delay: 0s;
-    animation-duration: 999s;
+    animation-delay: 3s;
+    animation-duration: 11s;
     animation-iteration-count: 10;
+    padding: 0px 7px;
 }
 #a3{
     animation-name: lista3;
-    animation-delay: 0s;
-    animation-duration: 999s;
+    animation-delay: 4s;
+    animation-duration: 11s;
     animation-iteration-count: 10;
+    padding: 0px 7px;
 }
 #a4{
     animation-name: lista4;
-    animation-delay: 0s;
-    animation-duration: 999s;
+    animation-delay: 5s;
+    animation-duration: 11s;
     animation-iteration-count: 10;
+    padding: 0px 7px;
 }
 #a5{
     animation-name: lista5;
-    animation-delay: 0s;
-    animation-duration: 999s;
+    animation-delay: 6s;
+    animation-duration: 11s;
     animation-iteration-count: 10;
+    padding: 0px 7px;
 }
-.seta{
-    font-size: 1.7em;
-    padding: 0px;
-    background-color: white;
-    border-radius: none;
+#b{
+    animation-name: lista6;
+    animation-delay: 7s;
+    animation-duration: 11s;
+    animation-iteration-count: 10;
+    padding: 0px 7px;
+}
+.tela, #pos{
+    font-size: 1.2em;
+    background-color: rgb(25, 25, 25);
+    display: block;
+    border-radius: 10px;
+    padding: 20px 10px;
     box-shadow: none;
-    color: black;
-    animation-name: seta;
-    animation-delay: 1s;
-    animation-duration: 7s;
-    animation-iteration-count: 10;
-    display: inline-block;
-    translate: 100px;
+    color: rgb(222, 173, 255);
 }
-@keyframes seta {
-    0%{
-        transform: translate(0px);
-    }
-    15%{
-        transform: translate(42px);
-    }
-    30%{
-        transform: translate(84px);
-    }
-    45%{
-        transform: translate(115px);
-    }
-    60%{
-        transform: translate(150px);
-    }
-    75%{
-        transform: translate(182px);
-    }
-    80%{
-        transform: translate(182px);
-    }
+#pos{
+    opacity: 0;
+    animation-name: pos;
+    animation-delay: 7.6s;
+    animation-duration: 11s;
+    animation-iteration-count: 10;
+}
+#d1, #d2, #d3, #d4{
+    background-color: rgb(25, 25, 25);
+    border-radius: 0px;
+    box-shadow: none;
+    color: rgb(222, 173, 255);
+    opacity: 0;
+}
+#d1{
+    animation-name: dots;
+    animation-delay: 1s;
+    animation-duration: 3.5s;
+    animation-iteration-count: 80;
+    padding: 0px 10px;
+}
+#d2{
+    animation-name: dots;
+    animation-delay: 1.3s;
+    animation-duration: 3.5s;
+    animation-iteration-count: 80;
+    padding: 0px 10px;
+}
+#d3{
+    animation-name: dots;
+    animation-delay: 1.6s;
+    animation-duration: 3.5s;
+    animation-iteration-count: 80;
+    padding: 0px 10px;
+}
+#d4{
+    animation-name: dots;
+    animation-delay: 1.9s;
+    animation-duration: 3.5s;
+    animation-iteration-count: 80;
+    padding: 0px 10px;
 }
 @keyframes lista {
     0%{
-        color: red;
-        font-weight: bold;
+        background-color: rgba(255, 75, 75, 0.641);
     }
-    60%{
-        font-weight: bold;
-        color: red;
+    43%{
+        background-color: rgba(255, 75, 75, 0.641);
     }
 }
 @keyframes lista2 {
     0%{
-        color: red;
-        font-weight: bold;
+        background-color: rgba(255, 75, 75, 0.641);
     }
-    100%{
-        color: red;
+    28%{
+        background-color: rgba(255, 75, 75, 0.641);
     }
 }@keyframes lista3 {
     0%{
-        color: red;
-        font-weight: bold;
+        background-color: rgba(255, 75, 75, 0.641);
     }
-    100%{
-        color: red;
+    20%{
+        background-color: rgba(255, 75, 75, 0.641);
     }
 }@keyframes lista4 {
     0%{
-        color: red;
-        font-weight: bold;
+        background-color: rgba(255, 75, 75, 0.641);
     }
-    100%{
-        color: red;
+    8%{
+        background-color: rgba(255, 75, 75, 0.641);
     }
 }@keyframes lista5 {
     0%{
-        color: red;
-        font-weight: bold;
+        background-color: rgba(255, 75, 75, 0.641);
+    }
+    5%{
+        background-color: rgba(255, 75, 75, 0.641);
+    }
+}
+@keyframes lista6 {
+    0%{
+    }
+    10%{
+        background-color: rgba(96, 255, 96, 0.616);
+    }
+}
+@keyframes pos {
+    1%{
+        opacity: 100;
+    }
+    80%{
+        opacity: 0;
+    }
+}
+@keyframes dots {
+    0%{
+        opacity: 100;
     }
     100%{
-        color: red;
+        opacity: 0;
     }
 }
