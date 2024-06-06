@@ -48,7 +48,6 @@ p {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
 }
 
 span {
@@ -59,12 +58,14 @@ span {
     background-color: rgba(102, 0, 255, 0.185);
     box-shadow: 1px 1px 3px rgba(92, 43, 226, 0.505);
     border-radius: 20px 100% 100% 20px;
+    cursor: pointer;
 }
 
 #vol {
     border-radius: 100% 20px 20px 100%;
     padding: 5px 8px 8px 30px;
     opacity: 0;
+    cursor: pointer;
 }
 
 mark {
@@ -85,11 +86,9 @@ p {
 }
 
 pre {
-    font-size: 1.9em;
-    background-color: white;
-    border-radius: none;
-    box-shadow: none;
-    color: black;
+    font-size: min(1em, 4vw);
+    font-weight: lighter;
+    font-family: 'Aria', Helvetica, sans-serif;
 }
 
 .cod,
@@ -167,6 +166,7 @@ pre {
 }
 
 .tela,
+#ind,
 #pos {
     font-size: 1.2em;
     background-color: rgb(25, 25, 25);
@@ -175,6 +175,10 @@ pre {
     padding: 20px 10px;
     box-shadow: none;
     color: rgb(222, 173, 255);
+}
+
+#ind {
+    display: inline-block;
 }
 
 #pos {
@@ -230,51 +234,52 @@ pre {
 
 @keyframes lista {
     0% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 
     43% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
+
     }
 }
 
 @keyframes lista2 {
     0% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 
     28% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 }
 
 @keyframes lista3 {
     0% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 
     20% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 }
 
 @keyframes lista4 {
     0% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 
     8% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 }
 
 @keyframes lista5 {
     0% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 
     5% {
-        background-color: rgba(255, 75, 75, 0.641);
+        background-color: rgb(111, 168, 226, 0.641);
     }
 }
 
