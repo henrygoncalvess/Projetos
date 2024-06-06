@@ -1,17 +1,58 @@
 var titulo = document.getElementById('titulo')
 var parag = document.getElementById('parag')
-var tam = document.getElementById('tam')
 var tam2 = document.getElementById('tam2')
 var ant = document.getElementById('vol')
 var avan = document.getElementById('avan')
+var tela = document.getElementById('ind')
 var pos = 0
+var tempo = 3100
+var cont = 0
 
 function trocar() {
-    if (pos == 0){
+
+    function contar(iniciar) {
+        if (iniciar = 0) { cont = 0 }
+        setTimeout(() => {
+            if (cont < 5) {
+                cont += 1
+                switch (cont) {
+                    case 1:
+                        tempo = 1000
+                        ind.innerHTML = `índice: ${cont}`
+                        sim = 1
+                        break
+                    case 2:
+                        ind.innerHTML = `índice: ${cont}`
+                        sim = 1
+                        break
+                    case 3:
+                        ind.innerHTML = `índice: ${cont}`
+                        sim = 1
+                        break
+                    case 4:
+                        ind.innerHTML = `índice: ${cont}`
+                        sim = 1
+                        break
+                    case 5:
+                        ind.innerHTML = `índice: ${cont}`
+                        sim = 1
+                        break
+                    default:
+                        tempo = 3100
+                        break
+                }
+                contar(iniciar)
+            } else { ind.innerHTML = 'erro' }
+        }, tempo)
+    }
+
+    if (pos == 0) {
         pos += 2
-    }else { pos += 0}
+    } else { pos += 0 }
     switch (pos) {
         case 2:
+            contar(0)
+
             titulo.style.translate = '-400px'
             parag.style.translate = '-400px'
 
@@ -33,7 +74,25 @@ function trocar() {
 
             setTimeout(() => {
                 titulo.innerHTML = `Busca Sequencial`
-                parag.innerHTML = ' Uma <mark>Busca Sequencial</mark> é o algoritmo mais simples de busca. <br> <br>  Ele percorre todos os valores dentro de uma lista comparando os índices com os valores dos elementos em cada uma das posições. Se a chave for igual a algum dos elementos, ela retorna a posição correspondente na lista <br> <br>  Número escolhido: 7 <br> <br>   <span class="cod">Lista = [<span id="a1" class="a">2</span>,<span id="a2" class="a">5</span>,<span id="a3" class="a">9</span>,<span id="a4" class="a">1</span>,<span id="a5" class="a">0</span>,<span id="b" class="a">7</span>, 8, 5, 10]</span> <br> <br> <span class="tela"> <strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span id="d3">&bull;</span><span id="d4">&bull;</span></strong> <span id="pos">Valor encontrado<br>Posição: <mark style="background-color: rgb(25, 25, 25); color: yellow;">5</mark></span> </span>'
+                parag.innerHTML = `
+        <p>
+            ${pos}Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre todos os valores dentro de uma lista comparando os índices/posições(0,1,2...) com os valores dos elementos em cada uma das posições.
+            <br>
+            Se a <mark>chave</mark> for igual a algum dos valores, a busca retorna a posição correspondente na lista
+            <br>
+            <br>
+            <mark>Chave:</mark> <strong>7</strong>
+            <br>
+            <br>
+            <pre>
+<span class="cod">lista = [<span id="a1" class="a">2</span>,<span id="a2" class="a">5</span>,<span id="a3" class="a">9</span>,<span id="a4" class="a">1</span>,<span id="a5" class="a">0</span>,<span id="b" class="a">7</span>,3]</span>
+            </pre>
+            <br>
+            <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span
+                        id="d3">&bull;</span><span id="d4">&bull;</span></strong><span id="ind">índice: 0</span>                <span id="pos">Valor encontrado
+                    <br>
+                    Posição: <mark style="background-color: rgb(25, 25, 25); color: yellow;">5</mark></span>
+        </p>`
 
                 titulo.style.translate = '0px'
                 parag.style.translate = '0px'
@@ -48,16 +107,19 @@ function trocar() {
                 tam2.style.transition = '800ms'
             }, 1200);
             break
+        default:
+
+            break
     }
 }
 
 function voltar() {
-    if (pos > 0){
+    if (pos == 2 || pos == 1) {
         pos -= 1
-    }else { pos -= 0}
+    } else { pos -= 0 }
     switch (pos) {
         case 0:
-            titulo.innerHTML = `O que é "Binary Search" <br> ou <br> "Pesquisa Binária"?`
+            titulo.innerHTML = `O que é "<strong>Binary Search</strong>" <br> ou <br> "<strong>Pesquisa Binária</strong>"?${pos}`
             parag.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
             break
         case 1:
@@ -74,7 +136,7 @@ function voltar() {
             }, 600);
 
             setTimeout(() => {
-                titulo.innerHTML = `O que é "Binary Search" <br> ou <br> "Pesquisa Binária"?`
+                titulo.innerHTML = `O que é "Binary Search" <br> ou <br> "Pesquisa Binária"?${pos}`
                 parag.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
 
                 titulo.style.translate = '0px'
@@ -83,8 +145,6 @@ function voltar() {
                 titulo.style.opacity = 100
                 parag.style.opacity = 100
             }, 900);
-            break
-        default:
             break
     }
 }
