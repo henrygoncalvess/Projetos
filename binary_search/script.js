@@ -21,6 +21,7 @@ function trocar() {
     // se a posição for tal, página tal
     switch (pos) {
         case 2:
+            tam2.style.padding = '90px'
             pag2()
             break
 
@@ -99,7 +100,6 @@ function voltar() {
         // página 2
         case 2:
             // conteúdo
-            tam2.style.padding = '200px 0px'
             pag2()
             break
     }
@@ -172,9 +172,7 @@ function pag3(){
         </p>
         <br>
         <br>
-        <pre>
-        <span class="cod">lista = [<span id="a1" class="a">2</span>,<span id="a2" class="a">5</span>,<span id="a3" class="a">9</span>,<span id="a4" class="a">1</span>,<span id="a5" class="a">0</span>,<span id="b" class="a">7</span>,3 ]</span>
-        </pre>
+        <span class="cod">Lista = [<span id="a1" class="a">2</span>,<span id="a2" class="a">5</span>,<span id="a3" class="a">9</span>,<span id="a4" class="a">1</span>,<span id="a5" class="a">0</span>,<span id="b" class="a">7</span>, 3 ]</span>
         <br>
         <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span
                     id="d3">&bull;</span><span id="d4">&bull;</span></strong><span id="pos">Valor encontrado

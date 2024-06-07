@@ -103,14 +103,14 @@ pre {
     font-size: min(1.6em, 5vw);
     font-weight: lighter;
     padding: 0px;
-    background-color: white;
+    background-color: transparent;
     border-radius: none;
     box-shadow: none;
     color: black;
 }
 
 .cod2 {
-    font-size: min(1.2em, 3.5vw);
+    font-size: min(1.6em, 5vw);
     ;
 }
 
@@ -129,7 +129,7 @@ pre {
     animation-delay: 2s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 3px 10px;
+    padding: 0px 11px;
 }
 
 #a2 {
@@ -137,7 +137,7 @@ pre {
     animation-delay: 3s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 3px 10px;
+    padding: 0px 11px;
 }
 
 #a3 {
@@ -145,7 +145,7 @@ pre {
     animation-delay: 4s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 3px 10px;
+    padding: 0px 11px;
 }
 
 #a4 {
@@ -153,7 +153,7 @@ pre {
     animation-delay: 5s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 3px 10px;
+    padding: 0px 11px;
 }
 
 #a5 {
@@ -161,7 +161,7 @@ pre {
     animation-delay: 6s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 3px 10px;
+    padding: 0px 11px;
 }
 
 #b {
@@ -169,11 +169,12 @@ pre {
     animation-delay: 7s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 3px 10px;
+    padding: 0px 11px;
 }
 
 .tela,
 #pos {
+    margin-top: 20px;
     font-size: 1.2em;
     background-color: black;
     display: block;
@@ -193,7 +194,7 @@ pre {
 }
 
 a {
-    color: rgb(6, 247, 6);
+    color: rgb(0, 174, 255);
     text-decoration: none;
 }
 
@@ -245,7 +246,7 @@ a {
         background-color: rgba(97, 1, 240, 0.249);
     }
 
-    43% {
+    40% {
         background-color: rgba(97, 1, 240, 0.249);
 
     }
@@ -256,7 +257,7 @@ a {
         background-color: rgba(97, 1, 240, 0.249);
     }
 
-    28% {
+    23% {
         background-color: rgba(97, 1, 240, 0.249);
     }
 }
@@ -266,7 +267,7 @@ a {
         background-color: rgba(97, 1, 240, 0.249);
     }
 
-    20% {
+    15% {
         background-color: rgba(97, 1, 240, 0.249);
     }
 }
@@ -276,7 +277,7 @@ a {
         background-color: rgba(97, 1, 240, 0.249);
     }
 
-    8% {
+    2% {
         background-color: rgba(97, 1, 240, 0.249);
     }
 }
@@ -286,7 +287,7 @@ a {
         background-color: rgba(97, 1, 240, 0.249);
     }
 
-    5% {
+    0.1% {
         background-color: rgba(97, 1, 240, 0.249);
     }
 }
@@ -295,7 +296,7 @@ a {
     0% {}
 
     5% {
-        background-color: rgba(96, 255, 96, 0.616);
+        background-color: rgba(0, 140, 255, 0.418);
     }
 }
 
@@ -314,7 +315,7 @@ a {
         opacity: 100;
     }
 
-    100% {
+    80% {
         opacity: 0;
     }
 }
