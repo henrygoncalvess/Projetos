@@ -37,7 +37,7 @@ function trocar() {
                 titulo.innerHTML = `Busca Sequencial`
                 parag.innerHTML = `
         <p>
-            Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre todos os valores dentro de uma lista comparando os índices/posições(0,1,2...) com os valores dos elementos em cada uma das posições.
+            Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre todos os valores dentro de uma lista comparando as posições com os valores dos elementos.
             <br>
             Se a <mark>chave</mark> for igual a algum dos valores, a busca retorna a posição correspondente na lista
             <br>
@@ -52,7 +52,7 @@ function trocar() {
             <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span
                         id="d3">&bull;</span><span id="d4">&bull;</span></strong><span id="pos">Valor encontrado
                     <br>
-                    Posição: <mark style="background-color: rgb(25, 25, 25); color: yellow;">5</mark></span>
+                    Posição: <a>5</a></span>
         </p>`
 
                 titulo.style.translate = '0px'
