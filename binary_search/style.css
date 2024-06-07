@@ -75,6 +75,12 @@ mark {
     background-color: rgba(102, 0, 255, 0.185);
 }
 
+#chave {
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 0em;
+}
+
 h1,
 p {
     transition: 800ms;
