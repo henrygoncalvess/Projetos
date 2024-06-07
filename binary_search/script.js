@@ -5,44 +5,37 @@ var ant = document.getElementById('vol')
 var avan = document.getElementById('avan')
 var tela = document.getElementById('ind')
 var pos = 0
-var tempo = 3100
 var cont = 0
+var tempo = 3100
 
 function trocar() {
 
-    function contar(iniciar) {
-        if (iniciar = 0) { cont = 0 }
+    function contar() {
         setTimeout(() => {
             if (cont < 5) {
                 cont += 1
                 switch (cont) {
                     case 1:
                         tempo = 1000
-                        ind.innerHTML = `índice: ${cont}`
-                        sim = 1
+                        ind.innerHTML = `índice: 1`
                         break
                     case 2:
-                        ind.innerHTML = `índice: ${cont}`
-                        sim = 1
+                        ind.innerHTML = `índice: 2`
                         break
                     case 3:
-                        ind.innerHTML = `índice: ${cont}`
-                        sim = 1
+                        ind.innerHTML = `índice: 3`
                         break
                     case 4:
-                        ind.innerHTML = `índice: ${cont}`
-                        sim = 1
+                        ind.innerHTML = `índice: 4`
                         break
                     case 5:
-                        ind.innerHTML = `índice: ${cont}`
-                        sim = 1
+                        ind.innerHTML = `índice: 5`
                         break
                     default:
-                        tempo = 3100
                         break
                 }
-                contar(iniciar)
-            } else { ind.innerHTML = 'erro' }
+                contar()
+            }
         }, tempo)
     }
 
@@ -51,7 +44,7 @@ function trocar() {
     } else { pos += 0 }
     switch (pos) {
         case 2:
-            contar(0)
+            contar()
 
             titulo.style.translate = '-400px'
             parag.style.translate = '-400px'
@@ -76,7 +69,7 @@ function trocar() {
                 titulo.innerHTML = `Busca Sequencial`
                 parag.innerHTML = `
         <p>
-            ${pos}Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre todos os valores dentro de uma lista comparando os índices/posições(0,1,2...) com os valores dos elementos em cada uma das posições.
+            Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre todos os valores dentro de uma lista comparando os índices/posições(0,1,2...) com os valores dos elementos em cada uma das posições.
             <br>
             Se a <mark>chave</mark> for igual a algum dos valores, a busca retorna a posição correspondente na lista
             <br>
@@ -119,7 +112,7 @@ function voltar() {
     } else { pos -= 0 }
     switch (pos) {
         case 0:
-            titulo.innerHTML = `O que é "<strong>Binary Search</strong>" <br> ou <br> "<strong>Pesquisa Binária</strong>"?${pos}`
+            titulo.innerHTML = `O que é "<strong>Binary Search</strong>" <br> ou <br> "<strong>Pesquisa Binária</strong>"?`
             parag.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
             break
         case 1:
@@ -136,7 +129,7 @@ function voltar() {
             }, 600);
 
             setTimeout(() => {
-                titulo.innerHTML = `O que é "Binary Search" <br> ou <br> "Pesquisa Binária"?${pos}`
+                titulo.innerHTML = `O que é "Binary Search" <br> ou <br> "Pesquisa Binária"?`
                 parag.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
 
                 titulo.style.translate = '0px'
