@@ -22,3 +22,12 @@ export function pag2() {
         </p>`;
     }, 900);
 }
+
+export function pag1(){
+    setTimeout(() => {
+        ant.style.opacity = 0
+        avan.style.opacity = 100
+        titulo.innerHTML = `O que é "<strong>Binary Search</strong>" <br> ou <br> "<strong>Pesquisa Binária</strong>"?`
+        parag.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
+    }, 900);
+}

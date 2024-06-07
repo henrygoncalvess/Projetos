@@ -29,7 +29,6 @@ function animar(){
     setTimeout(() => {
         titulo.style.translate = '400px'
         parag.style.translate = '400px'
-        tam2.style.transition = '0ms'
     }, 600);
     
     setTimeout(() => {
@@ -61,7 +60,9 @@ function trocar() {
 
         // página 2
         case 2:
+            tam2.style.padding = '238px 0px'
             setTimeout(() => {
+                tam2.style.transition = '0ms'
                 titulo.innerHTML = `<strong>Busca Sequencial</strong>`
                 parag.innerHTML = `
         <p>
@@ -94,7 +95,7 @@ function trocar() {
                 titulo.innerHTML = `<strong>Desvantagem</strong>`
                 parag.innerHTML = `
         <p>
-            A partir do momento em que nós temos muitos dados para manipular, a busca sequencial já deixa de ser tão útil assim.
+            A partir do momento em que nós temos muitos dados para manipular, a busca sequencial deixa de ser útil.
             <br>
             <br>
             Imagine que o valor que você procura é o último valor de uma lista com <strong>1000 elementos</strong>... O Algoritmo vai ser executado muitas vezes, e ainda há chances desse valor não existir na lista.
@@ -177,7 +178,9 @@ function voltar() {
         // página 2
         case 2:
             // conteúdo
+            tam2.style.padding = '200px 0px'
             setTimeout(() => {
+                tam2.style.transition = '0ms'
                 avan.style.opacity = 100
                 titulo.innerHTML = `<strong>Busca Sequencial</strong>`
                 parag.innerHTML = `

@@ -7,6 +7,7 @@
     "homepage": "https://henrygoncalvess.github.io/Meus-Projetos/binary_search/index",
     "main": "script.js",
     "bugs": {
+        "url": "https://github.com/henrygoncalvess/Meus-Projetos/issues",
         "email": "octanebt@gmail.com"
     },
     "license": "MIT",
