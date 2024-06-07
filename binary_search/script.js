@@ -50,7 +50,7 @@ function trocar() {
             </pre>
             <br>
             <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span
-                        id="d3">&bull;</span><span id="d4">&bull;</span></strong><span id="ind">índice: 0</span>                <span id="pos">Valor encontrado
+                        id="d3">&bull;</span><span id="d4">&bull;</span></strong><span id="pos">Valor encontrado
                     <br>
                     Posição: <mark style="background-color: rgb(25, 25, 25); color: yellow;">5</mark></span>
         </p>`
