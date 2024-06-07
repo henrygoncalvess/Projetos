@@ -33,6 +33,7 @@ main {
 
 h1 {
     font-size: 1.5em;
+    font-weight: 300;
     text-align: center;
     line-height: 1.3em;
     margin-bottom: 40px;
@@ -122,7 +123,7 @@ pre {
     animation-delay: 2s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 7px;
+    padding: 3px 10px;
 }
 
 #a2 {
@@ -130,7 +131,7 @@ pre {
     animation-delay: 3s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 7px;
+    padding: 3px 10px;
 }
 
 #a3 {
@@ -138,7 +139,7 @@ pre {
     animation-delay: 4s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 7px;
+    padding: 3px 10px;
 }
 
 #a4 {
@@ -146,7 +147,7 @@ pre {
     animation-delay: 5s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 7px;
+    padding: 3px 10px;
 }
 
 #a5 {
@@ -154,7 +155,7 @@ pre {
     animation-delay: 6s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 7px;
+    padding: 3px 10px;
 }
 
 #b {
@@ -162,7 +163,7 @@ pre {
     animation-delay: 7s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 7px;
+    padding: 3px 10px;
 }
 
 .tela,
@@ -235,52 +236,52 @@ a{
 
 @keyframes lista {
     0% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 
     43% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
 
     }
 }
 
 @keyframes lista2 {
     0% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 
     28% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 }
 
 @keyframes lista3 {
     0% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 
     20% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 }
 
 @keyframes lista4 {
     0% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 
     8% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 }
 
 @keyframes lista5 {
     0% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 
     5% {
-        background-color: rgba(102, 0, 255, 0.185);
+        background-color: rgba(97, 1, 240, 0.249);
     }
 }
 
