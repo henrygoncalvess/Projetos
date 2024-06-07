@@ -33,27 +33,27 @@ function trocar() {
         case 4:
             pag4()
             break
-            case 5:
-                // não deixa o conteúdo desaparecer e sair do lugar
+        case 5:
+            // não deixa o conteúdo desaparecer e sair do lugar
+            titulo.style.translate = '0px'
+            parag.style.translate = '0px'
+            titulo.style.opacity = 100
+            parag.style.opacity = 100
+            ant.style.opacity = 100
+
+            setTimeout(() => {
                 titulo.style.translate = '0px'
                 parag.style.translate = '0px'
-                titulo.style.opacity = 100
-                parag.style.opacity = 100
-                ant.style.opacity = 100
-    
-                setTimeout(() => {
-                    titulo.style.translate = '0px'
-                    parag.style.translate = '0px'
-                    tam2.style.transition = '0ms'
-                }, 600);
-    
-                setTimeout(() => {
-                    titulo.style.translate = '0px'
-                    parag.style.translate = '0px'
-                    tam2.style.transition = '0ms'
-                    avan.style.opacity = 0
-                }, 900);
-                pos -= 1
+                tam2.style.transition = '0ms'
+            }, 600);
+
+            setTimeout(() => {
+                titulo.style.translate = '0px'
+                parag.style.translate = '0px'
+                tam2.style.transition = '0ms'
+                avan.style.opacity = 0
+            }, 900);
+            pos -= 1
             break
     }
 }
@@ -99,8 +99,11 @@ function voltar() {
 
         // página 2
         case 2:
-            // conteúdo
             pag2()
+            break
+        case 3:
+            tam2.style.padding = '46px'
+            pag3()
             break
     }
 }
@@ -172,7 +175,7 @@ function pag3(){
         </p>
         <br>
         <br>
-        <span class="cod">Lista = [<span id="a1" class="a">2</span>,<span id="a2" class="a">5</span>,<span id="a3" class="a">9</span>,<span id="a4" class="a">1</span>,<span id="a5" class="a">0</span>,<span id="b" class="a">7</span>, 3 ]</span>
+        <code><span class="cod">Lista = [<span id="a1" class="a">2</span>,<span id="a2" class="a">5</span>,<span id="a3" class="a">9</span>,<span id="a4" class="a">1</span>,<span id="a5" class="a">0</span>,<span id="b" class="a">7</span>, 3 ]</span></code>
         <br>
         <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span
                     id="d3">&bull;</span><span id="d4">&bull;</span></strong><span id="pos">Valor encontrado
@@ -198,5 +201,5 @@ function pag4(){
             <br>
             
         </p>`
-    }, 1000)
+    }, 900)
 }
