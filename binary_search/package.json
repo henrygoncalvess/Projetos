@@ -1,0 +1,14 @@
+{
+    "type": "module",
+    "name": "binary_search",
+    "version": "1.0.0",
+    "description": "algoritmo",
+    "author": "Henry Gonçalves <octanebt@gmail.com> (https://github.com/henrygoncalvess/)",
+    "homepage": "https://henrygoncalvess.github.io/Meus-Projetos/binary_search/index",
+    "main": "script.js",
+    "bugs": {
+        "email": "octanebt@gmail.com"
+    },
+    "license": "MIT",
+    "private": true
+}
