@@ -6,17 +6,17 @@ var avan = document.getElementById('avan')
 var tela = document.getElementById('ind')
 var pos = 0
 var cont = 0
-var tempo = 3100
+var tempo = 0
 
 function trocar() {
 
     function contar() {
         setTimeout(() => {
-            if (cont < 5) {
+            if (cont < 6 && pos == 2) {
                 cont += 1
                 switch (cont) {
                     case 1:
-                        tempo = 1000
+                        tempo = 1050
                         ind.innerHTML = `índice: 1`
                         break
                     case 2:
@@ -30,7 +30,12 @@ function trocar() {
                         break
                     case 5:
                         ind.innerHTML = `índice: 5`
+                        tempo = 3900
                         break
+                    case 6:
+                        tempo = 2800
+                        cont = 0
+                        ind.innerHTML = `índice: 0`
                     default:
                         break
                 }
@@ -44,7 +49,10 @@ function trocar() {
     } else { pos += 0 }
     switch (pos) {
         case 2:
-            contar()
+            tempo = 0
+            setTimeout(() => {
+                contar()
+            }, 4000)
 
             titulo.style.translate = '-400px'
             parag.style.translate = '-400px'
