@@ -12,6 +12,7 @@ var c = 0
 
 // quando clicar em AVANÇAR
 function trocar() {
+    tempo = 2000
     c = 0
     animar()
 
@@ -64,6 +65,7 @@ function trocar() {
 
 // quando clicar em VOLTAR
 function voltar() {
+    tempo = 2100
     c = 0
     animar()
 
@@ -144,10 +146,13 @@ function animar(){
 
 function contar(){
     setTimeout(() => {
-        c+=1
-        ind.innerHTML = `${c}`
-        requestAnimationFrame(contar)
-    }, 1000);
+        if (c < 6){
+            tempo = 1000
+            ind.innerHTML = `${c}`
+            c+=1
+            requestAnimationFrame(contar)
+        }
+    }, tempo);
 }
 
 function pag1(){
