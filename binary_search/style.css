@@ -93,26 +93,14 @@ p {
     transition: 800ms;
 }
 
-#seq,
-#pseq {
-    display: none;
-    opacity: 0;
-}
-
-pre {
-    font-size: min(1em, 4vw);
-    font-weight: lighter;
-    font-family: 'Aria', Helvetica, sans-serif;
-}
-
 .cod {
-    font-size: min(1.5em, 4vw);
+    font-size: min(1.7em, 4.8vw);
     font-weight: lighter;
-    padding: 0px;
+    padding: 0px 0px 215px 0px;
     background-color: transparent;
-    border-radius: none;
     box-shadow: none;
     color: black;
+    border-radius: 0px;
 }
 
 .a {

@@ -38,6 +38,9 @@ function trocar() {
 
         // não deixa o conteúdo desaparecer e sair do lugar
         case 5:
+            pag5()
+            break
+            case 6:
             titulo.style.translate = '0px'
             parag.style.translate = '0px'
             titulo.style.opacity = 100
@@ -107,6 +110,11 @@ function voltar() {
         case 3:
             pag3()
             break
+
+        // página 4
+        case 4:
+            pag4()
+            break
     }
 }
 
@@ -152,10 +160,10 @@ function pag2(){
         titulo.innerHTML = `<strong>Busca Sequencial</strong>`
         parag.innerHTML = `
         <p>
-        Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre do início ao fim da lista, comparando a posição/índice com o valor da <mark>chave</mark>.
+        Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre do <strong>início ao fim</strong> da lista, comparando a posição/índice com o valor da <mark>chave</mark>.
         <br>
         <br>
-        Se a <mark>chave</mark> for igual o valor da posição, a busca retorna a posição correspondente.
+        Se a posição for igual o valor da <mark>chave</mark>, a busca retorna a posição correspondente.
         <br>
         <br>
         Se a <mark>chave</mark> não for encontrada a posição retornada é " <strong>-1</strong> ". Veja o exemplo a seguir...
@@ -173,21 +181,22 @@ function pag3(){
         </p>
         <br>
         <code><span class="cod">
-        Posição &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        Lista
-        <br>0 -> <span id="a1" class="a">2</span>
+        &nbsp; &nbsp;&nbsp;<strong>Posição</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <strong>Lista</strong>
         <br>
-        1 -> <span id="a2" class="a">5</span>
+         &nbsp; &nbsp; &nbsp; &nbsp;<strong>0</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a1" class="a">2</span>
         <br>
-        2 -> <span id="a3" class="a">9</span>
+         &nbsp; &nbsp; &nbsp; &nbsp;<strong>1</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a2" class="a">5</span>
         <br>
-        3 -> <span id="a4" class="a">1</span>
+         &nbsp; &nbsp; &nbsp; &nbsp;<strong>2</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a3" class="a">9</span>
         <br>
-        4 -> <span id="a5" class="a">0</span>
+         &nbsp; &nbsp; &nbsp; &nbsp;<strong>3</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a4" class="a">1</span>
         <br>
-        5 -> <span id="b" class="a">7</span>
+         &nbsp; &nbsp; &nbsp; &nbsp;<strong>4</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a5" class="a">0</span>
         <br>
-        6 -> <span id="c" class="a">3</span>
+         &nbsp; &nbsp; &nbsp; &nbsp;<strong>5</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="b" class="a">7</span>
+        <br>
+         &nbsp; &nbsp; &nbsp; &nbsp;<strong>6</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="c" class="a">3</span>
         </span></code>
         <br>
         <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span id="d3">&bull;</span><span id="d4">&bull;</span></strong>
@@ -196,25 +205,37 @@ function pag3(){
         Posição: <a>5</a>
         </span>
         </p>`
-        requestAnimationFrame(contar)
     }, 900);
 }
 
 function pag4(){
     setTimeout(() => {
-        // some com o botão de avançar
-        avan.style.opacity = 0
-        
         titulo.innerHTML = `<strong>Desvantagem</strong>`
         parag.innerHTML = `
         <p>
             A partir do momento em que nós temos muitos dados para manipular, a busca sequencial deixa de ser útil.
             <br>
             <br>
-            Imagine que o valor que você procura é o último valor de uma lista com <strong>1000 elementos</strong>... O Algoritmo vai ser executado muitas vezes, e ainda há chances desse valor não existir na lista.
+            Imagine que o valor que você procura é o último de uma lista com <strong>1000 elementos</strong>...
+            <br>
+            <br>
+            O Algoritmo vai comparar cada uma das posições... Teste por teste.... e ainda há chances desse valor não existir na lista.
             <br>
             <br>
             
+        </p>`
+    }, 900)
+}
+
+function pag5(){
+    setTimeout(() => {
+        // some com o botão de avançar
+        avan.style.opacity = 0
+        
+        titulo.innerHTML = `<strong>Binary Search</strong>`
+        parag.innerHTML = `
+        <p>
+            E é aí que entra a <strong>Pesquisa Binária.</strong> No próximo exemplo você vai ver o poder de busca desse algoritmo... Sem contar que ele é executado pouquíssimas vezes.
         </p>`
     }, 900)
 }
