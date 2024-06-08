@@ -7,6 +7,7 @@ var ant = document.getElementById('vol')
 var avan = document.getElementById('avan')
 var tela = document.getElementById('ind')
 var pos = 0
+var id;
 
 // quando clicar em AVANÇAR
 function trocar() {
@@ -20,11 +21,13 @@ function trocar() {
 
     // se a posição for tal, página tal
     switch (pos) {
+
+        // página 2
         case 2:
-            tam2.style.padding = '90px'
             pag2()
             break
 
+        // página 3
         case 3:
             pag3()
             break
@@ -33,8 +36,9 @@ function trocar() {
         case 4:
             pag4()
             break
+
+        // não deixa o conteúdo desaparecer e sair do lugar
         case 5:
-            // não deixa o conteúdo desaparecer e sair do lugar
             titulo.style.translate = '0px'
             parag.style.translate = '0px'
             titulo.style.opacity = 100
@@ -44,13 +48,11 @@ function trocar() {
             setTimeout(() => {
                 titulo.style.translate = '0px'
                 parag.style.translate = '0px'
-                tam2.style.transition = '0ms'
             }, 600);
 
             setTimeout(() => {
                 titulo.style.translate = '0px'
                 parag.style.translate = '0px'
-                tam2.style.transition = '0ms'
                 avan.style.opacity = 0
             }, 900);
             pos -= 1
@@ -101,8 +103,9 @@ function voltar() {
         case 2:
             pag2()
             break
+
+        // página 3
         case 3:
-            tam2.style.padding = '46px'
             pag3()
             break
     }
@@ -112,20 +115,19 @@ function voltar() {
 
 // animação de sumir e aparecer
 function animar(){
-    titulo.style.translate = '-400px'
-    parag.style.translate = '-400px'
+    titulo.style.translate = '-100px'
+    parag.style.translate = '-100px'
     titulo.style.opacity = 0
     parag.style.opacity = 0
     ant.style.opacity = 0
     avan.style.opacity = 0
     
     setTimeout(() => {
-        titulo.style.translate = '400px'
-        parag.style.translate = '400px'
+        titulo.style.translate = '90px'
+        parag.style.translate = '90px'
     }, 600);
     
     setTimeout(() => {
-        tam2.style.padding = '20px'
         titulo.style.translate = '0px'
         parag.style.translate = '0px'
 
@@ -134,7 +136,6 @@ function animar(){
 
         ant.style.opacity = 100
         avan.style.opacity = 100
-        tam2.style.transition = '800ms'
     }, 900);
 }
 
@@ -149,7 +150,6 @@ function pag1(){
 
 function pag2(){
     setTimeout(() => {
-        tam2.style.transition = '0ms'
         titulo.innerHTML = `<strong>Busca Sequencial</strong>`
         parag.innerHTML = `
         <p>
@@ -166,7 +166,6 @@ function pag2(){
 
 function pag3(){
     setTimeout(() => {
-        tam2.style.transition = '0ms'
         titulo.innerHTML = `<strong>Exemplo</strong>`
         parag.innerHTML = `
         <p>
