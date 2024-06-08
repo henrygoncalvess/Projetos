@@ -145,12 +145,16 @@ function animar(){
 }
 
 function contar(){
+    if (c == 6){
+        c = 0
+        tempo = 5950
+    }
     setTimeout(() => {
-        if (c < 6){
+        if (c < 7){
             tempo = 1000
             ind.innerHTML = `${c}`
             c+=1
-            requestAnimationFrame(contar)
+            contar()
         }
     }, tempo);
 }
@@ -197,7 +201,7 @@ function pag3(){
         Valor encontrado
         </span>
         </p>`
-        contar()
+        requestAnimationFrame(contar)
     }, 900);
 }
 
