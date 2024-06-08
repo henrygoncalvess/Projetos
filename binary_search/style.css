@@ -81,6 +81,11 @@ mark {
     text-align: center;
     font-size: 1.3em;
     line-height: 0em;
+    display: block;
+}
+
+#indice {
+    font-size: 0.9em;
 }
 
 h1,
@@ -125,7 +130,7 @@ pre {
     animation-delay: 2s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 1px 6.5px;
+    padding: 0px 6.5px;
 }
 
 #a2 {
@@ -133,7 +138,7 @@ pre {
     animation-delay: 3s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 1px 6.5px;
+    padding: 0px 6.5px;
 }
 
 #a3 {
@@ -141,7 +146,7 @@ pre {
     animation-delay: 4s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 1px 6.5px;
+    padding: 0px 6.5px;
 }
 
 #a4 {
@@ -149,7 +154,7 @@ pre {
     animation-delay: 5s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 1px 6.5px;
+    padding: 0px 6.5px;
 }
 
 #a5 {
@@ -157,7 +162,7 @@ pre {
     animation-delay: 6s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 1px 6.5px;
+    padding: 0px 6.5px;
 }
 
 #b {
@@ -165,7 +170,11 @@ pre {
     animation-delay: 7s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 1px 6.5px;
+    padding: 0px 6.5px;
+}
+
+#c{
+    padding: 0px 6.5px;
 }
 
 .tela,

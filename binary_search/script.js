@@ -7,13 +7,9 @@ var ant = document.getElementById('vol')
 var avan = document.getElementById('avan')
 var tela = document.getElementById('ind')
 var pos = 0
-var id;
-var c = 0
 
 // quando clicar em AVANÇAR
 function trocar() {
-    tempo = 2000
-    c = 0
     animar()
 
     // se for o começo, página 2
@@ -65,8 +61,6 @@ function trocar() {
 
 // quando clicar em VOLTAR
 function voltar() {
-    tempo = 2100
-    c = 0
     animar()
 
     // se a posição não for o início, volta uma página
@@ -144,21 +138,6 @@ function animar(){
     }, 900);
 }
 
-function contar(){
-    if (c == 6){
-        c = 0
-        tempo = 5950
-    }
-    setTimeout(() => {
-        if (c < 7){
-            tempo = 1000
-            ind.innerHTML = `${c}`
-            c+=1
-            contar()
-        }
-    }, tempo);
-}
-
 function pag1(){
     setTimeout(() => {
         ant.style.opacity = 0
@@ -190,15 +169,31 @@ function pag3(){
         parag.innerHTML = `
         <p>
         <p id="chave">
-            <mark>Chave:</mark> <strong>7</strong>
+        <mark>Chave:</mark> <strong>7</strong>
         </p>
         <br>
+        <code><span class="cod">
+        Posição &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        Lista
+        <br>0 -> <span id="a1" class="a">2</span>
         <br>
-        <code><span class="cod">Lista = [<span id="a1" class="a">2</span>,<span id="a2" class="a">5</span>,<span id="a3" class="a">9</span>,<span id="a4" class="a">1</span>,<span id="a5" class="a">0</span>,<span id="b" class="a">7</span>, 3 ]</span></code>
+        1 -> <span id="a2" class="a">5</span>
         <br>
-        <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span id="d3">&bull;</span><span id="d4">&bull;</span></strong> Posição: <a id="ind">${c}</a>
+        2 -> <span id="a3" class="a">9</span>
+        <br>
+        3 -> <span id="a4" class="a">1</span>
+        <br>
+        4 -> <span id="a5" class="a">0</span>
+        <br>
+        5 -> <span id="b" class="a">7</span>
+        <br>
+        6 -> <span id="c" class="a">3</span>
+        </span></code>
+        <br>
+        <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span id="d3">&bull;</span><span id="d4">&bull;</span></strong>
         <span id="pos">
-        Valor encontrado
+        Valor encontrado<br>
+        Posição: <a>5</a>
         </span>
         </p>`
         requestAnimationFrame(contar)
