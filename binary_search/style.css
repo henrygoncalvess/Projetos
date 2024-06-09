@@ -115,12 +115,19 @@ strong{
     cursor: default;
 }
 
+#a1,
+#a2,
+#a3,
+#a4,
+#a5 {
+    padding: 0px 6.5px;
+}
+
 #a1 {
     animation-name: lista;
     animation-delay: 2s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 6.5px;
 }
 
 #a2 {
@@ -128,7 +135,6 @@ strong{
     animation-delay: 3s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 6.5px;
 }
 
 #a3 {
@@ -136,7 +142,6 @@ strong{
     animation-delay: 4s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 6.5px;
 }
 
 #a4 {
@@ -144,7 +149,6 @@ strong{
     animation-delay: 5s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 6.5px;
 }
 
 #a5 {
@@ -152,7 +156,6 @@ strong{
     animation-delay: 6s;
     animation-duration: 11s;
     animation-iteration-count: 10;
-    padding: 0px 6.5px;
 }
 
 #b {
