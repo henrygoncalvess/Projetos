@@ -167,6 +167,11 @@ strong{
     padding: 0px 6.5px;
 }
 
+#b2 {
+    font-size: min(1.67em, 5vw);
+    padding: 0px 9px;
+    font-weight: 400;
+}
 
 #c {
     font-size: 1em;
@@ -174,6 +179,13 @@ strong{
     color: rgba(54, 19, 105, 0.452);
 }
 
+#c2 {
+    background-color: transparent;
+    font-size: min(1.67em, 6vw);
+    font-weight: 400;
+    padding: 0px 9px;
+    color: rgba(54, 19, 105, 0.452);
+}
 
 .tela,
 #pos {
