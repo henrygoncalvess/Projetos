@@ -174,13 +174,13 @@ function pagina2(){
         titulo.innerHTML = `<strong>Busca Sequencial</strong>`
         parag.innerHTML = `
         <p>
-        Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre do <strong>início ao fim</strong> de um Vetor, comparando a posição/índice com o valor da <mark>chave</mark>.
-        <br>
-        <br>
-        Se a posição for igual o valor da <mark>chave</mark>, a busca retorna a posição correspondente.
-        <br>
-        <br>
-        Se a <mark>chave</mark> não for encontrada a posição retornada é " <strong>-1</strong> ". Veja o exemplo a seguir...
+            Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre do <strong>início ao fim</strong> de um Vetor, comparando a posição/índice com o valor da <mark>chave</mark>.
+            <br>
+            <br>
+            Se a posição for igual o valor da <mark>chave</mark>, a busca retorna a posição correspondente.
+            <br>
+            <br>
+            Se a <mark>chave</mark> não for encontrada a posição retornada é " <strong>-1</strong> ". Veja o exemplo a seguir...
         </p>`
     }, 900);
 }
@@ -190,36 +190,36 @@ function pagina3(){
         titulo.innerHTML = `<strong>Exemplo</strong>`
         parag.innerHTML = `
         <p>
-        <p id="chave">
-        <mark>Chave:</mark> <strong>7</strong>
-        </p>
-        <br>
-        <code><span class="cod">
-        <span id="b1" class="a">Vetor</span> &nbsp;
-        <span id="a1" class="a">2</span> 
-        <span id="a2" class="a">5</span> 
-        <span id="a3" class="a">9</span> 
-        <span id="a4" class="a">1</span> 
-        <span id="a5" class="a">0</span> 
-        <span id="b" class="a">7</span> 
-        <span id="b1" class="a">3</span>
-        <br>
-        <span id="c" class="a">Posição </span>
-        <span id="c" class="a">0</span>
-        <span id="c" class="a">1</span>
-        <span id="c" class="a">2</span>
-        <span id="c" class="a">3</span>
-        <span id="c" class="a">4</span>
-        <span id="c" class="a">5</span>
-        <span id="c" class="a">6</span>
-        <br>
-        </span></code>
-        <br>
-        <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span id="d3">&bull;</span><span id="d4">&bull;</span></strong>
-        <span id="pos">
-        Valor encontrado<br>
-        Posição: <a>5</a>
-        </span>
+            <p id="chave">
+            <mark>Chave:</mark> <strong>7</strong>
+            </p>
+            <br>
+            <code><span class="cod">
+            <span id="b1" class="a">Vetor</span> &nbsp;
+            <span id="a1" class="a">2</span> 
+            <span id="a2" class="a">5</span> 
+            <span id="a3" class="a">9</span> 
+            <span id="a4" class="a">1</span> 
+            <span id="a5" class="a">0</span> 
+            <span id="b" class="a">7</span> 
+            <span id="b1" class="a">3</span>
+            <br>
+            <span id="c" class="a">Posição </span>
+            <span id="c" class="a">0</span>
+            <span id="c" class="a">1</span>
+            <span id="c" class="a">2</span>
+            <span id="c" class="a">3</span>
+            <span id="c" class="a">4</span>
+            <span id="c" class="a">5</span>
+            <span id="c" class="a">6</span>
+            <br>
+            </span></code>
+            <br>
+            <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span id="d3">&bull;</span><span id="d4">&bull;</span></strong>
+            <span id="pos">
+            Valor encontrado<br>
+            Posição: <a>5</a>
+            </span>
         </p>`
     }, 900);
 }
@@ -300,29 +300,34 @@ function pagina7(){
         titulo.innerHTML = `<strong>Exemplo</strong>`
         parag.innerHTML = `
         <p>
-            <strong>Agora o nosso vetor ORDENADO tem 8 posições, com os valores:</strong>
+            Agora o nosso vetor <mark>ORDENADO</mark> tem <span id="p" class="a">8 posições</span>, com os valores :
             <br>
             <br>
-            <p>
-                <span id="b2" class="a">11</span>
-                <span id="b2" class="a">13</span>
-                <span id="b2" class="a">15</span>
-                <span id="b2" class="a">18</span>
-                <span id="b2" class="a">19</span>
-                <span id="b2" class="a">21</span>
-                <span id="b2" class="a">23</span>
-                <span id="b2" class="a">27</span>
+            <p id="chave">
+            <mark>Chave:</mark> <strong>21</strong>
             </p>
-            <p>
-                <span id="c2" class="a">&nbsp;0</span> &nbsp;
-                <span id="c2" class="a">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                <span id="c2" class="a">2</span> &nbsp;&nbsp;&nbsp;
-                <span id="c2" class="a">3</span>&nbsp;&nbsp;&nbsp;
-                <span id="c2" class="a">4</span> &nbsp;&nbsp;&nbsp;
-                <span id="c2" class="a">5</span> &nbsp;&nbsp;
-                <span id="c2" class="a">6</span> &nbsp;
-                <span id="c2" class="a">7</span>
-            </p>
+            <br>
+            <br>
+        <p>
+            <span id="b2" class="a">11</span>
+            <span id="b2" class="a">13</span>
+            <span id="b2" class="a">15</span>
+            <span id="b2" class="a">18</span>
+            <span id="b2" class="a">19</span>
+            <span id="b2" class="a">21</span>
+            <span id="b2" class="a">23</span>
+            <span id="b2" class="a">27</span>
+        </p>
+        <p>
+            <span id="c2" class="a">&nbsp;0</span> &nbsp;
+            <span id="c2" class="a">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="c2" class="a">2</span> &nbsp;&nbsp;&nbsp;
+            <span id="c2" class="a">3</span>&nbsp;&nbsp;&nbsp;
+            <span id="c2" class="a">4</span> &nbsp;&nbsp;&nbsp;
+            <span id="c2" class="a">5</span> &nbsp;&nbsp;
+            <span id="c2" class="a">6</span> &nbsp;
+            <span id="c2" class="a">7</span>
+        </p>
         </p>`
     }, 900)
 }

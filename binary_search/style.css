@@ -168,7 +168,7 @@ strong{
 }
 
 #b2 {
-    font-size: min(1.67em, 5vw);
+    font-size: min(1.67em, 5.5vw);
     padding: 0px 9px;
     font-weight: 400;
 }
@@ -181,10 +181,18 @@ strong{
 
 #c2 {
     background-color: transparent;
-    font-size: min(1.67em, 6vw);
+    font-size: min(1.67em, 5.5vw);
     font-weight: 400;
     padding: 0px 9px;
     color: rgba(54, 19, 105, 0.452);
+}
+
+#p {
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0px;
+    color: rgb(111, 56, 194);
 }
 
 .tela,

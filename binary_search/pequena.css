@@ -1,50 +1,92 @@
 @charset "UTF-8";
 
-@media screen and (max-width: 795px){
+@media screen and (max-width: 480px){
     #c2 {
-        font-size: min(1.67em, 3.6vw);
+        font-size: min(1.67em, 5.5vw);
         padding: 0px 8px;
     }
 }
 
-@media screen and (max-width: 715px){
-    #c2 {
-        font-size: min(1.67em, 3.6vw);
-        padding: 0px 7px;
+@media screen and (max-width: 450px){
+    #b2 {
+        font-size: min(1.67em, 5vw);
+        padding: 0px 9px;
+        font-weight: 400;
     }
-}
-
-@media screen and (max-width: 660px){
     #c2 {
-        font-size: min(1.67em, 3.6vw);
-        padding: 0px 6.5px;
-    }
-}
-
-@media screen and (max-width: 550px){
-    #c2 {
-        font-size: min(1.67em, 3.6vw);
-        padding: 0px 6px;
-    }
-}
-
-@media screen and (max-width: 490px){
-    #c2 {
-        font-size: min(1.67em, 3.6vw);
-        padding: 0px 5.5px;
+        font-size: min(1.67em, 5vw);
+        padding: 0px 7.5px;
     }
 }
 
 @media screen and (max-width: 430px){
+    #b2 {
+        font-size: min(1.67em, 5vw);
+        padding: 0px 9px;
+        font-weight: 400;
+    }
     #c2 {
-        font-size: min(1.67em, 3.6vw);
-        padding: 0px 5px;
+        font-size: min(1.67em, 5vw);
+        padding: 0px 6.5px;
     }
 }
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 415px){
+    #b2 {
+        font-size: min(1.67em, 4.9vw);
+        padding: 0px 8.5px;
+        font-weight: 400;
+    }
     #c2 {
-        font-size: min(1.67em, 3.6vw);
+        font-size: min(1.67em, 4.9vw);
+        padding: 0px 6.5px;
+    }
+}
+
+@media screen and (max-width: 415px){
+    #b2 {
+        font-size: min(1.67em, 4.9vw);
+        padding: 0px 8.5px;
+        font-weight: 400;
+    }
+    #c2 {
+        font-size: min(1.67em, 4.9vw);
+        padding: 0px 6.5px;
+    }
+}
+
+@media screen and (max-width: 405px){
+    #b2 {
+        font-size: min(1.67em, 4.9vw);
+        padding: 0px 8px;
+        font-weight: 400;
+    }
+    #c2 {
+        font-size: min(1.67em, 4.9vw);
+        padding: 0px 5.3px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    #b2 {
+        font-size: min(1.67em, 4.3vw);
+        padding: 0px 8px;
+        font-weight: 400;
+    }
+    #c2 {
+        font-size: min(1.67em, 4.5vw);
         padding: 0px 4.5px;
+    }
+}
+
+@media screen and (max-width: 360px){
+    #b2 {
+        font-size: min(1.67em, 4.3vw);
+        padding: 0px 8px;
+        font-weight: 400;
+    }
+    #c2 {
+        font-size: min(1.67em, 4.5vw);
+        padding: 0px 3.9px;
     }
 }
