@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 795px){
+    #c2 {
+        font-size: min(1.67em, 3.6vw);
+        padding: 0px 8px;
+    }
+}
+
+@media screen and (max-width: 715px){
+    #c2 {
+        font-size: min(1.67em, 3.6vw);
+        padding: 0px 7px;
+    }
+}
+
+@media screen and (max-width: 660px){
+    #c2 {
+        font-size: min(1.67em, 3.6vw);
+        padding: 0px 6.5px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #c2 {
+        font-size: min(1.67em, 3.6vw);
+        padding: 0px 6px;
+    }
+}
+
+@media screen and (max-width: 490px){
+    #c2 {
+        font-size: min(1.67em, 3.6vw);
+        padding: 0px 5.5px;
+    }
+}
+
+@media screen and (max-width: 430px){
+    #c2 {
+        font-size: min(1.67em, 3.6vw);
+        padding: 0px 5px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    #c2 {
+        font-size: min(1.67em, 3.6vw);
+        padding: 0px 4.5px;
+    }
+}
