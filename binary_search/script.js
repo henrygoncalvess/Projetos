@@ -39,8 +39,12 @@ function trocar() {
             pagina6()
             break
 
-        // não deixa o conteúdo desaparecer e sair do lugar
         case 7:
+            pagina7()
+            break
+
+        // não deixa o conteúdo desaparecer e sair do lugar
+        case 8:
             titulo.style.translate = '0px'
             parag.style.translate = '0px'
             titulo.style.opacity = 100
@@ -115,6 +119,10 @@ function voltar() {
         case 5:
             pagina5()
             break
+        
+        case 6:
+            pagina6()
+            break
     }
 }
 
@@ -187,22 +195,24 @@ function pagina3(){
         </p>
         <br>
         <code><span class="cod">
-        &nbsp; &nbsp;<strong>Posição</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <strong>Vetor</strong>
+        <span id="b1" class="a">Vetor</span> &nbsp;
+        <span id="a1" class="a">2</span> 
+        <span id="a2" class="a">5</span> 
+        <span id="a3" class="a">9</span> 
+        <span id="a4" class="a">1</span> 
+        <span id="a5" class="a">0</span> 
+        <span id="b" class="a">7</span> 
+        <span id="b1" class="a">3</span>
         <br>
-         &nbsp; &nbsp; &nbsp; <strong style="color: rgba(68, 0, 170, 0.692);">0</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a1" class="a">2</span>
+        <span id="c" class="a">Posição </span>
+        <span id="c" class="a">0</span>
+        <span id="c" class="a">1</span>
+        <span id="c" class="a">2</span>
+        <span id="c" class="a">3</span>
+        <span id="c" class="a">4</span>
+        <span id="c" class="a">5</span>
+        <span id="c" class="a">6</span>
         <br>
-         &nbsp; &nbsp; &nbsp; <strong style="color: rgba(68, 0, 170, 0.692);">1</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a2" class="a">5</span>
-        <br>
-         &nbsp; &nbsp; &nbsp; <strong style="color: rgba(68, 0, 170, 0.692);">2</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a3" class="a">9</span>
-        <br>
-         &nbsp; &nbsp; &nbsp; <strong style="color: rgba(68, 0, 170, 0.692);">3</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a4" class="a">1</span>
-        <br>
-         &nbsp; &nbsp; &nbsp; <strong style="color: rgba(68, 0, 170, 0.692);">4</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="a5" class="a">0</span>
-        <br>
-         &nbsp; &nbsp; &nbsp; <strong style="color: rgba(68, 0, 170, 0.692);">5</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="b" class="a">7</span>
-        <br>
-         &nbsp; &nbsp; &nbsp; <strong style="color: rgba(68, 0, 170, 0.692);">6</strong>  &nbsp; &nbsp; &nbsp; &nbsp;-> &nbsp; &nbsp; &nbsp; &nbsp;<span id="c" class="a">3</span>
         </span></code>
         <br>
         <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span id="d3">&bull;</span><span id="d4">&bull;</span></strong>
@@ -213,6 +223,7 @@ function pagina3(){
         </p>`
     }, 900);
 }
+
 
 function pagina4(){
     setTimeout(() => {
@@ -247,10 +258,7 @@ function pagina5(){
 }
 
 function pagina6(){
-    setTimeout(() => {
-        // some com o botão de avançar
-        avan.style.opacity = 0
-        
+    setTimeout(() => { 
         titulo.innerHTML = `<strong>Como a Pesquisa Binária funciona</strong>`
         parag.innerHTML = `
         <p>
@@ -265,19 +273,56 @@ function pagina6(){
             <br>
             <strong>O valor dessa posição é igual a chave?</strong>
             <br>
-            Se for, retorna a posição correspondente
-            <br>
-            <br>
-            Se não for --> outra verificação :
+            se SIM --> retorna a posição correspondente
             <br>
             <span class="tela" style="padding: 1px;"></span>
             <br>
-            <strong>O valor dessa posição é maior ou menor que a chave?</strong>
-            <br>
-            se for maior --> agora a busca verifica da posição atual pra cima
+            se NÃO --> outra verificação :
             <br>
             <br>
-            se for menor --> agora a busca verifica da posição atual pra baixo  
+            <strong>O valor dessa posição é MAIOR ou MENOR que a chave?</strong>
+            <br>
+            se for MAIOR --> agora a busca verifica da posição atual pra <strong>+</strong>
+            <br>
+            <br>
+            se for MENOR --> agora a busca verifica da posição atual pra <strong>-</strong>
+        </p>`
+    }, 900)
+}
+
+function pagina7(){
+    setTimeout(() => {
+        // some com o botão de avançar
+        avan.style.opacity = 0
+
+        // 10 11 12 15 18 19 21 22 23 25
+        
+        titulo.innerHTML = `<strong>Exemplo</strong>`
+        parag.innerHTML = `
+        <p>
+            <strong>Agora o nosso vetor ORDENADO tem 8 posições, com os valores:</strong>
+            <br>
+            <br>
+            <p>
+                <span id="b2" class="a">11</span>
+                <span id="b2" class="a">13</span>
+                <span id="b2" class="a">15</span>
+                <span id="b2" class="a">18</span>
+                <span id="b2" class="a">19</span>
+                <span id="b2" class="a">21</span>
+                <span id="b2" class="a">23</span>
+                <span id="b2" class="a">27</span>
+            </p>
+            <p>
+                <span id="c2" class="a">&nbsp;0</span> &nbsp;
+                <span id="c2" class="a">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span id="c2" class="a">2</span> &nbsp;&nbsp;&nbsp;
+                <span id="c2" class="a">3</span>&nbsp;&nbsp;&nbsp;
+                <span id="c2" class="a">4</span> &nbsp;&nbsp;&nbsp;
+                <span id="c2" class="a">5</span> &nbsp;&nbsp;
+                <span id="c2" class="a">6</span> &nbsp;
+                <span id="c2" class="a">7</span>
+            </p>
         </p>`
     }, 900)
 }

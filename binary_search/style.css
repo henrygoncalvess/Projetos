@@ -84,10 +84,6 @@ mark {
     display: block;
 }
 
-#indice {
-    font-size: 0.9em;
-}
-
 h1,
 p {
     transition: 850ms;
@@ -105,6 +101,7 @@ strong{
     box-shadow: none;
     color: black;
     border-radius: 0px;
+    cursor: default;
 }
 
 .a {
@@ -115,6 +112,7 @@ strong{
     border-radius: 50%;
     box-shadow: none;
     color: black;
+    cursor: default;
 }
 
 #a1 {
@@ -165,12 +163,21 @@ strong{
     padding: 0px 6.5px;
 }
 
-#c{
+#b1 {
     padding: 0px 6.5px;
 }
 
+
+#c {
+    font-size: 1em;
+    padding: 0px 6.5px;
+    color: rgba(54, 19, 105, 0.452);
+}
+
+
 .tela,
 #pos {
+    cursor: default;
     margin-top: 20px;
     font-size: 1.2em;
     background-color: black;
@@ -199,6 +206,7 @@ a {
 #d2,
 #d3,
 #d4 {
+    cursor: default;
     background-color: transparent;
     border-radius: 0px;
     box-shadow: none;
