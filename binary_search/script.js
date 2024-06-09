@@ -138,6 +138,7 @@ function animar(){
     parag.style.opacity = 0
     ant.style.opacity = 0
     avan.style.opacity = 0
+    tam2.style.rotateX = '10deg'
     
     // move o conteúdo pra direita -> pra ele aparecer
     setTimeout(() => {
@@ -195,7 +196,7 @@ function pagina3(){
             </p>
             <br>
             <code><span class="cod">
-            <span id="b1" class="a">Vetor</span> &nbsp;
+            <span id="a" class="a">Vetor</span> &nbsp;
             <span id="a1" class="a">2</span> 
             <span id="a2" class="a">5</span> 
             <span id="a3" class="a">9</span> 
@@ -215,9 +216,16 @@ function pagina3(){
             <br>
             </span></code>
             <br>
-            <span class="tela"><strong><span id="d1">&bull;</span><span id="d2">&bull;</span><span id="d3">&bull;</span><span id="d4">&bull;</span></strong>
+            <span class="tela">
+            <strong>
+            <div id="d"></div>
+            <div id="d"></div>
+            <div id="d"></div>
+            <div id="d"></div>
+            </strong>
             <span id="pos">
-            Valor encontrado<br>
+            Valor encontrado
+            <br>
             Posição: <a>5</a>
             </span>
         </p>`
@@ -300,7 +308,7 @@ function pagina7(){
         titulo.innerHTML = `<strong>Exemplo</strong>`
         parag.innerHTML = `
         <p>
-            Agora o nosso vetor <mark>ORDENADO</mark> tem <span id="p" class="a">8 posições</span>, com os valores :
+            Agora o nosso vetor <mark>ORDENADO</mark> tem <span id="p" class="b">8 posições</span>, com os valores :
             <br>
             <br>
             <p id="chave">
@@ -309,24 +317,24 @@ function pagina7(){
             <br>
             <br>
         <p class="posicao">
-            <span id="b2" class="a">11</span>
-            <span id="b2" class="a">13</span>
-            <span id="b2" class="a">15</span>
-            <span id="b2" class="a">18</span>
-            <span id="b2" class="a">19</span>
-            <span id="b2" class="a">21</span>
-            <span id="b2" class="a">23</span>
-            <span id="b2" class="a">27</span>
+            <span id="b2" class="b">11</span>
+            <span id="b2" class="b">13</span>
+            <span id="b2" class="b">15</span>
+            <span id="b2" class="b">18</span>
+            <span id="b2" class="b">19</span>
+            <span id="b2" class="b">21</span>
+            <span id="b2" class="b">23</span>
+            <span id="b2" class="b">27</span>
         </p>
         <p class="posicao">
-            <span id="c2" class="a">&nbsp;0</span> &nbsp;
-            <span id="c2" class="a">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span id="c2" class="a">2</span> &nbsp;&nbsp;&nbsp;
-            <span id="c2" class="a">3</span>&nbsp;&nbsp;&nbsp;
-            <span id="c2" class="a">4</span> &nbsp;&nbsp;&nbsp;
-            <span id="c2" class="a">5</span> &nbsp;&nbsp;
-            <span id="c2" class="a">6</span> &nbsp;
-            <span id="c2" class="a">7</span>
+            <span id="c2" class="b">&nbsp;0</span> &nbsp;
+            <span id="c2" class="b">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="c2" class="b">2</span> &nbsp;&nbsp;&nbsp;
+            <span id="c2" class="b">3</span>&nbsp;&nbsp;&nbsp;
+            <span id="c2" class="b">4</span> &nbsp;&nbsp;&nbsp;
+            <span id="c2" class="b">5</span> &nbsp;&nbsp;
+            <span id="c2" class="b">6</span> &nbsp;
+            <span id="c2" class="b">7</span>
         </p>
         </p>`
     }, 900)

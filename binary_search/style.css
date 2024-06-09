@@ -104,10 +104,10 @@ strong{
     cursor: default;
 }
 
-.a {
+.a, .b {
     font-size: 1em;
     font-weight: lighter;
-    padding: 0px;
+    padding: 0px 6.5px;
     background-color: white;
     border-radius: 50%;
     box-shadow: none;
@@ -115,60 +115,22 @@ strong{
     cursor: default;
 }
 
-#a1,
-#a2,
-#a3,
-#a4,
-#a5 {
+.a:nth-child(2) { animation: lista 11s 2s 10; }
+
+.a:nth-child(3) { animation: lista 11s 3s 10; }
+
+.a:nth-child(4) { animation: lista 11s 4s 10; }
+
+.a:nth-child(5) { animation: lista 11s 5s 10; }
+
+.a:nth-child(6) { animation: lista 11s 6s 10; }
+
+.a:nth-child(7) {
+    animation: lista2 11s 7s 10;
     padding: 0px 6.5px;
 }
 
-#a1 {
-    animation-name: lista;
-    animation-delay: 2s;
-    animation-duration: 11s;
-    animation-iteration-count: 10;
-}
-
-#a2 {
-    animation-name: lista2;
-    animation-delay: 3s;
-    animation-duration: 11s;
-    animation-iteration-count: 10;
-}
-
-#a3 {
-    animation-name: lista3;
-    animation-delay: 4s;
-    animation-duration: 11s;
-    animation-iteration-count: 10;
-}
-
-#a4 {
-    animation-name: lista4;
-    animation-delay: 5s;
-    animation-duration: 11s;
-    animation-iteration-count: 10;
-}
-
-#a5 {
-    animation-name: lista5;
-    animation-delay: 6s;
-    animation-duration: 11s;
-    animation-iteration-count: 10;
-}
-
-#b {
-    animation-name: lista6;
-    animation-delay: 7s;
-    animation-duration: 11s;
-    animation-iteration-count: 10;
-    padding: 0px 6.5px;
-}
-
-#b1 {
-    padding: 0px 6.5px;
-}
+.a:nth-child(8) { padding: 0px 6.5px; }
 
 #b2 {
     font-size: min(1.67em, 5.5vw);
@@ -225,105 +187,32 @@ a {
     text-decoration: none;
 }
 
-#d1,
-#d2,
-#d3,
-#d4 {
-    cursor: default;
-    background-color: transparent;
-    border-radius: 0px;
-    box-shadow: none;
-    color: white;
-    opacity: 0;
+#d {
+    border-radius: 50%;
+    margin: 0px 20px;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    display: inline-block;
 }
 
-#d1 {
-    animation-name: dots;
-    animation-delay: 1.3s;
-    animation-duration: 4.5s;
-    animation-iteration-count: 80;
-    padding: 0px 10px;
-}
+#d:nth-child(1) { animation: dots 2.5s .8s 10; }
 
-#d2 {
-    animation-name: dots;
-    animation-delay: 1.9s;
-    animation-duration: 4.5s;
-    animation-iteration-count: 80;
-    padding: 0px 10px;
-}
+#d:nth-child(2) { animation: dots 2.5s 1.2s 10; }
 
-#d3 {
-    animation-name: dots;
-    animation-delay: 2.4s;
-    animation-duration: 4.5s;
-    animation-iteration-count: 80;
-    padding: 0px 10px;
-}
+#d:nth-child(3) { animation: dots 2.5s 1.6s 10; }
 
-#d4 {
-    animation-name: dots;
-    animation-delay: 3s;
-    animation-duration: 4.5s;
-    animation-iteration-count: 80;
-    padding: 0px 10px;
-}
+#d:nth-child(4) { animation: dots 2.5s 1.9s 10; }
+
 
 @keyframes lista {
-    0% {
+    0%, 30%{
         background-color: rgba(97, 1, 240, 0.249);
-    }
-
-    40% {
-        background-color: rgba(97, 1, 240, 0.249);
-
     }
 }
 
 @keyframes lista2 {
-    0% {
-        background-color: rgba(97, 1, 240, 0.249);
-    }
-
-    23% {
-        background-color: rgba(97, 1, 240, 0.249);
-    }
-}
-
-@keyframes lista3 {
-    0% {
-        background-color: rgba(97, 1, 240, 0.249);
-    }
-
-    15% {
-        background-color: rgba(97, 1, 240, 0.249);
-    }
-}
-
-@keyframes lista4 {
-    0% {
-        background-color: rgba(97, 1, 240, 0.249);
-    }
-
-    2% {
-        background-color: rgba(97, 1, 240, 0.249);
-    }
-}
-
-@keyframes lista5 {
-    0% {
-        background-color: rgba(97, 1, 240, 0.249);
-    }
-
-    0.1% {
-        background-color: rgba(97, 1, 240, 0.249);
-    }
-}
-
-@keyframes lista6 {
-    0% {}
-
-    5% {
+    0%, 5% {
         background-color: rgba(0, 140, 255, 0.418);
     }
 }
@@ -332,18 +221,13 @@ a {
     1% {
         opacity: 100;
     }
-
     80% {
         opacity: 0;
     }
 }
 
 @keyframes dots {
-    0% {
-        opacity: 100;
-    }
-
-    80% {
-        opacity: 0;
+    40%{
+        scale: 4;
     }
 }
