@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 
+/* um fundo azul bem claro pra não doer muito os olhos
+   fonte /system-ui / -apple-system/
+*/
 body {
     background-color: rgb(227, 244, 255);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -20,6 +23,7 @@ body {
     align-items: center;
 }
 
+/* bloco com o conteúdo */
 main {
     padding: 20px;
     margin: 8px;
@@ -31,6 +35,7 @@ main {
     transition: 900ms;
 }
 
+/* título afastado do conteúdo */
 h1 {
     font-size: 1.5em;
     font-weight: 300;
@@ -41,18 +46,47 @@ h1 {
     translate: 0px;
 }
 
+/* conteúdo */
 p {
     text-align: justify;
     font-size: 1.1em;
     translate: 0px;
 }
 
+/* ambos com transição */
+h1,
+p {
+    transition: 850ms;
+}
+
+/* certificando que vai realmente ficar em negrito */
+strong{
+    font-weight: bold;
+}
+
+/* marcador --> destaca as palavras importantes */
+mark {
+    padding: 0px 8px;
+    border-radius: 5px;
+    background-color: rgba(102, 0, 255, 0.185);
+}
+
+/* chave --> usada nos exemplos pra identificar o número procurado */
+#chave {
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 0em;
+    display: block;
+}
+
+/* div responsável pela área dos botões */
 #botao {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
 }
 
+/* botão de avançar */
 span {
     font-size: 0.7em;
     font-weight: 500;
@@ -64,6 +98,7 @@ span {
     cursor: pointer;
 }
 
+/* botão de voltar */
 #vol {
     border-radius: 100% 20px 20px 100%;
     padding: 5px 8px 8px 30px;
@@ -71,40 +106,10 @@ span {
     cursor: pointer;
 }
 
-mark {
-    padding: 0px 8px;
-    border-radius: 5px;
-    background-color: rgba(102, 0, 255, 0.185);
-}
-
-#chave {
-    text-align: center;
-    font-size: 1.3em;
-    line-height: 0em;
-    display: block;
-}
-
-h1,
-p {
-    transition: 850ms;
-}
-
-strong{
-    font-weight: bold;
-}
-
-.cod {
-    font-size: min(1.7em, 4.8vw);
-    font-weight: lighter;
-    padding: 0px 0px 215px 0px;
-    background-color: transparent;
-    box-shadow: none;
-    color: black;
-    border-radius: 0px;
-    cursor: default;
-}
-
-.a, .b {
+/* classe que define a área de texto dos códigos
+   animação da terceira página: lista, lista2
+*/
+.pag3, .pag7 {
     font-size: 1em;
     font-weight: lighter;
     padding: 0px 6.5px;
@@ -115,95 +120,17 @@ strong{
     cursor: default;
 }
 
-.a:nth-child(2) { animation: lista 11s 2s 10; }
+.pag3:nth-child(2) { animation: lista 11s 2s 10; }
 
-.a:nth-child(3) { animation: lista 11s 3s 10; }
+.pag3:nth-child(3) { animation: lista 11s 3s 10; }
 
-.a:nth-child(4) { animation: lista 11s 4s 10; }
+.pag3:nth-child(4) { animation: lista 11s 4s 10; }
 
-.a:nth-child(5) { animation: lista 11s 5s 10; }
+.pag3:nth-child(5) { animation: lista 11s 5s 10; }
 
-.a:nth-child(6) { animation: lista 11s 6s 10; }
+.pag3:nth-child(6) { animation: lista 11s 6s 10; }
 
-.a:nth-child(7) {
-    animation: lista2 11s 7s 10;
-    padding: 0px 6.5px;
-}
-
-.a:nth-child(8) { padding: 0px 6.5px; }
-
-#b2 {
-    font-size: min(1.67em, 5.5vw);
-    padding: 0px 9px;
-    font-weight: 400;
-}
-
-#c {
-    font-size: 1em;
-    padding: 0px 6.5px;
-    color: rgba(54, 19, 105, 0.452);
-}
-
-#c2 {
-    background-color: transparent;
-    font-size: min(1.67em, 5.5vw);
-    font-weight: 400;
-    padding: 0px 9px;
-    color: rgba(54, 19, 105, 0.452);
-}
-
-#p {
-    background-color: transparent;
-    font-size: 1em;
-    font-weight: normal;
-    padding: 0px;
-    color: rgb(111, 56, 194);
-}
-
-.tela,
-#pos {
-    cursor: default;
-    margin-top: 20px;
-    font-size: 1.2em;
-    background-color: black;
-    display: block;
-    border-radius: 10px;
-    padding: 20px 10px;
-    box-shadow: none;
-    color: white;
-}
-
-#pos {
-    opacity: 0;
-    animation-name: pos;
-    animation-delay: 7.2s;
-    animation-duration: 11s;
-    animation-iteration-count: 10;
-    background-color: transparent;
-}
-
-a {
-    color: rgb(0, 174, 255);
-    text-decoration: none;
-}
-
-#d {
-    border-radius: 50%;
-    margin: 0px 20px;
-    width: 5px;
-    height: 5px;
-    background-color: white;
-    display: inline-block;
-}
-
-#d:nth-child(1) { animation: dots 2.5s .8s 10; }
-
-#d:nth-child(2) { animation: dots 2.5s 1.2s 10; }
-
-#d:nth-child(3) { animation: dots 2.5s 1.6s 10; }
-
-#d:nth-child(4) { animation: dots 2.5s 1.9s 10; }
-
+.pag3:nth-child(7) { animation: lista2 11s 7s 10 }
 
 @keyframes lista {
     0%, 30%{
@@ -217,6 +144,49 @@ a {
     }
 }
 
+/* área de código da terceira página */
+.cod {
+    font-size: min(1.7em, 4.8vw);
+    padding: 0px;
+    background-color: transparent;
+    box-shadow: none;
+    color: black;
+    cursor: default;
+}
+
+/* identificador de posição da terceira página */
+#PosPag3 {
+    font-size: 1em;
+    padding: 0px 6.5px;
+    color: rgba(54, 19, 105, 0.452);
+}
+
+/* tela preta e texto que indica a posição em que a chave se encontra */
+.tela,
+#pos {
+    cursor: default;
+    font-size: 1.2em;
+    background-color: black;
+    display: block;
+    border-radius: 10px;
+    padding: 20px 10px;
+    box-shadow: none;
+    color: white;
+}
+
+/* cor no número que indica a posição encontrada na página 3 */
+a {
+    color: rgb(0, 174, 255);
+    text-decoration: none;   
+}
+
+/* posição da chave --> animação: pos  */
+#pos {
+    opacity: 0;
+    animation: pos 11s 7s cubic-bezier(0, -0.13, 0, 1.25) 10;
+    background-color: transparent;
+}
+
 @keyframes pos {
     1% {
         opacity: 100;
@@ -226,8 +196,51 @@ a {
     }
 }
 
-@keyframes dots {
+/* pontos que indicam carregamento --> animação: pontos */
+#ponto {
+    border-radius: 50%;
+    margin: 0px 20px;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    display: inline-block;
+}
+
+#ponto:nth-child(1) { animation: pontos 3s .8s 15; }
+
+#ponto:nth-child(2) { animation: pontos 3s 1.4s 15; }
+
+#ponto:nth-child(3) { animation: pontos 3s 1.8s 15; }
+
+#ponto:nth-child(4) { animation: pontos 3s 2.2s 15; }
+
+@keyframes pontos {
     40%{
         scale: 4;
     }
+}
+
+/* COR no trecho "8 posições" da página 7 */
+#cor {
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0px;
+    color: rgb(111, 56, 194);
+}
+
+/* tamanho dos números da página 7 */
+#numpag7 {
+    font-size: min(1.67em, 5.5vw);
+    padding: 0px 9px;
+    font-weight: 400;
+}
+
+/* posição dos números da página 7 */
+#PosPag7 {
+    background-color: transparent;
+    font-size: min(1.67em, 5.5vw);
+    font-weight: 400;
+    padding: 0px 9px;
+    color: rgba(54, 19, 105, 0.452);
 }

@@ -192,36 +192,36 @@ function pagina3(){
         parag.innerHTML = `
         <p>
             <p id="chave">
-            <mark>Chave:</mark> <strong>7</strong>
+                <mark>Chave:</mark> <strong>7</strong>
             </p>
             <br>
             <code><span class="cod">
-            <span id="a" class="a">Vetor</span> &nbsp;
-            <span id="a1" class="a">2</span> 
-            <span id="a2" class="a">5</span> 
-            <span id="a3" class="a">9</span> 
-            <span id="a4" class="a">1</span> 
-            <span id="a5" class="a">0</span> 
-            <span id="b" class="a">7</span> 
-            <span id="b1" class="a">3</span>
+            <span class="pag3">Vetor</span> &nbsp;
+            <span class="pag3">2</span> 
+            <span class="pag3">5</span> 
+            <span class="pag3">9</span> 
+            <span class="pag3">1</span> 
+            <span class="pag3">0</span> 
+            <span class="pag3">7</span> 
+            <span class="pag3">3</span>
             <br>
-            <span id="c" class="a">Posição </span>
-            <span id="c" class="a">0</span>
-            <span id="c" class="a">1</span>
-            <span id="c" class="a">2</span>
-            <span id="c" class="a">3</span>
-            <span id="c" class="a">4</span>
-            <span id="c" class="a">5</span>
-            <span id="c" class="a">6</span>
+            <span id="PosPag3" class="pag3">Posição </span>
+            <span id="PosPag3" class="pag3">0</span>
+            <span id="PosPag3" class="pag3">1</span>
+            <span id="PosPag3" class="pag3">2</span>
+            <span id="PosPag3" class="pag3">3</span>
+            <span id="PosPag3" class="pag3">4</span>
+            <span id="PosPag3" class="pag3">5</span>
+            <span id="PosPag3" class="pag3">6</span>
             <br>
             </span></code>
             <br>
             <span class="tela">
             <strong>
-            <div id="d"></div>
-            <div id="d"></div>
-            <div id="d"></div>
-            <div id="d"></div>
+            <div id="ponto"></div>
+            <div id="ponto"></div>
+            <div id="ponto"></div>
+            <div id="ponto"></div>
             </strong>
             <span id="pos">
             Valor encontrado
@@ -308,33 +308,39 @@ function pagina7(){
         titulo.innerHTML = `<strong>Exemplo</strong>`
         parag.innerHTML = `
         <p>
-            Agora o nosso vetor <mark>ORDENADO</mark> tem <span id="p" class="b">8 posições</span>, com os valores :
+            Agora o nosso vetor <mark>ORDENADO</mark> tem <span id="cor" class="pag7">8 posições</span>, com os valores :
             <br>
             <br>
-            <p id="chave">
+        <p id="chave">
             <mark>Chave:</mark> <strong>21</strong>
-            </p>
-            <br>
+        </p>
             <br>
         <p class="posicao">
-            <span id="b2" class="b">11</span>
-            <span id="b2" class="b">13</span>
-            <span id="b2" class="b">15</span>
-            <span id="b2" class="b">18</span>
-            <span id="b2" class="b">19</span>
-            <span id="b2" class="b">21</span>
-            <span id="b2" class="b">23</span>
-            <span id="b2" class="b">27</span>
+            <span id="numpag7" class="pag7">11</span>
+            <span id="numpag7" class="pag7">13</span>
+            <span id="numpag7" class="pag7">15</span>
+            <span id="numpag7" class="pag7">18</span>
+            <span id="numpag7" class="pag7">19</span>
+            <span id="numpag7" class="pag7">21</span>
+            <span id="numpag7" class="pag7">23</span>
+            <span id="numpag7" class="pag7">27</span>
         </p>
         <p class="posicao">
-            <span id="c2" class="b">&nbsp;0</span> &nbsp;
-            <span id="c2" class="b">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span id="c2" class="b">2</span> &nbsp;&nbsp;&nbsp;
-            <span id="c2" class="b">3</span>&nbsp;&nbsp;&nbsp;
-            <span id="c2" class="b">4</span> &nbsp;&nbsp;&nbsp;
-            <span id="c2" class="b">5</span> &nbsp;&nbsp;
-            <span id="c2" class="b">6</span> &nbsp;
-            <span id="c2" class="b">7</span>
+            <span id="PosPag7" class="pag7">&nbsp;0</span> &nbsp;
+
+            <span id="PosPag7" class="pag7">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pag7">2</span> &nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pag7">3</span>&nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pag7">4</span> &nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pag7">5</span> &nbsp;&nbsp;
+            
+            <span id="PosPag7" class="pag7">6</span> &nbsp;
+
+            <span id="PosPag7" class="pag7">7</span>
         </p>
         </p>`
     }, 900)
