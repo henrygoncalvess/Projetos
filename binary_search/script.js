@@ -308,7 +308,7 @@ function pagina7(){
             </p>
             <br>
             <br>
-        <p>
+        <p class="posicao">
             <span id="b2" class="a">11</span>
             <span id="b2" class="a">13</span>
             <span id="b2" class="a">15</span>
@@ -318,7 +318,7 @@ function pagina7(){
             <span id="b2" class="a">23</span>
             <span id="b2" class="a">27</span>
         </p>
-        <p>
+        <p class="posicao">
             <span id="c2" class="a">&nbsp;0</span> &nbsp;
             <span id="c2" class="a">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span id="c2" class="a">2</span> &nbsp;&nbsp;&nbsp;
