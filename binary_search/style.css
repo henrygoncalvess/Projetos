@@ -90,7 +90,11 @@ mark {
 
 h1,
 p {
-    transition: 800ms;
+    transition: 850ms;
+}
+
+strong{
+    font-weight: bold;
 }
 
 .cod {
