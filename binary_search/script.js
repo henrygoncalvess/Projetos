@@ -22,7 +22,7 @@ function verificar(resposta){
             setTimeout(() => {
                 ant.style.opacity = 100
                 avan.style.display = 'none'
-                titulo.innerHTML = `Em andamento`
+                titulo.innerHTML = `Em andamento...`
                 parag.innerHTML = ''
             }, 900);
             break
@@ -37,7 +37,7 @@ function verificar(resposta){
             setTimeout(() => {
                 ant.style.opacity = 100
                 avan.style.display = 'none'
-                titulo.innerHTML = `Em andamento`
+                titulo.innerHTML = `Em andamento...`
                 parag.innerHTML = ''
             }, 900);
             break
@@ -48,32 +48,50 @@ function verificar(resposta){
 function trocar() {
     animar()
 
-    pos += 1
+    if (pos == 1) pos = 2
 
     // posição == página
     switch (pos) {
 
         case 2:
+            setTimeout(() => {
+                pos = 3
+            }, 900);
             pagina2()
             break
 
         case 3:
+            setTimeout(() => {
+                pos = 4
+            }, 900);
             pagina3()
             break
 
         case 4:
+            setTimeout(() => {
+                pos = 5
+            }, 900);
             pagina4()
             break
 
         case 5:
+            setTimeout(() => {
+                pos = 6
+            }, 900);
             pagina5()
             break
 
         case 6:
+            setTimeout(() => {
+                pos = 7
+            }, 900);
             pagina6()
             break
 
         case 7:
+            setTimeout(() => {
+                pos = 8
+            }, 900);
             pagina7()
             break
 
@@ -105,7 +123,7 @@ function voltar() {
     animar()
 
     // se a posição não for o início, volta uma página
-    if (pos >= 0) {
+    if (pos > 0) {
         pos -= 1
     }
     else { pos -= 0 }
