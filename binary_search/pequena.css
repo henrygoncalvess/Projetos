@@ -82,6 +82,11 @@
     #PosPag7 {
         padding: 0px 4.5px;
     }
+
+    #PosPag3,
+    .pag3 {
+        padding: 0px 5px;
+    }
 }
 
 @media screen and (max-width: 380px){
