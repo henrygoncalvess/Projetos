@@ -60,7 +60,7 @@ p {
 }
 
 /* certificando que vai realmente ficar em negrito */
-strong{
+strong {
     font-weight: bold;
 }
 
@@ -86,7 +86,7 @@ mark {
     justify-content: space-between;
 }
 
-/* botão de avançar */
+/* botão (padrão - avançar) */
 span {
     font-size: 0.7em;
     font-weight: 500;
@@ -96,6 +96,18 @@ span {
     box-shadow: 1px 1px 3px rgba(92, 43, 226, 0.505);
     border-radius: 20px 100% 100% 20px;
     cursor: pointer;
+}
+
+#resposta1,
+#resposta2,
+#resposta3{
+    display: block;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0px;
+    font-size: 1em;
+    opacity: 100;
+    transition: 800ms;
 }
 
 /* botão de voltar */
@@ -109,7 +121,8 @@ span {
 /* classe que define a área de texto dos códigos
    animação da terceira página: lista, lista2
 */
-.pag3, .pag7 {
+.pag3,
+.pag7 {
     font-size: 1em;
     font-weight: lighter;
     padding: 0px 6.5px;
@@ -120,26 +133,42 @@ span {
     cursor: default;
 }
 
-.pag3:nth-child(2) { animation: lista 11s 2s 10; }
+.pag3:nth-child(2) {
+    animation: lista 11s 2s 10;
+}
 
-.pag3:nth-child(3) { animation: lista 11s 3s 10; }
+.pag3:nth-child(3) {
+    animation: lista 11s 3s 10;
+}
 
-.pag3:nth-child(4) { animation: lista 11s 4s 10; }
+.pag3:nth-child(4) {
+    animation: lista 11s 4s 10;
+}
 
-.pag3:nth-child(5) { animation: lista 11s 5s 10; }
+.pag3:nth-child(5) {
+    animation: lista 11s 5s 10;
+}
 
-.pag3:nth-child(6) { animation: lista 11s 6s 10; }
+.pag3:nth-child(6) {
+    animation: lista 11s 6s 10;
+}
 
-.pag3:nth-child(7) { animation: lista2 11s 7s 10 }
+.pag3:nth-child(7) {
+    animation: lista2 11s 7s 10
+}
 
 @keyframes lista {
-    0%, 30%{
+
+    0%,
+    30% {
         background-color: rgba(97, 1, 240, 0.249);
     }
 }
 
 @keyframes lista2 {
-    0%, 5% {
+
+    0%,
+    5% {
         background-color: rgba(0, 140, 255, 0.418);
     }
 }
@@ -177,13 +206,13 @@ span {
 /* cor no número que indica a posição encontrada na página 3 */
 a {
     color: rgb(0, 174, 255);
-    text-decoration: none;   
+    text-decoration: none;
 }
 
 /* posição da chave --> animação: pos  */
 #pos {
     opacity: 0;
-    animation: pos 11s 7s cubic-bezier(0, -0.13, 0, 1.25) 10;
+    animation: pos 11s 7s 10;
     background-color: transparent;
 }
 
@@ -191,6 +220,7 @@ a {
     1% {
         opacity: 100;
     }
+
     80% {
         opacity: 0;
     }
@@ -206,16 +236,24 @@ a {
     display: inline-block;
 }
 
-#ponto:nth-child(1) { animation: pontos 3s .8s 15; }
+#ponto:nth-child(1) {
+    animation: pontos 3s .8s 15;
+}
 
-#ponto:nth-child(2) { animation: pontos 3s 1.4s 15; }
+#ponto:nth-child(2) {
+    animation: pontos 3s 1.4s 15;
+}
 
-#ponto:nth-child(3) { animation: pontos 3s 1.8s 15; }
+#ponto:nth-child(3) {
+    animation: pontos 3s 1.8s 15;
+}
 
-#ponto:nth-child(4) { animation: pontos 3s 2.2s 15; }
+#ponto:nth-child(4) {
+    animation: pontos 3s 2.2s 15;
+}
 
 @keyframes pontos {
-    40%{
+    40% {
         scale: 4;
     }
 }
