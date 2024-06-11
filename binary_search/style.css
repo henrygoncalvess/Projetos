@@ -65,14 +65,18 @@ strong {
 }
 
 /* marcador --> destaca as palavras importantes */
-mark {
+mark,
+#botao {
     padding: 0px 8px;
     border-radius: 5px;
     background-color: rgba(102, 0, 255, 0.185);
 }
 
 /* chave --> usada nos exemplos pra identificar o número procurado */
-#chave {
+#chave,
+#procura,
+#chute,
+#tentativa {
     text-align: center;
     font-size: 1.3em;
     line-height: 0em;
@@ -84,6 +88,7 @@ mark {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    background-color: white;
 }
 
 /* botão (padrão - avançar) */
@@ -359,4 +364,16 @@ a {
 
 .posicao {
     text-align: center;
+}
+
+input{
+    font-size: 0.9em;
+    width: 110px;
+}
+
+#algoritmo {
+    background-color: rgba(0, 174, 255, 0.500);
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
 }
