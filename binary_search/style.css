@@ -197,7 +197,8 @@ span {
 .tela,
 #pos,
 #pos2,
-#pos3 {
+#pos3,
+#pos4 {
     cursor: default;
     font-size: 1.2em;
     background-color: black;
@@ -296,7 +297,7 @@ a {
 
 @keyframes meio {
     0%, 35%{
-        background-color: rgba(0, 174, 255, 0.767);
+        background-color: rgba(97, 1, 240, 0.249);
     }
     50%{
         background-color: rgba(255, 0, 0, 0.767);
@@ -321,12 +322,12 @@ a {
 }
 
 #pos3{
-    display: block;
+    display: inline-block;
     opacity: 0;
     padding: 0px 10px;
 }
 
-#pos3{ animation: meio3 10s 11s 1; }
+#pos3{ animation: meio3 7s 11s 1; }
 
 @keyframes meio3 {
     0%, 30% {
@@ -336,4 +337,26 @@ a {
         opacity: 0;
         color: rgb(39, 255, 31);
     }
+}
+
+#pos4{
+    color: rgb(20, 180, 255);
+    display: inline-block;
+    opacity: 0;
+    padding: 0px 10px;
+}
+
+#pos4{ animation: meio4 11s 17s 1; }
+
+@keyframes meio4 {
+    0%, 30% {
+        opacity: 100;
+    }
+    80%{
+        opacity: 0;
+    }
+}
+
+.posicao {
+    text-align: center;
 }

@@ -18,7 +18,7 @@ function verificar(resposta){
     
     switch (resposta) {
         case 1:
-            pos = 10
+            pos = 11
             setTimeout(() => {
                 ant.style.opacity = 100
                 avan.style.display = 'none'
@@ -32,15 +32,6 @@ function verificar(resposta){
             pagina1()
             break
         
-        case 3:
-            pos = 10
-            setTimeout(() => {
-                ant.style.opacity = 100
-                avan.style.display = 'none'
-                titulo.innerHTML = `Em andamento...`
-                parag.innerHTML = ''
-            }, 900);
-            break
     }
 }
 
@@ -48,7 +39,7 @@ function verificar(resposta){
 function trocar() {
     animar()
 
-    if (pos == 1) pos = 2
+    if (pos == 1) pos = 8
 
     // posição == página
     switch (pos) {
@@ -97,6 +88,16 @@ function trocar() {
 
         case 8:
             pagina8()
+            setTimeout(() => {
+                pos = 9
+            }, 900);
+            break
+
+        case 9:
+            pagina9()
+            setTimeout(() => {
+                pos = 10
+            }, 900);
             break
     }
 }
@@ -125,30 +126,38 @@ function voltar() {
             break
 
         case 2:
-            pagina2()
+            pagina1()
             break
 
         case 3:
-            pagina3()
+            pagina2()
             break
 
         case 4:
-            pagina4()
+            pagina3()
             break
 
         case 5:
-            pagina5()
+            pagina4()
             break
 
         case 6:
-            pagina6()
+            pagina5()
             break
 
         case 7:
+            pagina6()
+            break
+
+        case 8:
             pagina7()
             break
-            
+
         case 9:
+            pagina8()
+            break
+            
+        case 10:
             inicio()
             pos = 0
             break
@@ -355,10 +364,10 @@ function pagina6(){
             <br>
             <strong>O valor dessa posição é MAIOR ou MENOR que a chave?</strong>
             <br>
-            se for MAIOR --> agora a busca verifica da posição <mark style="background: rgba(0, 174, 255, 0.767);">meio +1</mark> pra <strong>mais</strong>
+            <strong>se for MENOR a chave só pode ser um valor acima disso...</strong> Então o algoritmo elimina tudo que é menor que a posição, e começa a busca com os valores que sobraram
             <br>
             <br>
-            se for MENOR --> agora a busca verifica da posição <mark style="background: rgba(0, 174, 255, 0.767);">meio -1</mark> pra <strong>menos</strong>
+            <strong>se for MAIOR a chave só pode ser um valor abaixo disso...</strong> Então o algoritmo elimina tudo que é maior que a posição, e começa a busca com os valores que sobraram
             <br>
             <br>
             Veja o exemplo a seguir...
@@ -410,7 +419,7 @@ function pagina7(){
             Mas como o algoritmo vai encontrar nossa chave dessa vez?
             <br>
             <br>
-            Como nós vimos na explicação anterior, nosso algoritmo procura as posições :
+            Como vimos na explicação anterior, nosso algoritmo procura as posições :
             <br>
             <mark>INÍCIO</mark> = 0
             <br>
@@ -420,7 +429,7 @@ function pagina7(){
             Então... somando as posições &nbsp; 0 + 7 = 7
             <br>
             <br>
-            Nosso <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> vai ser &nbsp; 7 &nbsp;&divide; &nbsp;2 = &nbsp; <mark style="background: rgba(0, 174, 255, 0.767);">3</mark> &nbsp;, &nbsp;5
+            Nosso <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> &nbsp; (7 &nbsp;&divide; &nbsp;2) &nbsp; vai ser = &nbsp; <mark style="background: rgba(0, 174, 255, 0.767);">3</mark> &nbsp;, &nbsp;5
             <br>
             <br>
             <strong>OBS:</strong> sempre a divisão inteira
@@ -433,8 +442,8 @@ function pagina7(){
 
 function pagina8(){
     setTimeout(() => {
-        // some com o botão de avançar
-        avan.style.opacity = 0
+        avan.style.display = 'none'
+        ant.style.display = 'none'
 
         titulo.innerHTML = `<strong>Procurando...</strong>`
         parag.innerHTML = `
@@ -487,20 +496,42 @@ function pagina8(){
             <span id="pos2">
                 18 é a chave?
             </span>
+            <br>
             <span id="pos3">
-                é maior?
+                18 é menor que a chave?
+            </span>
+            <span id="pos4">
+                então... meio + 1 = 4
+                <br>
+                (pois a chave só pode ser maior que 18)
             </span>
         </p>`
     }, 900)
 
     setTimeout(() => {
-        animar()
-    }, 21000)
+        avan.style.display = 'block'
+        ant.style.display = 'block'
+    }, 26000)
+}
 
+function pagina9(){
     setTimeout(() => {
+        // some com o botão de avançar
+        avan.style.display = 'none'
+
         titulo.innerHTML = `<strong>Agora nós temos :</strong>`
         parag.innerHTML = `
         <p>
+            <p id="chave">
+                <mark>início:</mark> <strong>4</strong>
+            </p>
+            <br>
+            <br>
+            <p id="chave">
+                <mark>fim:</mark> <strong>7</strong>
+            </p>
+            <br>
+            <br>
             <p class="posicao">
             <span id="numpag7" class="pag8">19</span>
             <span id="numpag7" class="pag8">21</span>
@@ -518,5 +549,5 @@ function pagina8(){
             <span id="PosPag7" class="pospag8">7</span>
         </p>
         </p>`
-    }, 21900)
+    }, 900)
 }
