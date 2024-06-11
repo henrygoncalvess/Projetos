@@ -3,7 +3,6 @@ var parag = document.getElementById('parag')
 var tam2 = document.getElementById('tam2')
 var ant = document.getElementById('vol')
 var avan = document.getElementById('avan')
-var tela = document.getElementById('ind')
 var resp1 = document.getElementById('resposta1')
 var resp2 = document.getElementById('resposta2')
 var pos2 = document.getElementById('pos2')
@@ -39,7 +38,7 @@ function verificar(resposta){
 function trocar() {
     animar()
 
-    if (pos == 1) pos = 2
+    if (pos == 1) pos = 11
 
     // posição == página
     switch (pos) {
@@ -415,9 +414,9 @@ function pagina7(){
                 <mark>Chave:</mark> <strong>21</strong>
             </p>
             <br>
-            <br>
+            <p>
             Agora o nosso vetor <strong>ORDENADO</strong> tem <span id="cor" class="pag7">8 posições</span>, com os valores :
-            <br>
+            </p>
             <br>
         <p class="posicao">
             <span id="numpag7" class="pag7">11</span>
@@ -622,7 +621,7 @@ function pagina10(){
             Aqui você conheceu os algoritmos de <strong>Busca Sequencial</strong> e <strong>Pesquisa Binária</strong>, mas saiba que não existem só eles, e para a criação de um programa de qualidade, é super importante se aprofundar neste assunto.
             <br>
             <br>
-            E agora... que tal assitir a <strong>Pesquisa Binária</strong> procurando a SUA chave?
+            E agora... que tal assitir a <strong>Pesquisa Binária</strong> procurando a <mark>SUA</mark> chave?
             <br>
             e melhor ainda... Em um vetor com 1000 posições.
             <br>
@@ -632,15 +631,19 @@ function pagina10(){
     }, 900)
 }
 
-var tent = 0
-var chute = 0
+var arr = []
+var soma = 0
 
-function comecar(){
-
+for (let c = 0; c <= 1000; c++){
+    arr[c] = soma
+    soma += 1
 }
 
-
 function pagina11(){
+
+    var encontrar = document.getElementById('encontrar')
+    var chute = document.getElementById('chute')
+    var tentativa = document.getElementById('tentativa')
     setTimeout(() => {
         avan.style.display = 'none'
         titulo.style.display = `none`
@@ -652,7 +655,7 @@ function pagina11(){
             <br>
             <br>
             <p id="chave">
-                <mark id="algoritmo"  onclick="comecar()">INICIAR</mark>
+                <mark id="algoritmo"  onclick="analisar()">INICIAR</mark>
             </p>
             <br>
             <br>
@@ -663,13 +666,32 @@ function pagina11(){
             <br>
             <br>
             <p id="chute">
-                Chute -> ${chute}
+                Chute -> 0
             </p>
             <br>
             <br>
             <p id="tentativa">
-                Tentativas -> ${tent}
+                Tentativas -> 0
             </p>
         </p>`
     }, 900)
+}
+
+function analisar(){
+    chute.style.translate = '-100px'
+    chute.style.opacity = 0
+
+    // move o conteúdo pra direita -> pra ele aparecer
+    setTimeout(() => {
+        chute.style.translate = '85px'
+    }, 600);
+
+    // aparece com o conteúdo e os botões
+    setTimeout(() => {
+        chute.innerHTML = `Chute -> ${encontrar.value}`
+
+        chute.style.translate = '0px'
+
+        chute.style.opacity = 100
+    }, 900);
 }
