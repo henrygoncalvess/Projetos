@@ -15,10 +15,10 @@ if (pos == 0){
 
 function verificar(resposta){
     animar()
-    
+
     switch (resposta) {
         case 1:
-            pos = 11
+            pos = 21
             setTimeout(() => {
                 ant.style.opacity = 100
                 avan.style.display = 'none'
@@ -26,12 +26,12 @@ function verificar(resposta){
                 parag.innerHTML = ''
             }, 900);
             break
-            
+
         case 2:
             pos = 1
             pagina1()
             break
-        
+
     }
 }
 
@@ -99,6 +99,17 @@ function trocar() {
                 pos = 10
             }, 900);
             break
+
+        case 10:
+            pagina10()
+            setTimeout(() => {
+                pos = 11
+            }, 900);
+            break
+
+        case 11:
+            pagina11()
+            break
     }
 }
 
@@ -114,7 +125,7 @@ function voltar() {
 
     // posição == página
     switch (pos) {
-            
+
         // se for o início
         // não deixa o conteúdo desaparecer e sair do lugar
         case 0:
@@ -156,8 +167,16 @@ function voltar() {
         case 9:
             pagina8()
             break
-            
+
         case 10:
+            pagina9()
+            break
+
+        case 11:
+            pagina10()
+            break
+
+        case 20:
             inicio()
             pos = 0
             break
@@ -347,27 +366,39 @@ function pagina6(){
             <strong>Detalhe importante :</strong>
             <br>
             <br>
-            Para utilizar esse algoritmo o seu vetor precisa estar <strong>ORDENADO</strong> (pode estar em ordem crescente ou decrescente)
+            Para utilizar esse algoritmo o seu vetor precisa estar <strong>ORDENADO</strong>
             <br>
             <br>
-            Isso porque o algoritmo procura o <mark>INÍCIO</mark> e o <mark>FIM</mark> pra começar a verificar sempre pelo <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark>. A partir dessa posição ele faz a seguinte verificação:
+            Chave de exemplo: <strong>6</strong>
+            <br>
+            <br>
+            valores : <mark>1</mark> 2 3 <mark style="background: rgba(0, 174, 255, 0.767);">4</mark> 5 6 <mark>7</mark>
+            <br>
+            <br>
+            Isso porque o algoritmo procura o <mark>INÍCIO</mark> e o <mark>FIM</mark> para começar a verificar sempre pelo <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark>. A partir do <mark style="background: rgba(0, 174, 255, 0.767);">meio</mark> ele faz a seguinte verificação:
+            <br>
+            <br>
             <span class="tela" style="padding: 1px;"></span>
             <br>
-            <strong>O valor dessa posição é igual a chave?</strong>
+            <strong>O valor do <mark style="background: rgba(0, 174, 255, 0.767);">meio (4)</mark> é MENOR que a chave (6)?</strong>
             <br>
-            se SIM --> retorna a posição correspondente
+            <br>
+            <strong>se for MENOR a chave só pode ser um valor acima disso...</strong> Então o algoritmo <mark style="background: rgba(0, 174, 255, 0.767);">elimina o meio e tudo abaixo dele</mark>, e continua a busca com os valores que sobraram.
+            <br>
+            5 6 7
+            <br>
             <br>
             <span class="tela" style="padding: 1px;"></span>
             <br>
-            se NÃO --> outra verificação :
+            <strong>O valor do <mark style="background: rgba(0, 174, 255, 0.767);">meio</mark> é MAIOR que a chave?</strong>
             <br>
             <br>
-            <strong>O valor dessa posição é MAIOR ou MENOR que a chave?</strong>
-            <br>
-            <strong>se for MENOR a chave só pode ser um valor acima disso...</strong> Então o algoritmo elimina tudo que é menor que a posição, e começa a busca com os valores que sobraram
+            <strong>se for MAIOR a chave só pode ser um valor abaixo disso...</strong> Então o algoritmo <mark style="background: rgba(0, 174, 255, 0.767);">elimina o meio e tudo abaixo dele</mark>, e continua a busca com os valores que sobraram.
             <br>
             <br>
-            <strong>se for MAIOR a chave só pode ser um valor abaixo disso...</strong> Então o algoritmo elimina tudo que é maior que a posição, e começa a busca com os valores que sobraram
+            <span class="tela" style="padding: 1px;"></span>
+            <br>
+            se não for maior, nem menor (chave encontrada) --> retorna o meio
             <br>
             <br>
             Veja o exemplo a seguir...
@@ -385,7 +416,7 @@ function pagina7(){
             </p>
             <br>
             <br>
-            Agora o nosso vetor <mark>ORDENADO</mark> tem <span id="cor" class="pag7">8 posições</span>, com os valores :
+            Agora o nosso vetor <strong>ORDENADO</strong> tem <span id="cor" class="pag7">8 posições</span>, com os valores :
             <br>
             <br>
         <p class="posicao">
@@ -410,31 +441,44 @@ function pagina7(){
             <span id="PosPag7" class="pag7">4</span> &nbsp;&nbsp;&nbsp;
 
             <span id="PosPag7" class="pag7">5</span> &nbsp;&nbsp;
-            
+
             <span id="PosPag7" class="pag7">6</span> &nbsp;
 
             <span id="PosPag7" class="pag7">7</span>
         </p>
         <p>
-            Mas como o algoritmo vai encontrar nossa chave dessa vez?
-            <br>
             <br>
             Como vimos na explicação anterior, nosso algoritmo procura as posições :
             <br>
-            <mark>INÍCIO</mark> = 0
+            <mark>INÍCIO</mark> = <span id="cor" class="pag7">0</span>
             <br>
-            <mark>FIM</mark> = 7
+            <mark>FIM</mark> = <span id="cor" class="pag7">7</span>
             <br>
             <br>
             Então... somando as posições &nbsp; 0 + 7 = 7
             <br>
             <br>
-            Nosso <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> &nbsp; (7 &nbsp;&divide; &nbsp;2) &nbsp; vai ser = &nbsp; <mark style="background: rgba(0, 174, 255, 0.767);">3</mark> &nbsp;, &nbsp;5
+            
+            Nosso meio = &nbsp; 7 &nbsp;&divide; &nbsp;2 &nbsp;
+            <br>
+            <br>
+            <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> = <mark style="background: rgba(0, 174, 255, 0.767);">3</mark> , 5
             <br>
             <br>
             <strong>OBS:</strong> sempre a divisão inteira
             <br>
-            Agora veja o que vai acontecer...
+            <br>
+            na posição <mark style="background: rgba(0, 174, 255, 0.767);">3</mark>, temos o valor <mark>18</mark>, e como vimos anteriormente, ele é menor que a chave, então o algoritmo elimina o <mark>18</mark> e os valores abaixo dele.
+            <br>
+            Sobrando então...
+            <br>
+            <br>
+            19 21 23 27
+            <br>
+            <span id="cor" class="pag7"> 4 &nbsp; 5 &nbsp; 6 &nbsp; 7</span>
+            <br>
+            <br>
+            <strong>assista a animação...</strong>
         </p>
         </p>`
     }, 900)
@@ -480,7 +524,7 @@ function pagina8(){
             <span id="PosPag7" class="pospag8">4</span> &nbsp;&nbsp;&nbsp;
 
             <span id="PosPag7" class="pospag8">5</span> &nbsp;&nbsp;
-            
+
             <span id="PosPag7" class="pospag8">6</span> &nbsp;
 
             <span id="PosPag7" class="pospag8">7</span>
@@ -501,9 +545,7 @@ function pagina8(){
                 18 é menor que a chave?
             </span>
             <span id="pos4">
-                então... meio + 1 = 4
-                <br>
-                (pois a chave só pode ser maior que 18)
+                removendo o 18 e os valores abaixo dele...
             </span>
         </p>`
     }, 900)
@@ -511,27 +553,16 @@ function pagina8(){
     setTimeout(() => {
         avan.style.display = 'block'
         ant.style.display = 'block'
-    }, 26000)
+    }, 25000)
 }
 
 function pagina9(){
     setTimeout(() => {
-        // some com o botão de avançar
-        avan.style.display = 'none'
+        avan.innerHTML = 'FINALIZAR'
 
         titulo.innerHTML = `<strong>Agora nós temos :</strong>`
         parag.innerHTML = `
         <p>
-            <p id="chave">
-                <mark>início:</mark> <strong>4</strong>
-            </p>
-            <br>
-            <br>
-            <p id="chave">
-                <mark>fim:</mark> <strong>7</strong>
-            </p>
-            <br>
-            <br>
             <p class="posicao">
             <span id="numpag7" class="pag8">19</span>
             <span id="numpag7" class="pag8">21</span>
@@ -543,11 +574,102 @@ function pagina9(){
             <span id="PosPag7" class="pospag8">4</span> &nbsp;&nbsp;&nbsp;
 
             <span id="PosPag7" class="pospag8">5</span> &nbsp;&nbsp;
-            
+
             <span id="PosPag7" class="pospag8">6</span> &nbsp;
 
             <span id="PosPag7" class="pospag8">7</span>
+            <br>
+            <br>
+            <br>
+            <p id="chave">
+                <mark>início</mark> = <strong><span id="cor" class="pag7">4</span></strong>
+            </p>
+            <br>
+            <br>
+            <p id="chave">
+                <mark>fim</mark> = <strong><span id="cor" class="pag7">7</span></strong>
+            </p>
+            <br>
+            <br>
+            Então... somando as posições &nbsp; <span id="cor" class="pag7">4</span> + <span id="cor" class="pag7">7</span> = 11
+            <br>
+            <br>
+            
+            Nosso meio é -> &nbsp; 11 &nbsp;&divide; &nbsp;2 &nbsp;
+            <br>
+            <br>
+            <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> = <mark style="background: rgba(0, 174, 255, 0.767);">5</mark> , 5
+            <br>
+            <br>
+            <strong>OBS:</strong> sempre a divisão inteira
+            <br>
+            <br>
+            E agora, perceba que na próxima verificação nossa <strong>Pesquisa Binária</strong> irá acabar retornando a posição <mark style="background: rgba(0, 174, 255, 0.767);">5</mark>, pois agora ela é igual a chave.
         </p>
+        </p>`
+    }, 900)
+}
+
+function pagina10(){
+    setTimeout(() => {
+        avan.innerHTML = 'COMEÇAR'
+        titulo.innerHTML = `<strong>A importância de aprender algoritmos</strong>`
+        parag.innerHTML = `
+        <p>
+            Aprender algoritmos na programação é essencial porque eles são as receitas que guiam o computador a resolver problemas de forma eficiente.
+            <br>
+            <br>
+            Aqui você conheceu os algoritmos de <strong>Busca Sequencial</strong> e <strong>Pesquisa Binária</strong>, mas saiba que não existem só eles, e para a criação de um programa de qualidade, é super importante se aprofundar neste assunto.
+            <br>
+            <br>
+            E agora... que tal assitir a <strong>Pesquisa Binária</strong> procurando a SUA chave?
+            <br>
+            e melhor ainda... Em um vetor com 1000 posições.
+            <br>
+            <br>
+            E sabe o mais legal disso tudo? Só vai precisa de (no máximo) <strong>10</strong> tentativas para encontrar a sua chave.
+        </p>`
+    }, 900)
+}
+
+var tent = 0
+var chute = 0
+
+function comecar(){
+
+}
+
+
+function pagina11(){
+    setTimeout(() => {
+        avan.style.display = 'none'
+        titulo.style.display = `none`
+        parag.innerHTML = `
+        <p>
+            <p id="chave">
+                <mark>CHAVE</mark> = <input type="number" id="encontrar" min="0" max="1000" placeholder=" 0 a 1000">
+            </p>
+            <br>
+            <br>
+            <p id="chave">
+                <mark id="algoritmo"  onclick="comecar()">INICIAR</mark>
+            </p>
+            <br>
+            <br>
+            <br>
+            <p id="procura">
+                Procurando... de 0 a 1000
+            </p>
+            <br>
+            <br>
+            <p id="chute">
+                Chute -> ${chute}
+            </p>
+            <br>
+            <br>
+            <p id="tentativa">
+                Tentativas -> ${tent}
+            </p>
         </p>`
     }, 900)
 }
