@@ -640,7 +640,6 @@ for (let c = 0; c <= 1000; c++){
 }
 
 function pagina11(){
-
     var encontrar = document.getElementById('encontrar')
     var chute = document.getElementById('chute')
     var tentativa = document.getElementById('tentativa')
@@ -676,22 +675,76 @@ function pagina11(){
         </p>`
     }, 900)
 }
+        
+var parar = false
+
+var comeco = 0
+var final = arr.length - 1
+var meio = 0
+var contador = 0
 
 function analisar(){
+    var id;
+
+    while (true){
+        meio = parseInt((comeco + final) / 2)
+        if (arr[meio] == encontrar.value){
+            contador++
+            chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
+            tentativa.innerHTML = `${contador}`
+            parar = true
+            break
+        }else{
+            contador++
+            if (arr[meio] < encontrar.value){
+                comeco = meio + 1
+            }
+            else{
+                final = meio - 1
+            }
+        }
+        if (comeco > final){
+            chute.innerHTML = `A chave ${encontrar.value} não foi encontrada`
+            parar = true
+            break
+        }
+    }
+
     chute.style.translate = '-100px'
     chute.style.opacity = 0
 
-    // move o conteúdo pra direita -> pra ele aparecer
     setTimeout(() => {
         chute.style.translate = '85px'
     }, 600);
 
-    // aparece com o conteúdo e os botões
     setTimeout(() => {
-        chute.innerHTML = `Chute -> ${encontrar.value}`
-
+        chute.innerHTML = `Chute -> ${meio}`
         chute.style.translate = '0px'
-
         chute.style.opacity = 100
     }, 900);
+
+
+    // tentativa
+    setTimeout(() => {
+        tentativa.style.translate = '-100px'
+        tentativa.style.opacity = 0
+    }, 3000);
+
+    setTimeout(() => {
+        tentativa.style.translate = '85px'
+    }, 3600);
+
+    setTimeout(() => {
+        tentativa.innerHTML = `tentativa -> ${contador}`
+        tentativa.style.translate = '0px'
+        tentativa.style.opacity = 100
+    }, 3900);
+
+    setTimeout(() => {
+        if (parar == true){
+            cancelAnimationFrame(id)
+        }else{
+            id = requestAnimationFrame(analisar) 
+        }
+    }, 3900);
 }
