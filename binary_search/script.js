@@ -39,7 +39,7 @@ function verificar(resposta){
 function trocar() {
     animar()
 
-    if (pos == 1) pos = 8
+    if (pos == 1) pos = 2
 
     // posição == página
     switch (pos) {
