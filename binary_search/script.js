@@ -6,7 +6,7 @@ var avan = document.getElementById('avan')
 var tela = document.getElementById('ind')
 var resp1 = document.getElementById('resposta1')
 var resp2 = document.getElementById('resposta2')
-var resp3 = document.getElementById('resposta3')
+var pos2 = document.getElementById('pos2')
 var pos = 0
 if (pos == 0){
     avan.style.display = 'none'
@@ -54,66 +54,49 @@ function trocar() {
     switch (pos) {
 
         case 2:
+            pagina2()
             setTimeout(() => {
                 pos = 3
             }, 900);
-            pagina2()
             break
 
         case 3:
+            pagina3()
             setTimeout(() => {
                 pos = 4
             }, 900);
-            pagina3()
             break
 
         case 4:
+            pagina4()
             setTimeout(() => {
                 pos = 5
             }, 900);
-            pagina4()
             break
 
         case 5:
+            pagina5()
             setTimeout(() => {
                 pos = 6
             }, 900);
-            pagina5()
             break
 
         case 6:
+            pagina6()
             setTimeout(() => {
                 pos = 7
             }, 900);
-            pagina6()
             break
 
         case 7:
+            pagina7()
             setTimeout(() => {
                 pos = 8
             }, 900);
-            pagina7()
             break
 
-        // não deixa o conteúdo desaparecer e sair do lugar
         case 8:
-            titulo.style.translate = '0px'
-            parag.style.translate = '0px'
-            titulo.style.opacity = 100
-            parag.style.opacity = 100
-            ant.style.opacity = 100
-
-            setTimeout(() => {
-                titulo.style.translate = '0px'
-                parag.style.translate = '0px'
-            }, 600);
-
-            setTimeout(() => {
-                titulo.style.translate = '0px'
-                parag.style.translate = '0px'
-                avan.style.opacity = 0
-            }, 900);
-            pos -= 1
+            pagina8()
             break
     }
 }
@@ -160,6 +143,10 @@ function voltar() {
         case 6:
             pagina6()
             break
+
+        case 7:
+            pagina7()
+            break
             
         case 9:
             inicio()
@@ -176,12 +163,10 @@ function animar(){
     // move o conteúdo pra esquerda <- e soma com os botões
     resp1.style.translate = '-100px'
     resp2.style.translate = '-100px'
-    resp3.style.translate = '-100px'
     titulo.style.translate = '-100px'
     parag.style.translate = '-100px'
     resp1.style.opacity = 0
     resp2.style.opacity = 0
-    resp3.style.opacity = 0
     titulo.style.opacity = 0
     parag.style.opacity = 0
     ant.style.opacity = 0
@@ -191,7 +176,6 @@ function animar(){
     setTimeout(() => {
         resp1.style.translate = '85px'
         resp2.style.translate = '85px'
-        resp3.style.translate = '85px'
         titulo.style.translate = '85px'
         parag.style.translate = '85px'
     }, 600);
@@ -200,10 +184,8 @@ function animar(){
     setTimeout(() => {
         resp1.style.display = 'none'
         resp2.style.display = 'none'
-        resp3.style.display = 'none'
         resp1.style.translate = '0px'
         resp2.style.translate = '0px'
-        resp3.style.translate = '0px'
         titulo.style.translate = '0px'
         parag.style.translate = '0px'
 
@@ -240,10 +222,8 @@ function inicio(){
         avan.style.display = 'none'
         resp1.style.display = 'block'
         resp2.style.display = 'block'
-        resp3.style.display = 'block'
         resp1.style.opacity = 100
         resp2.style.opacity = 100
-        resp3.style.opacity = 100
     }, 900);
 }
 
@@ -361,7 +341,7 @@ function pagina6(){
             Para utilizar esse algoritmo o seu vetor precisa estar <strong>ORDENADO</strong> (pode estar em ordem crescente ou decrescente)
             <br>
             <br>
-            Isso porque o algoritmo começa sempre na posição do <mark>meio</mark>. A partir dessa posição ele faz a seguinte verificação:
+            Isso porque o algoritmo procura o <mark>INÍCIO</mark> e o <mark>FIM</mark> pra começar a verificar sempre pelo <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark>. A partir dessa posição ele faz a seguinte verificação:
             <span class="tela" style="padding: 1px;"></span>
             <br>
             <strong>O valor dessa posição é igual a chave?</strong>
@@ -375,22 +355,19 @@ function pagina6(){
             <br>
             <strong>O valor dessa posição é MAIOR ou MENOR que a chave?</strong>
             <br>
-            se for MAIOR --> agora a busca verifica da posição atual pra <strong>+</strong>
+            se for MAIOR --> agora a busca verifica da posição <mark style="background: rgba(0, 174, 255, 0.767);">meio +1</mark> pra <strong>mais</strong>
             <br>
             <br>
-            se for MENOR --> agora a busca verifica da posição atual pra <strong>-</strong>
+            se for MENOR --> agora a busca verifica da posição <mark style="background: rgba(0, 174, 255, 0.767);">meio -1</mark> pra <strong>menos</strong>
+            <br>
+            <br>
+            Veja o exemplo a seguir...
         </p>`
     }, 900)
 }
 
 function pagina7(){
     setTimeout(() => {
-        // some com o botão de avançar
-        avan.style.opacity = 0
-
-        // 10 13 15 18 19 21 23 27
-        //  0  1  2  3  4  5  6  7
-
         titulo.innerHTML = `<strong>Exemplo</strong>`
         parag.innerHTML = `
         <p>
@@ -429,6 +406,117 @@ function pagina7(){
 
             <span id="PosPag7" class="pag7">7</span>
         </p>
+        <p>
+            Mas como o algoritmo vai encontrar nossa chave dessa vez?
+            <br>
+            <br>
+            Como nós vimos na explicação anterior, nosso algoritmo procura as posições :
+            <br>
+            <mark>INÍCIO</mark> = 0
+            <br>
+            <mark>FIM</mark> = 7
+            <br>
+            <br>
+            Então... somando as posições &nbsp; 0 + 7 = 7
+            <br>
+            <br>
+            Nosso <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> vai ser &nbsp; 7 &nbsp;&divide; &nbsp;2 = &nbsp; <mark style="background: rgba(0, 174, 255, 0.767);">3</mark> &nbsp;, &nbsp;5
+            <br>
+            <br>
+            <strong>OBS:</strong> sempre a divisão inteira
+            <br>
+            Agora veja o que vai acontecer...
+        </p>
         </p>`
     }, 900)
+}
+
+function pagina8(){
+    setTimeout(() => {
+        // some com o botão de avançar
+        avan.style.opacity = 0
+
+        titulo.innerHTML = `<strong>Procurando...</strong>`
+        parag.innerHTML = `
+        <p>
+            <p id="chave">
+                <mark>Chave:</mark> <strong>21</strong>
+            </p>
+            <br>
+            <br>
+            <p id="chave">
+                <mark style="background: rgba(0, 174, 255, 0.767);">meio</mark> <strong>3</strong>
+            </p>
+        <br>
+        <br>
+        <p class="posicao">
+            <span id="numpag7" class="pag8">11</span>
+            <span id="numpag7" class="pag8">13</span>
+            <span id="numpag7" class="pag8">15</span>
+            <span id="numpag7" class="pag8">18</span>
+            <span id="numpag7" class="pag8">19</span>
+            <span id="numpag7" class="pag8">21</span>
+            <span id="numpag7" class="pag8">23</span>
+            <span id="numpag7" class="pag8">27</span>
+            </p>
+        <p class="posicao">
+            <span id="PosPag7" class="pospag8">&nbsp;0</span> &nbsp;
+
+            <span id="PosPag7" class="pospag8">1</span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pospag8">2</span> &nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pospag8">3</span>&nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pospag8">4</span> &nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pospag8">5</span> &nbsp;&nbsp;
+            
+            <span id="PosPag7" class="pospag8">6</span> &nbsp;
+
+            <span id="PosPag7" class="pospag8">7</span>
+        </p>
+        <br>
+            <span class="tela">
+            <strong>
+            <div id="ponto"></div>
+            <div id="ponto"></div>
+            <div id="ponto"></div>
+            <div id="ponto"></div>
+            </strong>
+            <span id="pos2">
+                18 é a chave?
+            </span>
+            <span id="pos3">
+                é maior?
+            </span>
+        </p>`
+    }, 900)
+
+    setTimeout(() => {
+        animar()
+    }, 21000)
+
+    setTimeout(() => {
+        titulo.innerHTML = `<strong>Agora nós temos :</strong>`
+        parag.innerHTML = `
+        <p>
+            <p class="posicao">
+            <span id="numpag7" class="pag8">19</span>
+            <span id="numpag7" class="pag8">21</span>
+            <span id="numpag7" class="pag8">23</span>
+            <span id="numpag7" class="pag8final">27</span>
+            </p>
+        <p class="posicao">
+        <p class="posicao">
+            <span id="PosPag7" class="pospag8">4</span> &nbsp;&nbsp;&nbsp;
+
+            <span id="PosPag7" class="pospag8">5</span> &nbsp;&nbsp;
+            
+            <span id="PosPag7" class="pospag8">6</span> &nbsp;
+
+            <span id="PosPag7" class="pospag8">7</span>
+        </p>
+        </p>`
+    }, 21900)
 }
