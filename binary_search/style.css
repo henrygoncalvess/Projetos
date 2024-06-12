@@ -76,7 +76,8 @@ mark,
 #chave,
 #procura,
 #chute,
-#tentativa {
+#tentativa,
+#mm {
     text-align: center;
     font-size: 1.3em;
     line-height: 0em;
@@ -367,8 +368,9 @@ a {
 }
 
 input{
-    font-size: 0.9em;
-    width: 110px;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100px;
 }
 
 #algoritmo {

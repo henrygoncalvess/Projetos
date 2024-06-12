@@ -38,7 +38,7 @@ function verificar(resposta){
 function trocar() {
     animar()
 
-    if (pos == 1) pos = 11
+    if (pos == 1) pos = 2
 
     // posição == página
     switch (pos) {
@@ -108,6 +108,14 @@ function trocar() {
 
         case 11:
             pagina11()
+            setTimeout(() => {
+                pos = 12
+            }, 900);
+            break
+
+        case 12:
+            inicio()
+            pos = 0
             break
     }
 }
@@ -644,13 +652,18 @@ function pagina11(){
     var chute = document.getElementById('chute')
     var tentativa = document.getElementById('tentativa')
     var procura = document.getElementById('procura')
+    var mm = document.getElementById('mm')
+    
     setTimeout(() => {
-        avan.style.display = 'none'
+        avan.style.borderRadius = '20px'
+        avan.style.padding = '5px 10px'
+        avan.style.fontSize = '1em'
+        avan.innerHTML = 'Voltar ao início'
         titulo.style.display = `none`
         parag.innerHTML = `
         <p>
             <p id="chave">
-                <mark>CHAVE</mark> = <input type="number" id="encontrar" min="0" max="1000" placeholder=" 0 a 1000">
+                <mark>CHAVE</mark> <input type="number" id="encontrar" min="0" max="1000" placeholder=" 0 a 1000">
             </p>
             <br>
             <br>
@@ -668,6 +681,9 @@ function pagina11(){
             <p id="chute">
                 Chute -> 0
             </p>
+            <br>
+            <br>
+            <p id="mm">Sem chave</p>
             <br>
             <br>
             <p id="tentativa">
@@ -711,9 +727,12 @@ function analisar(){
     // chutes
     chute.style.translate = '-100px'
     chute.style.opacity = 0
+    mm.style.translate = '-100px'
+    mm.style.opacity = 0
 
     setTimeout(() => {
         chute.style.translate = '85px'
+        mm.style.translate = '85px'
     }, 600);
 
     setTimeout(() => {
@@ -722,12 +741,16 @@ function analisar(){
         }else{
             if (maior == true){
                 chute.innerHTML = `Chute -> ${meio}`
+                mm.innerHTML = 'maior'
             }else{
                 chute.innerHTML = `Chute -> ${meio}`
+                mm.innerHTML = 'menor'
             }
         }
         chute.style.translate = '0px'
         chute.style.opacity = 100
+        mm.style.translate = '0px'
+        mm.style.opacity = 100
     }, 900);
 
     // procurando...
