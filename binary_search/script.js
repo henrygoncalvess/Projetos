@@ -36,7 +36,6 @@ function verificar(resposta){
                 pos = 42
             }, 900);
             break
-
     }
 }
 
@@ -131,6 +130,46 @@ function trocar() {
             inicio()
             pos = 0
             break
+
+        case 32:
+            explicar2()
+            setTimeout(() => {
+                pos = 33
+            }, 900);
+            break
+
+        case 33:
+            explicar3()
+            setTimeout(() => {
+                pos = 34
+            }, 900);
+            break
+
+        case 34:
+            explicar4()
+            setTimeout(() => {
+                pos = 35
+            }, 900);
+            break
+
+        case 35:
+            inicio()
+            pos = 0
+            break
+
+        case 42:
+            experiente2()
+            setTimeout(() => {
+                pos = 43
+            }, 900);
+            break
+
+        // case 43:
+        //     experiente3()
+        //     setTimeout(() => {
+        //         pos = 44
+        //     }, 900);
+        //     break
     }
 }
 
