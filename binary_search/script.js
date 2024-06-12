@@ -643,6 +643,7 @@ function pagina11(){
     var encontrar = document.getElementById('encontrar')
     var chute = document.getElementById('chute')
     var tentativa = document.getElementById('tentativa')
+    var procura = document.getElementById('procura')
     setTimeout(() => {
         avan.style.display = 'none'
         titulo.style.display = `none`
@@ -676,40 +677,34 @@ function pagina11(){
     }, 900)
 }
         
-var parar = false
-
 var comeco = 0
 var final = arr.length - 1
 var meio = 0
 var contador = 0
+var maior = false
 
 function analisar(){
-    var id;
-
-    while (true){
-        meio = parseInt((comeco + final) / 2)
-        if (arr[meio] == encontrar.value){
-            contador++
-            chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
-            tentativa.innerHTML = `${contador}`
-            parar = true
-            break
-        }else{
-            contador++
-            if (arr[meio] < encontrar.value){
-                comeco = meio + 1
-            }
-            else{
-                final = meio - 1
-            }
+    meio = parseInt((comeco + final) / 2)
+    if (arr[meio] == encontrar.value){
+        contador++
+    }else{
+        contador++
+        if (arr[meio] < encontrar.value){
+            maior = true
+            comeco = meio + 1
         }
-        if (comeco > final){
-            chute.innerHTML = `A chave ${encontrar.value} não foi encontrada`
-            parar = true
-            break
+        else{
+            maior = false
+            final = meio - 1
         }
     }
+    if (comeco > final){
+        chute.innerHTML = `A chave ${encontrar.value} não foi encontrada`
+    }
 
+    var id;
+
+    // chutes
     chute.style.translate = '-100px'
     chute.style.opacity = 0
 
@@ -718,33 +713,56 @@ function analisar(){
     }, 600);
 
     setTimeout(() => {
-        chute.innerHTML = `Chute -> ${meio}`
+        if (arr[meio] == encontrar.value){
+            chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
+        }else{
+            if (maior == true){
+                chute.innerHTML = `Chute -> ${meio}... MAIOR`
+            }else{
+                chute.innerHTML = `Chute -> ${meio}... MENOR`
+            }
+        }
         chute.style.translate = '0px'
         chute.style.opacity = 100
     }, 900);
 
+    // procurando...
+    setTimeout(() => {
+        procura.style.translate = '-100px'
+        procura.style.opacity = 0
+    }, 3000);
+
+    setTimeout(() => {
+        procura.style.translate = '85px'
+    }, 3600);
+
+    setTimeout(() => {
+        procura.innerHTML = `procurando... de ${comeco} a ${final}`
+        procura.style.translate = '0px'
+        procura.style.opacity = 100
+    }, 3900);
 
     // tentativa
     setTimeout(() => {
         tentativa.style.translate = '-100px'
         tentativa.style.opacity = 0
-    }, 3000);
+    }, 5000);
 
     setTimeout(() => {
         tentativa.style.translate = '85px'
-    }, 3600);
+    }, 5600);
 
     setTimeout(() => {
-        tentativa.innerHTML = `tentativa -> ${contador}`
+        tentativa.innerHTML = `tentativas -> ${contador}`
         tentativa.style.translate = '0px'
         tentativa.style.opacity = 100
-    }, 3900);
+    }, 5900);
 
     setTimeout(() => {
-        if (parar == true){
+        if (arr[meio] == encontrar.value){
             cancelAnimationFrame(id)
         }else{
-            id = requestAnimationFrame(analisar) 
+            id = requestAnimationFrame(analisar)
         }
-    }, 3900);
+    }, 7900);
 }
