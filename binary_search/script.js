@@ -684,6 +684,10 @@ var contador = 0
 var maior = false
 
 function analisar(){
+    if (encontrar.value == 0){
+        encontrar.value = 0
+    }
+
     meio = parseInt((comeco + final) / 2)
     if (arr[meio] == encontrar.value){
         contador++
@@ -717,9 +721,9 @@ function analisar(){
             chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
         }else{
             if (maior == true){
-                chute.innerHTML = `Chute -> ${meio}... MAIOR`
+                chute.innerHTML = `Chute -> ${meio}`
             }else{
-                chute.innerHTML = `Chute -> ${meio}... MENOR`
+                chute.innerHTML = `Chute -> ${meio}`
             }
         }
         chute.style.translate = '0px'
@@ -746,17 +750,17 @@ function analisar(){
     setTimeout(() => {
         tentativa.style.translate = '-100px'
         tentativa.style.opacity = 0
-    }, 5000);
+    }, 3000);
 
     setTimeout(() => {
         tentativa.style.translate = '85px'
-    }, 5600);
+    }, 3600);
 
     setTimeout(() => {
         tentativa.innerHTML = `tentativas -> ${contador}`
         tentativa.style.translate = '0px'
         tentativa.style.opacity = 100
-    }, 5900);
+    }, 3900);
 
     setTimeout(() => {
         if (arr[meio] == encontrar.value){
