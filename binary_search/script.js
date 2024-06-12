@@ -178,7 +178,7 @@ function voltar() {
     avan.style.borderRadius = '20px 100% 100% 20px'
     avan.style.padding = '5px 20px 8px 8px'
     avan.style.fontSize = '0.7em'
-    avan.innerHTML = 'voltar'
+    avan.innerHTML = 'avançar'
     animar()
 
     // se a posição não for o início, volta uma página
@@ -237,12 +237,39 @@ function voltar() {
 
         case 11:
             avan.innerHTML = 'COMEÇAR'
+            animando = false
             pagina10()
             break
 
         case 20:
             inicio()
             pos = 0
+            break
+
+        case 31:
+            inicio()
+            pos = 0
+            break
+
+        case 32:
+            explicar1()
+            break
+
+        case 33:
+            explicar2()
+            break
+
+        case 34:
+            explicar3()
+            break
+
+        case 41:
+            inicio()
+            pos = 0
+            break
+
+        case 42:
+            experiente()
             break
     }
 }
