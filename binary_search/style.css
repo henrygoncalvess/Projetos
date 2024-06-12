@@ -64,7 +64,8 @@ strong {
     font-weight: bold;
 }
 
-/* marcador --> destaca as palavras importantes */
+/* marcador --> destaca as palavras importantes
+   parecido com o botão */
 mark,
 #botao {
     padding: 0px 8px;
@@ -72,7 +73,9 @@ mark,
     background-color: rgba(102, 0, 255, 0.185);
 }
 
-/* chave --> usada nos exemplos pra identificar o número procurado */
+/* chave --> usada nos exemplos pra identificar o número procurado 
+
+   espaço para a animação da última página */
 #chave,
 #procura,
 #chute,
@@ -104,6 +107,15 @@ span {
     cursor: pointer;
 }
 
+/* botão de voltar */
+#vol {
+    border-radius: 100% 20px 20px 100%;
+    padding: 5px 8px 8px 30px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* nível de conhecimento no início da página */
 #resposta1,
 #resposta2,
 #resposta3{
@@ -116,17 +128,7 @@ span {
     transition: 800ms;
 }
 
-/* botão de voltar */
-#vol {
-    border-radius: 100% 20px 20px 100%;
-    padding: 5px 8px 8px 30px;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* classe que define a área de texto dos códigos
-   animação da terceira página: lista, lista2
-*/
+/* classe que define a área de texto dos códigos */
 .pag3,
 .pag7,
 .pag8,
@@ -142,6 +144,7 @@ span {
     cursor: default;
 }
 
+/* animação da página 3: lista, lista2 */
 .pag3:nth-child(2) {
     animation: lista 11s 2s 10;
 }
@@ -182,7 +185,7 @@ span {
     }
 }
 
-/* área de código da terceira página */
+/* área de código da página 3 */
 .cod {
     font-size: min(1.7em, 4.8vw);
     padding: 0px;
@@ -217,19 +220,20 @@ span {
 
 #pos2{ opacity: 0; }
 
-/* cor no número que indica a posição encontrada na página 3 */
+/* cor do número que indica a posição encontrada na página 3 */
 a {
     color: rgb(0, 174, 255);
     text-decoration: none;
 }
 
-/* posição da chave --> animação: pos  */
+/* posição da chave */
 #pos {
     opacity: 0;
     animation: pos 11s 7s 10;
     background-color: transparent;
 }
 
+/* animação de posição da chave --> pos */
 @keyframes pos {
     1% {
         opacity: 100;
@@ -240,7 +244,7 @@ a {
     }
 }
 
-/* pontos que indicam carregamento --> animação: pontos */
+/* pontos que indicam carregamento */
 #ponto {
     border-radius: 50%;
     margin: 0px 20px;
@@ -250,6 +254,7 @@ a {
     display: inline-block;
 }
 
+/* animação: pontos */
 #ponto:nth-child(1) {
     animation: pontos 3s .8s 15;
 }
@@ -272,7 +277,7 @@ a {
     }
 }
 
-/* COR no trecho "8 posições" da página 7 */
+/* COR nos trechos que indicam a posição do vetor */
 #cor {
     background-color: transparent;
     font-size: 1em;
@@ -297,10 +302,12 @@ a {
     color: rgba(54, 19, 105, 0.452);
 }
 
+/* 18 chave página 8 */
 .pag8:nth-child(4) {
     animation: meio 10s 2s 1;
 }
 
+/* 18 chave página 8 */
 @keyframes meio {
     0%, 35%{
         background-color: rgba(97, 1, 240, 0.249);
@@ -310,12 +317,14 @@ a {
     }
 }
 
+/* 18 é a chave? página 8 */
 #pos2 {
     display: inline-block;
 }
 
 #pos2 { animation: meio2 10s 2s 1; }
 
+/* 18 é a chave? página 8 */
 @keyframes meio2 {
     0%, 30% {
         color: rgb(43, 188, 255);
@@ -327,6 +336,7 @@ a {
     }
 }
 
+/* é maior que a chave? página 8 */
 #pos3{
     display: inline-block;
     opacity: 0;
@@ -335,6 +345,7 @@ a {
 
 #pos3{ animation: meio3 7s 11s 1; }
 
+/* é maior que a chave? página 8 */
 @keyframes meio3 {
     0%, 30% {
         opacity: 100;
@@ -345,6 +356,7 @@ a {
     }
 }
 
+/* removendo os valores página 8 */
 #pos4{
     color: rgb(20, 180, 255);
     display: inline-block;
@@ -354,6 +366,7 @@ a {
 
 #pos4{ animation: meio4 11s 17s 1; }
 
+/* removendo os valores página 8 */
 @keyframes meio4 {
     0%, 30% {
         opacity: 100;
@@ -363,19 +376,24 @@ a {
     }
 }
 
+/* números e posições página 9 */
 .posicao {
     text-align: center;
 }
 
+/* chave do usuário página 11 */
 input{
     font-size: 1em;
     font-weight: bold;
-    width: 120px;
+    width: 210px;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: rgb(100, 170, 255, 0.200);
 }
 
+/* botão de iniciar página 11 */
 #algoritmo {
     background-color: rgba(0, 174, 255, 0.500);
     padding: 5px 10px;
     border-radius: 20px;
-    cursor: pointer;
 }
