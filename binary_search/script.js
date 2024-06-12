@@ -45,6 +45,9 @@ function trocar() {
     avan.style.borderRadius = '20px 100% 100% 20px'
     avan.style.padding = '5px 20px 8px 8px'
     avan.style.fontSize = '0.7em'
+    ant.style.borderRadius = '100% 20px 20px 100%'
+    ant.style.padding = '5px 8px 8px 30px'
+    ant.innerHTML = 'voltar'
     animar()
 
     if (pos == 1) pos = 2
