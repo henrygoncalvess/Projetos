@@ -36,6 +36,9 @@ function verificar(resposta){
 
 // quando clicar em AVANÇAR
 function trocar() {
+    avan.style.borderRadius = '20px 100% 100% 20px'
+    avan.style.padding = '5px 20px 8px 8px'
+    avan.style.fontSize = '0.7em'
     animar()
 
     if (pos == 1) pos = 2
@@ -93,6 +96,7 @@ function trocar() {
             break
 
         case 9:
+            avan.innerHTML = 'FINALIZAR'
             pagina9()
             setTimeout(() => {
                 pos = 10
@@ -100,6 +104,7 @@ function trocar() {
             break
 
         case 10:
+            avan.innerHTML = 'COMEÇAR'
             pagina10()
             setTimeout(() => {
                 pos = 11
@@ -122,6 +127,10 @@ function trocar() {
 
 // quando clicar em VOLTAR
 function voltar() {
+    avan.style.borderRadius = '20px 100% 100% 20px'
+    avan.style.padding = '5px 20px 8px 8px'
+    avan.style.fontSize = '0.7em'
+    avan.innerHTML = 'voltar'
     animar()
 
     // se a posição não for o início, volta uma página
@@ -137,13 +146,11 @@ function voltar() {
         // não deixa o conteúdo desaparecer e sair do lugar
         case 0:
             inicio()
-            break
-
-        case 1:
-            pagina1()
+            pos = 0
             break
 
         case 2:
+            pos -= 1
             pagina1()
             break
 
@@ -176,10 +183,12 @@ function voltar() {
             break
 
         case 10:
+            avan.innerHTML = 'FINALIZAR'
             pagina9()
             break
 
         case 11:
+            avan.innerHTML = 'COMEÇAR'
             pagina10()
             break
 
@@ -237,7 +246,9 @@ function animar(){
 // PÁGINAS
 
 function inicio(){
+    // página inicial com as 3 opções
     setTimeout(() => {
+        titulo.style.display = 'block'
         titulo.innerHTML = `<h1 id="titulo"></h1>`
         parag.innerHTML = `<p id="parag">
             Olá Programador! Hoje você vai aprender o que é uma <strong>"Binary Search"</strong> e como ela funciona.
@@ -264,7 +275,9 @@ function inicio(){
 
 function pagina1(){
     setTimeout(() => {
+        titulo.style.display = 'block'
         avan.style.opacity = 100
+        avan.innerHTML = "avançar"
         titulo.innerHTML = `O que é <strong>Binary Search</strong> <br> ou <br> <strong>Pesquisa Binária?</strong>`
         parag.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
     }, 900);
@@ -465,7 +478,7 @@ function pagina7(){
             Então... somando as posições &nbsp; 0 + 7 = 7
             <br>
             <br>
-            
+
             Nosso meio = &nbsp; 7 &nbsp;&divide; &nbsp;2 &nbsp;
             <br>
             <br>
@@ -601,7 +614,7 @@ function pagina9(){
             Então... somando as posições &nbsp; <span id="cor" class="pag7">4</span> + <span id="cor" class="pag7">7</span> = 11
             <br>
             <br>
-            
+
             Nosso meio é -> &nbsp; 11 &nbsp;&divide; &nbsp;2 &nbsp;
             <br>
             <br>
@@ -639,31 +652,37 @@ function pagina10(){
     }, 900)
 }
 
+// array que será usado na página 11
 var arr = []
 var soma = 0
 
+// array preenchido com valores de 0 a 1000
 for (let c = 0; c <= 1000; c++){
     arr[c] = soma
     soma += 1
 }
 
 function pagina11(){
+
+    // usada depois para começar a animação
+    var id;
+
+    // variáveis que manipulam os textos
     var encontrar = document.getElementById('encontrar')
     var chute = document.getElementById('chute')
     var tentativa = document.getElementById('tentativa')
     var procura = document.getElementById('procura')
     var mm = document.getElementById('mm')
-    
+
     setTimeout(() => {
         avan.style.borderRadius = '20px'
         avan.style.padding = '5px 10px'
-        avan.style.fontSize = '1em'
         avan.innerHTML = 'Voltar ao início'
         titulo.style.display = `none`
         parag.innerHTML = `
         <p>
             <p id="chave">
-                <mark>CHAVE</mark> <input type="number" id="encontrar" min="0" max="1000" placeholder=" 0 a 1000">
+                <mark>CHAVE</mark> <input type="number" id="encontrar" min="0" max="1000" placeholder="digite sua chave aqui">
             </p>
             <br>
             <br>
@@ -692,18 +711,24 @@ function pagina11(){
         </p>`
     }, 900)
 }
-        
+
+// variáveis responsáveis por fazer a busca binária funcionar
 var comeco = 0
 var final = arr.length - 1
 var meio = 0
 var contador = 0
 var maior = false
 
+// quando clicar em INICIAR
 function analisar(){
+
+    // se a pessoa não apertar o botão INICIAR
+    // chave é considerada  --> 0
     if (encontrar.value == 0){
         encontrar.value = 0
     }
 
+    // algoritmo de busca binária
     meio = parseInt((comeco + final) / 2)
     if (arr[meio] == encontrar.value){
         contador++
@@ -722,9 +747,7 @@ function analisar(){
         chute.innerHTML = `A chave ${encontrar.value} não foi encontrada`
     }
 
-    var id;
-
-    // chutes
+    // mudando o texto de "chutes" conforme o meio muda
     chute.style.translate = '-100px'
     chute.style.opacity = 0
     mm.style.translate = '-100px'
@@ -754,7 +777,7 @@ function analisar(){
         mm.style.opacity = 100
     }, 900);
 
-    // procurando...
+    // mudando o texto de "procurando..." conforme o algoritmo muda
     setTimeout(() => {
         procura.style.translate = '-100px'
         procura.style.opacity = 0
@@ -770,7 +793,7 @@ function analisar(){
         procura.style.opacity = 100
     }, 3900);
 
-    // tentativa
+    // mudando o texto de "tentativas" conforme o programa é executado
     setTimeout(() => {
         tentativa.style.translate = '-100px'
         tentativa.style.opacity = 0
@@ -786,6 +809,7 @@ function analisar(){
         tentativa.style.opacity = 100
     }, 3900);
 
+    // se achar a chave, para a animação
     setTimeout(() => {
         if (arr[meio] == encontrar.value){
             cancelAnimationFrame(id)
