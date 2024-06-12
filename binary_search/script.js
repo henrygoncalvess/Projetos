@@ -738,6 +738,7 @@ function analisar(){
     setTimeout(() => {
         if (arr[meio] == encontrar.value){
             chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
+            mm.style.display = 'none'
         }else{
             if (maior == true){
                 chute.innerHTML = `Chute -> ${meio}`
