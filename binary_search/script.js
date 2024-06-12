@@ -17,18 +17,24 @@ function verificar(resposta){
 
     switch (resposta) {
         case 1:
-            pos = 21
+            pos = 31
+            explicar1()
             setTimeout(() => {
-                ant.style.opacity = 100
-                avan.style.display = 'none'
-                titulo.innerHTML = `Em andamento...`
-                parag.innerHTML = ''
+                pos = 32
             }, 900);
             break
 
         case 2:
             pos = 1
             pagina1()
+            break
+
+        case 3:
+            pos = 41
+            experiente()
+            setTimeout(() => {
+                pos = 42
+            }, 900);
             break
 
     }
