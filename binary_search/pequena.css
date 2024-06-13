@@ -80,36 +80,27 @@
     }
 
     #PosPag7 {
-        padding: 0px 4px;
+        padding: 0px 3.5px;
     }
 
     #PosPag3,
     .pag3 {
-        padding: 0px 5px;
+        padding: 0px 4.5px;
     }
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 350px){
     #numpag7 {
         font-size: min(1.67em, 5vw);
-        padding: 0px 6px;
-    }
-    #PosPag7{
-        font-size: min(1.67em, 5vw);
-        padding: 0px 3px;
-    }
-    .pag3, #PosPag3 {
         padding: 0px 5px;
-    }
-}
-
-@media screen and (max-width: 360px){
-    #numpag7 {
-        font-size: min(1.67em, 5vw);
-        padding: 0px 6px;
     }
     #PosPag7 {
         font-size: min(1.67em, 5vw);
-        padding: 0px 2.5px;
+        padding: 0px 2px;
+    }
+
+    #PosPag3,
+    .pag3 {
+        padding: 0px 4px;
     }
 }
