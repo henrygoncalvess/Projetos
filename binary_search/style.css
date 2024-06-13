@@ -81,6 +81,7 @@ mark,
 #chute,
 #tentativa,
 #mm {
+    transition: 500ms;
     text-align: center;
     font-size: 1.3em;
     line-height: 0em;
@@ -122,7 +123,7 @@ span {
     display: block;
     border-radius: 10px;
     text-align: center;
-    margin: 20px 0px;
+    margin-top: 20px;
     font-size: 1em;
     opacity: 100;
     transition: 800ms;
