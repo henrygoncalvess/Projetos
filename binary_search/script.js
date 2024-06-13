@@ -68,7 +68,7 @@ function trocar() {
     ant.innerHTML = 'voltar'
     animar()
 
-    if (pos == 1) pos = 2
+    if (pos == 1) pos = 11
 
     // posição == página
     switch (pos) {
@@ -696,7 +696,9 @@ function pagina7(){
             <mark>FIM</mark> = <span id="cor" class="pag7">7</span>
             <br>
             <br>
-            Então... somando as posições &nbsp; 0 + 7 = 7
+            Então... somando as posições :
+            <br>
+            0 + 7 = 7
             <br>
             <br>
 
@@ -832,7 +834,9 @@ function pagina9(){
             </p>
             <br>
             <br>
-            Então... somando as posições &nbsp; <span id="cor" class="pag7">4</span> + <span id="cor" class="pag7">7</span> = 11
+            Então... somando as posições :
+            <br>
+            <span id="cor" class="pag7">4</span> + <span id="cor" class="pag7">7</span> = 11
             <br>
             <br>
 
@@ -876,7 +880,7 @@ function pagina10(){
 }
 
 function pagina11(){
-    
+
     setTimeout(() => {
         avan.style.borderRadius = '20px'
         avan.style.padding = '5px 10px'
@@ -885,7 +889,7 @@ function pagina11(){
         parag.innerHTML = `
         <p>
             <p id="chave">
-                <mark>CHAVE</mark> <input type="number" id="encontrar" min="0" max="1000" placeholder="digite sua chave aqui">
+                <mark>CHAVE</mark> <input type="number" id="encontrar" min="0" max="1000" maxlength="4" placeholder="digite sua chave aqui">
             </p>
             <br>
             <br>
@@ -915,6 +919,10 @@ function pagina11(){
             <p id="tentativa">0</p>
         </p>`
     }, 900)
+
+    setTimeout(() => {
+        encontrar.focus()
+    }, 1000);
 }
 
 // quando clicar em INICIAR
@@ -931,106 +939,109 @@ function analisar(){
     
     // se a pessoa não apertar o botão INICIAR
     // chave é considerada  --> 0
-    if (encontrar.value == 0){
-        encontrar.value = 0
-    }
-
-    // algoritmo de busca binária
-    meio = parseInt((comeco + final) / 2)
-    if (arr[meio] == encontrar.value){
-        contador++
+    if (encontrar.value < 0 || encontrar.value > 1000 || encontrar.value.length == 0){
+        window.alert('ERRO!!! Apenas valores de 0 a 1000')
+        encontrar.value = ''
+        encontrar.focus()
     }else{
-        contador++
-        if (arr[meio] < encontrar.value){
-            maior = true
-            comeco = meio + 1
+
+        // algoritmo de busca binária
+        meio = parseInt((comeco + final) / 2)
+        if (arr[meio] == encontrar.value){
+            contador++
+        }else{
+            contador++
+            if (arr[meio] < encontrar.value){
+                maior = true
+                comeco = meio + 1
+            }
+            else{
+                maior = false
+                final = meio - 1
+            }
         }
-        else{
-            maior = false
-            final = meio - 1
-        }
+
+        // mudando o texto de "chutes" conforme o meio muda
+        chute.style.translate = '-100px'
+        chute.style.opacity = 0
+
+        setTimeout(() => {
+            chute.style.translate = '85px'
+        }, 600);
+
+        setTimeout(() => {
+            if (arr[meio] == encontrar.value){
+                chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
+                mm.style.display = 'none'
+            }else{
+                chute.innerHTML = `${meio}`
+            }
+            chute.style.translate = '0px'
+            chute.style.opacity = 100
+        }, 800);
+
+        // indica se a chave é maior ou menor
+        setTimeout(() => {
+            mm.style.translate = '-100px'
+            mm.style.opacity = 0
+        }, 3000);
+
+        setTimeout(() => {
+            mm.style.translate = '85px'
+        }, 3600);
+
+        setTimeout(() => {
+            if (maior == true){
+                mm.innerHTML = `MAIOR`
+            }else{
+                mm.innerHTML = `MENOR`
+            }
+            mm.style.translate = '0px'
+            mm.style.opacity = 100
+        }, 3800);
+
+        // mudando o texto de "procurando..." conforme o algoritmo muda
+        setTimeout(() => {
+            procura.style.translate = '-100px'
+            procura.style.opacity = 0
+        }, 6000);
+
+        setTimeout(() => {
+            procura.style.translate = '85px'
+        }, 6600);
+
+        setTimeout(() => {
+            procura.innerHTML = `${comeco} a ${final}`
+            procura.style.translate = '0px'
+            procura.style.opacity = 100
+        }, 6800);
+
+        // mudando o texto de "tentativas" conforme o programa é executado
+        setTimeout(() => {
+            tentativa.style.translate = '-100px'
+            tentativa.style.opacity = 0
+        }, 6000);
+
+        setTimeout(() => {
+            tentativa.style.translate = '85px'
+        }, 6600);
+
+        setTimeout(() => {
+            tentativa.innerHTML = `${contador}`
+            tentativa.style.translate = '0px'
+            tentativa.style.opacity = 100
+        }, 6800);
+
+        // se achar a chave, para a animação
+        setTimeout(() => {
+            if (arr[meio] == encontrar.value){
+                comeco = 0
+                meio = 0
+                contador = 0
+                cancelAnimationFrame(id)
+            }else{
+                id = requestAnimationFrame(analisar)
+            }
+        }, 10000);
     }
-
-    // mudando o texto de "chutes" conforme o meio muda
-    chute.style.translate = '-100px'
-    chute.style.opacity = 0
-
-    setTimeout(() => {
-        chute.style.translate = '85px'
-    }, 600);
-
-    setTimeout(() => {
-        if (arr[meio] == encontrar.value){
-            chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
-            mm.style.display = 'none'
-        }else{
-            chute.innerHTML = `${meio}`
-        }
-        chute.style.translate = '0px'
-        chute.style.opacity = 100
-    }, 800);
-
-    // indica se a chave é maior ou menor
-    setTimeout(() => {
-        mm.style.translate = '-100px'
-        mm.style.opacity = 0
-    }, 3000);
-
-    setTimeout(() => {
-        mm.style.translate = '85px'
-    }, 3600);
-
-    setTimeout(() => {
-        if (maior == true){
-            mm.innerHTML = `maior`
-        }else{
-            mm.innerHTML = `menor`
-        }
-        mm.style.translate = '0px'
-        mm.style.opacity = 100
-    }, 3800);
-
-    // mudando o texto de "procurando..." conforme o algoritmo muda
-    setTimeout(() => {
-        procura.style.translate = '-100px'
-        procura.style.opacity = 0
-    }, 6000);
-
-    setTimeout(() => {
-        procura.style.translate = '85px'
-    }, 6600);
-
-    setTimeout(() => {
-        procura.innerHTML = `${comeco} a ${final}`
-        procura.style.translate = '0px'
-        procura.style.opacity = 100
-    }, 6800);
-
-    // mudando o texto de "tentativas" conforme o programa é executado
-    setTimeout(() => {
-        tentativa.style.translate = '-100px'
-        tentativa.style.opacity = 0
-    }, 6000);
-
-    setTimeout(() => {
-        tentativa.style.translate = '85px'
-    }, 6600);
-
-    setTimeout(() => {
-        tentativa.innerHTML = `${contador}`
-        tentativa.style.translate = '0px'
-        tentativa.style.opacity = 100
-    }, 6800);
-
-    // se achar a chave, para a animação
-    setTimeout(() => {
-        if (arr[meio] == encontrar.value){
-            comeco = 0
-            meio = 0
-            contador = 0
-            cancelAnimationFrame(id)
-        }else{
-            id = requestAnimationFrame(analisar)
-        }
-    }, 10000);
 }
