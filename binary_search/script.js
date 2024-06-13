@@ -5,8 +5,27 @@ var ant = document.getElementById('vol')
 var avan = document.getElementById('avan')
 var resp1 = document.getElementById('resposta1')
 var resp2 = document.getElementById('resposta2')
+var resp3 = document.getElementById('resposta3')
 var pos2 = document.getElementById('pos2')
 var pos = 0
+
+// array que será usado na página 11
+var arr = []
+var soma = 0
+
+// array preenchido com valores de 0 a 1000
+for (let c = 0; c <= 1000; c++){
+    arr[c] = soma
+    soma += 1
+}
+
+// variáveis responsáveis por fazer a busca binária funcionar
+var comeco = 0
+var final = arr.length - 1
+var meio = 0
+var contador = 0
+var maior = false
+
 if (pos == 0){
     avan.style.display = 'none'
     ant.style.display = 'none'
@@ -282,10 +301,12 @@ function animar(){
     // move o conteúdo pra esquerda <- e soma com os botões
     resp1.style.translate = '-100px'
     resp2.style.translate = '-100px'
+    resp3.style.translate = '-100px'
     titulo.style.translate = '-100px'
     parag.style.translate = '-100px'
     resp1.style.opacity = 0
     resp2.style.opacity = 0
+    resp3.style.opacity = 0
     titulo.style.opacity = 0
     parag.style.opacity = 0
     ant.style.opacity = 0
@@ -295,6 +316,7 @@ function animar(){
     setTimeout(() => {
         resp1.style.translate = '85px'
         resp2.style.translate = '85px'
+        resp3.style.translate = '85px'
         titulo.style.translate = '85px'
         parag.style.translate = '85px'
     }, 600);
@@ -303,8 +325,10 @@ function animar(){
     setTimeout(() => {
         resp1.style.display = 'none'
         resp2.style.display = 'none'
+        resp3.style.display = 'none'
         resp1.style.translate = '0px'
         resp2.style.translate = '0px'
+        resp3.style.translate = '0px'
         titulo.style.translate = '0px'
         parag.style.translate = '0px'
 
@@ -318,24 +342,141 @@ function animar(){
     }, 900);
 }
 
+// EXPLICAÇÕES
+
+function explicar1(){
+    setTimeout(() => {
+        ant.style.opacity = 100
+        titulo.innerHTML = `
+        Primeiro vamos aprender
+        <br>
+        O que são Algoritmos`
+        parag.innerHTML = `
+        <p>
+        Um algoritmo é simplesmente uma <strong>sequência de passos que resolvem um problema ou realizam uma tarefa</strong>. Por exemplo, você sabia que uma receita de bolo é um algoritmo?
+        <br>
+        <br>
+        Ela <strong>lista ingredientes e instruções</strong> passo a passo para <strong>preparar o bolo.</strong> Na programação, algoritmos são usados para processar dados, realizar cálculos, ou automatizar tarefas.
+        <br>
+        <br>
+        É como se nós fizéssemos uma receita pro computador preparar o bolo.
+        </p>`
+    }, 900);
+}
+
+function explicar2(){
+    setTimeout(() => {
+        ant.style.opacity = 100
+        titulo.innerHTML = `Importante`
+        parag.innerHTML = `
+        <p>
+        Agora que você sabe o que são Algoritmos, não se assuste com as palavras que você irá encontrar nesta página :
+        <br>
+        <br>
+        <strong>Busca sequencial</strong> e <strong>Binary Search</strong> (tradução --> <strong>pesquisa binária</strong>), como vimos anteriormente são 2 algoritmos de busca. E ao longo desta página você irá conhecer melhor cada um deles.
+        <br>
+        <br>
+        Além de algoritmos, vamos entender mais 3 palavrinhas que também irão aparecer aqui:
+        </p>`
+    }, 900);
+}
+
+function explicar3(){
+    setTimeout(() => {
+        ant.style.opacity = 100
+        titulo.innerHTML = `Palavras chave`
+        parag.innerHTML = `
+        <p>
+        <strong>Vetor :</strong> uma lista que armazena valores de um mesmo tipo.
+        <br>
+        Exemplo: [ 1, 2, 3, 4, 5]
+        <br>
+        <br>
+        <strong>Posição :</strong> é o número que identifica cada elemento de um vetor.
+        <br>
+        Exemplo: na posição 0 está o número 1...
+        <br>
+        na posição 1 está o número 2...
+        <br>
+        <br>
+        <strong>OBS:</strong> se você não está acostumado com a numeração, não se preocupe, até o final dessa página você irá entender tudo.
+        <br>
+        <br>
+        <strong>Chave :</strong> é o valor que vamos procurar no nosso algoritmo de busca.
+        </p>`
+    }, 900);
+}
+
+function explicar4(){
+    setTimeout(() => {
+        avan.style.borderRadius = '20px'
+        avan.style.padding = '5px 10px'
+        
+        ant.style.opacity = 100
+        avan.innerHTML = 'VOLTAR AO INÍCIO'
+        titulo.innerHTML = `Objetivo`
+        parag.innerHTML = `
+        <p>
+        Agora que você aprendeu o básico sobre algoritmos, e viu também algumas palavras chave é hora de dar o próximo passo.
+        <br>
+        <br>
+        Mas não se preocupe, pois você irá aprender apenas os conceitos de algoritmo de busca, sem ter contato com nenhum código. Se acabar gostando do assunto, você pode voltar para a página inicial e selecionar outro nível de conhecimento.
+        </p>`
+    }, 900);
+}
+
+// NÍVEL EXPERT
+
+function experiente(){
+    setTimeout(() => {
+        ant.style.opacity = 100
+        titulo.innerHTML = `Busca sequencial`
+        parag.innerHTML = `
+        <p>
+        Nosso algoritmo começa do início do vetor e verifica cada elemento, um por um, até encontrar a chave ou até chegar ao final do vetor.
+        <br>
+        <br>
+         texto temporário
+        </p>`
+    }, 900);
+}
+
+function experiente2(){
+    setTimeout(() => {
+        ant.style.opacity = 100
+        titulo.innerHTML = `b`
+        parag.innerHTML = `
+        <p>
+        joao
+        </p>`
+    }, 900);
+}
+
 // PÁGINAS
 
 function inicio(){
     // página inicial com as 3 opções
     setTimeout(() => {
+        ant.style.borderRadius = '20px'
+        ant.style.padding = '5px 10px'
+        ant.innerHTML = 'Voltar ao início'
+        avan.innerHTML = 'avançar'
         titulo.style.display = 'block'
-        titulo.innerHTML = `<h1 id="titulo"></h1>`
-        parag.innerHTML = `<p id="parag">
-            Olá Programador! Hoje você vai aprender o que é uma <strong>"Binary Search"</strong> e como ela funciona.
+        titulo.innerHTML = `Olá Programador!`
+        parag.innerHTML = `
+        <p id="parag">
+             Hoje você vai aprender o que é uma <strong>"Binary Search"</strong> e como ela funciona.
             <br>
             <br>
             mas antes de começarmos...
             <br>
             <br>
+            É importante que você selecione qual é o seu nível de
+            conhecimento abaixo, porque você vai conseguir
+            aprender mesmo que não entenda de programação.
+            <br>
+            <br>
             Você sabe o que é um <strong>"Algoritmo"?</strong>
-            <br>
-            <br>
-            É importante que você selecione qual é o seu nível de conhecimento abaixo, porque você vai conseguir aprender mesmo que não entenda de programação.
             <br>
             <br>
         </p>`
@@ -343,13 +484,18 @@ function inicio(){
         avan.style.display = 'none'
         resp1.style.display = 'block'
         resp2.style.display = 'block'
+        resp3.style.display = 'block'
         resp1.style.opacity = 100
         resp2.style.opacity = 100
+        resp3.style.opacity = 100
     }, 900);
 }
 
 function pagina1(){
     setTimeout(() => {
+        ant.style.borderRadius = '20px'
+        ant.style.padding = '5px 10px'
+        ant.innerHTML = 'Voltar ao início'
         titulo.style.display = 'block'
         avan.style.opacity = 100
         avan.innerHTML = "avançar"
@@ -706,7 +852,9 @@ function pagina9(){
 }
 
 function pagina10(){
+    
     setTimeout(() => {
+        titulo.style.display = 'block'
         avan.innerHTML = 'COMEÇAR'
         titulo.innerHTML = `<strong>A importância de aprender algoritmos</strong>`
         parag.innerHTML = `
@@ -727,28 +875,8 @@ function pagina10(){
     }, 900)
 }
 
-// array que será usado na página 11
-var arr = []
-var soma = 0
-
-// array preenchido com valores de 0 a 1000
-for (let c = 0; c <= 1000; c++){
-    arr[c] = soma
-    soma += 1
-}
-
 function pagina11(){
-
-    // usada depois para começar a animação
-    var id;
-
-    // variáveis que manipulam os textos
-    var encontrar = document.getElementById('encontrar')
-    var chute = document.getElementById('chute')
-    var tentativa = document.getElementById('tentativa')
-    var procura = document.getElementById('procura')
-    var mm = document.getElementById('mm')
-
+    
     setTimeout(() => {
         avan.style.borderRadius = '20px'
         avan.style.padding = '5px 10px'
@@ -767,36 +895,40 @@ function pagina11(){
             <br>
             <br>
             <br>
-            <p id="procura">
-                Procurando... de 0 a 1000
-            </p>
+            <p id="chave">Chute</p>
+            <br>
+            <p id="chute">0<p>
             <br>
             <br>
-            <p id="chute">
-                Chute -> 0
-            </p>
+            <p id="chave">A chave é...</p>
+            <br>
+            <p id="mm">maior ou menor?</p>
             <br>
             <br>
-            <p id="mm">Sem chave</p>
+            <p id="chave">Procurando</p>
+            <br>
+            <p id="procura">0 a 1000</p>
             <br>
             <br>
-            <p id="tentativa">
-                Tentativas -> 0
-            </p>
+            <p id="chave">Tentativas</p>
+            <br>
+            <p id="tentativa">0</p>
         </p>`
     }, 900)
 }
 
-// variáveis responsáveis por fazer a busca binária funcionar
-var comeco = 0
-var final = arr.length - 1
-var meio = 0
-var contador = 0
-var maior = false
-
 // quando clicar em INICIAR
 function analisar(){
-
+    
+    // usada depois para começar a animação
+    var id;
+    
+    // variáveis que manipulam os textos
+    var chute = document.getElementById('chute')
+    var tentativa = document.getElementById('tentativa')
+    var procura = document.getElementById('procura')
+    var mm = document.getElementById('mm')
+    
     // se a pessoa não apertar o botão INICIAR
     // chave é considerada  --> 0
     if (encontrar.value == 0){
@@ -818,19 +950,13 @@ function analisar(){
             final = meio - 1
         }
     }
-    if (comeco > final){
-        chute.innerHTML = `A chave ${encontrar.value} não foi encontrada`
-    }
 
     // mudando o texto de "chutes" conforme o meio muda
     chute.style.translate = '-100px'
     chute.style.opacity = 0
-    mm.style.translate = '-100px'
-    mm.style.opacity = 0
 
     setTimeout(() => {
         chute.style.translate = '85px'
-        mm.style.translate = '85px'
     }, 600);
 
     setTimeout(() => {
@@ -838,58 +964,73 @@ function analisar(){
             chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
             mm.style.display = 'none'
         }else{
-            if (maior == true){
-                chute.innerHTML = `Chute -> ${meio}`
-                mm.innerHTML = 'maior'
-            }else{
-                chute.innerHTML = `Chute -> ${meio}`
-                mm.innerHTML = 'menor'
-            }
+            chute.innerHTML = `${meio}`
         }
         chute.style.translate = '0px'
         chute.style.opacity = 100
+    }, 800);
+
+    // indica se a chave é maior ou menor
+    setTimeout(() => {
+        mm.style.translate = '-100px'
+        mm.style.opacity = 0
+    }, 3000);
+
+    setTimeout(() => {
+        mm.style.translate = '85px'
+    }, 3600);
+
+    setTimeout(() => {
+        if (maior == true){
+            mm.innerHTML = `maior`
+        }else{
+            mm.innerHTML = `menor`
+        }
         mm.style.translate = '0px'
         mm.style.opacity = 100
-    }, 900);
+    }, 3800);
 
     // mudando o texto de "procurando..." conforme o algoritmo muda
     setTimeout(() => {
         procura.style.translate = '-100px'
         procura.style.opacity = 0
-    }, 3000);
+    }, 6000);
 
     setTimeout(() => {
         procura.style.translate = '85px'
-    }, 3600);
+    }, 6600);
 
     setTimeout(() => {
-        procura.innerHTML = `procurando... de ${comeco} a ${final}`
+        procura.innerHTML = `${comeco} a ${final}`
         procura.style.translate = '0px'
         procura.style.opacity = 100
-    }, 3900);
+    }, 6800);
 
     // mudando o texto de "tentativas" conforme o programa é executado
     setTimeout(() => {
         tentativa.style.translate = '-100px'
         tentativa.style.opacity = 0
-    }, 3000);
+    }, 6000);
 
     setTimeout(() => {
         tentativa.style.translate = '85px'
-    }, 3600);
+    }, 6600);
 
     setTimeout(() => {
-        tentativa.innerHTML = `tentativas -> ${contador}`
+        tentativa.innerHTML = `${contador}`
         tentativa.style.translate = '0px'
         tentativa.style.opacity = 100
-    }, 3900);
+    }, 6800);
 
     // se achar a chave, para a animação
     setTimeout(() => {
         if (arr[meio] == encontrar.value){
+            comeco = 0
+            meio = 0
+            contador = 0
             cancelAnimationFrame(id)
         }else{
             id = requestAnimationFrame(analisar)
         }
-    }, 7900);
+    }, 10000);
 }
