@@ -433,21 +433,30 @@ function experiente(){
         titulo.innerHTML = `Busca sequencial`
         parag.innerHTML = `
         <p>
-        Nosso algoritmo começa do início do vetor e verifica cada elemento, um por um, até encontrar a chave ou até chegar ao final do vetor.
-        <br>
-        <br>
-        
+            Nosso algoritmo começa do <strong>início</strong> do vetor e verifica cada elemento, um por um, até encontrar a chave ou até chegar ao final do vetor.
+            <br>
+            <br>
+            <img src="busca sequencial.png">
+            <br>
+            <br>
+            <strong>O contador serve pra verificar cada posição do Vetor.</strong>
+            <br>
+            <br>
+            Se for a chave, é mostrado na tela a posição em que ela foi encontrada (que é --> <strong>3</strong>)
+            <br>
+            <br>
+            Se não for a chave, é somado <strong>1</strong> ao contador e ele pula pra próxima posição
         </p>`
     }, 900);
 }
 
 function experiente2(){
     setTimeout(() => {
+        avan.style.display = 'none'
         ant.style.opacity = 100
-        titulo.innerHTML = `b`
+        titulo.innerHTML = `Em andamento...`
         parag.innerHTML = `
         <p>
-        joao
         </p>`
     }, 900);
 }
