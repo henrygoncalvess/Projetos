@@ -11,7 +11,7 @@
 */
 body {
     background-color: rgb(227, 244, 255);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Din round', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
     font-size: 1em;
 
     width: 100%;
@@ -38,7 +38,7 @@ main {
 /* título afastado do conteúdo */
 h1 {
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
     line-height: 1.3em;
     margin-bottom: 40px;
@@ -48,6 +48,7 @@ h1 {
 
 /* conteúdo */
 p {
+    font-weight: 300;
     text-align: justify;
     font-size: 1.1em;
     translate: 0px;
@@ -57,6 +58,10 @@ p {
 h1,
 p {
     transition: 850ms;
+}
+
+img {
+    width: 100%;
 }
 
 /* certificando que vai realmente ficar em negrito */

@@ -373,7 +373,7 @@ function explicar2(){
         Agora que você sabe o que são Algoritmos, não se assuste com as palavras que você irá encontrar nesta página :
         <br>
         <br>
-        <strong>Busca sequencial</strong> e <strong>Binary Search</strong> (tradução --> <strong>pesquisa binária</strong>), como vimos anteriormente são 2 algoritmos de busca. E ao longo desta página você irá conhecer melhor cada um deles.
+        <strong>Busca sequencial</strong> e <strong>Binary Search</strong>, como vimos anteriormente são 2 algoritmos de busca. E ao longo desta página você irá conhecer melhor cada um deles.
         <br>
         <br>
         Além de algoritmos, vamos entender mais 3 palavrinhas que também irão aparecer aqui:
@@ -392,9 +392,9 @@ function explicar3(){
         Exemplo: [ 1, 2, 3, 4, 5]
         <br>
         <br>
-        <strong>Posição :</strong> é o número que identifica cada elemento de um vetor.
+        <strong><span id="cor" class="pag7">Posição :</span></strong> é o número que identifica cada elemento de um vetor.
         <br>
-        Exemplo: na posição 0 está o número 1...
+        na posição 0 está o número 1...
         <br>
         na posição 1 está o número 2...
         <br>
@@ -402,7 +402,7 @@ function explicar3(){
         <strong>OBS:</strong> se você não está acostumado com a numeração, não se preocupe, até o final dessa página você irá entender tudo.
         <br>
         <br>
-        <strong>Chave :</strong> é o valor que vamos procurar no nosso algoritmo de busca.
+        <strong><mark>Chave</mark> :</strong> é o valor que vamos procurar no nosso algoritmo de busca.
         </p>`
     }, 900);
 }
@@ -436,7 +436,7 @@ function experiente(){
         Nosso algoritmo começa do início do vetor e verifica cada elemento, um por um, até encontrar a chave ou até chegar ao final do vetor.
         <br>
         <br>
-         texto temporário
+        
         </p>`
     }, 900);
 }
@@ -927,7 +927,7 @@ function pagina11(){
 
 // quando clicar em INICIAR
 function analisar(){
-    
+
     // usada depois para começar a animação
     var id;
     
