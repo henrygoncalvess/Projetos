@@ -57,7 +57,7 @@ p {
 /* ambos com transição */
 h1,
 p {
-    transition: 850ms;
+    transition: 800ms;
 }
 
 img {
