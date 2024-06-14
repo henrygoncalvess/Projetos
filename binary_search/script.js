@@ -183,10 +183,17 @@ function trocar() {
             }, 900);
             break
 
-        // case 43:
-        //     experiente3()
+        case 43:
+            experiente3()
+            setTimeout(() => {
+                pos = 44
+            }, 900);
+            break
+
+        // case 44:
+        //     experiente4()
         //     setTimeout(() => {
-        //         pos = 44
+        //         pos = 45
         //     }, 900);
         //     break
     }
@@ -290,6 +297,14 @@ function voltar() {
         case 42:
             experiente()
             break
+
+        case 43:
+            experiente2()
+            break
+
+        // case 44:
+        //     experiente3()
+        //     break
     }
 }
 
@@ -474,7 +489,7 @@ function experiente3(){
         avan.style.display = 'none'
 
         ant.style.opacity = 100
-        titulo.innerHTML = `Binary Search`
+        titulo.innerHTML = `Em andamento...`
         parag.innerHTML = `
         <p>
         </p>`
