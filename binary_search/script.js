@@ -190,12 +190,12 @@ function trocar() {
             }, 900);
             break
 
-        // case 44:
-        //     experiente4()
-        //     setTimeout(() => {
-        //         pos = 45
-        //     }, 900);
-        //     break
+        case 44:
+            experiente4()
+            setTimeout(() => {
+                pos = 45
+            }, 900);
+            break
     }
 }
 
@@ -302,9 +302,9 @@ function voltar() {
             experiente2()
             break
 
-        // case 44:
-        //     experiente3()
-        //     break
+        case 44:
+            experiente3()
+            break
     }
 }
 
@@ -355,6 +355,7 @@ function animar(){
         ant.style.display = 'block'
         avan.style.display = 'block'
     }, 900);
+    
 }
 
 // EXPLICAÇÕES
@@ -426,7 +427,7 @@ function explicar4(){
     setTimeout(() => {
         avan.style.borderRadius = '20px'
         avan.style.padding = '5px 10px'
-        
+
         avan.innerHTML = 'VOLTAR AO INÍCIO'
         titulo.innerHTML = `Objetivo`
         parag.innerHTML = `
@@ -450,6 +451,9 @@ function experiente(){
         parag.innerHTML = `
         <p>
             Nosso algoritmo começa do <strong>início</strong> do vetor e verifica cada elemento, um por um, até encontrar a chave ou até chegar ao final do vetor.
+            <br>
+            <br>
+            Linguagem de exemplo: <mark style="background: rgb(255, 208, 0, 0.385);">JavaScript</mark>
             <br>
             <br>
             <img src="busca sequencial.png">
@@ -485,13 +489,46 @@ function experiente2(){
 
 function experiente3(){
     setTimeout(() => {
+        ant.style.opacity = 100
+        titulo.innerHTML = `Binary Search`
+        parag.innerHTML = `
+        <p>
+            A <strong>Pesquisa Binária</strong> é melhor utilizada em vetores maiores, e ele precisa estar <strong>ORDENADO.</strong>
+            <br>
+            <br>
+            Com esse algoritmo nós trabalhamos com <mark>INÍCIO</mark> <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> e <mark>FIM</mark>.
+            <br>
+            <br>
+            img variáveis ini mei fim
+            <br>
+            <br>
+            <strong>OBS:</strong> meio --> divisão inteira.
+            <br>
+            <br>
+            Nossa verificação sempre vai começar pelo <mark style="background: rgba(0, 174, 255, 0.767);">meio</mark> e dependendo do resultado, nossas variáveis <mark>início</mark> e <mark>fim</mark> mudam para uma posição a frente ou para uma posição atrás.
+            <br>
+            <br>
+            Isso faz com que nosso algoritmo "diminuia" o vetor a cada verificação, e quanto menos números pra verificar, mais fácil vai ser de encontrar o valor procurado.
+            <br>
+            <br>
+            Vamos colocar em prática...
+        </p>`
+    }, 900);
+}
+
+function experiente4(){
+    setTimeout(() => {
         // some com o botão de avançar
         avan.style.display = 'none'
 
         ant.style.opacity = 100
-        titulo.innerHTML = `Em andamento...`
+        titulo.innerHTML = `Prática`
         parag.innerHTML = `
         <p>
+            img binary search
+            <br>
+            <br>
+            
         </p>`
     }, 900);
 }
@@ -897,7 +934,7 @@ function pagina9(){
 }
 
 function pagina10(){
-    
+
     setTimeout(() => {
         titulo.style.display = 'block'
         avan.innerHTML = 'COMEÇAR'
@@ -971,13 +1008,13 @@ function analisar(){
 
     // usada depois para começar a animação
     var id;
-    
+
     // variáveis que manipulam os textos
     var chute = document.getElementById('chute')
     var tentativa = document.getElementById('tentativa')
     var procura = document.getElementById('procura')
     var mm = document.getElementById('mm')
-    
+
     // se a pessoa não apertar o botão INICIAR
     // chave é considerada  --> 0
     if (encontrar.value < 0 || encontrar.value > 1000 || encontrar.value.length == 0){
