@@ -456,7 +456,7 @@ function experiente(){
             Linguagem de exemplo: <mark style="background: rgb(255, 208, 0, 0.385);">JavaScript</mark>
             <br>
             <br>
-            <img src="busca sequencial.png">
+            <img src="imagens/busca sequencial.png">
             <br>
             <br>
             <strong>O contador serve pra verificar cada posição do Vetor.</strong>
