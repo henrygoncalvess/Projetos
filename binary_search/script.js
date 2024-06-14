@@ -68,7 +68,7 @@ function trocar() {
     ant.innerHTML = 'voltar'
     animar()
 
-    if (pos == 1) pos = 11
+    if (pos == 1) pos = 2
 
     // posição == página
     switch (pos) {
@@ -345,8 +345,10 @@ function animar(){
 // EXPLICAÇÕES
 
 function explicar1(){
+    ant.style.borderRadius = '100% 20px 20px 100%'
+    ant.style.padding = '5px 8px 8px 30px'
+    ant.innerHTML = 'voltar'
     setTimeout(() => {
-        ant.style.opacity = 100
         titulo.innerHTML = `
         Primeiro vamos aprender
         <br>
@@ -366,7 +368,6 @@ function explicar1(){
 
 function explicar2(){
     setTimeout(() => {
-        ant.style.opacity = 100
         titulo.innerHTML = `Importante`
         parag.innerHTML = `
         <p>
@@ -383,7 +384,6 @@ function explicar2(){
 
 function explicar3(){
     setTimeout(() => {
-        ant.style.opacity = 100
         titulo.innerHTML = `Palavras chave`
         parag.innerHTML = `
         <p>
@@ -412,7 +412,6 @@ function explicar4(){
         avan.style.borderRadius = '20px'
         avan.style.padding = '5px 10px'
         
-        ant.style.opacity = 100
         avan.innerHTML = 'VOLTAR AO INÍCIO'
         titulo.innerHTML = `Objetivo`
         parag.innerHTML = `
@@ -428,8 +427,10 @@ function explicar4(){
 // NÍVEL EXPERT
 
 function experiente(){
+    ant.style.borderRadius = '100% 20px 20px 100%'
+    ant.style.padding = '5px 8px 8px 30px'
+    ant.innerHTML = 'voltar'
     setTimeout(() => {
-        ant.style.opacity = 100
         titulo.innerHTML = `Busca sequencial`
         parag.innerHTML = `
         <p>
@@ -452,9 +453,28 @@ function experiente(){
 
 function experiente2(){
     setTimeout(() => {
-        avan.style.display = 'none'
         ant.style.opacity = 100
-        titulo.innerHTML = `Em andamento...`
+        titulo.innerHTML = `Desvantagem`
+        parag.innerHTML = `
+        <p>
+            A partir do momento em que nós temos muitos dados para manipular, a busca sequencial deixa de ser útil.
+            <br>
+            <br>
+            O Algoritmo vai comparar cada uma das posições... Teste por teste.... e ainda há chances desse valor não existir no vetor.
+            <br>
+            <br>
+            Ou seja, o processo do algoritmo de busca sequencial é <strong>muito demorado</strong>.
+        </p>`
+    }, 900);
+}
+
+function experiente3(){
+    setTimeout(() => {
+        // some com o botão de avançar
+        avan.style.display = 'none'
+
+        ant.style.opacity = 100
+        titulo.innerHTML = `Binary Search`
         parag.innerHTML = `
         <p>
         </p>`
@@ -466,9 +486,6 @@ function experiente2(){
 function inicio(){
     // página inicial com as 3 opções
     setTimeout(() => {
-        ant.style.borderRadius = '20px'
-        ant.style.padding = '5px 10px'
-        ant.innerHTML = 'Voltar ao início'
         avan.innerHTML = 'avançar'
         titulo.style.display = 'block'
         titulo.innerHTML = `Olá Programador!`
