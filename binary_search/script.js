@@ -6,8 +6,8 @@ var avan = document.getElementById('avan')
 var resp1 = document.getElementById('resposta1')
 var resp2 = document.getElementById('resposta2')
 var resp3 = document.getElementById('resposta3')
-var pos2 = document.getElementById('pos2')
 var pos = 0
+var ativo = false
 
 // array que será usado na página 11
 var arr = []
@@ -1145,6 +1145,7 @@ function analisar(){
     var tentativa = document.getElementById('tentativa')
     var procura = document.getElementById('procura')
     var mm = document.getElementById('mm')
+    var algoritmo2 = document.getElementById('algoritmo2')
 
     // se a pessoa não apertar o botão INICIAR
     // chave é considerada  --> 0
@@ -1171,64 +1172,108 @@ function analisar(){
         }
 
         // mudando o texto de "chutes" conforme o meio muda
-        chute.style.translate = '-100px'
-        chute.style.opacity = 0
+        if (ativo == true){
+            chute.style.translate = '0px'
+            chute.style.opacity = 100
+        }else{
+            chute.style.translate = '-100px'
+            chute.style.opacity = 0
+        }
 
         setTimeout(() => {
-            chute.style.translate = '85px'
+            if (ativo == true){
+                chute.style.translate = '0px'
+            }else{
+                chute.style.translate = '85px'
+            }
         }, 600);
 
         setTimeout(() => {
-            if (arr[meio] == encontrar.value){
-                chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
-                mm.style.display = 'none'
+            if (ativo == true){
+                chute.innerHTML = `0`
+                mm.style.display = 'block'
             }else{
-                chute.innerHTML = `${meio}`
+                if (arr[meio] == encontrar.value){
+                    chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
+                    mm.style.display = 'none'
+                }else{
+                    chute.innerHTML = `${meio}`
+                }
+                chute.style.translate = '0px'
+                chute.style.opacity = 100
             }
-            chute.style.translate = '0px'
-            chute.style.opacity = 100
         }, 800);
 
         // indica se a chave é maior ou menor
         setTimeout(() => {
-            mm.style.translate = '-100px'
-            mm.style.opacity = 0
+            if (ativo == true){
+                mm.style.translate = '0px'
+                mm.style.opacity = 100
+            }else{
+                mm.style.translate = '-100px'
+                mm.style.opacity = 0
+            }
         }, 3000);
 
         setTimeout(() => {
-            mm.style.translate = '85px'
+            if (ativo == true){
+                mm.style.translate = '0px'
+            }else{
+                mm.style.translate = '85px'
+            }
         }, 3600);
 
         setTimeout(() => {
-            if (maior == true){
-                mm.innerHTML = `MAIOR`
+            if (ativo == true){
+                mm.innerHTML = `maior ou menor?`
             }else{
-                mm.innerHTML = `MENOR`
+                if (maior == true){
+                    mm.innerHTML = `MAIOR`
+                }else{
+                    mm.innerHTML = `MENOR`
+                }
+                mm.style.translate = '0px'
+                mm.style.opacity = 100
             }
-            mm.style.translate = '0px'
-            mm.style.opacity = 100
         }, 3800);
 
         // mudando o texto de "procurando..." conforme o algoritmo muda
         setTimeout(() => {
-            procura.style.translate = '-100px'
-            procura.style.opacity = 0
-            tentativa.style.translate = '-100px'
-            tentativa.style.opacity = 0
+            if (ativo == true){
+                procura.style.translate = '0px'
+                procura.style.opacity = 100
+                tentativa.style.translate = '0px'
+                tentativa.style.opacity = 100
+            }else{
+                procura.style.translate = '-100px'
+                procura.style.opacity = 0
+                tentativa.style.translate = '-100px'
+                tentativa.style.opacity = 0
+            }
         }, 6000);
 
         setTimeout(() => {
-            procura.style.translate = '85px'
-            tentativa.style.translate = '85px'
+            if (ativo == true){
+                procura.style.translate = '0px'
+                tentativa.style.translate = '0px'
+            }else{
+                procura.style.translate = '85px'
+                tentativa.style.translate = '85px'
+            }
         }, 6600);
 
         setTimeout(() => {
-            procura.innerHTML = `${comeco} a ${final}`
-            procura.style.translate = '0px'
-            procura.style.opacity = 100
-            tentativa.innerHTML = `${contador}`
-            tentativa.style.translate = '0px'
-            tentativa.style.opacity = 100
+            if (ativo == true){
+                procura.innerHTML = `0 a 1000`
+                tentativa.innerHTML = `0`
+            }else{
+                procura.innerHTML = `${comeco} a ${final}`
+                procura.style.translate = '0px'
+                procura.style.opacity = 100
+                tentativa.innerHTML = `${contador}`
+                tentativa.style.translate = '0px'
+                tentativa.style.opacity = 100
+            }
         }, 6800);
 
         // se achar a chave, para a animação
@@ -1237,25 +1282,83 @@ function analisar(){
                 comeco = 0
                 meio = 0
                 contador = 0
-                cancelAnimationFrame(id)
-            }else{
-                id = requestAnimationFrame(analisar)
+                final = arr.length - 1
             }
+            ativo = false
         }, 10000);
     }
 }
 
 function iniciar(){
     analisar()
+
+    setTimeout(() => {
+        
+    }, 10000);
 }
 
 function reiniciar(){
-    meio = encontrar.value
+    comeco = 0
+    meio = 0
+    contador = 0
+    final = arr.length - 1
+    ativo = true
+
     animar()
+    encontrar.value = ''
+
+    setTimeout(() => {
+        encontrar.focus()
+    }, 1000);
+
+    // não deixa o conteúdo sair do lugar
+
+    chute.style.translate = '0px'
+    chute.style.opacity = 100
+
     setTimeout(() => {
         chute.innerHTML = `0`
         mm.innerHTML = `maior ou menor?`
         procura.innerHTML = `0 a 1000`
         tentativa.innerHTML = `0`
+        chute.style.translate = '0px'
     }, 600);
+
+    setTimeout(() => {
+        if (arr[meio] == encontrar.value){
+            chute.innerHTML = `0`
+        }else{
+            chute.innerHTML = `0`
+        }
+    }, 800);
+
+    setTimeout(() => {
+        mm.style.translate = '0px'
+        mm.style.opacity = 100
+    }, 3000);
+
+    setTimeout(() => {
+        mm.style.translate = '0px'
+    }, 3600);
+
+    setTimeout(() => {
+        mm.innerHTML = `maior ou menor?`
+    }, 3800);
+
+    setTimeout(() => {
+        procura.style.translate = '0px'
+        procura.style.opacity = 100
+        tentativa.style.translate = '0px'
+        tentativa.style.opacity = 100
+    }, 6000);
+
+    setTimeout(() => {
+        procura.style.translate = '0px'
+        tentativa.style.translate = '0px'
+    }, 6600);
+
+    setTimeout(() => {
+        procura.innerHTML = `0 a 1000`
+        tentativa.innerHTML = `0`
+    }, 6800);
 }
