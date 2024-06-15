@@ -68,7 +68,7 @@ function trocar() {
     ant.innerHTML = 'voltar'
     animar()
 
-    if (pos == 1) pos = 2
+    if (pos == 1) pos = 11
 
     // posição == página
     switch (pos) {
@@ -546,7 +546,7 @@ function experiente3(){
             (aprender <strong>"Bubble Sort"</strong>)
             <br>
             <br>
-            Com esse algoritmo nós trabalhamos com <mark>INÍCIO</mark> <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> e <mark>FIM</mark>.
+            Com esse algoritmo nós trabalhamos com <span id="cor" class="pag7">as posições</span> <mark>INÍCIO</mark>, <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> e <mark>FIM</mark>.
             <br>
             <br>
             <p id="binary"><img src="imagens/i.m.f.png"></p>
@@ -571,7 +571,7 @@ function experiente4(){
         titulo.innerHTML = `Prática (parte 1/3)`
         parag.innerHTML = `
         <p>
-            O código será dividido em <strong>3 partes</strong> para melhor entendimento. (ao final, veremos o algoritmo completo)
+            <strong>O código será dividido em 3 partes para melhor entendimento. (ao final, veremos o algoritmo completo)</strong>
             <br>
             <br>
             <strong>OBS:</strong> no exemplo a nossa variável <strong>meio</strong> já estava modificada, mas você precisa declarar ela como <strong>(meio = 0)</strong>
@@ -590,12 +590,14 @@ function experiente5(){
         titulo.innerHTML = `Prática (parte 2/3)`
         parag.innerHTML = `
         <p>
-            <mark>CHAVE</mark>: <strong>7</strong> &nbsp; <mark>INÍCIO</mark>: <strong><span id="cor" class="pag7">0</span></strong> &nbsp; <mark>FIM</mark>: <strong><span id="cor" class="pag7">8</span></strong>
-            <br>
+            <strong>VETOR DE EXEMPLO:</strong>
             <br>
             <strong>1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9</strong>
             <br>
             <span id="cor" class="pag7"> &nbsp;0 &nbsp; 1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8</span>
+            <br>
+            <br>
+            <mark>CHAVE</mark>: <strong>7</strong> &nbsp; <mark>INÍCIO</mark>: <strong><span id="cor" class="pag7">0</span></strong> &nbsp; <mark>FIM</mark>: <strong><span id="cor" class="pag7">8</span></strong>
             <br>
             <br>
             <p id="binary"><img src="imagens/binary2.png"></p>
@@ -670,7 +672,7 @@ function experiente8(){
         parag.innerHTML = `
         <p>
             <p id="chave">
-                <mark>CHAVE</mark> <input type="number" id="encontrar" min="0" max="1000" maxlength="4" placeholder="digite sua chave aqui">
+                <mark class="sombra">CHAVE</mark> <input type="number" id="encontrar" class="sombra" min="0" max="1000" maxlength="4" placeholder="digite sua chave">
             </p>
             <br>
             <br>
@@ -700,6 +702,10 @@ function experiente8(){
             <p id="tentativa">0</p>
         </p>`
     }, 900);
+
+    setTimeout(() => {
+        encontrar.focus()
+    }, 1000);
 }
 
 // PÁGINAS
@@ -1136,7 +1142,7 @@ function pagina11(){
         parag.innerHTML = `
         <p>
             <p id="chave">
-                <mark>CHAVE</mark> <input type="number" id="encontrar" min="0" max="1000" maxlength="4" placeholder="digite sua chave aqui">
+                <mark class="sombra">CHAVE</mark> <input type="number" id="encontrar"  class="sombra" min="0" max="1000" maxlength="4" placeholder="digite sua chave">
             </p>
             <br>
             <br>
