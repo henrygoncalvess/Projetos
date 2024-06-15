@@ -68,7 +68,7 @@ function trocar() {
     ant.innerHTML = 'voltar'
     animar()
 
-    if (pos == 1) pos = 11
+    if (pos == 1) pos = 2
 
     // posição == página
     switch (pos) {
@@ -1088,6 +1088,10 @@ function pagina10(){
 }
 
 function pagina11(){
+    comeco = 0
+    meio = 0
+    contador = 0
+    final = arr.length - 1
 
     setTimeout(() => {
         avan.style.borderRadius = '20px'
@@ -1102,28 +1106,29 @@ function pagina11(){
             <br>
             <br>
             <p id="chave">
+                <mark id="buscando">PROCURANDO. . .</mark>
                 <mark id="algoritmo" onclick="iniciar()">PROCURAR</mark>
                 <mark id="algoritmo2" onclick="reiniciar()">REINICIAR</mark>
             </p>
             <br>
             <br>
             <br>
-            <p id="chave">Chute</p>
+            <p id="chave"><strong>Chute</strong></p>
             <br>
             <p id="chute">0<p>
             <br>
             <br>
-            <p id="chave">A chave é...</p>
+            <p id="chave"><strong>A chave é...</strong></p>
             <br>
             <p id="mm">maior ou menor?</p>
             <br>
             <br>
-            <p id="chave">Procurando</p>
+            <p id="chave"><strong>Procurando</strong></p>
             <br>
             <p id="procura">0 a 1000</p>
             <br>
             <br>
-            <p id="chave">Tentativas</p>
+            <p id="chave"><strong>Tentativas</strong></p>
             <br>
             <p id="tentativa">0</p>
         </p>`
@@ -1145,15 +1150,19 @@ function analisar(){
     var tentativa = document.getElementById('tentativa')
     var procura = document.getElementById('procura')
     var mm = document.getElementById('mm')
-    var algoritmo2 = document.getElementById('algoritmo2')
+    let algoritmo = document.getElementById('algoritmo')
+    let algoritmo2 = document.getElementById('algoritmo2')
+    let buscando = document.getElementById('buscando')
 
-    // se a pessoa não apertar o botão INICIAR
-    // chave é considerada  --> 0
     if (encontrar.value < 0 || encontrar.value > 1000 || encontrar.value.length == 0){
         window.alert('ERRO!!! Apenas valores de 0 a 1000')
         encontrar.value = ''
         encontrar.focus()
     }else{
+        algoritmo.style.display = 'none'
+        algoritmo.innerHTML = 'CONTINUAR'
+        algoritmo2.style.display = 'none'
+        buscando.style.display = 'inline'
 
         // algoritmo de busca binária
         meio = parseInt((comeco + final) / 2)
@@ -1194,8 +1203,8 @@ function analisar(){
                 mm.style.display = 'block'
             }else{
                 if (arr[meio] == encontrar.value){
-                    chute.innerHTML = `A chave ${encontrar.value} foi encontrada`
-                    mm.style.display = 'none'
+                    buscando.innerHTML = 'Chave encontrada!'
+                    chute.innerHTML = `${meio}`
                 }else{
                     chute.innerHTML = `${meio}`
                 }
@@ -1227,10 +1236,14 @@ function analisar(){
             if (ativo == true){
                 mm.innerHTML = `maior ou menor?`
             }else{
-                if (maior == true){
-                    mm.innerHTML = `MAIOR`
+                if (arr[meio] == encontrar.value){
+                    mm.innerHTML = `IGUAL`
                 }else{
-                    mm.innerHTML = `MENOR`
+                    if (maior == true){
+                        mm.innerHTML = `MAIOR`
+                    }else{
+                        mm.innerHTML = `MENOR`
+                    }
                 }
                 mm.style.translate = '0px'
                 mm.style.opacity = 100
@@ -1278,13 +1291,16 @@ function analisar(){
 
         // se achar a chave, para a animação
         setTimeout(() => {
+            algoritmo.style.display = 'inline'
+            algoritmo2.style.display = 'inline'
+            buscando.style.display = 'none'
             if (arr[meio] == encontrar.value){
                 comeco = 0
                 meio = 0
                 contador = 0
                 final = arr.length - 1
+                algoritmo.style.display = 'none'
             }
-            ativo = false
         }, 10000);
     }
 }
@@ -1298,6 +1314,14 @@ function iniciar(){
 }
 
 function reiniciar(){
+    ativo = true
+    let algoritmo = document.getElementById('algoritmo')
+    let algoritmo2 = document.getElementById('algoritmo2')
+    let buscando = document.getElementById('buscando')
+    algoritmo.style.display = 'inline'
+    algoritmo.innerHTML = 'PROCURAR'
+    algoritmo2.style.display = 'inline'
+    buscando.innerHTML = 'PROCURANDO. . .'
     comeco = 0
     meio = 0
     contador = 0
@@ -1309,6 +1333,7 @@ function reiniciar(){
 
     setTimeout(() => {
         encontrar.focus()
+        ativo = false
     }, 1000);
 
     // não deixa o conteúdo sair do lugar
