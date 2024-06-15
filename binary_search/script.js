@@ -219,7 +219,7 @@ function trocar() {
             break
 
         case 48:
-            experiente8()
+            pagina11()
             setTimeout(() => {
                 pos = 49
             }, 900);
@@ -661,51 +661,6 @@ function experiente7(){
         Veja esse algoritmo funcionando em um vetor com 1000 elementos. E melhor ainda... procurando a <mark>SUA</mark> chave.
         </p>`
     }, 900);
-}
-
-function experiente8(){
-    setTimeout(() => {
-        avan.style.borderRadius = '20px'
-        avan.style.padding = '5px 10px'
-        avan.innerHTML = 'Voltar ao início'
-        titulo.style.display = `none`
-        parag.innerHTML = `
-        <p>
-            <p id="chave">
-                <mark class="sombra">CHAVE</mark> <input type="number" id="encontrar" class="sombra" min="0" max="1000" maxlength="4" placeholder="digite sua chave">
-            </p>
-            <br>
-            <br>
-            <p id="chave">
-                <mark id="algoritmo"  onclick="analisar()">INICIAR</mark>
-            </p>
-            <br>
-            <br>
-            <br>
-            <p id="chave">Chute</p>
-            <br>
-            <p id="chute">0<p>
-            <br>
-            <br>
-            <p id="chave">A chave é...</p>
-            <br>
-            <p id="mm">maior ou menor?</p>
-            <br>
-            <br>
-            <p id="chave">Procurando</p>
-            <br>
-            <p id="procura">0 a 1000</p>
-            <br>
-            <br>
-            <p id="chave">Tentativas</p>
-            <br>
-            <p id="tentativa">0</p>
-        </p>`
-    }, 900);
-
-    setTimeout(() => {
-        encontrar.focus()
-    }, 1000);
 }
 
 // PÁGINAS
