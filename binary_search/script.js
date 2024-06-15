@@ -203,6 +203,20 @@ function trocar() {
                 pos = 46
             }, 900);
             break
+
+        case 46:
+            experiente6()
+            setTimeout(() => {
+                pos = 47
+            }, 900);
+            break
+
+        case 47:
+            experiente7()
+            setTimeout(() => {
+                pos = 48
+            }, 900);
+            break
     }
 }
 
@@ -315,6 +329,14 @@ function voltar() {
 
         case 45:
             experiente4()
+            break
+        
+        case 46:
+            experiente5()
+            break
+
+        case 47:
+            experiente6()
             break
     }
 }
@@ -458,7 +480,7 @@ function experiente(){
     ant.style.padding = '5px 8px 8px 30px'
     ant.innerHTML = 'voltar'
     setTimeout(() => {
-        titulo.innerHTML = `Busca sequencial`
+        titulo.innerHTML = `Vamos revisar o que é uma <br> Busca Sequencial`
         parag.innerHTML = `
         <p>
             Nosso algoritmo começa do <strong>início</strong> do vetor e verifica cada elemento, um por um, até encontrar a chave ou até chegar ao final do vetor.
@@ -467,13 +489,12 @@ function experiente(){
             Linguagem de exemplo: <mark style="background: rgb(255, 208, 0, 0.385);">JavaScript</mark>
             <br>
             <br>
-            <img src="imagens/busca sequencial.png">
-            <br>
+            <p id="binary"><img src="imagens/busca sequencial.png"></p>
             <br>
             <strong>O contador serve pra verificar cada posição do Vetor.</strong>
             <br>
             <br>
-            Se for a chave, é mostrado na tela a posição em que ela foi encontrada (que é --> <strong>3</strong>)
+            Se for a chave, é mostrado na tela a posição em que ela foi encontrada (que é <strong>3</strong>)
             <br>
             <br>
             Se não for a chave, é somado <strong>1</strong> ao contador e ele pula pra próxima posição
@@ -514,7 +535,6 @@ function experiente3(){
             <br>
             <img src="imagens/i.m.f.png">
             <br>
-            <br>
             <strong>OBS:</strong> meio --> divisão inteira.
             <br>
             <br>
@@ -535,14 +555,13 @@ function experiente4(){
         titulo.innerHTML = `Prática (parte 1/3)`
         parag.innerHTML = `
         <p>
-            O código será dividido em <strong>3 partes</strong> para fácil entendimento. (ao final, veremos o algoritmo completo)
+            O código será dividido em <strong>3 partes</strong> para melhor entendimento. (ao final, veremos o algoritmo completo)
             <br>
             <br>
             <strong>OBS:</strong> no exemplo a nossa variável <strong>meio</strong> já estava modificada, mas você precisa declarar ela como <strong>(meio = 0)</strong>
             <br>
             <br>
             <img src="imagens/binary1.png">
-            <br>
             <br>
             Essa parte do algoritmo é a mais simples de entender. Nós iremos calcular o meio do vetor, somando as posições <mark>início</mark> e <mark>fim</mark> dele. Se o nosso meio for igual a nossa chave, termina por aí.
         </p>`
@@ -551,9 +570,6 @@ function experiente4(){
 
 function experiente5(){
     setTimeout(() => {
-        // some com o botão de avançar
-        avan.style.display = 'none'
-
         ant.style.opacity = 100
         titulo.innerHTML = `Prática (parte 2/3)`
         parag.innerHTML = `
@@ -568,7 +584,6 @@ function experiente5(){
             <br>
             <img src="imagens/binary2.png">
             <br>
-            <br>
             <strong>Resumindo:</strong> Na posição do meio o valor é <strong>5</strong> que é menor que a chave. Então...
             <br>
             <br>
@@ -581,6 +596,50 @@ function experiente5(){
             <strong>6 &nbsp; 7 &nbsp; 8 &nbsp; 9</strong>
             <br>
             <span id="cor" class="pag7">5 &nbsp; 6 &nbsp; 7 &nbsp; 8</span>
+            <br>
+            <br>
+            Observe que neste exemplo, a próxima verificação retornaria a <mark>chave</mark>, pois:
+            <br>
+            <br>
+            meio = <span id="cor" class="pag7">5</span> <strong>+</strong> <span id="cor" class="pag7">8</span> = <strong>13</strong>
+            <br>
+            A divisão inteira de <strong>13 &divide; 2</strong> = <span id="cor" class="pag7">6</span>
+            <br>
+            <br>
+            E <span id="cor" class="pag7">6</span> é a posição da nossa <mark>chave</mark>
+        </p>`
+    }, 900);
+}
+
+function experiente6(){
+    setTimeout(() => {
+        ant.style.opacity = 100
+        titulo.innerHTML = `Prática (parte 3/3)`
+        parag.innerHTML = `
+        <p>
+            <strong>E por fim...</strong>
+            <br>
+            <br>
+            <img src="imagens/binary3.png">
+            <br>
+            Isso significa que se nosso algoritmo for diminuindo o tamanho de busca a ponto do início ser maior que o fim, é porque essa chave não existe.
+            <br>
+            <br>
+            Agora vamos dar uma olhada no código completo...
+        </p>`
+    }, 900);
+}
+
+function experiente7(){
+    setTimeout(() => {
+        // some com o botão de avançar
+        avan.style.display = 'none'
+
+        ant.style.opacity = 100
+        titulo.innerHTML = `Binary Search`
+        parag.innerHTML = `
+        <p>
+        <img src="imagens/binarySearch.png">
         </p>`
     }, 900);
 }

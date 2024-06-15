@@ -72,6 +72,10 @@
     #PosPag7 {
         padding: 0px 5.5px;
     }
+
+    img{
+        border-radius: 0px;
+    }
 }
 
 @media screen and (max-width: 395px) {

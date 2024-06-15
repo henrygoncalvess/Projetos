@@ -24,7 +24,7 @@ body {
 }
 
 /* bloco com o conteúdo */
-main {
+main{
     padding: 20px;
     margin: 8px;
     flex: 0 1 500px;
