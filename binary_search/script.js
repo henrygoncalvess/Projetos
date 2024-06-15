@@ -196,6 +196,13 @@ function trocar() {
                 pos = 45
             }, 900);
             break
+
+        case 45:
+            experiente5()
+            setTimeout(() => {
+                pos = 46
+            }, 900);
+            break
     }
 }
 
@@ -304,6 +311,10 @@ function voltar() {
 
         case 44:
             experiente3()
+            break
+
+        case 45:
+            experiente4()
             break
     }
 }
@@ -495,17 +506,19 @@ function experiente3(){
         <p>
             A <strong>Pesquisa Binária</strong> é melhor utilizada em vetores maiores, e ele precisa estar <strong>ORDENADO.</strong>
             <br>
+            (aprender <strong>"Bubble Sort"</strong>)
+            <br>
             <br>
             Com esse algoritmo nós trabalhamos com <mark>INÍCIO</mark> <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> e <mark>FIM</mark>.
             <br>
             <br>
-            img variáveis ini mei fim
+            <img src="imagens/i.m.f.png">
             <br>
             <br>
             <strong>OBS:</strong> meio --> divisão inteira.
             <br>
             <br>
-            Nossa verificação sempre vai começar pelo <mark style="background: rgba(0, 174, 255, 0.767);">meio</mark> e dependendo do resultado, nossas variáveis <mark>início</mark> e <mark>fim</mark> mudam para uma posição a frente ou para uma posição atrás.
+            Nossa verificação sempre vai começar pelo <mark style="background: rgba(0, 174, 255, 0.767);">meio</mark> e dependendo do resultado, nossas variáveis <mark>início</mark> ou <mark>fim</mark> podem mudar.
             <br>
             <br>
             Isso faz com que nosso algoritmo "diminuia" o vetor a cada verificação, e quanto menos números pra verificar, mais fácil vai ser de encontrar o valor procurado.
@@ -518,14 +531,37 @@ function experiente3(){
 
 function experiente4(){
     setTimeout(() => {
+        ant.style.opacity = 100
+        titulo.innerHTML = `Prática (parte 1/3)`
+        parag.innerHTML = `
+        <p>
+            O código será dividido em <strong>3 partes</strong> para fácil entendimento.
+            <br>
+            <br>
+            <strong>OBS:</strong> no exemplo a nossa variável <strong>meio</strong> já estava modificada, mas você precisa declarar ela como <strong>(meio = 0)</strong>
+            <br>
+            <br>
+            <img src="imagens/binary1.png">
+            <br>
+            <br>
+            Essa parte do algoritmo é a mais simples de entender. Nós iremos calcular o meio do vetor, somando as posições <mark>início</mark> e <mark>fim</mark> dele. Se o nosso meio for igual a nossa chave, termina por aí.
+        </p>`
+    }, 900);
+}
+
+function experiente5(){
+    setTimeout(() => {
         // some com o botão de avançar
         avan.style.display = 'none'
 
         ant.style.opacity = 100
-        titulo.innerHTML = `Prática`
+        titulo.innerHTML = `Prática (parte 2/3)`
         parag.innerHTML = `
         <p>
-            img binary search
+            Senão...
+            <br>
+            <br>
+            
             <br>
             <br>
             

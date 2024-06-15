@@ -47,26 +47,25 @@
 
 // Binary Search
 var inicio = 0
-var meio = parseInt((inicio + fim) / 2)
-var fim = arr.length - 1
-var contador = 0
+var meio = 0
+var fim = vetor.length - 1
 while (true){
-    middle = parseInt((start + end) / 2)
-    if (arr[middle] == key){
-        cont++
-        console.log(`the key ${key} was found in position ${middle}\nattempts: ${cont}`)
+    meio = parseInt((inicio + fim) / 2)
+    if (vetor[meio] == chave){
+        console.log(`Chave encontrada na posição ${meio}`)
         break
-    }else{
-        cont++
-        if (arr[middle] < key){
-            start = middle + 1
+    }
+}
+else{
+        if (vetor[meio] < chave){
+            inicio = meio + 1
         }
         else{
-            end = middle - 1
+            fim = meio - 1
         }
     }
-    if (start > end){
-        console.log(`The key ${key} is not found`)
+    if (inicio > fim){
+        console.log(`The chave ${chave} is not found`)
         break
     }
 }
