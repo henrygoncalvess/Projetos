@@ -55,14 +55,13 @@ while (true){
         console.log(`Chave encontrada na posição ${meio}`)
         break
     }
-}
-else{
-        if (vetor[meio] < chave){
-            inicio = meio + 1
-        }
-        else{
-            fim = meio - 1
-        }
+    else{
+       if (vetor[meio] < chave){
+           inicio = meio + 1
+       }
+       else{
+           fim = meio - 1
+       }
     }
     if (inicio > fim){
         console.log(`The chave ${chave} is not found`)

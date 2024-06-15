@@ -535,7 +535,7 @@ function experiente4(){
         titulo.innerHTML = `Prática (parte 1/3)`
         parag.innerHTML = `
         <p>
-            O código será dividido em <strong>3 partes</strong> para fácil entendimento.
+            O código será dividido em <strong>3 partes</strong> para fácil entendimento. (ao final, veremos o algoritmo completo)
             <br>
             <br>
             <strong>OBS:</strong> no exemplo a nossa variável <strong>meio</strong> já estava modificada, mas você precisa declarar ela como <strong>(meio = 0)</strong>
@@ -558,13 +558,29 @@ function experiente5(){
         titulo.innerHTML = `Prática (parte 2/3)`
         parag.innerHTML = `
         <p>
-            Senão...
+            <mark>CHAVE</mark>: <strong>7</strong> &nbsp; <mark>INÍCIO</mark>: <strong><span id="cor" class="pag7">0</span></strong> &nbsp; <mark>FIM</mark>: <strong><span id="cor" class="pag7">8</span></strong>
             <br>
             <br>
-            
+            <strong>1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9</strong>
+            <br>
+            <span id="cor" class="pag7"> &nbsp;0 &nbsp; 1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8</span>
             <br>
             <br>
-            
+            <img src="imagens/binary2.png">
+            <br>
+            <br>
+            <strong>Resumindo:</strong> Na posição do meio o valor é <strong>5</strong> que é menor que a chave. Então...
+            <br>
+            <br>
+            <mark>INÍCIO</mark>: <strong><span id="cor" class="pag7">5</span></strong> &nbsp; <mark>FIM</mark>: <strong><span id="cor" class="pag7">8</span></strong>
+            <br>
+            <br>
+            Agora só procuramos a partir dos valores que sobraram:
+            <br>
+            <br>
+            <strong>6 &nbsp; 7 &nbsp; 8 &nbsp; 9</strong>
+            <br>
+            <span id="cor" class="pag7">5 &nbsp; 6 &nbsp; 7 &nbsp; 8</span>
         </p>`
     }, 900);
 }
