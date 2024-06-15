@@ -1102,7 +1102,8 @@ function pagina11(){
             <br>
             <br>
             <p id="chave">
-                <mark id="algoritmo"  onclick="analisar()">INICIAR</mark>
+                <mark id="algoritmo" onclick="analisar()">INICIAR</mark>
+                <mark id="algoritmo2" onclick="parar()">PARAR</mark>
             </p>
             <br>
             <br>
@@ -1252,4 +1253,8 @@ function analisar(){
             }
         }, 10000);
     }
+}
+
+function parar(){
+    window.alert('funcionando')
 }
