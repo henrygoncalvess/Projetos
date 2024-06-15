@@ -1102,8 +1102,8 @@ function pagina11(){
             <br>
             <br>
             <p id="chave">
-                <mark id="algoritmo" onclick="analisar()">INICIAR</mark>
-                <mark id="algoritmo2" onclick="parar()">PARAR</mark>
+                <mark id="algoritmo" onclick="iniciar()">PROCURAR</mark>
+                <mark id="algoritmo2" onclick="reiniciar()">REINICIAR</mark>
             </p>
             <br>
             <br>
@@ -1213,29 +1213,19 @@ function analisar(){
         setTimeout(() => {
             procura.style.translate = '-100px'
             procura.style.opacity = 0
+            tentativa.style.translate = '-100px'
+            tentativa.style.opacity = 0
         }, 6000);
 
         setTimeout(() => {
             procura.style.translate = '85px'
+            tentativa.style.translate = '85px'
         }, 6600);
 
         setTimeout(() => {
             procura.innerHTML = `${comeco} a ${final}`
             procura.style.translate = '0px'
             procura.style.opacity = 100
-        }, 6800);
-
-        // mudando o texto de "tentativas" conforme o programa é executado
-        setTimeout(() => {
-            tentativa.style.translate = '-100px'
-            tentativa.style.opacity = 0
-        }, 6000);
-
-        setTimeout(() => {
-            tentativa.style.translate = '85px'
-        }, 6600);
-
-        setTimeout(() => {
             tentativa.innerHTML = `${contador}`
             tentativa.style.translate = '0px'
             tentativa.style.opacity = 100
@@ -1255,6 +1245,17 @@ function analisar(){
     }
 }
 
-function parar(){
-    window.alert('funcionando')
+function iniciar(){
+    analisar()
+}
+
+function reiniciar(){
+    meio = encontrar.value
+    animar()
+    setTimeout(() => {
+        chute.innerHTML = `0`
+        mm.innerHTML = `maior ou menor?`
+        procura.innerHTML = `0 a 1000`
+        tentativa.innerHTML = `0`
+    }, 600);
 }
