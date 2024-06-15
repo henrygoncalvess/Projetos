@@ -54,6 +54,14 @@
     #PosPag7 {
         padding: 0px 6.5px;
     }
+
+    img{
+        border-radius: 0px;
+    }
+
+    #binary{
+        margin: 0px -20px;
+    }
 }
 
 @media screen and (max-width: 415px){
@@ -71,10 +79,6 @@
     }
     #PosPag7 {
         padding: 0px 5.5px;
-    }
-
-    img{
-        border-radius: 0px;
     }
 }
 

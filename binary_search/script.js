@@ -217,6 +217,18 @@ function trocar() {
                 pos = 48
             }, 900);
             break
+
+        case 48:
+            experiente8()
+            setTimeout(() => {
+                pos = 49
+            }, 900);
+        break
+
+        case 49:
+            inicio()
+            pos = 0
+            break
     }
 }
 
@@ -337,6 +349,10 @@ function voltar() {
 
         case 47:
             experiente6()
+            break
+
+        case 48:
+            experiente7()
             break
     }
 }
@@ -489,7 +505,7 @@ function experiente(){
             Linguagem de exemplo: <mark style="background: rgb(255, 208, 0, 0.385);">JavaScript</mark>
             <br>
             <br>
-            <p id="binary"><img src="imagens/busca sequencial.png"></p>
+            <p id="binary"><img src="imagens/busca_sequencial.png"></p>
             <br>
             <strong>O contador serve pra verificar cada posição do Vetor.</strong>
             <br>
@@ -533,7 +549,7 @@ function experiente3(){
             Com esse algoritmo nós trabalhamos com <mark>INÍCIO</mark> <mark style="background: rgba(0, 174, 255, 0.767);">MEIO</mark> e <mark>FIM</mark>.
             <br>
             <br>
-            <img src="imagens/i.m.f.png">
+            <p id="binary"><img src="imagens/i.m.f.png"></p>
             <br>
             <strong>OBS:</strong> meio --> divisão inteira.
             <br>
@@ -561,7 +577,7 @@ function experiente4(){
             <strong>OBS:</strong> no exemplo a nossa variável <strong>meio</strong> já estava modificada, mas você precisa declarar ela como <strong>(meio = 0)</strong>
             <br>
             <br>
-            <img src="imagens/binary1.png">
+            <p id="binary"><img src="imagens/binary1.png"></p>
             <br>
             Essa parte do algoritmo é a mais simples de entender. Nós iremos calcular o meio do vetor, somando as posições <mark>início</mark> e <mark>fim</mark> dele. Se o nosso meio for igual a nossa chave, termina por aí.
         </p>`
@@ -582,7 +598,7 @@ function experiente5(){
             <span id="cor" class="pag7"> &nbsp;0 &nbsp; 1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8</span>
             <br>
             <br>
-            <img src="imagens/binary2.png">
+            <p id="binary"><img src="imagens/binary2.png"></p>
             <br>
             <strong>Resumindo:</strong> Na posição do meio o valor é <strong>5</strong> que é menor que a chave. Então...
             <br>
@@ -620,7 +636,7 @@ function experiente6(){
             <strong>E por fim...</strong>
             <br>
             <br>
-            <img src="imagens/binary3.png">
+            <p id="binary"><img src="imagens/binary3.png"></p>
             <br>
             Isso significa que se nosso algoritmo for diminuindo o tamanho de busca a ponto do início ser maior que o fim, é porque essa chave não existe.
             <br>
@@ -632,14 +648,56 @@ function experiente6(){
 
 function experiente7(){
     setTimeout(() => {
-        // some com o botão de avançar
-        avan.style.display = 'none'
-
+        titulo.style.display = 'block'
         ant.style.opacity = 100
+        avan.innerHTML = 'COMEÇAR'
         titulo.innerHTML = `Binary Search`
         parag.innerHTML = `
         <p>
-        <img src="imagens/binarySearch.png">
+        <p id="binary"><img src="imagens/binarySearch.png"></p>
+        <br>
+        Veja esse algoritmo funcionando em um vetor com 1000 elementos. E melhor ainda... procurando a <mark>SUA</mark> chave.
+        </p>`
+    }, 900);
+}
+
+function experiente8(){
+    setTimeout(() => {
+        avan.style.borderRadius = '20px'
+        avan.style.padding = '5px 10px'
+        avan.innerHTML = 'Voltar ao início'
+        titulo.style.display = `none`
+        parag.innerHTML = `
+        <p>
+            <p id="chave">
+                <mark>CHAVE</mark> <input type="number" id="encontrar" min="0" max="1000" maxlength="4" placeholder="digite sua chave aqui">
+            </p>
+            <br>
+            <br>
+            <p id="chave">
+                <mark id="algoritmo"  onclick="analisar()">INICIAR</mark>
+            </p>
+            <br>
+            <br>
+            <br>
+            <p id="chave">Chute</p>
+            <br>
+            <p id="chute">0<p>
+            <br>
+            <br>
+            <p id="chave">A chave é...</p>
+            <br>
+            <p id="mm">maior ou menor?</p>
+            <br>
+            <br>
+            <p id="chave">Procurando</p>
+            <br>
+            <p id="procura">0 a 1000</p>
+            <br>
+            <br>
+            <p id="chave">Tentativas</p>
+            <br>
+            <p id="tentativa">0</p>
         </p>`
     }, 900);
 }

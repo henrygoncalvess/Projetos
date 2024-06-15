@@ -25,6 +25,7 @@ body {
 
 /* bloco com o conteúdo */
 main{
+    overflow: hidden;
     padding: 20px;
     margin: 8px;
     flex: 0 1 500px;
