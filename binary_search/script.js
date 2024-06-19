@@ -361,15 +361,13 @@ function voltar() {
 
 // animação de sumir e aparecer
 function animar(){
-    var id;
-    pos += -100
 
     // move o conteúdo pra esquerda <- e soma com os botões
-    resp1.style.translate = `${pos}px`
-    resp2.style.translate = `${pos}px`
-    resp3.style.translate = `${pos}px`
-    titulo.style.translate = `${pos}px`
-    parag.style.translate = `${pos}px`
+    resp1.style.translate = '-100px'
+    resp2.style.translate = '-100px'
+    resp3.style.translate = '-100px'
+    titulo.style.translate = '-100px'
+    parag.style.translate = '-100px'
     resp1.style.opacity = 0
     resp2.style.opacity = 0
     resp3.style.opacity = 0
@@ -377,12 +375,6 @@ function animar(){
     parag.style.opacity = 0
     ant.style.opacity = 0
     avan.style.opacity = 0
-
-    id = requestAnimationFrame(animar)
-    if (pos < -50){
-        cancelAnimationFrame(id)
-        pos += 100
-    }
 
     // move o conteúdo pra direita -> pra ele aparecer
     setTimeout(() => {
