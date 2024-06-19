@@ -1,6 +1,4 @@
-# Meus Projetos
-
-## vou criar ideias que vierem em mente conforme eu for aprendendo
+# Tirando minhas ideias do papel
 
 [-Resolução de Desafios-](https://henrygoncalvess.github.io/meus-projetos/desafios/desafios)
 
