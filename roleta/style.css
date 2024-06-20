@@ -10,11 +10,33 @@ body{
     font-family: 'Din round', Arial, Helvetica, sans-serif;
     width: 100vw;
     height: 100vh;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 }
 
-main{
-    background-color: lightgray;
+h1,
+input,
+#roleta{
+    margin: 20px 0px;
+}
+
+h1{
+    text-align: center;
+}
+
+#roleta{
+    flex: 0 0 100px;
+    background-color: white;
+    align-content: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
