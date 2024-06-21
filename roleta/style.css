@@ -39,6 +39,7 @@ h1{
     border-radius: 50%;
     width: 300px;
     height: 300px;
+    overflow: hidden;
 }
 
 button{
