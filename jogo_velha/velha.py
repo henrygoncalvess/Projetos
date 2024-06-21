@@ -7,17 +7,29 @@ jog = 0
 pc = 0
 
 def velha(coluna=0, linha=0):
+      match coluna:
+         case 1:
+            linha -= 3
+         case 2:
+            linha -= 6
+
       match coluna, linha:
          case 0, 0:
-            for l in range(0, len(lista)):
-               print(f'{l + 1} ->', end='')
-               for c in range(0, len(lista)):
-                  print(' ' * 2 + f'[ {lista[l][c]} ]', end='  ')
+            for c in range(0, len(lista)):
+               print(f'{c + 1} ->', end='')
+               for l in range(0, len(lista)):
+                  print(' ' * 2 + f'[ {lista[c][l]} ]', end='  ')
                print('\n')
          case _:
-            for l in range(0, len(lista)):
-               for c in range(0, len(lista)):
-                  print(' ' * 2 + f'[ {lista[l][c]} ]', end='  ')
+            for c in range(0, len(lista)):
+               for l in range(0, len(lista)):
+                  lista[c][l] = ' '
+                  if c == coluna:
+                     lista[coluna][linha - 1] = 'x'
+                  # else:
+                  #    lista[c][l] = ' '
+
+                  print(' ' * 2 + f'[ {lista[c][l]} ]', end='  ')
                print('\n')
 
 
@@ -40,11 +52,11 @@ def jogoX():
    
    while lin != lista[col][0] and lin != lista[col][1] and lin != lista[col][2]:
       lin = (int(input(f'Escolha sua POSIÇÃO\n[ {lista[col][0]} ]  [ {lista[col][1]} ]  [ {lista[col][2]} ]: ')[0]))
-   
+
    print('Você escolheu...\n')
    sleep(0.800)
 
-   velha(1)
+   velha(col, lin)
       
    print(f"\n{'vitórias':^30}")
    print(f"{f'Você: {jog}    Computador: {pc}':^30}")
