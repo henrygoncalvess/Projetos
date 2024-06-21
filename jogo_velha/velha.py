@@ -20,7 +20,7 @@ def jogoX():
    
    #marca = str(input('Escolha sua marca [X] ou [O]: '))
    
-   col = int(input('Escolha a coluna: '))
+   col = (int(input('Escolha a coluna: '))) - 1
    lin = int(input(f'Escolha uma posição\n[ {lista[col][0]} ]  [ {lista[col][1]} ]  [ {lista[col][2]} ]: '))
       
    print(f"\n{'vitórias':^30}")
