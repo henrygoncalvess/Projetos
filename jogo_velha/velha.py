@@ -19,9 +19,15 @@ def jogoX():
    velha()
    
    #marca = str(input('Escolha sua marca [X] ou [O]: '))
+
+   col = 5
+   lin = 10
+
+   while col != 0 and col != 1 and col != 2:
+      col = (int(input('Escolha a coluna: '))) - 1
    
-   col = (int(input('Escolha a coluna: '))) - 1
-   lin = int(input(f'Escolha uma posição\n[ {lista[col][0]} ]  [ {lista[col][1]} ]  [ {lista[col][2]} ]: '))
+   while lin != lista[col][0] and col != lista[col][1] and col != lista[col][2]:
+      lin = int(input(f'Escolha uma posição\n[ {lista[col][0]} ]  [ {lista[col][1]} ]  [ {lista[col][2]} ]: '))
       
    print(f"\n{'vitórias':^30}")
    print(f"{f'Você: {jog}    Computador: {pc}':^30}")
