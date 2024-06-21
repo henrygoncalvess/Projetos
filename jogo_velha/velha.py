@@ -5,29 +5,34 @@ lista = [[1,2,3], [4,5,6], [7,8,9]]
 jog = 0
 pc = 0
 
-def velha():
+def velha(coluna=0, linha=0):
       for l in range(0, len(lista)):
-         print(l + 1, end='')
+         print(f'{l + 1} ->', end='')
          for c in range(0, len(lista)):
             print(' ' * 2 + f'[ {lista[l][c]} ]', end='  ')
          print('\n')
 
 
 def jogoX():
-   print(f"{'JOGO DA VELHA':^30}\n")
+   print(f"{'JOGO DA VELHA':^35}\n")
    
    velha()
    
-   #marca = str(input('Escolha sua marca [X] ou [O]: '))
 
    col = 5
-   lin = 10
+   lin = 0
+   marca = ' '
 
-   while col != 0 and col != 1 and col != 2:
-      col = (int(input('Escolha a coluna: '))) - 1
+   while 'o' not in marca and 'x' not in marca:
+      marca = str(input('Escolha sua marca [X] ou [O]: ')[0]).lower()
    
-   while lin != lista[col][0] and col != lista[col][1] and col != lista[col][2]:
-      lin = int(input(f'Escolha uma posição\n[ {lista[col][0]} ]  [ {lista[col][1]} ]  [ {lista[col][2]} ]: '))
+   while col != 0 and col != 1 and col != 2:
+      col = (int(input('Escolha uma COLUNA\n[ 1 ] [ 2 ] [ 3 ]: ')[0])) - 1
+   
+   while lin != lista[col][0] and lin != lista[col][1] and lin != lista[col][2]:
+      lin = (int(input(f'Escolha sua POSIÇÃO\n[ {lista[col][0]} ]  [ {lista[col][1]} ]  [ {lista[col][2]} ]: ')[0]))
+
+
       
    print(f"\n{'vitórias':^30}")
    print(f"{f'Você: {jog}    Computador: {pc}':^30}")
