@@ -1,4 +1,5 @@
 var roda = document.getElementById('roleta')
+var item = document.getElementById('out')
 var velocidade = 0
 
 function rodar(){
@@ -13,4 +14,8 @@ function rodar(){
         cancelAnimationFrame(id)
         velocidade = 0
     }
+}
+
+function output(){
+    item.innerHTML = dado.value
 }
