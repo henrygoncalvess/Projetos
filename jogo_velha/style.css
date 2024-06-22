@@ -43,15 +43,10 @@ h1{
     margin-bottom: 20px;
 }
 
-div{
-    background-color: lightgray;
-    height: 360px;
-}
-
 table{
     border-collapse: collapse;
     width: 100%;
-    height: min(360px, 80vw);
+    height: min(370px, 80vw);
 }
 
 td{
