@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Python</title>
+    <style>
+        body{
+            background-color: #282A36;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.1em;
+        }
+
+        #rosa{
+            color: #FF79C6;
+        }
+
+        #verde{
+            color: #50FA7B;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+<span id="rosa">from</span> random <span id="rosa">import</span> randint
+<span id="rosa">from</span> time <span id="rosa">import</span> <span id="verde">sleep</span>
+
+lista = [[' ',' ',' '], [' ',' ',' '], [' ',' ',' ']]
+lista2 = [[1,2,3], [4,5,6], [7,8,9]]
+
+jog = 0
+pc = 0
+
+<span id="rosa">def</span> <span id="verde">velha</span>(coluna=0, linha=0, marca=''):
+    <span id="rosa">match</span> coluna:
+        <span id="rosa">case</span> 1:
+            linha -= 3
+        <span id="rosa">case</span> 2:
+            linha -= 6
+
+    <span id="rosa">match</span> coluna, linha, marca:
+        <span id="rosa">case</span> 0, 0, '':
+            <span id="rosa">for</span> c <span id="rosa">in</span> range(0, <span id="verde">len</span>(lista2)):
+            <span id="verde">print</span>(f'{c + 1} ->', end='')
+            <span id="rosa">for</span> l <span id="rosa">in</span> range(0, <span id="verde">len</span>(lista2)):
+                <span id="verde">print</span>(' ' * 2 + f'[ {lista2[c][l]} ]', end='  ')
+            <span id="verde">print</span>('\n')
+        <span id="rosa">case</span> _:
+            <span id="rosa">for</span> c <span id="rosa">in</span> range(0, <span id="verde">len</span>(lista)):
+            <span id="rosa">for</span> l <span id="rosa">in</span> range(0, <span id="verde">len</span>(lista)):
+                <span id="rosa">if</span> c <span id="rosa">==</span> coluna:
+                    lista[coluna][linha - 1] = marca
+
+                <span id="verde">print</span>(' ' * 2 + f'[ {lista[c][l]} ]', end='  ')
+            <span id="verde">print</span>('\n')
+
+
+
+<span id="rosa">def</span> <span id="verde">jogoX</span>():
+<span id="verde">print</span>(f"{'JOGO DA VELHA':^35}\n")
+
+<span id="verde">velha</span>()
+
+marca = ' '
+marca2 = ' '
+
+<span id="rosa">while True</span>:
+    lista = [[1,2,3], [4,5,6], [7,8,9]]
+    col = 5
+    lin = 0
+    col2 = 5
+    lin2 = 0
+
+    <span id="rosa">while</span> 'O' <span id="rosa">not in</span> marca <span id="rosa">and</span> 'X' <span id="rosa">not in</span> marca:
+        marca = str(<span id="verde">input</span>('Escolha sua marca [X] ou [O]: ')[0]).<span id="verde">upper</span>()
+    
+    <span id="rosa">while</span> col <span id="rosa">!=</span> 0 <span id="rosa">and</span> col <span id="rosa">!=</span> 1 <span id="rosa">and</span> col <span id="rosa">!=</span> 2:
+        col = (int(<span id="verde">input</span>('Escolha uma COLUNA\n[ 1 ] [ 2 ] [ 3 ]: ')[0])) - 1
+    
+    <span id="rosa">while</span> lin <span id="rosa">!=</span> lista[col][0] <span id="rosa">and</span> lin <span id="rosa">!=</span> lista[col][1] <span id="rosa">and</span> lin <span id="rosa">!=</span> lista[col][2]:
+        lin = (int(<span id="verde">input</span>(f'Escolha sua POSIÇÃO\n[ {lista[col][0]} ]  [ {lista[col][1]} ]  [ {lista[col][2]} ]: ')[0]))
+
+    <span id="verde">print</span>('Você escolheu...\n')
+    <span id="verde">sleep</span>(0.800)
+
+    <span id="verde">velha</span>(col, lin, marca)
+
+    <span id="verde">print</span>('O computador escolheu...\n')
+    <span id="verde">sleep</span>(1.5)
+
+    col2 = randint(0, 2)
+    <span id="rosa">match</span> col2:
+        <span id="rosa">case</span> 0:
+            lin2 = randint(1, 3)
+        <span id="rosa">case</span> 1:
+            lin2 = randint(4, 5)
+        <span id="rosa">case</span> 2:
+            lin2 = randint(6, 8)
+
+    <span id="rosa">if</span> marca == 'X':
+        marca2 = 'O'
+    <span id="rosa">else</span>:
+        marca2 = 'X'
+
+    <span id="verde">velha</span>(col2, lin2, marca2)
+
+    resp = ''
+
+    <span id="rosa">while</span> 'n' <span id="rosa">not</span> <span id="rosa">in</span> resp <span id="rosa">and</span> 's' <span id="rosa">not in</span> resp:
+        resp = str(<span id="verde">input</span>('Quer continuar? ')[0]).<span id="verde">lower</span>()
+
+    <span id="rosa">if</span> resp <span id="rosa">==</span> 'n':
+        <span id="rosa">break</span>
+    
+<span id="verde">print</span>(f"\n{'vitórias':^30}")
+<span id="verde">print</span>(f"{f'Você: {jog}    Computador: {pc}':^30}")
+
+
+<span id="verde">jogoX</span>()
+    </pre>
+</body>
+</html>

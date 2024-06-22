@@ -42,6 +42,7 @@ section{
 h1{
     text-shadow: 2px 2px 2px rgba(0, 75, 125, 0.188);
     color: rgb(0, 7, 82);
+    flex: 1 0 100vw;
 }
 
 h1,
