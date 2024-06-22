@@ -15,7 +15,7 @@ body{
     font-size: 1em;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 main{
@@ -34,12 +34,13 @@ section{
     height: max-content;
     border-radius: 20px;
     box-shadow: 2px 2px 6px rgba(0, 75, 125, 0.188);
-    padding: 10px 30px 30px 30px;
+    padding: 30px 10px;
     margin: 5px;
 }
 
 h1{
     text-align: center;
+    margin-bottom: 20px;
 }
 
 div{
@@ -56,7 +57,7 @@ table{
 td{
     width: 20px;
     height: 20px;
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
 td:nth-child(1){
@@ -80,7 +81,7 @@ td:nth-child(3){
 }
 
 td:hover{
-    background-color: lightgray;
+    background-color: rgb(232, 231, 231);
 }
 
 footer{
