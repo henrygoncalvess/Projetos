@@ -1,3 +1,6 @@
+var x = document.getElementsByTagName('label')[0]
+var o = document.getElementsByTagName('label')[1]
+
 var cima1 = document.getElementById('a1')
 var cima2 = document.getElementById('a2')
 var cima3 = document.getElementById('a3')
@@ -46,6 +49,20 @@ function marcar(posicao){
 
         case 9:
             baixo3.style.background = 'black'
+            break
+    }
+}
+
+function checado(num){
+    switch (num){
+        case 1:
+            x.style.color = 'blue'
+            o.style.color = 'black'
+            break
+    
+        case 2:
+            o.style.color = 'red'
+            x.style.color = 'black'
             break
     }
 }

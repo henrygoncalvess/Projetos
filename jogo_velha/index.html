@@ -12,9 +12,15 @@
         <h1>Jogo da velha</h1>
         
         <section>
-            <h2>Escolha sua marca:</h2>
-            <label for="xis">X <input type="radio" name="op" id="xis"></label>
-            <label for="bolinha">O <input type="radio" name="op" id="bolinha"></label>
+            <h2>Escolha sua marca</h2>
+            
+            <label for="xis">
+                <span>X</span><input type="radio" name="op" id="xis" checked onfocus="checado(1)">
+            </label>
+
+            <label for="bolinha">
+                <span>O</span><input type="radio" name="op" id="bolinha" onfocus="checado(2)">
+            </label>
 
             <table>
                 <tr>

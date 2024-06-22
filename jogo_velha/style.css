@@ -87,8 +87,20 @@ td:hover{
     background-color: rgb(232, 231, 231);
 }
 
+label{
+    margin: 0px 50px;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+label:nth-child(2){
+    color: blue;
+}
+
 input{
     margin: 20px 0px;
+    width: 15px;
+    height: 15px;
 }
 
 footer{
