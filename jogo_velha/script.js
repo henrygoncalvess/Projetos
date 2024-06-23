@@ -76,12 +76,34 @@ function checado(num){
     switch (num){
         case 1:
             escolha = 1
+
+            cima1.style.opacity = '0'
+            cima2.style.opacity = '0'
+            cima3.style.opacity = '0'
+            meio1.style.opacity = '0'
+            meio2.style.opacity = '0'
+            meio3.style.opacity = '0'
+            baixo1.style.opacity = '0'
+            baixo2.style.opacity = '0'
+            baixo3.style.opacity = '0'
+
             x.style.color = 'blue'
             o.style.color = 'black'
             break
     
         case 2:
             escolha = 2
+
+            cima1.style.opacity = '0'
+            cima2.style.opacity = '0'
+            cima3.style.opacity = '0'
+            meio1.style.opacity = '0'
+            meio2.style.opacity = '0'
+            meio3.style.opacity = '0'
+            baixo1.style.opacity = '0'
+            baixo2.style.opacity = '0'
+            baixo3.style.opacity = '0'
+            
             o.style.color = 'red'
             x.style.color = 'black'
             break
