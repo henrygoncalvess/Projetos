@@ -27,9 +27,9 @@ function marcar(posicao){
     computador = parseInt(Math.random() * 8) + 1
 
     if (escolha == 2){
-        foto = '<img src="imagens/o.png">'
+        fotoJOG = '<img src="imagens/o.png">'
     }else{
-        foto = '<img src="imagens/x.png">'
+        fotoJOG = '<img src="imagens/x.png">'
     }
 
     mensagem.style.opacity = '100'
