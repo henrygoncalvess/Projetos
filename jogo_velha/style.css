@@ -77,6 +77,11 @@ td:nth-child(3){
     border-right: 1px solid transparent;
 }
 
+img{
+    width: 100%;
+    opacity: 0;
+}
+
 #a1,
 #a2,
 #a3{
@@ -90,7 +95,7 @@ td:nth-child(3){
 }
 
 td:hover{
-    background-color: rgb(232, 231, 231);
+    background-color: rgba(232, 231, 231, 0.457);
 }
 
 label{
