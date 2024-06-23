@@ -38,7 +38,7 @@ section{
     border-radius: 20px;
     box-shadow: 2px 2px 6px rgba(0, 75, 125, 0.188);
     padding: 10px 10px;
-    margin: 5px;
+    margin: 50px 5px;
 }
 
 h1{
@@ -94,12 +94,8 @@ img{
     border-bottom: 1px solid transparent;
 }
 
-td:hover{
-    background-color: rgba(232, 231, 231, 0.457);
-}
-
 label{
-    margin: 0px 50px;
+    margin: 0% 10%;
     font-size: 1.7em;
     font-weight: bold;
     text-shadow:  2px 2px 1px rgba(85, 85, 85, 0.442);

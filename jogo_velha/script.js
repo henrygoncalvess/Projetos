@@ -58,11 +58,13 @@ function checado(num){
         case 1:
             x.style.color = 'blue'
             o.style.color = 'black'
+            return num
             break
     
         case 2:
             o.style.color = 'red'
             x.style.color = 'black'
+            return num
             break
     }
 }
