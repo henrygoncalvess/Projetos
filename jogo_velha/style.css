@@ -67,6 +67,7 @@ td{
     height: 20px;
     border: 3px solid black;
     text-align: center;
+    opacity: 0;
 }
 
 td:nth-child(1){
@@ -79,7 +80,6 @@ td:nth-child(3){
 
 img{
     width: 100%;
-    opacity: 0;
 }
 
 #a1,
