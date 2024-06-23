@@ -55,6 +55,22 @@ h2{
     text-shadow: 2px 2px 1px rgba(85, 85, 85, 0.442);
 }
 
+label{
+    margin: 0% 10%;
+    font-size: 1.7em;
+    font-weight: bold;
+    text-shadow:  2px 2px 1px rgba(85, 85, 85, 0.442);
+}
+
+label:nth-child(2){
+    color: blue;
+}
+
+input{
+    margin: 20px 0px;
+    width: 15px;
+    height: 15px;
+}
 
 table{
     border-collapse: collapse;
@@ -68,6 +84,7 @@ td{
     border: 3px solid black;
     text-align: center;
     opacity: 0;
+    cursor: pointer;
 }
 
 td:nth-child(1){
@@ -94,21 +111,11 @@ img{
     border-bottom: 1px solid transparent;
 }
 
-label{
-    margin: 0% 10%;
-    font-size: 1.7em;
+p{
+    margin-top: 20px;
+    opacity: 0;
     font-weight: bold;
-    text-shadow:  2px 2px 1px rgba(85, 85, 85, 0.442);
-}
-
-label:nth-child(2){
-    color: blue;
-}
-
-input{
-    margin: 20px 0px;
-    width: 15px;
-    height: 15px;
+    font-size: 1.2em;
 }
 
 footer{

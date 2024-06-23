@@ -17,12 +17,20 @@ var baixo1 = document.getElementsByTagName('td')[6]
 var baixo2 = document.getElementsByTagName('td')[7]
 var baixo3 = document.getElementsByTagName('td')[8]
 
+var mensagem = document.getElementById('msg')
+
 function marcar(posicao){
     if (escolha == 2){
         foto = '<img src="imagens/o.png">'
     }else{
         foto = '<img src="imagens/x.png">'
     }
+
+    mensagem.style.opacity = '100'
+
+    setTimeout(() => {
+        mensagem.style.opacity = '0'
+    }, 3000);
 
     switch (posicao){
         case 1:
