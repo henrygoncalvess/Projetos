@@ -3,7 +3,9 @@ var o = document.getElementsByTagName('label')[1]
 
 var escolha = 1
 
-var foto = '<img src="imagens/x.png">'
+var fotoJOG = '<img src="imagens/x.png">'
+
+var fotoPC = '<img src="imagens/o.png">'
 
 var cima1 = document.getElementsByTagName('td')[0]
 var cima2 = document.getElementsByTagName('td')[1]
@@ -19,7 +21,11 @@ var baixo3 = document.getElementsByTagName('td')[8]
 
 var mensagem = document.getElementById('msg')
 
+var computador = 0
+
 function marcar(posicao){
+    computador = parseInt(Math.random() * 8) + 1
+
     if (escolha == 2){
         foto = '<img src="imagens/o.png">'
     }else{
@@ -28,56 +34,67 @@ function marcar(posicao){
 
     mensagem.style.opacity = '100'
 
-    setTimeout(() => {
-        mensagem.style.opacity = '0'
-    }, 3000);
-
-    switch (posicao){
-        case 1:
-            cima1.style.opacity = '100'
-            cima1.innerHTML = foto
-            break
-
-        case 2:
-            cima2.style.opacity = '100'
-            cima2.innerHTML = foto
-            break
-        
-        case 3:
-            cima3.style.opacity = '100'
-            cima3.innerHTML = foto
-            break
-
-        case 4:
-            meio1.style.opacity = '100'
-            meio1.innerHTML = foto
-            break
-
-        case 5:
-            meio2.style.opacity = '100'
-            meio2.innerHTML = foto
-            break
-
-        case 6:
-            meio3.style.opacity = '100'
-            meio3.innerHTML = foto
-            break
-        
-        case 7:
-            baixo1.style.opacity = '100'
-            baixo1.innerHTML = foto
-            break
-
-        case 8:
-            baixo2.style.opacity = '100'
-            baixo2.innerHTML = foto
-            break
-
-        case 9:
-            baixo3.style.opacity = '100'
-            baixo3.innerHTML = foto
-            break
+    function mostrar(pos){
+        switch (pos){
+            case 1:
+                cima1.style.opacity = '100'
+                cima1.innerHTML = fotoJOG
+                break
+    
+            case 2:
+                cima2.style.opacity = '100'
+                cima2.innerHTML = fotoJOG
+                break
+    
+            case 3:
+                cima3.style.opacity = '100'
+                cima3.innerHTML = fotoJOG
+                break
+    
+            case 4:
+                meio1.style.opacity = '100'
+                meio1.innerHTML = fotoJOG
+                break
+    
+            case 5:
+                meio2.style.opacity = '100'
+                meio2.innerHTML = fotoJOG
+                break
+    
+            case 6:
+                meio3.style.opacity = '100'
+                meio3.innerHTML = fotoJOG
+                break
+    
+            case 7:
+                baixo1.style.opacity = '100'
+                baixo1.innerHTML = fotoJOG
+                break
+    
+            case 8:
+                baixo2.style.opacity = '100'
+                baixo2.innerHTML = fotoJOG
+                break
+    
+            case 9:
+                baixo3.style.opacity = '100'
+                baixo3.innerHTML = fotoJOG
+                break
+        }
     }
+
+    mostrar(posicao)
+
+    setTimeout(() => {
+        if (escolha == 1){
+            fotoJOG = fotoPC
+        }else{
+            fotoJOG = '<img src="imagens/x.png">'
+        }
+        
+        mensagem.style.opacity = '0'
+        mostrar(computador)
+    }, 3000);
 }
 
 function checado(num){
