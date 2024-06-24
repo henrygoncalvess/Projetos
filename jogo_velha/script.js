@@ -24,15 +24,20 @@ var mensagem = document.getElementById('msg')
 var computador = 0
 
 var listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+var ocupados = []
 
 function marcar(posicao){
     computador = parseInt(Math.random() * 9) + 1
 
-    
+    // se quando eu clicar, a minha posição já tiver sido removida da lista, msg de erro
     if (listaPos.indexOf(posicao) == -1){
         window.alert('ocupado')
-    }else{
+    }
+    
+    else{
+        ocupados.push(posicao)
         listaPos.splice(listaPos.indexOf(posicao), 1)
+
         if (escolha == 2){
             fotoJOG = '<img src="imagens/o.png">'
         }else{
@@ -89,33 +94,36 @@ function marcar(posicao){
                     break
             }
         }
+
+        mostrar(posicao)
+        
+        setTimeout(() => {
+            if (listaPos.indexOf(computador) == -1){
+                window.alert('ocupado')
+            }else{
+                ocupados.push(computador)
+                listaPos.splice(listaPos.indexOf(computador), 1)
+                if (escolha == 1){
+                    fotoJOG = fotoPC
+                }else{
+                    fotoJOG = '<img src="imagens/x.png">'
+                }
+                
+                mensagem.style.opacity = '100'
+                mensagem.innerHTML = `${listaPos}<br>${ocupados}`
+                mostrar(computador)
+            }
+        }, 500);
     }
 
-
-    mostrar(posicao)
-
-    setTimeout(() => {
-        if (listaPos.indexOf(computador) == -1){
-            window.alert('ocupado')
-        }else{
-            listaPos.splice(listaPos.indexOf(computador), 1)
-            if (escolha == 1){
-                fotoJOG = fotoPC
-            }else{
-                fotoJOG = '<img src="imagens/x.png">'
-            }
-            
-            mensagem.style.opacity = '100'
-            mensagem.innerHTML = listaPos
-            mostrar(computador)
-        }
-    }, 500);
 }
 
 function checado(num){
     switch (num){
         case 1:
             escolha = 1
+            listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            ocupados = []
 
             cima1.style.opacity = '0'
             cima2.style.opacity = '0'
@@ -133,6 +141,8 @@ function checado(num){
     
         case 2:
             escolha = 2
+            listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            ocupados = []
 
             cima1.style.opacity = '0'
             cima2.style.opacity = '0'

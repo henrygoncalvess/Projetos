@@ -63,7 +63,7 @@ label{
 }
 
 label:nth-child(2){
-    color: blue;
+    color: #3030ff;
 }
 
 input{
@@ -97,6 +97,7 @@ td:nth-child(3){
 
 img{
     width: 100%;
+    opacity: 70%;
 }
 
 #a1,
@@ -115,6 +116,7 @@ p{
     margin-top: 20px;
     font-weight: bold;
     font-size: 1.2em;
+    text-shadow: 2px 2px 1px rgba(85, 85, 85, 0.442);
 }
 
 footer{
