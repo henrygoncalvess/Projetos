@@ -50,13 +50,17 @@ def velha(coluna=0, linha=0, marca=''):
                   else:
                      print(' ' * 2 + f'{lista[c][l]}', end='')
                
-               print('\n')
+               if c <= 1:
+                  print(f'\n {"—" * 15:^34}')
+               else:
+                  print('\n')
                
 
 def jogoX():
    print(f"{'JOGO DA VELHA':—^35}\n")
 
    velha()
+   print(f'{"":—^35}')
    
    marca = str(input('Escolha sua marca [X] ou [O]: ')).upper()[0]
       
@@ -90,6 +94,7 @@ def jogoX():
          
       lin = int(linhaSTR) - 1
       
+      print(f'\n{"":—^35}')
       print('Você escolheu...\n')
       sleep(0.800)
 
@@ -131,6 +136,7 @@ def jogoX():
       print(lista, col2)
 
       resp = str(input('Quer continuar? [S] ou [N] ')).upper()[0]
+      print(f'{"":—^35}')
       
       while resp not in 'SN':
          resp = str(input('Digite apenas [S] ou [N] ')).upper()[0]
