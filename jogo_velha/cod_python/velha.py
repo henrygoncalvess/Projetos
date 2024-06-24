@@ -1,5 +1,6 @@
 from random import randint
 from time import sleep
+from datetime import date
 
 lista = [[' ',' ',' '], [' ',' ',' '], [' ',' ',' ']]
 lista2 = [[1,2,3], [4,5,6], [7,8,9]]
@@ -57,6 +58,8 @@ def velha(coluna=0, linha=0, marca=''):
                
 
 def jogoX():
+   print(f'{date.today().day} / {date.today().month} / {date.today().year}\n')
+   
    print(f"{'JOGO DA VELHA':—^35}\n")
 
    velha()
