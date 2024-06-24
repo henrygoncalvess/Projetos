@@ -12,180 +12,192 @@
             font-size: 1.1em;
         }
 
-        #rosa{
+        i{
+            font-style: normal;
+        }
+
+        #r{
             color: #FF79C6;
         }
 
-        #verde{
+        #v{
             color: #50FA7B;
+        }
+
+        #a{
+            color: #8BE9FD;
+        }
+
+        #am{
+            color: #F1FA8C;
         }
     </style>
 </head>
 <body>
     <pre>
-from random import randint
-from time import sleep
-from datetime import date
+<i id="r">from</i> random <i id="r">import</i> randint
+<i id="r">from</i> time <i id="r">import</i> <i id="v">sleep</i>
+<i id="r">from</i> datetime <i id="r">import</i> <i id="a">date</i>
 
-lista = [[' ',' ',' '], [' ',' ',' '], [' ',' ',' ']]
-lista2 = [[1,2,3], [4,5,6], [7,8,9]]
+lista <i id="r">=</i> [[<i id="am">' '</i>,<i id="am">' '</i>,<i id="am">' '</i>], [<i id="am">' '</i>,<i id="am">' '</i>,<i id="am">' '</i>], [<i id="am">' '</i>,<i id="am">' '</i>,<i id="am">' '</i>]]
+lista2 <i id="r">=</i> [[1,2,3], [4,5,6], [7,8,9]]
 
-jog = 0
-pc = 0
+jog <i id="r">=</i> 0
+pc <i id="r">=</i> 0
 
-def velha(coluna=0, linha=0, marca=''):
+<i id="r">def</i> <i id="v">velha</i>(coluna<i id="r">=</i>0, linha<i id="r">=</i>0, marca<i id="r">=</i><i id="am">''</i>):
         
-        match coluna:
-            case 1:
-            linha -= 3
-            case 2:
-            linha -= 6
+        <i id="r">match</i> coluna:
+            <i id="r">case</i> 1:
+            linha <i id="r">-=</i> 3
+            <i id="r">case</i> 2:
+            linha <i id="r">-=</i> 6
 
-        match coluna, linha, marca:
-            case 0, 0, '':
-            for c in range(0, len(lista2)):
-                match c:
-                    case 0:
-                        print(f'{"A ->":^9}', end='')
-                    case 1:
-                        print(f'{"B ->":^9}', end='')
-                    case 2:
-                        print(f'{"C ->":^9}', end='')
+        <i id="r">match</i> coluna, linha, marca:
+            <i id="r">case</i> 0, 0, <i id="am">''</i>:
+            <i id="r">for</i> c<i id="r"> in </i><i id="a">range</i>(0, <i id="v">len</i>(lista2)):
+                <i id="r">match</i> c:
+                    <i id="r">case</i> 0:
+                        <i id="v">print</i>(f'{<i id="am">"A ->"</i>:^9}', end<i id="r">=</i><i id="am">''</i>)
+                    <i id="r">case</i> 1:
+                        <i id="v">print</i>(f'{<i id="am">"B ->"</i>:^9}', end<i id="r">=</i><i id="am">''</i>)
+                    <i id="r">case</i> 2:
+                        <i id="v">print</i>(f'{<i id="am">"C ->"</i>:^9}', end<i id="r">=</i><i id="am">''</i>)
                         
-                for l in range(0, len(lista2)):
-                    if l >= 1:
-                        print(' ' * 2 + f'|  {lista2[c][l]}', end='')
-                    else:
-                        print(' ' * 2 + f'{lista2[c][l]}', end='')
+                <i id="r">for</i> l<i id="r"> in </i><i id="a">range</i>(0, <i id="v">len</i>(lista2)):
+                    <i id="r">if</i> l <i id="r">>=</i> 1:
+                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'|  {lista2[c][l]}', end<i id="r">=</i><i id="am">''</i>)
+                    <i id="r">else</i>:
+                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'{lista2[c][l]}', end<i id="r">=</i><i id="am">''</i>)
                         
-                if c <= 1:
-                    print(f'\n{"—" * 15:^35}')
-                else:
-                    print('\n')
+                <i id="r">if</i> c <i id="r"><=</i> 1:
+                    <i id="v">print</i>(f'\n{"—" * 15:^35}')
+                <i id="r">else</i>:
+                    <i id="v">print</i>('\n')
                 
-            case _:
-            for c in range(0, len(lista)):
-                print(f'{"":^9}', end='')
+            <i id="r">case</i> _:
+            <i id="r">for</i> c<i id="r"> in </i><i id="a">range</i>(0, <i id="v">len</i>(lista)):
+                <i id="v">print</i>(f'{"":^9}', end<i id="r">=</i><i id="am">''</i>)
                 
-                for l in range(0, len(lista)):
-                    if c == coluna:
-                        lista[coluna][linha] = marca
+                <i id="r">for</i> l<i id="r"> in </i><i id="a">range</i>(0, <i id="v">len</i>(lista)):
+                    <i id="r">if</i> c <i id="r">==</i> coluna:
+                        lista[coluna][linha] <i id="r">=</i> marca
 
-                    if l >= 1:
-                        print(' ' * 2 + f'|  {lista[c][l]}', end='')
-                    else:
-                        print(' ' * 2 + f'{lista[c][l]}', end='')
+                    <i id="r">if</i> l <i id="r">>=</i> 1:
+                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'|  {lista[c][l]}', end<i id="r">=</i><i id="am">''</i>)
+                    <i id="r">else</i>:
+                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'{lista[c][l]}', end<i id="r">=</i><i id="am">''</i>)
                 
-                if c <= 1:
-                    print(f'\n {"—" * 15:^34}')
-                else:
-                    print('\n')
+                <i id="r">if</i> c <i id="r"><=</i> 1:
+                    <i id="v">print</i>(f'\n {"—" * 15:^34}')
+                <i id="r">else</i>:
+                    <i id="v">print</i>('\n')
                 
 
-def jogoX():
-    print(f'{date.today().day} / {date.today().month} / {date.today().year}\n')
+<i id="r">def</i> <i id="v">jogoX</i>():
+    <i id="v">print</i>(f'{<i id="a">date</i>.<i id="v">today</i>().day} / {<i id="a">date</i>.<i id="v">today</i>().month} / {<i id="a">date</i>.<i id="v">today</i>().year}\n')
     
-    print(f"{'JOGO DA VELHA':—^35}\n")
+    <i id="v">print</i>(f"{<i id="am">'JOGO DA VELHA'</i>:—^35}\n")
 
-    velha()
-    print(f'{"":—^35}')
+    <i id="v">velha</i>()
+    <i id="v">print</i>(f'{"":—^35}')
     
-    marca = str(input('Escolha sua marca [X] ou [O]: ')).upper()[0]
+    marca <i id="r">=</i> <i id="a">str</i>(<i id="v">input</i>(<i id="am">'Escolha sua marca [X] ou [O]: '</i>)).<i id="v">upper</i>()[0]
         
-    while marca not in 'XO':
-        marca = str(input('Apenas [X] ou [O]: ')).upper()[0]
+    <i id="r">while</i> marca <i id="r">not in </i><i id="am">'XO'</i>:
+        marca <i id="r">=</i> <i id="a">str</i>(<i id="v">input</i>(<i id="am">'Apenas [X] ou [O]: '</i>)).<i id="v">upper</i>()[0]
 
-    while True:
-        lista2 = [[1,2,3], [4,5,6], [7,8,9]]
+    <i id="r">while</i> True:
+        lista2 <i id="r">=</i> [[1,2,3], [4,5,6], [7,8,9]]
 
-        colSTR = (str(input('\nEscolha uma COLUNA
-        \n[ A ] [ B ] [ C ]: '))).upper()[0]
+        colSTR <i id="r">=</i> (<i id="a">str</i>(<i id="v">input</i>(<i id="am">'</i>\n<i id="am">Escolha uma COLUNA</i>
+        \n<i id="am">[ A ] [ B ] [ C ]: '</i>))).<i id="v">upper</i>()[0]
         
-        while colSTR not in 'ABC':
-            colSTR = (str(input('Apenas as COLUNAS abaixo
-            \n[ A ] [ B ] [ C ]: '))).upper()[0]
+        <i id="r">while</i> colSTR <i id="r">not in </i><i id="am">'ABC'</i>:
+            colSTR <i id="r">=</i> (<i id="a">str</i>(<i id="v">input</i>(<i id="am">'Apenas as COLUNAS abaixo</i>
+            \n<i id="am">[ A ] [ B ] [ C ]: '</i>))).<i id="v">upper</i>()[0]
             
-        match colSTR:
-            case 'A':
-            col = 0
-            case 'B':
-            col = 1
-            case 'C':
-            col = 2
+        <i id="r">match</i> colSTR:
+            <i id="r">case</i> <i id="am">'A'</i>:
+            col <i id="r">=</i> 0
+            <i id="r">case</i> <i id="am">'B'</i>:
+            col <i id="r">=</i> 1
+            <i id="r">case</i> <i id="am">'C'</i>:
+            col <i id="r">=</i> 2
             
-        linhaSTR = (str(input(f'\nAgora escolha sua POSIÇÃO
-        \n[ {lista2[col][0]} ]
-          [ {lista2[col][1]} ]
-          [ {lista2[col][2]} ]: ')[0]))
+        linhaSTR <i id="r">=</i> (<i id="a">str</i>(<i id="v">input</i>(f<i id="am">'</i>\n<i id="am">Agora escolha sua POSIÇÃO</i>
+        \n<i id="am">[</i> {lista2[col][0]} <i id="am">]</i>
+          <i id="am">[</i> {lista2[col][1]} <i id="am">]</i>
+          <i id="am">[</i> {lista2[col][2]} <i id="am">]: '</i>)[0]))
         
-        a = str(lista2[col][0])
-        b = str(lista2[col][1])
-        c = str(lista2[col][2])
+        a <i id="r">=</i> <i id="a">str</i>(lista2[col][0])
+        b <i id="r">=</i> <i id="a">str</i>(lista2[col][1])
+        c <i id="r">=</i> <i id="a">str</i>(lista2[col][2])
         
-        while linhaSTR not in (f'{a}{b}{c}'):
-            linhaSTR = (str(input(f'Apenas as POSIÇÕES abaixo
-            \n[ {lista2[col][0]} ]
-              [ {lista2[col][1]} ]
-              [ {lista2[col][2]} ]: ')[0]))
+        <i id="r">while</i> linhaSTR <i id="r">not in </i>(f<i id="am">'</i>{a}{b}{c}<i id="am">'</i>):
+            linhaSTR <i id="r">=</i> (<i id="a">str</i>(<i id="v">input</i>(f<i id="am">'Apenas as POSIÇÕES abaixo</i>
+            \n<i id="am">[</i> {lista2[col][0]} <i id="am">]</i>
+              <i id="am">[</i> {lista2[col][1]} <i id="am">]</i>
+              <i id="am">[</i> {lista2[col][2]} <i id="am">]: '</i>)[0]))
             
-        lin = int(linhaSTR) - 1
+        lin <i id="r">=</i> <i id="a">int</i>(linhaSTR) - 1
         
-        print(f'\n{"":—^35}')
-        print('Você escolheu...\n')
+        <i id="v">print</i>(f<i id="am">'</i>\n{<i id="am">""</i>:—^35}<i id="am">'</i>)
+        <i id="v">print</i>(<i id="am">'Você escolheu...</i>\n<i id="am">'</i>)
         sleep(0.800)
 
-        velha(col, lin, marca)
+        <i id="v">velha</i>(col, lin, marca)
 
-        print('O computador escolheu...\n')
+        <i id="v">print</i>(<i id="am">'O computador escolheu...</i>\n<i id="am">'</i>)
         sleep(1.5)
         
-        if marca == 'X':
-            marca2 = 'O'
-        else:
-            marca2 = 'X'
+        <i id="r">if</i> marca <i id="r">==</i> <i id="am">'X'</i>:
+            marca2 <i id="r">=</i> <i id="am">'O'</i>
+        <i id="r">else</i>:
+            marca2 <i id="r">=</i> <i id="am">'X'</i>
 
-        col2 = 0
-        match col2:
-            case 0:
-            lin2 = randint(0, 2)
-            case 1:
-            lin2 = randint(3, 4)
-            case 2:
-            lin2 = randint(5, 7)
+        col2 <i id="r">=</i> 0
+        <i id="r">match</i> col2:
+            <i id="r">case</i> 0:
+            lin2 <i id="r">=</i> randint(0, 2)
+            <i id="r">case</i> 1:
+            lin2 <i id="r">=</i> randint(3, 4)
+            <i id="r">case</i> 2:
+            lin2 <i id="r">=</i> randint(5, 7)
             
-        print(lin2)
+        <i id="v">print</i>(lin2)
             
-        for pos in range(0, 3):
-            if lista[col2][lin2] in 'XO':
-                if lin2 == 2:
-                    lin2 -= 2
-                else:
-                    lin2 += 1
-                print('ocupado')
-            if pos == 3:
-                col2 = 1
+        <i id="r">for</i> pos<i id="r"> in </i><i id="a">range</i>(0, 3):
+            <i id="r">if</i> lista[col2][lin2]<i id="r"> in </i><i id="am">'XO'</i>:
+                <i id="r">if</i> lin2 <i id="r">==</i> 2:
+                    lin2 <i id="r">-=</i> 2
+                <i id="r">else</i>:
+                    lin2 <i id="r">+=</i> 1
+                <i id="v">print</i>(<i id="am">'ocupado'</i>)
+            <i id="r">if</i> pos <i id="r">==</i> 3:
+                col2 <i id="r">=</i> 1
                 
-        print(lin2, col2)
+        <i id="v">print</i>(lin2, col2)
         
-        velha(col2, lin2, marca2)
+        <i id="v">velha</i>(col2, lin2, marca2)
         
-        print(lista, col2)
+        <i id="v">print</i>(lista, col2)
 
-        resp = str(input('Quer continuar? [S] ou [N] ')).upper()[0]
-        print(f'{"":—^35}')
+        resp <i id="r">=</i> <i id="a">str</i>(<i id="v">input</i>(<i id="am">'Quer continuar? [S] ou [N] '</i>)).<i id="v">upper</i>()[0]
+        <i id="v">print</i>(f<i id="am">'</i>{<i id="am">""</i>:—^35}<i id="am">'</i>)
         
-        while resp not in 'SN':
-            resp = str(input('Digite apenas [S] ou [N] ')).upper()[0]
+        <i id="r">while</i> resp <i id="r">not in </i><i id="am">'SN'</i>:
+            resp <i id="r">=</i> <i id="a">str</i>(<i id="v">input</i>(<i id="am">'Digite apenas [S] ou [N] '</i>)).<i id="v">upper</i>()[0]
 
-        if resp == 'N':
+        <i id="r">if</i> resp <i id="r">==</i> <i id="am">'N'</i>:
             break
             
-    print(f"\n{'Jogo da Velha encerrado':^30}")
-    print(f"\n{'vitórias':^30}\n")
-    print(f"{f'Você: {jog}    Computador: {pc}':^30}")
+    <i id="v">print</i>(f<i id="am">"</i>\n{<i id="am">'Jogo da Velha encerrado'</i>:^30}<i id="am">"</i>)
+    <i id="v">print</i>(f<i id="am">"</i>\n{<i id="am">'vitórias'</i>:^30}\n<i id="am">"</i>)
+    <i id="v">print</i>(f<i id="am">"</i>{f<i id="am">'Você:</i> {jog}    <i id="am">Computador:</i> {pc}<i id="am">'</i>:^30}<i id="am">"</i>)
 
 
-jogoX()
+<i id="v">jogoX</i>()
     </pre>
 </body>
 </html>
