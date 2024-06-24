@@ -31,6 +31,10 @@
         #am{
             color: #F1FA8C;
         }
+
+        #l{
+            color: #FFB86C;
+        }
     </style>
 </head>
 <body>
@@ -45,30 +49,30 @@ lista2 <i id="r">=</i> [[1,2,3], [4,5,6], [7,8,9]]
 jog <i id="r">=</i> 0
 pc <i id="r">=</i> 0
 
-<i id="r">def</i> <i id="v">velha</i>(coluna<i id="r">=</i>0, linha<i id="r">=</i>0, marca<i id="r">=</i><i id="am">''</i>):
+<i id="r">def</i> <i id="v">velha</i>(<i id="l">coluna</i><i id="r">=</i>0, <i id="l">linha</i><i id="r">=</i>0, <i id="l">marca</i><i id="r">=</i><i id="am">''</i>):
         
-        <i id="r">match</i> coluna:
+        <i id="r">match</i> <i id="l">coluna</i>:
             <i id="r">case</i> 1:
-            linha <i id="r">-=</i> 3
+            <i id="l">linha</i> <i id="r">-=</i> 3
             <i id="r">case</i> 2:
-            linha <i id="r">-=</i> 6
+            <i id="l">linha</i> <i id="r">-=</i> 6
 
-        <i id="r">match</i> coluna, linha, marca:
+        <i id="r">match</i> <i id="l">coluna</i>, <i id="l">linha</i>, <i id="l">marca</i>:
             <i id="r">case</i> 0, 0, <i id="am">''</i>:
             <i id="r">for</i> c<i id="r"> in </i><i id="a">range</i>(0, <i id="v">len</i>(lista2)):
                 <i id="r">match</i> c:
                     <i id="r">case</i> 0:
-                        <i id="v">print</i>(f'{<i id="am">"A ->"</i>:^9}', end<i id="r">=</i><i id="am">''</i>)
+                        <i id="v">print</i>(f'{<i id="am">"A ->"</i>:^9}', <i id="l">end</i><i id="r">=</i><i id="am">''</i>)
                     <i id="r">case</i> 1:
-                        <i id="v">print</i>(f'{<i id="am">"B ->"</i>:^9}', end<i id="r">=</i><i id="am">''</i>)
+                        <i id="v">print</i>(f'{<i id="am">"B ->"</i>:^9}', <i id="l">end</i><i id="r">=</i><i id="am">''</i>)
                     <i id="r">case</i> 2:
-                        <i id="v">print</i>(f'{<i id="am">"C ->"</i>:^9}', end<i id="r">=</i><i id="am">''</i>)
+                        <i id="v">print</i>(f'{<i id="am">"C ->"</i>:^9}', <i id="l">end</i><i id="r">=</i><i id="am">''</i>)
                         
                 <i id="r">for</i> l<i id="r"> in </i><i id="a">range</i>(0, <i id="v">len</i>(lista2)):
                     <i id="r">if</i> l <i id="r">>=</i> 1:
-                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'|  {lista2[c][l]}', end<i id="r">=</i><i id="am">''</i>)
+                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'|  {lista2[c][l]}', <i id="l">end</i><i id="r">=</i><i id="am">''</i>)
                     <i id="r">else</i>:
-                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'{lista2[c][l]}', end<i id="r">=</i><i id="am">''</i>)
+                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'{lista2[c][l]}', <i id="l">end</i><i id="r">=</i><i id="am">''</i>)
                         
                 <i id="r">if</i> c <i id="r"><=</i> 1:
                     <i id="v">print</i>(f'\n{"—" * 15:^35}')
@@ -77,16 +81,16 @@ pc <i id="r">=</i> 0
                 
             <i id="r">case</i> _:
             <i id="r">for</i> c<i id="r"> in </i><i id="a">range</i>(0, <i id="v">len</i>(lista)):
-                <i id="v">print</i>(f'{"":^9}', end<i id="r">=</i><i id="am">''</i>)
+                <i id="v">print</i>(f'{"":^9}', <i id="l">end</i><i id="r">=</i><i id="am">''</i>)
                 
                 <i id="r">for</i> l<i id="r"> in </i><i id="a">range</i>(0, <i id="v">len</i>(lista)):
-                    <i id="r">if</i> c <i id="r">==</i> coluna:
-                        lista[coluna][linha] <i id="r">=</i> marca
+                    <i id="r">if</i> c <i id="r">==</i> <i id="l">coluna</i>:
+                        lista[<i id="l">coluna</i>][<i id="l">linha</i>] <i id="r">=</i> <i id="l">marca</i>
 
                     <i id="r">if</i> l <i id="r">>=</i> 1:
-                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'|  {lista[c][l]}', end<i id="r">=</i><i id="am">''</i>)
+                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'|  {lista[c][l]}', <i id="l">end</i><i id="r">=</i><i id="am">''</i>)
                     <i id="r">else</i>:
-                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'{lista[c][l]}', end<i id="r">=</i><i id="am">''</i>)
+                        <i id="v">print</i>(<i id="am">' '</i> * 2 + f'{lista[c][l]}', <i id="l">end</i><i id="r">=</i><i id="am">''</i>)
                 
                 <i id="r">if</i> c <i id="r"><=</i> 1:
                     <i id="v">print</i>(f'\n {"—" * 15:^34}')
