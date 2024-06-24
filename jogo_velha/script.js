@@ -23,78 +23,93 @@ var mensagem = document.getElementById('msg')
 
 var computador = 0
 
+var listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 function marcar(posicao){
-    computador = parseInt(Math.random() * 8) + 1
+    computador = parseInt(Math.random() * 9) + 1
 
-    if (escolha == 2){
-        fotoJOG = '<img src="imagens/o.png">'
+    
+    if (listaPos.indexOf(posicao) == -1){
+        window.alert('ocupado')
     }else{
-        fotoJOG = '<img src="imagens/x.png">'
-    }
-
-    mensagem.style.opacity = '100'
-
-    function mostrar(pos){
-        switch (pos){
-            case 1:
-                cima1.style.opacity = '100'
-                cima1.innerHTML = fotoJOG
-                break
+        listaPos.splice(listaPos.indexOf(posicao), 1)
+        if (escolha == 2){
+            fotoJOG = '<img src="imagens/o.png">'
+        }else{
+            fotoJOG = '<img src="imagens/x.png">'
+        }
     
-            case 2:
-                cima2.style.opacity = '100'
-                cima2.innerHTML = fotoJOG
-                break
+        mensagem.style.opacity = '100'
     
-            case 3:
-                cima3.style.opacity = '100'
-                cima3.innerHTML = fotoJOG
-                break
-    
-            case 4:
-                meio1.style.opacity = '100'
-                meio1.innerHTML = fotoJOG
-                break
-    
-            case 5:
-                meio2.style.opacity = '100'
-                meio2.innerHTML = fotoJOG
-                break
-    
-            case 6:
-                meio3.style.opacity = '100'
-                meio3.innerHTML = fotoJOG
-                break
-    
-            case 7:
-                baixo1.style.opacity = '100'
-                baixo1.innerHTML = fotoJOG
-                break
-    
-            case 8:
-                baixo2.style.opacity = '100'
-                baixo2.innerHTML = fotoJOG
-                break
-    
-            case 9:
-                baixo3.style.opacity = '100'
-                baixo3.innerHTML = fotoJOG
-                break
+        function mostrar(pos){
+            switch (pos){
+                case 1:
+                    cima1.style.opacity = '100'
+                    cima1.innerHTML = fotoJOG
+                    break
+        
+                case 2:
+                    cima2.style.opacity = '100'
+                    cima2.innerHTML = fotoJOG
+                    break
+        
+                case 3:
+                    cima3.style.opacity = '100'
+                    cima3.innerHTML = fotoJOG
+                    break
+        
+                case 4:
+                    meio1.style.opacity = '100'
+                    meio1.innerHTML = fotoJOG
+                    break
+        
+                case 5:
+                    meio2.style.opacity = '100'
+                    meio2.innerHTML = fotoJOG
+                    break
+        
+                case 6:
+                    meio3.style.opacity = '100'
+                    meio3.innerHTML = fotoJOG
+                    break
+        
+                case 7:
+                    baixo1.style.opacity = '100'
+                    baixo1.innerHTML = fotoJOG
+                    break
+        
+                case 8:
+                    baixo2.style.opacity = '100'
+                    baixo2.innerHTML = fotoJOG
+                    break
+        
+                case 9:
+                    baixo3.style.opacity = '100'
+                    baixo3.innerHTML = fotoJOG
+                    break
+            }
         }
     }
+
 
     mostrar(posicao)
 
     setTimeout(() => {
-        if (escolha == 1){
-            fotoJOG = fotoPC
+        if (listaPos.indexOf(computador) == -1){
+            window.alert('ocupado')
         }else{
-            fotoJOG = '<img src="imagens/x.png">'
+            listaPos.splice(listaPos.indexOf(computador), 1)
+            if (escolha == 1){
+                fotoJOG = fotoPC
+            }else{
+                fotoJOG = '<img src="imagens/x.png">'
+            }
+            
+            mensagem.style.opacity = '100'
+            mensagem.innerHTML = listaPos
+            mostrar(computador)
         }
-        
-        mensagem.style.opacity = '0'
-        mostrar(computador)
-    }, 3000);
+    }, 500);
 }
 
 function checado(num){
