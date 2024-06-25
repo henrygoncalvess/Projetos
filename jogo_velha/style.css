@@ -51,19 +51,24 @@ h1{
 }
 
 h2{
+    font-size: 1.7em;
     text-align: center;
     text-shadow: 2px 2px 1px rgba(85, 85, 85, 0.442);
 }
 
 label{
     margin: 0% 10%;
-    font-size: 1.7em;
+    font-size: 2em;
     font-weight: bold;
     text-shadow:  2px 2px 1px rgba(85, 85, 85, 0.442);
 }
 
 label:nth-child(2){
     color: #3030ff;
+}
+
+label:nth-child(3){
+    color: rgba(0, 0, 0, 0.616);
 }
 
 input{
@@ -117,6 +122,7 @@ p{
     font-weight: bold;
     font-size: 1.2em;
     text-shadow: 2px 2px 1px rgba(85, 85, 85, 0.442);
+    opacity: 0;
 }
 
 footer{

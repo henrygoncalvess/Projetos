@@ -31,10 +31,13 @@ function marcar(posicao){
 
     // se quando eu clicar, a minha posição já tiver sido removida da lista, msg de erro
     if (listaPos.indexOf(posicao) == -1){
-        window.alert('ocupado')
+        window.alert('Posição ocupada, escolha outra')
     }
     
     else{
+
+        mensagem.style.opacity = '100'
+
         ocupados.push(posicao)
         listaPos.splice(listaPos.indexOf(posicao), 1)
 
@@ -44,7 +47,6 @@ function marcar(posicao){
             fotoJOG = '<img src="imagens/x.png">'
         }
     
-        mensagem.style.opacity = '100'
     
         function mostrar(pos){
             switch (pos){
@@ -98,64 +100,73 @@ function marcar(posicao){
         mostrar(posicao)
         
         setTimeout(() => {
-            if (listaPos.indexOf(computador) == -1){
-                window.alert('ocupado')
-            }else{
+            // não deixa repetir as posições
+            while (ocupados.indexOf(computador) != -1){
+                computador = parseInt(Math.random() * 9) + 1
+                if (ocupados.length > 8){
+                    break
+                }
+            }
+
+            // se todas as posições forem usadas, alerta de empate. Zera tudo
+            if (ocupados.length > 8){
+                window.alert('EMPATE')
+                limpar()
+            }
+            
+            else{
+                mensagem.style.opacity = '0'
+
                 ocupados.push(computador)
                 listaPos.splice(listaPos.indexOf(computador), 1)
+
                 if (escolha == 1){
                     fotoJOG = fotoPC
                 }else{
                     fotoJOG = '<img src="imagens/x.png">'
                 }
                 
-                mensagem.style.opacity = '100'
-                mensagem.innerHTML = `${listaPos}<br>${ocupados}`
                 mostrar(computador)
             }
-        }, 500);
+        }, 2000);
     }
 
 }
 
+function limpar(){
+    listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ocupados = []
+    
+    cima1.style.opacity = '0'
+    cima2.style.opacity = '0'
+    cima3.style.opacity = '0'
+    meio1.style.opacity = '0'
+    meio2.style.opacity = '0'
+    meio3.style.opacity = '0'
+    baixo1.style.opacity = '0'
+    baixo2.style.opacity = '0'
+    baixo3.style.opacity = '0'
+}
+
 function checado(num){
+
     switch (num){
         case 1:
             escolha = 1
-            listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            ocupados = []
 
-            cima1.style.opacity = '0'
-            cima2.style.opacity = '0'
-            cima3.style.opacity = '0'
-            meio1.style.opacity = '0'
-            meio2.style.opacity = '0'
-            meio3.style.opacity = '0'
-            baixo1.style.opacity = '0'
-            baixo2.style.opacity = '0'
-            baixo3.style.opacity = '0'
+            limpar()
 
-            x.style.color = 'blue'
-            o.style.color = 'black'
+            x.style.color = '#3030ff'
+            o.style.color = 'rgba(0, 0, 0, 0.616)'
             break
     
         case 2:
             escolha = 2
-            listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            ocupados = []
-
-            cima1.style.opacity = '0'
-            cima2.style.opacity = '0'
-            cima3.style.opacity = '0'
-            meio1.style.opacity = '0'
-            meio2.style.opacity = '0'
-            meio3.style.opacity = '0'
-            baixo1.style.opacity = '0'
-            baixo2.style.opacity = '0'
-            baixo3.style.opacity = '0'
             
-            o.style.color = 'red'
-            x.style.color = 'black'
+            limpar()
+
+            o.style.color = '#FF4C4C'
+            x.style.color = 'rgba(0, 0, 0, 0.616)'
             break
     }
 }
