@@ -25,6 +25,9 @@ var computador = 0
 
 var listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 var ocupados = []
+var fim = false
+var azul = []
+var vermelho = []
 
 function marcar(posicao){
     computador = parseInt(Math.random() * 9) + 1
