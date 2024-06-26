@@ -30,13 +30,14 @@ var azul = []
 var vermelho = []
 
 function marcar(posicao){
+    
     computador = parseInt(Math.random() * 9) + 1
 
     // se quando eu clicar, a minha posição já tiver sido removida da lista, msg de erro
     if (listaPos.indexOf(posicao) == -1){
         window.alert('Posição ocupada, escolha outra')
     }
-    
+
     else{
 
         mensagem.style.opacity = '100'
@@ -51,7 +52,7 @@ function marcar(posicao){
             fotoJOG = '<img src="imagens/x.png">'
         }
 
-        
+
         function mostrar(pos){
             switch (pos){
                 case 1:
@@ -104,50 +105,85 @@ function marcar(posicao){
         mostrar(posicao)
 
         setTimeout(() => {
-            // não deixa repetir as posições
-            while (ocupados.indexOf(computador) != -1){
-                computador = parseInt(Math.random() * 9) + 1
-                if (ocupados.length > 8){
-                    break
+            verificar(azul)
+            
+            if (verificar(azul)){
+                if (escolha == 1){
+                    window.alert(`azul ganhou`)
+                }else{
+                    window.alert(`vermelho ganhou`)
                 }
-            }
-
-            // se todas as posições forem usadas, alerta de empate. Zera tudo
-            if (ocupados.length > 8){
+                
+                
                 fim = true
-                window.alert('EMPATE')
                 limpar()
             }
-
+            
             else{
-                mensagem.style.opacity = '100'
                 
-                ocupados.push(computador)
-                listaPos.splice(listaPos.indexOf(computador), 1)
-                vermelho.push(computador)
-
-                if (escolha == 1){
-                    fotoJOG = fotoPC
-                }else{
-                    fotoJOG = '<img src="imagens/x.png">'
+                // não deixa repetir as posições
+                while (ocupados.indexOf(computador) != -1){
+                    computador = parseInt(Math.random() * 9) + 1
+                    if (ocupados.length > 8){
+                        break
+                    }
                 }
-
-                if (fim == false){
-                    mostrar(computador)
+    
+                // se todas as posições forem usadas, alerta de empate. Zera tudo
+                if (ocupados.length > 8){
+                    fim = true
+                    window.alert('EMPATE')
+                    limpar()
                 }
-
-                mensagem.innerHTML = `
-                ${azul}<br>
-                ${vermelho}`
+    
+                else{
+                    mensagem.style.opacity = '100'
+                    
+                    ocupados.push(computador)
+                    listaPos.splice(listaPos.indexOf(computador), 1)
+                    vermelho.push(computador)
+    
+                    if (escolha == 1){
+                        fotoJOG = fotoPC
+                    }else{
+                        fotoJOG = '<img src="imagens/x.png">'
+                    }
+    
+                    if (fim == false){
+                        mostrar(computador)
+                    }
+    
+                    mensagem.innerHTML = `
+                    ${azul}<br>
+                    ${vermelho}`
+                }
             }
         }, 1000);
     }
 
+    setTimeout(() => {
+        verificar(vermelho)
+        
+        if(verificar(vermelho)){
+            if (escolha == 1){
+                    window.alert(`vermelho ganhou`)
+                }else{
+                    window.alert(`azul ganhou`)
+            }
+            fim = true
+            limpar()
+        }
+    }, 1300);
 }
 
 function limpar(){
+
+    fim = false
     listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     ocupados = []
+    azul = []
+    vermelho = []
+    mensagem.innerHTML = ''
 
     cima1.style.opacity = '0'
     cima2.style.opacity = '0'
