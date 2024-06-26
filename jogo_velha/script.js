@@ -43,56 +43,57 @@ function marcar(posicao){
 
         ocupados.push(posicao)
         listaPos.splice(listaPos.indexOf(posicao), 1)
-
+        azul.push(posicao)
+        
         if (escolha == 2){
             fotoJOG = '<img src="imagens/o.png">'
         }else{
             fotoJOG = '<img src="imagens/x.png">'
         }
-    
-    
+
+        
         function mostrar(pos){
             switch (pos){
                 case 1:
                     cima1.style.opacity = '100'
                     cima1.innerHTML = fotoJOG
                     break
-        
+
                 case 2:
                     cima2.style.opacity = '100'
                     cima2.innerHTML = fotoJOG
                     break
-        
+
                 case 3:
                     cima3.style.opacity = '100'
                     cima3.innerHTML = fotoJOG
                     break
-        
+
                 case 4:
                     meio1.style.opacity = '100'
                     meio1.innerHTML = fotoJOG
                     break
-        
+
                 case 5:
                     meio2.style.opacity = '100'
                     meio2.innerHTML = fotoJOG
                     break
-        
+
                 case 6:
                     meio3.style.opacity = '100'
                     meio3.innerHTML = fotoJOG
                     break
-        
+
                 case 7:
                     baixo1.style.opacity = '100'
                     baixo1.innerHTML = fotoJOG
                     break
-        
+
                 case 8:
                     baixo2.style.opacity = '100'
                     baixo2.innerHTML = fotoJOG
                     break
-        
+
                 case 9:
                     baixo3.style.opacity = '100'
                     baixo3.innerHTML = fotoJOG
@@ -101,7 +102,7 @@ function marcar(posicao){
         }
 
         mostrar(posicao)
-        
+
         setTimeout(() => {
             // não deixa repetir as posições
             while (ocupados.indexOf(computador) != -1){
@@ -113,25 +114,33 @@ function marcar(posicao){
 
             // se todas as posições forem usadas, alerta de empate. Zera tudo
             if (ocupados.length > 8){
+                fim = true
                 window.alert('EMPATE')
                 limpar()
             }
-            
-            else{
-                mensagem.style.opacity = '0'
 
+            else{
+                mensagem.style.opacity = '100'
+                
                 ocupados.push(computador)
                 listaPos.splice(listaPos.indexOf(computador), 1)
+                vermelho.push(computador)
 
                 if (escolha == 1){
                     fotoJOG = fotoPC
                 }else{
                     fotoJOG = '<img src="imagens/x.png">'
                 }
-                
-                mostrar(computador)
+
+                if (fim == false){
+                    mostrar(computador)
+                }
+
+                mensagem.innerHTML = `
+                ${azul}<br>
+                ${vermelho}`
             }
-        }, 2000);
+        }, 1000);
     }
 
 }
@@ -139,7 +148,7 @@ function marcar(posicao){
 function limpar(){
     listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     ocupados = []
-    
+
     cima1.style.opacity = '0'
     cima2.style.opacity = '0'
     cima3.style.opacity = '0'
@@ -162,14 +171,34 @@ function checado(num){
             x.style.color = '#3030ff'
             o.style.color = 'rgba(0, 0, 0, 0.616)'
             break
-    
+
         case 2:
             escolha = 2
-            
+
             limpar()
 
             o.style.color = '#FF4C4C'
             x.style.color = 'rgba(0, 0, 0, 0.616)'
             break
+    }
+}
+
+
+function verificar(lista){
+    if (
+        lista.length >= 3 && lista.indexOf(1) != -1 &&
+        lista.indexOf(2) != -1 && lista.indexOf(3) != -1 ||
+        lista.indexOf(4) != -1 && lista.indexOf(5) != -1 &&
+        lista.indexOf(6) != -1 || lista.indexOf(7) != -1 &&
+        lista.indexOf(8) != -1 && lista.indexOf(9) != -1 ||
+        lista.indexOf(1) != -1 && lista.indexOf(4) != -1 &&
+        lista.indexOf(7) != -1 || lista.indexOf(2) != -1 &&
+        lista.indexOf(5) != -1 && lista.indexOf(8) != -1 ||
+        lista.indexOf(3) != -1 && lista.indexOf(6) != -1 &&
+        lista.indexOf(9) != -1)
+        {
+            return true
+    }else{
+            return false
     }
 }
