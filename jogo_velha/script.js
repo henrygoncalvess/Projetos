@@ -31,6 +31,9 @@ var vermelho = []
 
 var tempo_espera = false
 
+var jogar_pessoa = false
+var jogar_maquina = false
+
 function marcar(posicao){
     setTimeout(() => {
         tempo_espera = true
@@ -163,7 +166,7 @@ function marcar(posicao){
                         }
                     }
                 }
-            }, 1000);
+            }, 2000);
         }
     
         setTimeout(() => {

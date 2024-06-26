@@ -10,17 +10,25 @@
     <main>
         
         <h1>Jogo da velha</h1>
+
+        <label for="maquina">
+            <input type="radio" name="op" id="maquina" checked onfocus="checado(1)"><span>jogar contra a máquina</span>
+        </label> <br>
+
+        <label for="pessoa">
+            <input type="radio" name="op" id="pessoa" onfocus="checado(2)"><span>2 jogadores</span>
+        </label>
         
         <section>
             <h2>Escolha sua marca</h2>
             
             <label for="xis">
-                <span>X</span><input type="radio" name="op" id="xis" checked onfocus="checado(1)">
+                <span>X</span><input type="radio" name="xo" id="xis" checked onfocus="checado(1)">
             </label>
 
             <label for="bolinha">
-                <span>O</span><input type="radio" name="op" id="bolinha" onfocus="checado(2)">
-            </label>
+                <span>O</span><input type="radio" name="xo" id="bolinha" onfocus="checado(2)">
+            </label> <br>
 
             <table>
                 <tr>
@@ -48,12 +56,12 @@
                 </tr>
             </table>
 
-            <p id="msg">O computador está escolhendo uma posição...</p>
+            <p id="msg">A máquina está escolhendo uma posição...</p>
 
         </section>
 
         <footer>
-            <a href="https://github.com/henrygoncalvess"><em>&copy;HenryGonçalves</em></a>
+            <a href="https://github.com/henrygoncalvess" target="_blank"><em>&copy;HenryGonçalves</em></a>
         </footer>
 
     </main>
