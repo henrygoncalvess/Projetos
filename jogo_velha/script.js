@@ -231,7 +231,8 @@ function verificar(lista){
         lista.indexOf(7) != -1 || lista.indexOf(2) != -1 &&
         lista.indexOf(5) != -1 && lista.indexOf(8) != -1 ||
         lista.indexOf(3) != -1 && lista.indexOf(6) != -1 &&
-        lista.indexOf(9) != -1)
+        lista.indexOf(9) != -1 || lista.indexOf(1) != -1 &&
+        lista.indexOf(5) != -1 && lista.indexOf(9) != -1)
         {
             return true
     }else{
