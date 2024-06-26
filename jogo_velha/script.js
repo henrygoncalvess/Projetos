@@ -231,11 +231,9 @@ function checado(num){
             break
 
         case 3:
-            escolha = 3
-
             limpar()
 
-            jogarM.style.color = 'black'
+            jogarM.style.color = 'rgb(54, 71, 223)'
             jogarM.style.fontSize = '1.2em'
 
             jogarP.style.color = 'rgba(0, 0, 0, 0.616)'
@@ -243,11 +241,9 @@ function checado(num){
             break
 
         case 4:
-            escolha = 4
-
             limpar()
 
-            jogarP.style.color = 'black'
+            jogarP.style.color = 'rgb(54, 71, 223)'
             jogarP.style.fontSize = '1.2em'
 
             jogarM.style.color = 'rgba(0, 0, 0, 0.616)'
