@@ -1,5 +1,8 @@
-var x = document.getElementsByTagName('label')[0]
-var o = document.getElementsByTagName('label')[1]
+var jogarM = document.getElementsByTagName('label')[0]
+var jogarP = document.getElementsByTagName('label')[1]
+
+var x = document.getElementsByTagName('label')[2]
+var o = document.getElementsByTagName('label')[3]
 
 var escolha = 1
 
@@ -225,6 +228,30 @@ function checado(num){
 
             o.style.color = '#FF4C4C'
             x.style.color = 'rgba(0, 0, 0, 0.616)'
+            break
+
+        case 3:
+            escolha = 3
+
+            limpar()
+
+            jogarM.style.color = 'black'
+            jogarM.style.fontSize = '1.2em'
+
+            jogarP.style.color = 'rgba(0, 0, 0, 0.616)'
+            jogarP.style.fontSize = '1em'
+            break
+
+        case 4:
+            escolha = 4
+
+            limpar()
+
+            jogarP.style.color = 'black'
+            jogarP.style.fontSize = '1.2em'
+
+            jogarM.style.color = 'rgba(0, 0, 0, 0.616)'
+            jogarM.style.fontSize = '1em'
             break
     }
 }

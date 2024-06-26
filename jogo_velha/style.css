@@ -73,19 +73,20 @@ section > label:nth-child(3){
 }
 
 main > label:nth-child(2){
-    color: #3030ff;
+    font-size: 1.2em;
 }
 
 main > label:nth-child(4){
     color: rgba(0, 0, 0, 0.616);
+    font-size: 1em;
 }
 
 main > label:nth-child(2),
 main > label:nth-child(4){
+    transition: 500ms;
     text-align: center;
     flex: 1 0 100vw;
-    font-size: 1em;
-    height: 10px;
+    height: 20px;
 }
 
 main > label > input{
