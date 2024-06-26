@@ -37,104 +37,108 @@ var tempo_espera = false
 var jogar_pessoa = false
 var jogar_maquina = false
 
+var c = 0
+var msg = 'A máquina está escolhendo uma posição...'
+
 function marcar(posicao){
     setTimeout(() => {
         tempo_espera = true
     }, 100);
-    
+
     if (tempo_espera == true){
         window.alert('o computador está escolhendo uma posição...')
     }else{
         computador = parseInt(Math.random() * 9) + 1
-    
+
         // se quando eu clicar, a minha posição já tiver sido removida da lista, msg de erro
         if (listaPos.indexOf(posicao) == -1){
             window.alert('Posição ocupada, escolha outra')
         }
-    
+
         else{
-    
-            mensagem.style.opacity = '100'
-    
+
+            mensagem.innerHTML = ''
+            escrever()
+
             ocupados.push(posicao)
             listaPos.splice(listaPos.indexOf(posicao), 1)
             azul.push(posicao)
-            
+
             if (escolha == 2){
                 fotoJOG = '<img src="imagens/o.png">'
             }else{
                 fotoJOG = '<img src="imagens/x.png">'
             }
-    
-    
+
+
             function mostrar(pos){
                 switch (pos){
                     case 1:
                         cima1.style.opacity = '100'
                         cima1.innerHTML = fotoJOG
                         break
-    
+
                     case 2:
                         cima2.style.opacity = '100'
                         cima2.innerHTML = fotoJOG
                         break
-    
+
                     case 3:
                         cima3.style.opacity = '100'
                         cima3.innerHTML = fotoJOG
                         break
-    
+
                     case 4:
                         meio1.style.opacity = '100'
                         meio1.innerHTML = fotoJOG
                         break
-    
+
                     case 5:
                         meio2.style.opacity = '100'
                         meio2.innerHTML = fotoJOG
                         break
-    
+
                     case 6:
                         meio3.style.opacity = '100'
                         meio3.innerHTML = fotoJOG
                         break
-    
+
                     case 7:
                         baixo1.style.opacity = '100'
                         baixo1.innerHTML = fotoJOG
                         break
-    
+
                     case 8:
                         baixo2.style.opacity = '100'
                         baixo2.innerHTML = fotoJOG
                         break
-    
+
                     case 9:
                         baixo3.style.opacity = '100'
                         baixo3.innerHTML = fotoJOG
                         break
                 }
             }
-    
+
             mostrar(posicao)
-    
+
             setTimeout(() => {
                 verificar(azul)
-                
+
                 if (verificar(azul)){
                     if (escolha == 1){
                         window.alert(`azul ganhou`)
                     }else{
                         window.alert(`vermelho ganhou`)
                     }
-                    
-                    
+
+
                     fim = true
                     limpar()
                 }
-                
+
                 else{
-                    
+
                     // não deixa repetir as posições
                     while (ocupados.indexOf(computador) != -1){
                         computador = parseInt(Math.random() * 9) + 1
@@ -142,27 +146,27 @@ function marcar(posicao){
                             break
                         }
                     }
-        
+
                     // se todas as posições forem usadas, alerta de empate. Zera tudo
                     if (ocupados.length > 8){
                         fim = true
                         window.alert('EMPATE')
                         limpar()
                     }
-        
+
                     else{
-                        mensagem.style.opacity = '0'
-                        
+                        mensagem.innerHTML = '<br><br>'
+
                         ocupados.push(computador)
                         listaPos.splice(listaPos.indexOf(computador), 1)
                         vermelho.push(computador)
-        
+
                         if (escolha == 1){
                             fotoJOG = fotoPC
                         }else{
                             fotoJOG = '<img src="imagens/x.png">'
                         }
-        
+
                         if (fim == false){
                             mostrar(computador)
                             tempo_espera = false
@@ -171,10 +175,10 @@ function marcar(posicao){
                 }
             }, 2000);
         }
-    
+
         setTimeout(() => {
             verificar(vermelho)
-            
+
             if(verificar(vermelho)){
                 if (escolha == 1){
                         window.alert(`vermelho ganhou`)
@@ -184,19 +188,20 @@ function marcar(posicao){
                 fim = true
                 limpar()
             }
-        }, 1300);
+        }, 2300);
     }
 }
 
 function limpar(){
 
+    computador = 0
     tempo_espera = false
     fim = false
     listaPos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     ocupados = []
     azul = []
     vermelho = []
-    mensagem.innerHTML = ''
+    mensagem.opacity = '0'
 
     cima1.style.opacity = '0'
     cima2.style.opacity = '0'
@@ -273,4 +278,18 @@ function verificar(lista){
     }else{
             return false
     }
+}
+
+function escrever(){
+    mensagem.innerHTML += `${msg[c]}`
+    c++
+
+    setTimeout(() => {
+        if (c == msg.length){
+            cancelAnimationFrame(id)
+            c = 0
+        }else{
+            id = requestAnimationFrame(escrever)
+        }
+    }, 20)
 }
