@@ -54,27 +54,17 @@ em{
     display: inline-block;
 }
 
-h1 > em:nth-child(1){
-    animation: up1 2s 0.1s 10;
-}
-h1 > em:nth-child(3){
-    animation: up2 2s 0.4s 10;
-}
+h1 > em:nth-child(1),
+h1 > em:nth-child(3),
 h1 > em:nth-child(5){
-    animation: up3 2s 0.7s 10;
+    animation: up 2s 10;
 }
 
-@keyframes up1 {
-    50% { translate: 0px 0px; }
-    60%{ translate: 0px -15px; }
-}
+h1 > em:nth-child(1) { animation-delay: 0.1s; }
+h1 > em:nth-child(3) { animation-delay: 0.4s; }
+h1 > em:nth-child(5) { animation-delay: 0.7s; }
 
-@keyframes up2 {
-    50% { translate: 0px 0px; }
-    60%{ translate: 0px -15px; }
-}
-
-@keyframes up3 {
+@keyframes up {
     50% { translate: 0px 0px; }
     60%{ translate: 0px -15px; }
 }
