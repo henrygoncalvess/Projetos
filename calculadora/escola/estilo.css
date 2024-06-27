@@ -17,12 +17,12 @@ body{
 }
 section{
     background-color:rgba(144, 144, 144, 0);
-    background-color: rgba(255, 255, 255, 0.291);
+    background-color: rgba(144, 201, 255, 0.426);
     border-radius: 25px;
     overflow: hidden;
     padding: 8px;
     width: 380px;
-    box-shadow:3px 3px 4px rgba(0, 0, 0, 0.552);
+    box-shadow:3px 3px 4px rgba(0, 0, 0, 0.284);
     border:1px solid black;
 }
 header{
@@ -31,7 +31,7 @@ header{
     height: 150px;
     border-radius: 25px;
     font-size: 3em;
-    box-shadow:2px 2px 3px rgba(1, 1, 1, 0.4);
+    box-shadow:2px 2px 3px rgba(1, 1, 1, 0.269);
     color: black;
     margin-bottom: 5px;
     padding: 50px 5px 0px 20px;
@@ -39,6 +39,7 @@ header{
 #igual{
     text-align: right;
     font-size: .8em;
+    text-shadow: 1px 2px 1px rgba(27, 27, 27, 0.377);
     color: rgba(0, 0, 0, 0.637);
 }
 #info{
@@ -47,7 +48,8 @@ header{
     color: rgba(0, 0, 0, 0.637);
 }
 header > #tela{
-    color: black;
+    text-shadow: 1px 2px 1px rgba(27, 27, 27, 0.377);
+    color: rgba(0, 0, 0, 0.825);
     text-align: right;
     font-size: 1em;
 }
