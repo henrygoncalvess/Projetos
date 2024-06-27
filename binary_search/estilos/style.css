@@ -115,15 +115,8 @@ span {
     cursor: pointer;
 }
 
-#avan{
-    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
-    box-shadow: none;
-}
-
 /* botão de voltar */
 #vol {
-    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
-    box-shadow: none;
     border-radius: 100% 20px 20px 100%;
     padding: 5px 8px 8px 30px;
     opacity: 0;
@@ -134,8 +127,6 @@ span {
 #resposta1,
 #resposta2,
 #resposta3{
-    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
-    box-shadow: none;
     display: block;
     border-radius: 10px;
     text-align: center;
@@ -143,6 +134,17 @@ span {
     font-size: 1em;
     opacity: 100;
     transition: 800ms;
+}
+
+#resposta1,
+#resposta2,
+#resposta3,
+#vol,
+#avan{
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
+    box-shadow: none;
 }
 
 /* classe que define a área de texto dos códigos */
