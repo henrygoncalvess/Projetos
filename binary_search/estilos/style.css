@@ -110,13 +110,20 @@ span {
     color: rgb(68, 0, 132);
     padding: 5px 20px 8px 8px;
     background-color: rgba(102, 0, 255, 0.185);
-    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
+    box-shadow: 1px 1px 3px rgba(92, 43, 226, 0.505);
     border-radius: 20px 100% 100% 20px;
     cursor: pointer;
 }
 
+#avan{
+    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
+    box-shadow: none;
+}
+
 /* botão de voltar */
 #vol {
+    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
+    box-shadow: none;
     border-radius: 100% 20px 20px 100%;
     padding: 5px 8px 8px 30px;
     opacity: 0;
@@ -127,6 +134,8 @@ span {
 #resposta1,
 #resposta2,
 #resposta3{
+    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
+    box-shadow: none;
     display: block;
     border-radius: 10px;
     text-align: center;
