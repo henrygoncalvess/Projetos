@@ -85,8 +85,8 @@ h1 > em:nth-child(12) { animation-delay: 1.2s; }
 h1 > em:nth-child(13) { animation-delay: 1.3s; }
 
 @keyframes up {
-    80% { translate: 0px 0px; }
-    90%{ translate: 0px -8px; }
+    60% { translate: 0px 0px; }
+    70%{ translate: 0px -10px; }
 }
 
 h2{
