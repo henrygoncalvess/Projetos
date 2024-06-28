@@ -72,46 +72,55 @@ function marcar(posicao){
                 switch (pos){
                     case 1:
                         cima1.style.opacity = '100'
+                        cima1.style.scale = '0.8'
                         cima1.innerHTML = fotoJOG
                         break
 
                     case 2:
                         cima2.style.opacity = '100'
+                        cima2.style.scale = '0.8'
                         cima2.innerHTML = fotoJOG
                         break
 
                     case 3:
                         cima3.style.opacity = '100'
+                        cima3.style.scale = '0.8'
                         cima3.innerHTML = fotoJOG
                         break
 
                     case 4:
                         meio1.style.opacity = '100'
+                        meio1.style.scale = '0.8'
                         meio1.innerHTML = fotoJOG
                         break
 
                     case 5:
                         meio2.style.opacity = '100'
+                        meio2.style.scale = '0.8'
                         meio2.innerHTML = fotoJOG
                         break
 
                     case 6:
                         meio3.style.opacity = '100'
+                        meio3.style.scale = '0.8'
                         meio3.innerHTML = fotoJOG
                         break
 
                     case 7:
                         baixo1.style.opacity = '100'
+                        baixo1.style.scale = '0.8'
                         baixo1.innerHTML = fotoJOG
                         break
 
                     case 8:
                         baixo2.style.opacity = '100'
+                        baixo2.style.scale = '0.8'
                         baixo2.innerHTML = fotoJOG
                         break
 
                     case 9:
                         baixo3.style.opacity = '100'
+                        baixo3.style.scale = '0.8'
                         baixo3.innerHTML = fotoJOG
                         break
                 }
