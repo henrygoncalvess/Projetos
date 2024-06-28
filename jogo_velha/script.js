@@ -52,6 +52,9 @@ function marcar(posicao){
 
         // se quando eu clicar, a minha posição já tiver sido removida da lista, msg de erro
         if (listaPos.indexOf(posicao) == -1){
+            setTimeout(() => {
+                tempo_espera = false
+            }, 100);
             window.alert('Posição ocupada, escolha outra')
         }
 
