@@ -1,6 +1,3 @@
-var jogarM = document.getElementsByTagName('label')[0]
-var jogarP = document.getElementsByTagName('label')[1]
-
 var x = document.getElementsByTagName('label')[2]
 var o = document.getElementsByTagName('label')[3]
 
@@ -34,11 +31,8 @@ var vermelho = []
 
 var tempo_espera = false
 
-var jogar_pessoa = false
-var jogar_maquina = false
-
 var c = 0
-var msg = 'A máquina está escolhendo uma posição...'
+var msg = 'A máquina está escolhendo uma posição...             '
 
 function marcar(posicao){
     setTimeout(() => {
@@ -158,7 +152,6 @@ function marcar(posicao){
                     }
 
                     else{
-                        mensagem.innerHTML = '<br><br>'
 
                         ocupados.push(computador)
                         listaPos.splice(listaPos.indexOf(computador), 1)
@@ -204,7 +197,6 @@ function limpar(){
     ocupados = []
     azul = []
     vermelho = []
-    mensagem.opacity = '0'
 
     cima1.style.opacity = '0'
     cima2.style.opacity = '0'
@@ -236,26 +228,6 @@ function checado(num){
 
             o.style.color = '#FF4C4C'
             x.style.color = 'rgba(0, 0, 0, 0.616)'
-            break
-
-        case 3:
-            limpar()
-
-            jogarM.style.color = 'rgb(54, 71, 223)'
-            jogarM.style.fontSize = '1.2em'
-
-            jogarP.style.color = 'rgba(0, 0, 0, 0.616)'
-            jogarP.style.fontSize = '1em'
-            break
-
-        case 4:
-            limpar()
-
-            jogarP.style.color = 'rgb(54, 71, 223)'
-            jogarP.style.fontSize = '1.2em'
-
-            jogarM.style.color = 'rgba(0, 0, 0, 0.616)'
-            jogarM.style.fontSize = '1em'
             break
     }
 }
@@ -291,8 +263,9 @@ function escrever(){
         if (c == msg.length){
             cancelAnimationFrame(id)
             c = 0
+            mensagem.innerHTML = ''
         }else{
             id = requestAnimationFrame(escrever)
         }
-    }, 20)
+    }, 30)
 }

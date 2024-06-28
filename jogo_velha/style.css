@@ -38,7 +38,7 @@ section{
     border-radius: 20px;
     box-shadow: 2px 2px 6px rgba(0, 75, 125, 0.188);
     padding: 10px;
-    margin: 50px 5px;
+    margin: 30px 5px 50px 5px;
 }
 
 h1{
@@ -109,31 +109,6 @@ section > label:nth-child(2){
 
 section > label:nth-child(3){
     color: rgba(0, 0, 0, 0.616);
-}
-
-main > label:nth-child(2){
-    color: rgb(54, 71, 223);
-    font-size: 1.2em;
-    font-weight: 500;
-}
-
-main > label:nth-child(4){
-    color: rgba(0, 0, 0, 0.616);
-    font-size: 1em;
-    font-weight: 500;
-}
-
-main > label:nth-child(2),
-main > label:nth-child(4){
-    text-shadow: 2px 2px 1px rgba(91, 105, 231, 0.299);
-    transition: 500ms;
-    text-align: center;
-    flex: 1 0 100vw;
-    height: 20px;
-}
-
-main > label > input{
-    opacity: 0;
 }
 
 input{
