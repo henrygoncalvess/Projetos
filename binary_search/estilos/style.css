@@ -145,7 +145,7 @@ span {
     text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.279);
     font-weight: bold;
     text-transform: uppercase;
-    border-bottom: 4px inset rgba(92, 43, 226, 0.505);
+    border-bottom: 3.5px inset rgba(92, 43, 226, 0.245);
     box-shadow: none;
 }
 
