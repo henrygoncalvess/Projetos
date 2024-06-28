@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from sys import exit
+from random import randint
 
 pygame.init()
 
@@ -14,12 +15,17 @@ fps = pygame.time.Clock()
 x = (640 / 2) - 30
 y = (480 / 2) - 30
 
+cubinx = randint(40, 600)
+cubiny = randint(10, 470)
+
+pontos = 0
+
 # fonte e texto
-font = pygame.font.SysFont('', 50)
-texto = font.render('Helloooooooooooo World :D', 1, (255, 255, 255))
+font = pygame.font.SysFont('', 40)
 
 while True:
-    fps.tick(48)
+    texto = font.render(f'pontos: {pontos}', 1, (255, 255, 255))
+    fps.tick(30)
     for event in pygame.event.get():
         # se o evento for clicar no X da janela
         if event.type == QUIT:
@@ -28,29 +34,29 @@ while True:
             exit()
 
     if pygame.key.get_pressed()[K_w]:
-        y -= 3
+        y -= 10
     if pygame.key.get_pressed()[K_a]:
-        x -= 3
+        x -= 10
     if pygame.key.get_pressed()[K_s]:
-        y += 3
+        y += 10
     if pygame.key.get_pressed()[K_d]:
-        x += 3
+        x += 10
 
     # texto na posição inicial da tela
     tela.fill((0, 0, 0))
     tela.blit(texto, (0, 0))
 
     # desenhando formas na tela
-    # QUADRADO -> parâmetros (tela, cor, (posX, posY, largura, altura))
-    pygame.draw.rect(tela, (255, 0, 0), (x, y, 30, 30))
+    # LINHA .line -> parâmetros (tela, cor, (inicioX, inicioY), (fimX, fimY), expessura)
+    # CÍRCULO .circle -> parâmetros (tela, cor, (posX, posY), área)
+    # QUADRADO .rect -> parâmetros (tela, cor, (posX, posY, largura, altura))
+    eu = pygame.draw.rect(tela, (0, 255, 0), (x, y, 20, 20))
+    cubin = pygame.draw.rect(tela, (255, 0, 0), (cubinx, cubiny, 18, 18))
 
-
-    # # CÍRCULO -> parâmetros (tela, cor, (posX, posY), área)
-    # pygame.draw.circle(tela, (0, 0, 255), (110, 60), 20)
-
-    # # LINHA -> parâmetros (tela, cor, (inicioX, inicioY), (fimX, fimY), expessura)
-    # pygame.draw.line(tela, (200, 200, 200), (140, 50), (140, 400), 10)
-    # pygame.draw.line(tela, (100, 255, 255), (170, 60), (300, 60), 10)
+    if eu.colliderect(cubin):
+        cubinx = randint(40, 600)
+        cubiny = randint(10, 470)
+        pontos += 1
 
     # sempre atualizar a tela
     pygame.display.update()
