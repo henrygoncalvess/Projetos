@@ -432,8 +432,8 @@ input{
 }
 
 #buscando {
+    border-bottom: 4px inset rgba(0, 181, 63, 0.399);
     background-color: rgba(0, 255, 89, 0.5);
-    border: none;
     box-shadow: none;
     cursor: default;
     display: none;
