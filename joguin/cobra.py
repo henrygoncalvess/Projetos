@@ -6,7 +6,7 @@ from random import randint
 pygame.init()
 
 # Nome da janela
-pygame.display.set_caption('Joguin Python')
+pygame.display.set_caption('Cobrinha Python')
 
 # tamanho da tela (altura, largura)
 tela = pygame.display.set_mode((640, 480))
@@ -21,7 +21,7 @@ hitbox = mensagem.get_rect()
 
 cobraX = (640 / 2) - 30
 cobraY = (480 / 2) - 30
-tam = 5
+tam = 10
 vel = 7
 morreu = False
 
@@ -37,12 +37,12 @@ listCobra = []
 
 def crescer(l):
     for XY in l:
-        pygame.draw.rect(tela, (0, 255, 0), (XY[0], XY[1], 20, 20))
+        pygame.draw.circle(tela, (0, 0, 255), (XY[0], XY[1] +10), 10)
 
 def reiniciar():
     global pontos, macaX, macaY, morreu, tam, cobraX, cobraY, listCabeca, listCobra
     pontos = 0
-    tam = 5
+    tam = 10
     macaX = randint(20, 600)
     macaY = randint(50, 430)   
     cobraX = (640 / 2) - 30
@@ -112,18 +112,20 @@ while True:
     # LINHA .line -> parâmetros (tela, cor, (inicioX, inicioY), (fimX, fimY), expessura)
     # CÍRCULO .circle -> parâmetros (tela, cor, (posX, posY), área)
     # QUADRADO .rect -> parâmetros (tela, cor, (posX, posY, largura, altura))
-    eu = pygame.draw.rect(tela, (0, 255, 0), (cobraX, cobraY, 20, 20))
-    cubin = pygame.draw.rect(tela, (255, 0, 0), (macaX, macaY, 18, 18))
+    eu = pygame.draw.circle(tela, (0, 0, 255), (cobraX, cobraY +10), 10)
+    fruta = pygame.draw.circle(tela, (255, 0, 0), (macaX, macaY), 9)
+    matinho = pygame.draw.line(tela, (0, 230, 0), (macaX - 5, macaY - 12), (macaX -2, macaY - 5), 6)
+    matinho = pygame.draw.line(tela, (0, 230, 0), (macaX +5, macaY -12), (macaX, macaY -5), 6)
     pygame.draw.line(tela, (0, 0, 0), (2, 0), (2, 480), 5)
     pygame.draw.line(tela, (0, 0, 0), (637, 0), (637, 480), 5)
     pygame.draw.line(tela, (0, 0, 0), (0, 2), (637, 2), 5)
     pygame.draw.line(tela, (0, 0, 0), (0, 477), (637, 477), 5)
 
-    if eu.colliderect(cubin):
+    if eu.colliderect(fruta):
         macaX = randint(20, 600)
         macaY = randint(50, 430)
         pontos += 1
-        tam += 3
+        tam += 5
 
     listCabeca = []
     listCabeca.append(cobraX)
