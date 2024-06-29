@@ -11,18 +11,18 @@
         <h1>Roleta</h1>
 
         <div id="roleta">
-            <output id="out"><em>abcdef</em></output>
-            <output id="out2"><em>ABCDEF</em></output>
+            <output id="out"><em>Item 1</em></output>
+            <output id="out2"><em>Item 2</em></output>
         </div>
 
         <button onclick="rodar(20)">GIRAR</button>
 
         <label for="dado">
-            <input type="text" id="dado" placeholder="Item 1" autocomplete="off" maxlength="15" size="15" oninput="out.innerHTML = dado.value">
+            <input type="text" id="dado" placeholder="Item 1" autocomplete="off" maxlength="15" size="15" oninput="out.innerHTML = `<em>${dado.value}<em>`">
         </label>
 
         <label for="dado2">
-            <input type="text" id="dado2" placeholder="Item 2" autocomplete="off" maxlength="15" size="15" oninput="out2.innerHTML = dado2.value">
+            <input type="text" id="dado2" placeholder="Item 2" autocomplete="off" maxlength="15" size="15" oninput="out2.innerHTML = `<em>${dado2.value}<em>`">
         </label>
     </main>
 
