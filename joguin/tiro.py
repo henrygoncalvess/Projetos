@@ -9,6 +9,9 @@ pygame.display.set_caption('Cobrinha Python')
 tela = pygame.display.set_mode((640, 480))
 fps = pygame.time.Clock()
 
+meioX = (640//2) - 20
+meioY = (480//2) - 20
+
 font = pygame.font.SysFont('', 40)
 
 while True:
@@ -20,6 +23,6 @@ while True:
             pygame.quit()
             exit()
 
-    # pygame.draw
+    pygame.draw.rect(tela, (255, 0, 127), (meioX, meioY, 20, 20))
 
     pygame.display.update()
