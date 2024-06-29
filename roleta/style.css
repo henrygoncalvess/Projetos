@@ -53,12 +53,19 @@ button{
 }
 
 #out{
-    background-color: rgba(0, 0, 0, 0.362);
+    background-color: rgba(255, 255, 0, 0.359);
     display: block;
-    margin-top: 150px;
     padding-top: 50px;
     height: 150px;
     text-align: center;
+}
+
+#out2{
+    background-color: rgba(0, 128, 0, 0.402);
+    display: block;
+    text-align: center;
+    height: 150px;
+    padding-top: 50px;
 }
 
 input{
@@ -69,4 +76,11 @@ input{
     height: 25px;
     border-radius: 20px;
     border: 1px solid black;
+}
+
+em{
+    display: inline-block;
+    font-style: normal;
+    rotate: 90deg;
+    font-weight: bold;
 }
