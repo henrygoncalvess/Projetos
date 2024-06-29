@@ -85,3 +85,13 @@ em{
     rotate: 90deg;
     font-weight: bold;
 }
+
+span{
+    width: 0;
+    height: 0;
+    border-top: 25px solid black;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    margin: -10px 0px;
+    z-index: 1;
+}
