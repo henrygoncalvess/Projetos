@@ -1,5 +1,5 @@
-var x = document.getElementsByTagName('label')[2]
-var o = document.getElementsByTagName('label')[3]
+var x = document.getElementsByTagName('label')[0]
+var o = document.getElementsByTagName('label')[1]
 
 var escolha = 1
 
