@@ -33,14 +33,16 @@ h1{
 #roleta{
     margin-bottom: 30px;
     border: 1px solid rgba(0, 122, 179, 0.516);
-    flex: 0 0 300px;
     background-color: white;
     align-content: center;
     border-radius: 50%;
     width: 300px;
     height: 300px;
     overflow: hidden;
-    rotate: 270deg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* rotate: 270deg; */
 }
 
 button{
@@ -55,18 +57,18 @@ button{
 
 #out{
     background-color: rgba(255, 255, 0, 0.359);
-    display: block;
-    padding-top: 50px;
-    height: 150px;
     text-align: center;
+    flex: 0 0 150px;
+    height: 300px;
+    padding-top: 140px;
 }
 
 #out2{
     background-color: rgba(0, 128, 0, 0.402);
-    display: block;
     text-align: center;
-    height: 150px;
-    padding-top: 50px;
+    flex: 0 0 150px;
+    height: 300px;
+    padding-top: 140px;
 }
 
 input{
@@ -82,7 +84,6 @@ input{
 em{
     display: inline-block;
     font-style: normal;
-    rotate: 90deg;
     font-weight: bold;
 }
 
