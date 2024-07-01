@@ -1,36 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Border-Radius</title>
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-        body{
-            width: 100vw;
-            height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-flow: column wrap;
-        }
-        div{
-            width: 200px;
-            height: 200px;
-            background-color: lightgray;
-            border: 5px solid black;
-            border-radius: 0%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>replit</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+    }
+    
+    div {
+        flex: 0 0 200px;
+        height: 200px;
+        background-color: gray;
+        border: 1px solid black;
+        margin: 20px 25px;
+    }
+    
+    section{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: space-between;
+        width: 250px;
+    }
+    
+    input{
+        width: 50px;
+        height: 30px;
+        text-align: center;
+        font-size: 1.2em;
+    }
+    
+    label{
+        font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-    <div id="square">
+
+  <main>
+
+    <section>
+      <label for="b1">
+        <input type="number" id="b1" oninput="mud.style.borderTopLeftRadius = `${b1.value}%`">%
+      </label>
+        
+      <label>
+        <input type="number" id="b2" oninput="mud.style.borderTopRightRadius = `${b2.value}%`">%
+      </label>
+    </section>
+    
+    <div id="mud">
 
     </div>
+
+    <section>
+
+      <label for="b3">
+        <input type="number" id="b3" oninput="mud.style.borderBottomLeftRadius = `${b3.value}%`">%
+      </label>
+      
+      <label for="b4">
+        <input type="number" id="b4" oninput="mud.style.borderBottomRightRadius = `${b4.value}%`">%
+      </label>
+      
+    </section>
+    
+  </main>
+  
 </body>
 </html>
