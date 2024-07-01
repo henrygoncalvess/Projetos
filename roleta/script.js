@@ -26,7 +26,3 @@ function rodar(){
         mult -= 0.2
     }
 }
-
-function output(){
-    item.innerHTML = dado.value
-}
