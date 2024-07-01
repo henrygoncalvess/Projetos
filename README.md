@@ -1,6 +1,6 @@
 # Tirando minhas ideias do papel
 
-[-Resolução de Desafios-](https://henrygoncalvess.github.io/meus-projetos/desafios/desafios)
+[-Resolução de Desafios-](https://henrygoncalvess.github.io/Projetos/desafios/desafios)
 
 Mini Projetos:
 
