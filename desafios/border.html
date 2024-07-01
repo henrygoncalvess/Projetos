@@ -38,7 +38,7 @@
     }
     
     input{
-        width: 50px;
+        width: 60px;
         height: 30px;
         text-align: center;
         font-size: 1.2em;
@@ -55,11 +55,11 @@
 
     <section>
       <label for="b1">
-        <input type="number" id="b1" oninput="mud.style.borderTopLeftRadius = `${b1.value}%`">%
+        <input type="number" id="b1" oninput="mud.style.borderTopLeftRadius = `${b1.value}%`" placeholder="0" step="10" min="0" max="100">%
       </label>
         
       <label>
-        <input type="number" id="b2" oninput="mud.style.borderTopRightRadius = `${b2.value}%`">%
+        <input type="number" id="b2" oninput="mud.style.borderTopRightRadius = `${b2.value}%`" placeholder="0" step="10" min="0" max="100">%
       </label>
     </section>
     
@@ -70,11 +70,11 @@
     <section>
 
       <label for="b3">
-        <input type="number" id="b3" oninput="mud.style.borderBottomLeftRadius = `${b3.value}%`">%
+        <input type="number" id="b3" oninput="mud.style.borderBottomLeftRadius = `${b3.value}%`" placeholder="0" step="10" min="0" max="100">%
       </label>
       
       <label for="b4">
-        <input type="number" id="b4" oninput="mud.style.borderBottomRightRadius = `${b4.value}%`">%
+        <input type="number" id="b4" oninput="mud.style.borderBottomRightRadius = `${b4.value}%`" placeholder="0" step="10" min="0" max="100">%
       </label>
       
     </section>
