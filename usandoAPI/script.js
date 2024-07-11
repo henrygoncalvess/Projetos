@@ -1,3 +1,9 @@
+var div = document.getElementById('lista')
+var botao = document.getElementById('botao')
+var personalizar = document.getElementById('bloco2')
+var inputs = document.getElementById('inputs')
+var custom = document.getElementById('custom')
+
 var tela = document.getElementById('especial')
 var bola = document.getElementById('circulo')
 
@@ -27,6 +33,12 @@ var fundo = `&backgroundColor=ffb162`
 
 async function carregando(){
     if (localStorage.getItem('criou') == 'sim'){
+        setTimeout(() => {
+            rodando = false
+            tela.style.display = 'none'
+            inputs.style.display = 'none'
+        }, 5002);
+
         botao.style.display = 'none'
         inputs.style.display = 'none'
         personalizar.innerHTML = `
@@ -37,7 +49,7 @@ async function carregando(){
         <br>
         <br>
         &#x1F447 compartilhe esta página com seus amigos &#x1F447
-        <p style="color: blue;">link aqui</p>
+        <p style="color: blue; font-size: 1em;">https://henrygoncalvess.github.io/Projetos/usandoAPI/</p>
         </p>`
     }else{
         botao.style.display = 'inline-block'
@@ -47,19 +59,21 @@ async function carregando(){
     
     rodando = true
     tela.style.display = 'block'
+    inputs.style.display = 'none'
     rodar()
     setTimeout(() => {
         rodando = false
         tela.style.display = 'none'
+        inputs.style.display = 'block'
         nome.focus()
-    }, 4000);
+    }, 5000);
 
 
     urlava = `https://api.dicebear.com/9.x/pixel-art/svg?scale=90`
 
     custom.setAttribute('src', `${urlava}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}${fundo}`)
 
-    await conectar(4000)
+    await conectar(5000)
 }
 
 async function avatar(pos){
@@ -543,5 +557,124 @@ function rodar(){
         i = 0
     }else{
         id = requestAnimationFrame(rodar)
+    }
+}
+
+
+async function acessar(){
+    const res = await fetch('/env')
+
+    const k = await res.json()
+
+    let get = {
+        method: 'GET',
+    
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${k.token}`
+        }
+    }
+
+    try{
+        const response = await fetch(k.url, get)
+
+        if(!response.ok){
+            throw new Error(`erro na requisição: ${response.status}`)
+        }
+        else{
+            
+            const dados = await response.json()
+
+            
+            console.log(dados)
+
+            
+            dados.records.forEach(element => {
+                let span = document.createElement('span')
+
+                span.innerHTML = `
+                &diams; <strong>${element.fields.nome}</strong> &diams; <br>
+                <img src="${element.fields.url}" id="visitas"> <br>
+                <em>&#x1F37D &#xFE0F</em> ${element.fields.comida_fav} <br>
+                <em>&#x1F3AC&#x1F37F</em> ${element.fields.serie_fav} <br>
+                <hr>
+                `
+
+                div.appendChild(span)
+            });
+        }
+    }
+    catch(erro){
+        console.log(`erro na requisição. status: ${erro}`)
+    }
+}
+acessar()
+
+async function criar(nome, comida, serie){
+    const res = await fetch('/env')
+
+    const k = await res.json()
+
+    localStorage.setItem('criou', 'sim')
+    botao.style.display = 'none'
+    inputs.style.display = 'none'
+    personalizar.innerHTML = `
+    <p>
+    &#x2728 Prontinho &#x2728 
+    <br>
+    seu nome já está na lista...
+    <br>
+    <br>
+    &#x1F447 compartilhe esta página com seus amigos &#x1F447
+    <p style="color: blue; font-size: 1em;">https://henrygoncalvess.github.io/Projetos/usandoAPI/</p>
+    </p>`
+
+    let post = {
+        method: 'POST',
+    
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${k.token}`
+        },
+
+        body: JSON.stringify({
+            fields: {
+                url: custom.attributes[1].value,
+                nome: `${nome}`,
+                comida_fav: `${comida}`,
+                serie_fav: `${serie}`
+            }
+        })
+    }
+
+    try{
+        const response = await fetch(k.url, post)
+
+        if(!response.ok){
+            throw new Error(`erro na requisição: ${response.status}`)
+        }
+        else{
+            
+            const dados = await response.json()
+    
+            console.log(dados)
+
+                
+            let span = document.createElement('span')
+
+            span.innerHTML = `
+            &diams; <strong>${dados.fields.nome}</strong> &diams; <br>
+            <img src="${dados.fields.url}" id="visitas"> <br>
+            <em>&#x1F37D &#xFE0F</em> ${dados.fields.comida_fav} <br>
+            <em>&#x1F3AC&#x1F37F</em> ${dados.fields.serie_fav} <br>
+            <hr>
+            `
+
+            div.appendChild(span)
+        }
+    }
+    catch(erro){
+        console.log(`erro na requisição. status: ${erro}`)
     }
 }
