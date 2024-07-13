@@ -129,6 +129,10 @@ input {
     background-color: rgba(255, 143, 143, 0.253);
 }
 
+input:checked + img{
+    background-color: blue;
+}
+
 em{
     font-style: normal;
     font-size: 1.4em;
