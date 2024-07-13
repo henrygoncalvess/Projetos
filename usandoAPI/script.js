@@ -539,9 +539,13 @@ function conectar(tempo){
         img[80].setAttribute('src', `${tamA}${pele}${olho}${corolho}&hat=variant10&hatProbability=100&hatColor=101010`)
 
         img[81].setAttribute('height', '60px')
+        img[81].style.padding = '0px'
         img[82].setAttribute('height', '60px')
+        img[82].style.padding = '0px'
         img[83].setAttribute('height', '60px')
+        img[83].style.padding = '0px'
         img[84].setAttribute('height', '60px')
+        img[84].style.padding = '0px'
 
         // COR DE FUNDO
         img[81].style.background = `#b6e3f4`
