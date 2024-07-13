@@ -129,6 +129,10 @@ input {
     background-color: rgba(255, 143, 143, 0.253);
 }
 
+.ocultar input{
+    display: none;
+}
+
 input:checked + img{
     background-color: blue;
 }
