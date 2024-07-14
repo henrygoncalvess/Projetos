@@ -539,7 +539,6 @@ async function conectar(){
     img[82].setAttribute('src', `${res.url}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}&backgroundColor=ffb162`)
     img[83].setAttribute('src', `${res.url}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}&backgroundColor=d1d4f9`)
     img[84].setAttribute('src', `${res.url}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}&backgroundColor=909090`)
-
 }
 
 let rodando = true
