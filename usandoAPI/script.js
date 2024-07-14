@@ -82,15 +82,11 @@ function carregando(){
     
         custom.setAttribute('src', `${urlava}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}${fundo}`)
     
-        conectar(5000)
+        conectar()
     }
 }
 
-async function avatar(pos){
-    rodando = true
-    tela.style.display = 'block'
-    rodar()
-
+function avatar(pos){
     switch (pos){
         case 1:
             pele = `&skinColor=8d5524`
@@ -431,12 +427,12 @@ async function avatar(pos){
 
     custom.setAttribute('src', `${urlava}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}${fundo}`)
 
-    await conectar(1600)
+    conectar()
 }
 
 let id2;
 
-async function conectar(tempo){
+async function conectar(){
     const res = await fetch(`${urlava}`)
 
     img[1].setAttribute('src', `${res.url}&skinColor=8d5524${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
