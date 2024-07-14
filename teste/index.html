@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste fetch img</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <img src="" id="imagem">
+
+    <script>
+        let img = document.getElementById('imagem')
+
+        fetch('https://api.dicebear.com/9.x/pixel-art/svg?scale=90')
+        .then(res => {
+            img.setAttribute('src', res.url)
+        })
+    </script>
+</body>
+</html>
