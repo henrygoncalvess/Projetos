@@ -129,7 +129,7 @@ input {
     background-color: rgba(255, 143, 143, 0.253);
 }
 
-.ocultar input{
+#bloco2 input{
     display: none;
 }
 
