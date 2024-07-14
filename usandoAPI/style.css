@@ -134,7 +134,7 @@ input {
 }
 
 input:checked + img{
-    background-color: blue;
+    background-color: #005d97;
 }
 
 em{
