@@ -436,16 +436,13 @@ async function avatar(pos){
 
 let id2;
 
-function conectar(tempo){
-    fetch(`${urlava}`)
-    .then(res => {
-        img[1].setAttribute('src', `${res.url}&skinColor=b68655${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
-    })
+async function conectar(tempo){
+    const res = await fetch(`${urlava}`)
 
-    // COR DA PELE
-    // img[1].setAttribute('src', `${urlava}&skinColor=8d5524${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
-    img[2].setAttribute('src', `${urlava}&skinColor=b68655${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
-    img[3].setAttribute('src', `${urlava}&skinColor=ffdbac${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
+    img[1].setAttribute('src', `${res.url}&skinColor=8d5524${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
+
+    img[2].setAttribute('src', `${res.url}&skinColor=b68655${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
+    img[3].setAttribute('src', `${res.url}&skinColor=ffdbac${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
     
     // CABELO
     img[4].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long01`)
@@ -556,11 +553,6 @@ function conectar(tempo){
     img[82].style.background = `#ffb162`
     img[83].style.background = `#d1d4f9`
     img[84].style.background = `#909090`
-
-    setTimeout(() => {
-        rodando = false
-        tela.style.display = 'none'
-    }, tempo);
 }
 
 let rodando = true
