@@ -134,7 +134,7 @@ input {
 }
 
 input:checked + img{
-    background-color: #005d97;
+    background-color: #005d97f0;
 }
 
 em{
@@ -172,6 +172,7 @@ img{
     width: 60px;
     margin: 0px 5px;
     padding: 5px;
+    border-radius: 10px;
 }
 
 button{
