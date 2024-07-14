@@ -63,12 +63,12 @@ function carregando(){
         rodando = true
         tela.style.display = 'block'
         rodar()
-        setTimeout(() => {
-            rodando = false
-            inputs.style.display = 'block'
-            tela.style.display = 'none'
-            nome.focus()
-        }, 6000);
+        // setTimeout(() => {
+        //     rodando = false
+        //     inputs.style.display = 'block'
+        //     tela.style.display = 'none'
+        //     nome.focus()
+        // }, 6000);
     
     
         urlava = `https://api.dicebear.com/9.x/pixel-art/svg?scale=90`
@@ -588,18 +588,49 @@ async function acessar(){
             console.log(dados)
 
             
-            dados.records.forEach(element => {
-                let span = document.createElement('span')
+            dados.records.map((element, pos, arr) => {
+                if (pos == arr.length -1){
+                    if (localStorage.getItem('criou') == 'sim'){
+                        inputs.style.display = 'none'
+                        botao.style.display = 'none'
+                        rodando = false
+                        tela.style.display = 'none'
+                    }else{
+                        botao.style.display = 'inline-block'
+                        inputs.style.display = 'none'
+                        tela.style.display = 'block'
+                        rodando = false
+                        inputs.style.display = 'block'
+                        tela.style.display = 'none'
+                        nome.focus()
+                    }
 
-                span.innerHTML = `
-                <em>&diams;</em> <strong>${element.fields.nome}</strong> <em>&diams;</em> <br>
-                <img src="${element.fields.url}" id="visitas"> <br>
-                <em>&#x1F37D &#xFE0F</em> ${element.fields.comida_fav} <br>
-                <em>&#x1F3AC&#x1F37F</em> ${element.fields.serie_fav} <br>
-                <hr>
-                `
+                    let span = document.createElement('span')
+    
+                    span.innerHTML = `
+                    <em>&diams;</em> <strong>${element.fields.nome}</strong> <em>&diams;</em> <br>
+                    <img src="${element.fields.url}" id="visitas"> <br>
+                    <em>&#x1F37D &#xFE0F</em> ${element.fields.comida_fav} <br>
+                    <em>&#x1F3AC&#x1F37F</em> ${element.fields.serie_fav} <br>
+                    <hr>
+                    `
+    
+                    div.appendChild(span)
+                }
+                else{
+                    let span = document.createElement('span')
+    
+                    span.innerHTML = `
+                    <em>&diams;</em> <strong>${element.fields.nome}</strong> <em>&diams;</em> <br>
+                    <img src="${element.fields.url}" id="visitas"> <br>
+                    <em>&#x1F37D &#xFE0F</em> ${element.fields.comida_fav} <br>
+                    <em>&#x1F3AC&#x1F37F</em> ${element.fields.serie_fav} <br>
+                    <hr>
+                    `
+    
+                    div.appendChild(span)
+                }
 
-                div.appendChild(span)
             });
         }
     }
