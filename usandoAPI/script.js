@@ -33,7 +33,7 @@ var acess = ``
 var fundo = `&backgroundColor=b6e3f4`
 
 acessar()
-async function carregando(){
+function carregando(){
     if (localStorage.getItem('criou') == 'sim'){
         rodando = true
         tela.style.display = 'block'
@@ -437,8 +437,13 @@ async function avatar(pos){
 let id2;
 
 function conectar(tempo){
+    fetch(`${urlava}`)
+    .then(res => {
+        img[1].setAttribute('src', `${res.url}&skinColor=b68655${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
+    })
+
     // COR DA PELE
-    img[1].setAttribute('src', `${urlava}&skinColor=8d5524${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
+    // img[1].setAttribute('src', `${urlava}&skinColor=8d5524${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
     img[2].setAttribute('src', `${urlava}&skinColor=b68655${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
     img[3].setAttribute('src', `${urlava}&skinColor=ffdbac${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
     

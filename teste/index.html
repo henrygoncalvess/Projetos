@@ -9,15 +9,50 @@
     </style>
 </head>
 <body>
-    <img src="" id="imagem">
+    <img src="adowhf" id="imagem">
+
+    <button onclick="trocar()">trocar</button>
 
     <script>
         let img = document.getElementById('imagem')
 
-        fetch('https://api.dicebear.com/9.x/pixel-art/svg?scale=90')
-        .then(res => {
-            img.setAttribute('src', res.url)
-        })
+        var pele = `&skinColor=8d5524`
+        var cabelo = `&hair=short14`
+        var cc = `&hairColor=28150a`
+        var olho = `&eyes=variant10`
+        var corolho = `&eyesColor=000000`
+        var boca = `&mouth=happy09`
+        var corboca = `&mouthColor=be7054`
+        var roupa = `&clothing=variant03`
+        var corroupa = `&clothingColor=428bca`
+        var acess = ``
+        var fundo = `&backgroundColor=b6e3f4`
+
+        setTimeout(() => {
+            fetch(`https://api.dicebear.com/9.x/pixel-art/svg?scale=20${cabelo}${cc}${olho}${corolho}${boca}${corboca}${roupa}${corroupa}${acess}${fundo}`)
+            .then(res => {
+                img.setAttribute('src', res.url)
+            })
+        }, 2000);
+
+        function trocar() {
+            pele = `&skinColor=ffdbac`
+            cabelo = `&hair=long08`
+            cc = `&hairColor=28150a`
+            olho = `&eyes=variant10`
+            corolho = `&eyesColor=000000`
+            boca = `&mouth=happy09`
+            corboca = `&mouthColor=be7054`
+            roupa = `&clothing=variant03`
+            corroupa = `&clothingColor=428bca`
+            acess = ``
+            fundo = `&backgroundColor=b6e3f4`
+
+            fetch(`https://api.dicebear.com/9.x/pixel-art/svg?scale=20${cabelo}${cc}${olho}${corolho}${boca}${corboca}${roupa}${corroupa}${acess}${fundo}`)
+            .then(res => {
+                img.setAttribute('src', res.url)
+            })
+        }
     </script>
 </body>
 </html>
