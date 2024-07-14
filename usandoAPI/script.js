@@ -24,8 +24,10 @@ var acess = ``
 var fundo = `&backgroundColor=b6e3f4`
 
 acessar()
+var varredura = setInterval(conectar, 1000)
 function carregando(){
     if (localStorage.getItem('criou') == 'sim'){
+        clearInterval(varredura)
         rodando = true
         tela.style.display = 'block'
         rodar()
@@ -415,6 +417,8 @@ function avatar(pos){
             fundo = `&backgroundColor=909090`
             break
     }
+
+    conectar()
 }
 
 let id2;
