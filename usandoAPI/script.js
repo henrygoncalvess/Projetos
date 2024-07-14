@@ -9,15 +9,6 @@ var tela = document.getElementById('especial')
 var bola = document.getElementById('circulo')
 
 let img = document.querySelectorAll('img')
-var tamC = `https://api.dicebear.com/9.x/pixel-art/svg?scale=150&translateY=45&ackgroundColor=ffffff`
-
-var tamO = `https://api.dicebear.com/9.x/pixel-art/svg?scale=190&translateY=30&ackgroundColor=ffffff`
-
-var tamB = `https://api.dicebear.com/9.x/pixel-art/svg?scale=200&translateY=-45&ackgroundColor=ffffff`
-
-var tamR = `https://api.dicebear.com/9.x/pixel-art/svg?scale=160&translateY=-90&ackgroundColor=ffffff`
-
-var tamA = `https://api.dicebear.com/9.x/pixel-art/svg?scale=120&translateY=40&ackgroundColor=ffffff`
 
 var urlava;
 var pele = `&skinColor=8d5524`
@@ -424,10 +415,6 @@ function avatar(pos){
             fundo = `&backgroundColor=909090`
             break
     }
-
-    custom.setAttribute('src', `${urlava}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}${fundo}`)
-
-    conectar()
 }
 
 let id2;
@@ -435,120 +422,124 @@ let id2;
 async function conectar(){
     const res = await fetch(`${urlava}`)
 
+    custom.setAttribute('src', `${res.url}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}${fundo}`)
+
     img[1].setAttribute('src', `${res.url}&skinColor=8d5524${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
 
     img[2].setAttribute('src', `${res.url}&skinColor=b68655${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
     img[3].setAttribute('src', `${res.url}&skinColor=ffdbac${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}`)
     
     // CABELO
-    img[4].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long01`)
-    img[5].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long04`)
-    img[6].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long05`)
-    img[7].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long07`)
-    img[8].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long08`)
-    img[9].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long10`)
-    img[10].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long11`)
-    img[11].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long12`)
-    img[12].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long13`)
-    img[13].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long14`)
-    img[14].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long15`)
-    img[15].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long16`)
-    img[16].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long17`)
-    img[17].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long18`)
-    img[18].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long19`)
-    img[19].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long20`)
-    img[20].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long21`)
-    img[21].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short01`)
-    img[22].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short02`)
-    img[23].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short03`)
-    img[24].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short04`)
-    img[25].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short06`)
-    img[26].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short07`)
-    img[27].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short08`)
-    img[28].setAttribute('src', `${urlava}${pele}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hairColor=transparent`)
-    img[29].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short10`)
-    img[30].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short12`)
-    img[31].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short14`)
-    img[32].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short15`)
-    img[33].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short16`)
-    img[34].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short17`)
-    img[35].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short19`)
-    img[36].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short20`)
-    img[37].setAttribute('src', `${urlava}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short21`)
+    img[4].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long01`)
+    img[5].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long04`)
+    img[6].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long05`)
+    img[7].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long07`)
+    img[8].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long08`)
+    img[9].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long10`)
+    img[10].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long11`)
+    img[11].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long12`)
+    img[12].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long13`)
+    img[13].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long14`)
+    img[14].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long15`)
+    img[15].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long16`)
+    img[16].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long17`)
+    img[17].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long18`)
+    img[18].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long19`)
+    img[19].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long20`)
+    img[20].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=long21`)
+    img[21].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short01`)
+    img[22].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short02`)
+    img[23].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short03`)
+    img[24].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short04`)
+    img[25].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short06`)
+    img[26].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short07`)
+    img[27].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short08`)
+    img[28].setAttribute('src', `${res.url}${pele}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hairColor=transparent`)
+    img[29].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short10`)
+    img[30].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short12`)
+    img[31].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short14`)
+    img[32].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short15`)
+    img[33].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short16`)
+    img[34].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short17`)
+    img[35].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short19`)
+    img[36].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short20`)
+    img[37].setAttribute('src', `${res.url}${pele}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}&hair=short21`)
+
+
+    const tamC = await fetch(`https://api.dicebear.com/9.x/pixel-art/svg?scale=150&translateY=45`)
+
+    const tamO = await fetch(`https://api.dicebear.com/9.x/pixel-art/svg?scale=190&translateY=30`)
+
+    const tamB = await fetch(`https://api.dicebear.com/9.x/pixel-art/svg?scale=200&translateY=-45`)
+    
+    const tamR = await fetch(`https://api.dicebear.com/9.x/pixel-art/svg?scale=160&translateY=-90`)
+
+    const tamA = await fetch(`https://api.dicebear.com/9.x/pixel-art/svg?scale=120&translateY=40`)
 
     // COR DO CABELO
-    img[38].setAttribute('src', `${tamC}${pele}${cabelo}${olho}${corolho}&hairColor=28150a`)
-    img[39].setAttribute('src', `${tamC}${pele}${cabelo}${olho}${corolho}&hairColor=603015`)
-    img[40].setAttribute('src', `${tamC}${pele}${cabelo}${olho}${corolho}&hairColor=009bbd`)
-    img[41].setAttribute('src', `${tamC}${pele}${cabelo}${olho}${corolho}&hairColor=611c17`)
-    img[42].setAttribute('src', `${tamC}${pele}${cabelo}${olho}${corolho}&hairColor=bd1700`)
-    img[43].setAttribute('src', `${tamC}${pele}${cabelo}${olho}${corolho}&hairColor=eacc0b`)
+    img[38].setAttribute('src', `${tamC.url}${pele}${cabelo}${olho}${corolho}&hairColor=28150a`)
+    img[39].setAttribute('src', `${tamC.url}${pele}${cabelo}${olho}${corolho}&hairColor=603015`)
+    img[40].setAttribute('src', `${tamC.url}${pele}${cabelo}${olho}${corolho}&hairColor=009bbd`)
+    img[41].setAttribute('src', `${tamC.url}${pele}${cabelo}${olho}${corolho}&hairColor=611c17`)
+    img[42].setAttribute('src', `${tamC.url}${pele}${cabelo}${olho}${corolho}&hairColor=bd1700`)
+    img[43].setAttribute('src', `${tamC.url}${pele}${cabelo}${olho}${corolho}&hairColor=eacc0b`)
 
     // OLHO
-    img[44].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant10`)
-    img[45].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant05`)
-    img[46].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant08`)
-    img[47].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant09`)
-    img[48].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant02`)
+    img[44].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant10`)
+    img[45].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant05`)
+    img[46].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant08`)
+    img[47].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant09`)
+    img[48].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${corolho}${acess}&eyes=variant02`)
 
     // COR DO OLHO
-    img[49].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=000000`)
-    img[50].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=156b15`)
-    img[51].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=73230b`)
-    img[52].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=bd641b`)
-    img[53].setAttribute('src', `${tamO}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=6293bd`)
+    img[49].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=000000`)
+    img[50].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=156b15`)
+    img[51].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=73230b`)
+    img[52].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=bd641b`)
+    img[53].setAttribute('src', `${tamO.url}${pele}${cabelo}${cc}${corboca}${olho}${acess}&eyesColor=6293bd`)
 
     // BOCA
-    img[54].setAttribute('src', `${tamB}${pele}&mouth=happy09${corboca}${roupa}${corroupa}`)
-    img[55].setAttribute('src', `${tamB}${pele}&mouth=happy06${corboca}${roupa}${corroupa}`)
+    img[55].setAttribute('src', `${tamB.url}${pele}&mouth=happy06${corboca}${roupa}${corroupa}`)
+    img[54].setAttribute('src', `${tamB.url}${pele}&mouth=happy09${corboca}${roupa}${corroupa}`)
 
     // COR DA BOCA
-    img[56].setAttribute('src', `${tamB}${pele}${boca}&mouthColor=be7054${roupa}${corroupa}`)
-    img[57].setAttribute('src', `${tamB}${pele}${boca}&mouthColor=de0f0d${roupa}${corroupa}`)
-    img[58].setAttribute('src', `${tamB}${pele}${boca}&mouthColor=e35d6a${roupa}${corroupa}`)
+    img[56].setAttribute('src', `${tamB.url}${pele}${boca}&mouthColor=be7054${roupa}${corroupa}`)
+    img[57].setAttribute('src', `${tamB.url}${pele}${boca}&mouthColor=de0f0d${roupa}${corroupa}`)
+    img[58].setAttribute('src', `${tamB.url}${pele}${boca}&mouthColor=e35d6a${roupa}${corroupa}`)
 
     // ROUPAS
-    img[59].setAttribute('src', `${tamR}${pele}${boca}&clothing=variant03${corroupa}`)
-    img[60].setAttribute('src', `${tamR}${pele}${boca}&clothing=variant05${corroupa}`)
-    img[61].setAttribute('src', `${tamR}${pele}${boca}&clothing=variant07${corroupa}`)
-    img[62].setAttribute('src', `${tamR}${pele}${boca}&clothing=variant09${corroupa}`)
-    img[63].setAttribute('src', `${tamR}${pele}${boca}&clothing=variant10${corroupa}`)
-    img[64].setAttribute('src', `${tamR}${pele}${boca}&clothing=variant12${corroupa}`)
-    img[65].setAttribute('src', `${tamR}${pele}${boca}&clothing=variant15${corroupa}`)
-    img[66].setAttribute('src', `${tamR}${pele}${boca}&clothing=variant22${corroupa}`)
+    img[59].setAttribute('src', `${tamR.url}${pele}${boca}&clothing=variant03${corroupa}`)
+    img[60].setAttribute('src', `${tamR.url}${pele}${boca}&clothing=variant05${corroupa}`)
+    img[61].setAttribute('src', `${tamR.url}${pele}${boca}&clothing=variant07${corroupa}`)
+    img[62].setAttribute('src', `${tamR.url}${pele}${boca}&clothing=variant09${corroupa}`)
+    img[63].setAttribute('src', `${tamR.url}${pele}${boca}&clothing=variant10${corroupa}`)
+    img[64].setAttribute('src', `${tamR.url}${pele}${boca}&clothing=variant12${corroupa}`)
+    img[65].setAttribute('src', `${tamR.url}${pele}${boca}&clothing=variant15${corroupa}`)
+    img[66].setAttribute('src', `${tamR.url}${pele}${boca}&clothing=variant22${corroupa}`)
 
     // COR DAS ROUPAS
-    img[67].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=ae0001`)
-    img[68].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=ffc425`)
-    img[69].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=00b159`)
-    img[70].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=44c585`)
-    img[71].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=03396c`)
-    img[72].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=428bca`)
-    img[73].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=d11141`)
-    img[74].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=ff6f69`)
-    img[75].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=000000`)
-    img[76].setAttribute('src', `${tamR}${pele}${boca}${roupa}&clothingColor=808080`)
+    img[67].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=ae0001`)
+    img[68].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=ffc425`)
+    img[69].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=00b159`)
+    img[70].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=44c585`)
+    img[71].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=03396c`)
+    img[72].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=428bca`)
+    img[73].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=d11141`)
+    img[74].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=ff6f69`)
+    img[75].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=000000`)
+    img[76].setAttribute('src', `${tamR.url}${pele}${boca}${roupa}&clothingColor=808080`)
 
     // ACESSÓRIOS
-    img[77].setAttribute('src', `${tamA}${pele}${cabelo}${cc}${olho}${corolho}`)
-    img[78].setAttribute('src', `${tamA}${pele}${cabelo}${cc}${olho}${corolho}&glasses=light07&glassesProbability=100&glassesColor=000000`)
-    img[79].setAttribute('src', `${tamA}${pele}${olho}${corolho}&hat=variant02&hatProbability=100&hatColor=101010`)
-    img[80].setAttribute('src', `${tamA}${pele}${olho}${corolho}&hat=variant10&hatProbability=100&hatColor=101010`)
+    img[77].setAttribute('src', `${tamA.url}${pele}${cabelo}${cc}${olho}${corolho}`)
+    img[78].setAttribute('src', `${tamA.url}${pele}${cabelo}${cc}${olho}${corolho}&glasses=light07&glassesProbability=100&glassesColor=000000`)
+    img[79].setAttribute('src', `${tamA.url}${pele}${olho}${corolho}&hat=variant02&hatProbability=100&hatColor=101010`)
+    img[80].setAttribute('src', `${tamA.url}${pele}${olho}${corolho}&hat=variant10&hatProbability=100&hatColor=101010`)
 
-    img[81].setAttribute('height', '60px')
-    img[81].style.padding = '0px'
-    img[82].setAttribute('height', '60px')
-    img[82].style.padding = '0px'
-    img[83].setAttribute('height', '60px')
-    img[83].style.padding = '0px'
-    img[84].setAttribute('height', '60px')
-    img[84].style.padding = '0px'
+    img[81].setAttribute('src', `${res.url}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}&backgroundColor=b6e3f4`)
+    img[82].setAttribute('src', `${res.url}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}&backgroundColor=ffb162`)
+    img[83].setAttribute('src', `${res.url}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}&backgroundColor=d1d4f9`)
+    img[84].setAttribute('src', `${res.url}${pele}${cabelo}${cc}${boca}${corboca}${olho}${corolho}${roupa}${corroupa}${acess}&backgroundColor=909090`)
 
-    // COR DE FUNDO
-    img[81].style.background = `#b6e3f4`
-    img[82].style.background = `#ffb162`
-    img[83].style.background = `#d1d4f9`
-    img[84].style.background = `#909090`
 }
 
 let rodando = true
