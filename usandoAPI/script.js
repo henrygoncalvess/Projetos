@@ -615,13 +615,15 @@ async function acessar(){
                     rodando = false
                     tela.style.display = 'none'
                 }else{
-                    botao.style.display = 'inline-block'
-                    inputs.style.display = 'none'
-                    tela.style.display = 'block'
-                    rodando = false
-                    inputs.style.display = 'block'
-                    tela.style.display = 'none'
-                    nome.focus()
+                    setTimeout(() => {
+                        botao.style.display = 'inline-block'
+                        inputs.style.display = 'none'
+                        tela.style.display = 'block'
+                        rodando = false
+                        inputs.style.display = 'block'
+                        tela.style.display = 'none'
+                        nome.focus()
+                    }, 3000);
                 }
             });
         }
