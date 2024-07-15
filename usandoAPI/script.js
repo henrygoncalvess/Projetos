@@ -33,10 +33,6 @@ function carregando(){
         inputs.style.display = 'none'
         botao.style.display = 'none'
 
-        // setTimeout(() => {
-        //     rodando = false
-        // }, 6000);
-
         personalizar.innerHTML = `
         <section id="bloco2" style="font-size: 0.8em;">
             <p>
@@ -59,13 +55,6 @@ function carregando(){
 
         rodando = true
         rodar()
-        // setTimeout(() => {
-        //     rodando = false
-        //     inputs.style.display = 'block'
-        //     tela.style.display = 'none'
-        //     nome.focus()
-        // }, 1000);
-    
     
         urlava = `https://api.dicebear.com/9.x/pixel-art/svg?scale=90`
     
@@ -610,14 +599,14 @@ async function acessar(){
                     inputs.style.display = 'none'
                     botao.style.display = 'none'
                     rodando = false
+                    bola.style.display = 'none'
                 }else{
-                    setTimeout(() => {
-                        botao.style.display = 'inline-block'
-                        inputs.style.display = 'none'
-                        rodando = false
-                        inputs.style.display = 'block'
-                        nome.focus()
-                    }, 10000);
+                    botao.style.display = 'inline-block'
+                    inputs.style.display = 'none'
+                    rodando = false
+                    bola.style.display = 'none'
+                    inputs.style.display = 'block'
+                    nome.focus()
                 }
             });
         }
