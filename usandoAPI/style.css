@@ -9,12 +9,10 @@
 
 #especial{
     width: 100%;
-    height: 100vh;
+    height: 100px;
     background-color: rgba(194, 194, 194, 0.618);
-    position: fixed;
     display: none;
     text-align: center;
-    padding-top: calc(30vh - 5%);
     font-weight: bold;
     color: blue;
     text-shadow: 1px 1px 0px black;
@@ -28,9 +26,7 @@
     border: 4px solid blue;
     border-top:  3px solid transparent;
     border-right: 1px solid transparent;
-    position: fixed;
-    left: calc(50% - 50px);
-    top: calc(50% - 50px);
+    display: block;
 }
 
 body{
