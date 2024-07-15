@@ -3,6 +3,7 @@ var botao = document.getElementById('botao')
 var personalizar = document.getElementById('bloco2')
 var inputs = document.getElementById('inputs')
 var custom = document.getElementById('custom')
+var nomecustom = document.getElementById('nomecustom')
 
 var bola = document.getElementById('circulo')
 
@@ -699,6 +700,8 @@ async function criar(apelido, comida, serie){
 }
 
 function verif(tam){
+    nomecustom.innerHTML = `<em>&diams;</em> ${tam.value} <em>&diams;</em>`
+
     if (tam.value.length < 2){
         tam.style.background = 'rgba(255, 143, 143, 0.253)'
     }else{
