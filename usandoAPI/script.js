@@ -595,6 +595,7 @@ async function acessar(){
             
             console.log(dados)
 
+            div.style.border = '1px solid black'
             
             dados.records.map((element, pos, arr) => {
                 let span = document.createElement('span')
@@ -623,7 +624,7 @@ async function acessar(){
                         inputs.style.display = 'block'
                         tela.style.display = 'none'
                         nome.focus()
-                    }, 3000);
+                    }, 10000);
                 }
             });
         }

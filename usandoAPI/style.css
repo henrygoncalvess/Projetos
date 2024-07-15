@@ -99,7 +99,6 @@ td{
 
 #lista{
     display: inline-block;
-    border: 1px solid black;
     text-align: center;
     width: max(65%, 250px);
     background-color: rgba(117, 209, 255, 0.222);
