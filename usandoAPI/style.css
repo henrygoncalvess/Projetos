@@ -18,7 +18,7 @@
 }
 
 body{
-    background: rgb(10, 132, 208) url(fundo.png) center center repeat fixed;
+    background: rgb(10, 132, 208) url(fundo.png) center center repeat scroll;
     background-size: 60px;
     width: 100vw;
     height: 100vh;
