@@ -609,21 +609,19 @@ async function acessar(){
 
                 div.appendChild(span)
 
-                if (pos == arr.length -1){
-                    if (localStorage.getItem('criou') == 'sim'){
-                        inputs.style.display = 'none'
-                        botao.style.display = 'none'
-                        rodando = false
-                        tela.style.display = 'none'
-                    }else{
-                        botao.style.display = 'inline-block'
-                        inputs.style.display = 'none'
-                        tela.style.display = 'block'
-                        rodando = false
-                        inputs.style.display = 'block'
-                        tela.style.display = 'none'
-                        nome.focus()
-                    }
+                if (localStorage.getItem('criou') == 'sim'){
+                    inputs.style.display = 'none'
+                    botao.style.display = 'none'
+                    rodando = false
+                    tela.style.display = 'none'
+                }else{
+                    botao.style.display = 'inline-block'
+                    inputs.style.display = 'none'
+                    tela.style.display = 'block'
+                    rodando = false
+                    inputs.style.display = 'block'
+                    tela.style.display = 'none'
+                    nome.focus()
                 }
             });
         }
