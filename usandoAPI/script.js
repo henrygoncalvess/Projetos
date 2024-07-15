@@ -1,4 +1,3 @@
-// validação
 var div = document.getElementById('lista')
 var botao = document.getElementById('botao')
 var personalizar = document.getElementById('bloco2')
@@ -617,10 +616,10 @@ async function acessar(){
     }
 }
 
-async function criar(nome, comida, serie){
-    if(nome.length < 2 || comida.length < 2 || serie.length < 2){
+async function criar(apelido, comida, serie){
+    if(apelido.length < 2 || comida.length < 2 || serie.length < 2){
         window.alert('Por favor, preencha todos os campos corretamente antes de entrar na lista')
-        apelido.focus()
+        nome.focus()
     }
     
     else{
