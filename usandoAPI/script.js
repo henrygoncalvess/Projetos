@@ -5,7 +5,6 @@ var personalizar = document.getElementById('bloco2')
 var inputs = document.getElementById('inputs')
 var custom = document.getElementById('custom')
 
-var tela = document.getElementById('especial')
 var bola = document.getElementById('circulo')
 
 let img = document.querySelectorAll('img')
@@ -29,7 +28,6 @@ function carregando(){
     if (localStorage.getItem('criou') == 'sim'){
         clearInterval(varredura)
         rodando = true
-        tela.style.display = 'block'
         rodar()
 
         inputs.style.display = 'none'
@@ -37,7 +35,6 @@ function carregando(){
 
         // setTimeout(() => {
         //     rodando = false
-        //     tela.style.display = 'none'
         // }, 6000);
 
         personalizar.innerHTML = `
@@ -61,7 +58,6 @@ function carregando(){
         inputs.style.display = 'none'
 
         rodando = true
-        tela.style.display = 'block'
         rodar()
         // setTimeout(() => {
         //     rodando = false
@@ -614,15 +610,12 @@ async function acessar(){
                     inputs.style.display = 'none'
                     botao.style.display = 'none'
                     rodando = false
-                    tela.style.display = 'none'
                 }else{
                     setTimeout(() => {
                         botao.style.display = 'inline-block'
                         inputs.style.display = 'none'
-                        tela.style.display = 'block'
                         rodando = false
                         inputs.style.display = 'block'
-                        tela.style.display = 'none'
                         nome.focus()
                     }, 10000);
                 }
