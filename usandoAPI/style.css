@@ -67,6 +67,7 @@ h2{
     border-radius: 10px;
     border: 1px solid rgba(255, 0, 0, 0.416);
     background-color: rgba(255, 143, 143, 0.253);
+    outline: none;
 }
 
 p{
