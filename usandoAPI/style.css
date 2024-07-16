@@ -65,7 +65,8 @@ h2{
     height: 30px;
     font-size: 1em;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid rgba(255, 0, 0, 0.416);
+    background-color: rgba(255, 143, 143, 0.253);
 }
 
 p{
@@ -107,7 +108,7 @@ hr{
     margin-top: 15px;
 }
 
-#bloco2 input{
+z#bloco2 input{
     display: none;
 }
 
