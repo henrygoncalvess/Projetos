@@ -704,7 +704,9 @@ function verif(tam){
 
     if (tam.value.length < 2){
         tam.style.background = 'rgba(255, 143, 143, 0.253)'
+        // rgba(255, 0, 0, 0.416)
     }else{
         tam.style.background = 'rgba(113, 255, 113, 0.253)'
+        // rgba(0, 255, 0, 0.776)
     }
 }
