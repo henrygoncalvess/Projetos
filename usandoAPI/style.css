@@ -62,6 +62,7 @@ h2{
 
 #lab{
     transform: translate(-48px, 29px);
+    transition: .3s;
 }
 
 .info{

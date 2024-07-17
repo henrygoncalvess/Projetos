@@ -606,7 +606,9 @@ async function acessar(){
                     rodando = false
                     bola.style.display = 'none'
                     inputs.style.display = 'block'
-                    nome.focus()
+                    setTimeout(() => {
+                        nome.focus()
+                    }, 500);
                 }
             });
         }
