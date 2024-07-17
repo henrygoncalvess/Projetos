@@ -705,10 +705,8 @@ function verif(tam){
     nomecustom.innerHTML = `<em class="c">&diams;</em> ${tam.value} <em class="c">&diams;</em>`
 
     if (tam.value.length < 2){
-        tam.style.background = 'rgba(255, 143, 143, 0.253)'
-        tam.style.border = '1px solid rgba(255, 0, 0, 0.416)'
+        tam.style.border = '2px solid rgba(255, 0, 0, 0.416)'
     }else{
-        tam.style.background = 'rgba(113, 255, 113, 0.253)'
-        tam.style.border = '1px solid rgba(0, 255, 0, 0.776)'
+        tam.style.border = '2px solid rgba(0, 255, 0, 0.776)'
     }
 }
