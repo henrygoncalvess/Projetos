@@ -22,17 +22,23 @@
             <br>
             <br>
             <label for="nome">
-                <div id="lab"><mark>Nome/Apelido</mark></div>
-                <input type="text" id="nome" maxlength="20" autocomplete="off" class="info" oninput="verif(nome)">
+                <div id="lab" class="ape"><mark>Nome/Apelido</mark></div>
+                <input type="text" id="nome" maxlength="20" autocomplete="off" class="info" oninput="verif(nome)" onclick="animar(1)">
             </label>
             
             <br><br>
 
-            <input type="text" id="comida" maxlength="23" autocomplete="off" class="info" oninput="verif(comida)">
+            <label for="comida">
+                <div id="lab" class="doce"><mark>Doce/Comida favorita</mark></div>
+                <input type="text" id="comida" maxlength="23" autocomplete="off" class="info" oninput="verif(comida)" onclick="animar(2)">
+            </label>
             
             <br><br>
 
-            <input type="text" id="serie" maxlength="23" autocomplete="off"  class="info" oninput="verif(serie)">
+            <label for="serie">
+                <div id="lab" class="filme"><mark>Filme/Série favorita</mark></div>
+                <input type="text" id="serie" maxlength="23" autocomplete="off"  class="info" oninput="verif(serie)" onclick="animar(3)">
+            </label>
             
             <br><br>
         </section>

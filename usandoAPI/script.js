@@ -1,3 +1,9 @@
+// informações
+var ape = document.querySelector('div.ape')
+var doce = document.querySelector('div.doce')
+var filme = document.querySelector('div.filme')
+var lab = document.querySelectorAll('div#lab')
+
 var div = document.getElementById('lista')
 var botao = document.getElementById('botao')
 var personalizar = document.getElementById('bloco2')
@@ -22,9 +28,10 @@ var corroupa = `&clothingColor=428bca`
 var acess = ``
 var fundo = `&backgroundColor=b6e3f4`
 
-acessar()
 var varredura = setInterval(conectar, 1000)
 function carregando(){
+    acessar()
+
     if (localStorage.getItem('criou') == 'sim'){
         clearInterval(varredura)
         rodando = true
@@ -705,8 +712,28 @@ function verif(tam){
     nomecustom.innerHTML = `<em class="c">&diams;</em> ${tam.value} <em class="c">&diams;</em>`
 
     if (tam.value.length < 2){
-        tam.style.border = '2px solid rgba(255, 0, 0, 0.416)'
+        tam.style.border = '2px solid rgb(251, 87, 87)'
     }else{
         tam.style.border = '2px solid rgba(0, 255, 0, 0.776)'
+    }
+}
+
+function animar(input){
+
+    switch (input){
+        case 1:
+            lab[0].style.fontSize = '1em'
+            ape.style.translate = '0px -23px'
+            break
+            
+        case 2:
+            lab[1].style.fontSize = '1em'
+            doce.style.translate = '-3px -23px'
+            break
+        
+        case 3:
+            lab[2].style.fontSize = '1em'
+            filme.style.translate = '0px -23px'
+            break
     }
 }
