@@ -126,7 +126,7 @@ span {
 /* nível de conhecimento no início da página */
 #firstOption,
 #secondOption,
-#resposta3{
+#thirdOption{
     display: block;
     border-radius: 10px;
     text-align: center;
@@ -138,7 +138,7 @@ span {
 
 #firstOption,
 #secondOption,
-#resposta3,
+#thirdOption,
 #backButton,
 #fowardButton{
     color: rgb(82, 11, 148);

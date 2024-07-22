@@ -4,7 +4,7 @@ var backButton = document.getElementById('backButton')
 var fowardButton = document.getElementById('fowardButton')
 var firstOption = document.getElementById('firstOption')
 var secondOption = document.getElementById('secondOption')
-var resp3 = document.getElementById('resposta3')
+var thirdOption = document.getElementById('thirdOption')
 var pos = 0
 var ativo = false
 
@@ -364,12 +364,12 @@ function animar(){
     // move o conteúdo pra esquerda <- e soma com os botões
     firstOption.style.translate = '-100px'
     secondOption.style.translate = '-100px'
-    resp3.style.translate = '-100px'
+    thirdOption.style.translate = '-100px'
     title.style.translate = '-100px'
     indents.style.translate = '-100px'
     firstOption.style.opacity = 0
     secondOption.style.opacity = 0
-    resp3.style.opacity = 0
+    thirdOption.style.opacity = 0
     title.style.opacity = 0
     indents.style.opacity = 0
     backButton.style.opacity = 0
@@ -379,7 +379,7 @@ function animar(){
     setTimeout(() => {
         firstOption.style.translate = '85px'
         secondOption.style.translate = '85px'
-        resp3.style.translate = '85px'
+        thirdOption.style.translate = '85px'
         title.style.translate = '85px'
         indents.style.translate = '85px'
     }, 600);
@@ -388,10 +388,10 @@ function animar(){
     setTimeout(() => {
         firstOption.style.display = 'none'
         secondOption.style.display = 'none'
-        resp3.style.display = 'none'
+        thirdOption.style.display = 'none'
         firstOption.style.translate = '0px'
         secondOption.style.translate = '0px'
-        resp3.style.translate = '0px'
+        thirdOption.style.translate = '0px'
         title.style.translate = '0px'
         indents.style.translate = '0px'
 
@@ -691,10 +691,10 @@ function inicio(){
         fowardButton.style.display = 'none'
         firstOption.style.display = 'block'
         secondOption.style.display = 'block'
-        resp3.style.display = 'block'
+        thirdOption.style.display = 'block'
         firstOption.style.opacity = 100
         secondOption.style.opacity = 100
-        resp3.style.opacity = 100
+        thirdOption.style.opacity = 100
     }, 900);
 }
 
