@@ -1,4 +1,4 @@
-var titulo = document.getElementById('titulo')
+var title = document.getElementById('title')
 var indents = document.getElementById('indents')
 var backButton = document.getElementById('backButton')
 var fowardButton = document.getElementById('fowardButton')
@@ -365,12 +365,12 @@ function animar(){
     resp1.style.translate = '-100px'
     resp2.style.translate = '-100px'
     resp3.style.translate = '-100px'
-    titulo.style.translate = '-100px'
+    title.style.translate = '-100px'
     indents.style.translate = '-100px'
     resp1.style.opacity = 0
     resp2.style.opacity = 0
     resp3.style.opacity = 0
-    titulo.style.opacity = 0
+    title.style.opacity = 0
     indents.style.opacity = 0
     backButton.style.opacity = 0
     fowardButton.style.opacity = 0
@@ -380,7 +380,7 @@ function animar(){
         resp1.style.translate = '85px'
         resp2.style.translate = '85px'
         resp3.style.translate = '85px'
-        titulo.style.translate = '85px'
+        title.style.translate = '85px'
         indents.style.translate = '85px'
     }, 600);
 
@@ -392,10 +392,10 @@ function animar(){
         resp1.style.translate = '0px'
         resp2.style.translate = '0px'
         resp3.style.translate = '0px'
-        titulo.style.translate = '0px'
+        title.style.translate = '0px'
         indents.style.translate = '0px'
 
-        titulo.style.opacity = 100
+        title.style.opacity = 100
         indents.style.opacity = 100
 
         backButton.style.opacity = 100
@@ -413,7 +413,7 @@ function explicar1(){
     backButton.style.padding = '5px 8px 8px 30px'
     backButton.innerHTML = 'voltar'
     setTimeout(() => {
-        titulo.innerHTML = `
+        title.innerHTML = `
         Primeiro vamos aprender
         <br>
         O que são Algoritmos`
@@ -432,7 +432,7 @@ function explicar1(){
 
 function explicar2(){
     setTimeout(() => {
-        titulo.innerHTML = `Importante`
+        title.innerHTML = `Importante`
         indents.innerHTML = `
         <p>
         Agora que você sabe o que são Algoritmos, não se assuste com as palavras que você irá encontrar nesta página :
@@ -448,7 +448,7 @@ function explicar2(){
 
 function explicar3(){
     setTimeout(() => {
-        titulo.innerHTML = `Palavras chave`
+        title.innerHTML = `Palavras chave`
         indents.innerHTML = `
         <p>
         <strong>Vetor :</strong> uma lista que armazena valores de um mesmo tipo.
@@ -477,7 +477,7 @@ function explicar4(){
         fowardButton.style.padding = '5px 10px'
 
         fowardButton.innerHTML = 'VOLTAR AO INÍCIO'
-        titulo.innerHTML = `Objetivo`
+        title.innerHTML = `Objetivo`
         indents.innerHTML = `
         <p>
         Agora que você aprendeu o básico sobre algoritmos, e viu também algumas palavras chave é hora de dar o próximo passo.
@@ -495,7 +495,7 @@ function experiente(){
     backButton.style.padding = '5px 8px 8px 30px'
     backButton.innerHTML = 'voltar'
     setTimeout(() => {
-        titulo.innerHTML = `Vamos revisar o que é uma <br> Busca Sequencial`
+        title.innerHTML = `Vamos revisar o que é uma <br> Busca Sequencial`
         indents.innerHTML = `
         <p>
             Nosso algoritmo começa do <strong>início</strong> do vetor e verifica cada elemento, um por um, até encontrar a chave ou até chegar ao final do vetor.
@@ -520,7 +520,7 @@ function experiente(){
 function experiente2(){
     setTimeout(() => {
         backButton.style.opacity = 100
-        titulo.innerHTML = `Desvantagem`
+        title.innerHTML = `Desvantagem`
         indents.innerHTML = `
         <p>
             A partir do momento em que nós temos muitos dados para manipular, a busca sequencial deixa de ser útil.
@@ -537,7 +537,7 @@ function experiente2(){
 function experiente3(){
     setTimeout(() => {
         backButton.style.opacity = 100
-        titulo.innerHTML = `Binary Search`
+        title.innerHTML = `Binary Search`
         indents.innerHTML = `
         <p>
             A <strong>Pesquisa Binária</strong> é melhor utilizada em vetores maiores, e ele precisa estar <strong>ORDENADO.</strong>
@@ -567,7 +567,7 @@ function experiente3(){
 function experiente4(){
     setTimeout(() => {
         backButton.style.opacity = 100
-        titulo.innerHTML = `Prática (parte 1/3)`
+        title.innerHTML = `Prática (parte 1/3)`
         indents.innerHTML = `
         <p>
             <strong>O código será dividido em 3 partes para melhor entendimento. (ao final, veremos o algoritmo completo)</strong>
@@ -586,7 +586,7 @@ function experiente4(){
 function experiente5(){
     setTimeout(() => {
         backButton.style.opacity = 100
-        titulo.innerHTML = `Prática (parte 2/3)`
+        title.innerHTML = `Prática (parte 2/3)`
         indents.innerHTML = `
         <p>
             <strong>VETOR DE EXEMPLO:</strong>
@@ -631,7 +631,7 @@ function experiente5(){
 function experiente6(){
     setTimeout(() => {
         backButton.style.opacity = 100
-        titulo.innerHTML = `Prática (parte 3/3)`
+        title.innerHTML = `Prática (parte 3/3)`
         indents.innerHTML = `
         <p>
             <strong>E por fim...</strong>
@@ -649,10 +649,10 @@ function experiente6(){
 
 function experiente7(){
     setTimeout(() => {
-        titulo.style.display = 'block'
+        title.style.display = 'block'
         backButton.style.opacity = 100
         fowardButton.innerHTML = 'COMEÇAR'
-        titulo.innerHTML = `Binary Search`
+        title.innerHTML = `Binary Search`
         indents.innerHTML = `
         <p>
         <p id="binary"><img src="imagens/binarySearch.png"></p>
@@ -668,8 +668,8 @@ function inicio(){
     // página inicial com as 3 opções
     setTimeout(() => {
         fowardButton.innerHTML = 'avançar'
-        titulo.style.display = 'block'
-        titulo.innerHTML = `Olá Programador!`
+        title.style.display = 'block'
+        title.innerHTML = `Olá Programador!`
         indents.innerHTML = `
         <p id="indents">
              Hoje você vai aprender o que é uma <strong>"Binary Search"</strong> e como ela funciona.
@@ -703,17 +703,17 @@ function pagina1(){
         backButton.style.borderRadius = '20px'
         backButton.style.padding = '5px 10px'
         backButton.innerHTML = 'Voltar ao início'
-        titulo.style.display = 'block'
+        title.style.display = 'block'
         fowardButton.style.opacity = 100
         fowardButton.innerHTML = "avançar"
-        titulo.innerHTML = `O que é <strong>Binary Search</strong> <br> ou <br> <strong>Pesquisa Binária?</strong>`
+        title.innerHTML = `O que é <strong>Binary Search</strong> <br> ou <br> <strong>Pesquisa Binária?</strong>`
         indents.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
     }, 900);
 }
 
 function pagina2(){
     setTimeout(() => {
-        titulo.innerHTML = `<strong>Busca Sequencial</strong>`
+        title.innerHTML = `<strong>Busca Sequencial</strong>`
         indents.innerHTML = `
         <p>
             Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre do <strong>início ao fim</strong> de um Vetor, comparando a posição/índice com o valor da <mark>chave</mark>.
@@ -729,7 +729,7 @@ function pagina2(){
 
 function pagina3(){
     setTimeout(() => {
-        titulo.innerHTML = `<strong>Exemplo</strong>`
+        title.innerHTML = `<strong>Exemplo</strong>`
         indents.innerHTML = `
         <p>
             <p id="chave">
@@ -776,7 +776,7 @@ function pagina3(){
 
 function pagina4(){
     setTimeout(() => {
-        titulo.innerHTML = `<strong>Desvantagem</strong>`
+        title.innerHTML = `<strong>Desvantagem</strong>`
         indents.innerHTML = `
         <p>
             A partir do momento em que nós temos muitos dados para manipular, a busca sequencial deixa de ser útil.
@@ -795,7 +795,7 @@ function pagina4(){
 
 function pagina5(){
     setTimeout(() => {
-        titulo.innerHTML = `<strong>Binary Search</strong>`
+        title.innerHTML = `<strong>Binary Search</strong>`
         indents.innerHTML = `
         <p>
             E é aí que entra a <strong>Pesquisa Binária.</strong> No próximo exemplo você vai ver o poder de busca desse algoritmo... Sem contar que ele é executado pouquíssimas vezes.
@@ -808,7 +808,7 @@ function pagina5(){
 
 function pagina6(){
     setTimeout(() => { 
-        titulo.innerHTML = `<strong>Como a Pesquisa Binária funciona</strong>`
+        title.innerHTML = `<strong>Como a Pesquisa Binária funciona</strong>`
         indents.innerHTML = `
         <p>
             <strong>Detalhe importante :</strong>
@@ -856,7 +856,7 @@ function pagina6(){
 
 function pagina7(){
     setTimeout(() => {
-        titulo.innerHTML = `<strong>Exemplo</strong>`
+        title.innerHTML = `<strong>Exemplo</strong>`
         indents.innerHTML = `
         <p>
             <p id="chave">
@@ -939,7 +939,7 @@ function pagina8(){
         fowardButton.style.display = 'none'
         backButton.style.display = 'none'
 
-        titulo.innerHTML = `<strong>Procurando...</strong>`
+        title.innerHTML = `<strong>Procurando...</strong>`
         indents.innerHTML = `
         <p>
             <p id="chave">
@@ -1010,7 +1010,7 @@ function pagina9(){
     setTimeout(() => {
         fowardButton.innerHTML = 'FINALIZAR'
 
-        titulo.innerHTML = `<strong>Agora nós temos :</strong>`
+        title.innerHTML = `<strong>Agora nós temos :</strong>`
         indents.innerHTML = `
         <p>
             <p class="posicao">
@@ -1065,9 +1065,9 @@ function pagina9(){
 function pagina10(){
 
     setTimeout(() => {
-        titulo.style.display = 'block'
+        title.style.display = 'block'
         fowardButton.innerHTML = 'COMEÇAR'
-        titulo.innerHTML = `<strong>A importância de aprender algoritmos</strong>`
+        title.innerHTML = `<strong>A importância de aprender algoritmos</strong>`
         indents.innerHTML = `
         <p>
             Aprender algoritmos na programação é essencial porque eles são as receitas que guiam o computador a resolver problemas de forma eficiente.
@@ -1096,7 +1096,7 @@ function pagina11(){
         fowardButton.style.borderRadius = '20px'
         fowardButton.style.padding = '5px 10px'
         fowardButton.innerHTML = 'Voltar ao início'
-        titulo.style.display = `none`
+        title.style.display = `none`
         indents.innerHTML = `
         <p>
             <p id="chave">
