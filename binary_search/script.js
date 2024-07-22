@@ -1,6 +1,5 @@
 var titulo = document.getElementById('titulo')
 var indents = document.getElementById('indents')
-var tam2 = document.getElementById('tam2')
 var ant = document.getElementById('vol')
 var avan = document.getElementById('avan')
 var resp1 = document.getElementById('resposta1')
