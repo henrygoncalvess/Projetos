@@ -1,5 +1,5 @@
 var titulo = document.getElementById('titulo')
-var parag = document.getElementById('parag')
+var indents = document.getElementById('indents')
 var tam2 = document.getElementById('tam2')
 var ant = document.getElementById('vol')
 var avan = document.getElementById('avan')
@@ -367,12 +367,12 @@ function animar(){
     resp2.style.translate = '-100px'
     resp3.style.translate = '-100px'
     titulo.style.translate = '-100px'
-    parag.style.translate = '-100px'
+    indents.style.translate = '-100px'
     resp1.style.opacity = 0
     resp2.style.opacity = 0
     resp3.style.opacity = 0
     titulo.style.opacity = 0
-    parag.style.opacity = 0
+    indents.style.opacity = 0
     ant.style.opacity = 0
     avan.style.opacity = 0
 
@@ -382,7 +382,7 @@ function animar(){
         resp2.style.translate = '85px'
         resp3.style.translate = '85px'
         titulo.style.translate = '85px'
-        parag.style.translate = '85px'
+        indents.style.translate = '85px'
     }, 600);
 
     // aparece com o conteúdo e os botões
@@ -394,10 +394,10 @@ function animar(){
         resp2.style.translate = '0px'
         resp3.style.translate = '0px'
         titulo.style.translate = '0px'
-        parag.style.translate = '0px'
+        indents.style.translate = '0px'
 
         titulo.style.opacity = 100
-        parag.style.opacity = 100
+        indents.style.opacity = 100
 
         ant.style.opacity = 100
         avan.style.opacity = 100
@@ -418,7 +418,7 @@ function explicar1(){
         Primeiro vamos aprender
         <br>
         O que são Algoritmos`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
         Um algoritmo é simplesmente uma <strong>sequência de passos que resolvem um problema ou realizam uma tarefa</strong>. Por exemplo, você sabia que uma receita de bolo é um algoritmo?
         <br>
@@ -434,7 +434,7 @@ function explicar1(){
 function explicar2(){
     setTimeout(() => {
         titulo.innerHTML = `Importante`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
         Agora que você sabe o que são Algoritmos, não se assuste com as palavras que você irá encontrar nesta página :
         <br>
@@ -450,7 +450,7 @@ function explicar2(){
 function explicar3(){
     setTimeout(() => {
         titulo.innerHTML = `Palavras chave`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
         <strong>Vetor :</strong> uma lista que armazena valores de um mesmo tipo.
         <br>
@@ -479,7 +479,7 @@ function explicar4(){
 
         avan.innerHTML = 'VOLTAR AO INÍCIO'
         titulo.innerHTML = `Objetivo`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
         Agora que você aprendeu o básico sobre algoritmos, e viu também algumas palavras chave é hora de dar o próximo passo.
         <br>
@@ -497,7 +497,7 @@ function experiente(){
     ant.innerHTML = 'voltar'
     setTimeout(() => {
         titulo.innerHTML = `Vamos revisar o que é uma <br> Busca Sequencial`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             Nosso algoritmo começa do <strong>início</strong> do vetor e verifica cada elemento, um por um, até encontrar a chave ou até chegar ao final do vetor.
             <br>
@@ -522,7 +522,7 @@ function experiente2(){
     setTimeout(() => {
         ant.style.opacity = 100
         titulo.innerHTML = `Desvantagem`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             A partir do momento em que nós temos muitos dados para manipular, a busca sequencial deixa de ser útil.
             <br>
@@ -539,7 +539,7 @@ function experiente3(){
     setTimeout(() => {
         ant.style.opacity = 100
         titulo.innerHTML = `Binary Search`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             A <strong>Pesquisa Binária</strong> é melhor utilizada em vetores maiores, e ele precisa estar <strong>ORDENADO.</strong>
             <br>
@@ -569,7 +569,7 @@ function experiente4(){
     setTimeout(() => {
         ant.style.opacity = 100
         titulo.innerHTML = `Prática (parte 1/3)`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <strong>O código será dividido em 3 partes para melhor entendimento. (ao final, veremos o algoritmo completo)</strong>
             <br>
@@ -588,7 +588,7 @@ function experiente5(){
     setTimeout(() => {
         ant.style.opacity = 100
         titulo.innerHTML = `Prática (parte 2/3)`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <strong>VETOR DE EXEMPLO:</strong>
             <br>
@@ -633,7 +633,7 @@ function experiente6(){
     setTimeout(() => {
         ant.style.opacity = 100
         titulo.innerHTML = `Prática (parte 3/3)`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <strong>E por fim...</strong>
             <br>
@@ -654,7 +654,7 @@ function experiente7(){
         ant.style.opacity = 100
         avan.innerHTML = 'COMEÇAR'
         titulo.innerHTML = `Binary Search`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
         <p id="binary"><img src="imagens/binarySearch.png"></p>
         <br>
@@ -671,8 +671,8 @@ function inicio(){
         avan.innerHTML = 'avançar'
         titulo.style.display = 'block'
         titulo.innerHTML = `Olá Programador!`
-        parag.innerHTML = `
-        <p id="parag">
+        indents.innerHTML = `
+        <p id="indents">
              Hoje você vai aprender o que é uma <strong>"Binary Search"</strong> e como ela funciona.
             <br>
             <br>
@@ -708,14 +708,14 @@ function pagina1(){
         avan.style.opacity = 100
         avan.innerHTML = "avançar"
         titulo.innerHTML = `O que é <strong>Binary Search</strong> <br> ou <br> <strong>Pesquisa Binária?</strong>`
-        parag.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
+        indents.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
     }, 900);
 }
 
 function pagina2(){
     setTimeout(() => {
         titulo.innerHTML = `<strong>Busca Sequencial</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             Uma <strong>Busca Sequencial</strong> é o algoritmo mais simples de busca. <br> <br> Ele percorre do <strong>início ao fim</strong> de um Vetor, comparando a posição/índice com o valor da <mark>chave</mark>.
             <br>
@@ -731,7 +731,7 @@ function pagina2(){
 function pagina3(){
     setTimeout(() => {
         titulo.innerHTML = `<strong>Exemplo</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <p id="chave">
                 <mark>Chave:</mark> <strong>7</strong>
@@ -778,7 +778,7 @@ function pagina3(){
 function pagina4(){
     setTimeout(() => {
         titulo.innerHTML = `<strong>Desvantagem</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             A partir do momento em que nós temos muitos dados para manipular, a busca sequencial deixa de ser útil.
             <br>
@@ -797,7 +797,7 @@ function pagina4(){
 function pagina5(){
     setTimeout(() => {
         titulo.innerHTML = `<strong>Binary Search</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             E é aí que entra a <strong>Pesquisa Binária.</strong> No próximo exemplo você vai ver o poder de busca desse algoritmo... Sem contar que ele é executado pouquíssimas vezes.
             <br>
@@ -810,7 +810,7 @@ function pagina5(){
 function pagina6(){
     setTimeout(() => { 
         titulo.innerHTML = `<strong>Como a Pesquisa Binária funciona</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <strong>Detalhe importante :</strong>
             <br>
@@ -858,7 +858,7 @@ function pagina6(){
 function pagina7(){
     setTimeout(() => {
         titulo.innerHTML = `<strong>Exemplo</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <p id="chave">
                 <mark>Chave:</mark> <strong>21</strong>
@@ -941,7 +941,7 @@ function pagina8(){
         ant.style.display = 'none'
 
         titulo.innerHTML = `<strong>Procurando...</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <p id="chave">
                 <mark>Chave:</mark> <strong>21</strong>
@@ -1012,7 +1012,7 @@ function pagina9(){
         avan.innerHTML = 'FINALIZAR'
 
         titulo.innerHTML = `<strong>Agora nós temos :</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <p class="posicao">
             <span id="numpag7" class="pag8">19</span>
@@ -1069,7 +1069,7 @@ function pagina10(){
         titulo.style.display = 'block'
         avan.innerHTML = 'COMEÇAR'
         titulo.innerHTML = `<strong>A importância de aprender algoritmos</strong>`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             Aprender algoritmos na programação é essencial porque eles são as receitas que guiam o computador a resolver problemas de forma eficiente.
             <br>
@@ -1098,7 +1098,7 @@ function pagina11(){
         avan.style.padding = '5px 10px'
         avan.innerHTML = 'Voltar ao início'
         titulo.style.display = `none`
-        parag.innerHTML = `
+        indents.innerHTML = `
         <p>
             <p id="chave">
                 <mark class="sombra">CHAVE</mark> <input type="number" id="encontrar"  class="sombra" min="0" max="1000" maxlength="4" placeholder="digite sua chave">
