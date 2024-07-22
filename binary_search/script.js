@@ -3,7 +3,7 @@ var indents = document.getElementById('indents')
 var backButton = document.getElementById('backButton')
 var fowardButton = document.getElementById('fowardButton')
 var firstOption = document.getElementById('firstOption')
-var resp2 = document.getElementById('resposta2')
+var secondOption = document.getElementById('secondOption')
 var resp3 = document.getElementById('resposta3')
 var pos = 0
 var ativo = false
@@ -363,12 +363,12 @@ function animar(){
 
     // move o conteúdo pra esquerda <- e soma com os botões
     firstOption.style.translate = '-100px'
-    resp2.style.translate = '-100px'
+    secondOption.style.translate = '-100px'
     resp3.style.translate = '-100px'
     title.style.translate = '-100px'
     indents.style.translate = '-100px'
     firstOption.style.opacity = 0
-    resp2.style.opacity = 0
+    secondOption.style.opacity = 0
     resp3.style.opacity = 0
     title.style.opacity = 0
     indents.style.opacity = 0
@@ -378,7 +378,7 @@ function animar(){
     // move o conteúdo pra direita -> pra ele aparecer
     setTimeout(() => {
         firstOption.style.translate = '85px'
-        resp2.style.translate = '85px'
+        secondOption.style.translate = '85px'
         resp3.style.translate = '85px'
         title.style.translate = '85px'
         indents.style.translate = '85px'
@@ -387,10 +387,10 @@ function animar(){
     // aparece com o conteúdo e os botões
     setTimeout(() => {
         firstOption.style.display = 'none'
-        resp2.style.display = 'none'
+        secondOption.style.display = 'none'
         resp3.style.display = 'none'
         firstOption.style.translate = '0px'
-        resp2.style.translate = '0px'
+        secondOption.style.translate = '0px'
         resp3.style.translate = '0px'
         title.style.translate = '0px'
         indents.style.translate = '0px'
@@ -690,10 +690,10 @@ function inicio(){
         backButton.style.display = 'none'
         fowardButton.style.display = 'none'
         firstOption.style.display = 'block'
-        resp2.style.display = 'block'
+        secondOption.style.display = 'block'
         resp3.style.display = 'block'
         firstOption.style.opacity = 100
-        resp2.style.opacity = 100
+        secondOption.style.opacity = 100
         resp3.style.opacity = 100
     }, 900);
 }

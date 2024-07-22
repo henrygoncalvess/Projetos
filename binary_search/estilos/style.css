@@ -125,7 +125,7 @@ span {
 
 /* nível de conhecimento no início da página */
 #firstOption,
-#resposta2,
+#secondOption,
 #resposta3{
     display: block;
     border-radius: 10px;
@@ -137,7 +137,7 @@ span {
 }
 
 #firstOption,
-#resposta2,
+#secondOption,
 #resposta3,
 #backButton,
 #fowardButton{
