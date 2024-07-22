@@ -1,6 +1,6 @@
 var titulo = document.getElementById('titulo')
 var indents = document.getElementById('indents')
-var ant = document.getElementById('vol')
+var backButton = document.getElementById('backButton')
 var fowardButton = document.getElementById('fowardButton')
 var resp1 = document.getElementById('resposta1')
 var resp2 = document.getElementById('resposta2')
@@ -27,7 +27,7 @@ var maior = false
 
 if (pos == 0){
     fowardButton.style.display = 'none'
-    ant.style.display = 'none'
+    backButton.style.display = 'none'
 }
 
 function verificar(resposta){
@@ -62,9 +62,9 @@ function trocar() {
     fowardButton.style.borderRadius = '20px 100% 100% 20px'
     fowardButton.style.padding = '5px 20px 8px 8px'
     fowardButton.style.fontSize = '0.7em'
-    ant.style.borderRadius = '100% 20px 20px 100%'
-    ant.style.padding = '5px 8px 8px 30px'
-    ant.innerHTML = 'voltar'
+    backButton.style.borderRadius = '100% 20px 20px 100%'
+    backButton.style.padding = '5px 8px 8px 30px'
+    backButton.innerHTML = 'voltar'
     animar()
 
     if (pos == 1) pos = 2
@@ -372,7 +372,7 @@ function animar(){
     resp3.style.opacity = 0
     titulo.style.opacity = 0
     indents.style.opacity = 0
-    ant.style.opacity = 0
+    backButton.style.opacity = 0
     fowardButton.style.opacity = 0
 
     // move o conteúdo pra direita -> pra ele aparecer
@@ -398,9 +398,9 @@ function animar(){
         titulo.style.opacity = 100
         indents.style.opacity = 100
 
-        ant.style.opacity = 100
+        backButton.style.opacity = 100
         fowardButton.style.opacity = 100
-        ant.style.display = 'block'
+        backButton.style.display = 'block'
         fowardButton.style.display = 'block'
     }, 900);
     
@@ -409,9 +409,9 @@ function animar(){
 // EXPLICAÇÕES
 
 function explicar1(){
-    ant.style.borderRadius = '100% 20px 20px 100%'
-    ant.style.padding = '5px 8px 8px 30px'
-    ant.innerHTML = 'voltar'
+    backButton.style.borderRadius = '100% 20px 20px 100%'
+    backButton.style.padding = '5px 8px 8px 30px'
+    backButton.innerHTML = 'voltar'
     setTimeout(() => {
         titulo.innerHTML = `
         Primeiro vamos aprender
@@ -491,9 +491,9 @@ function explicar4(){
 // NÍVEL EXPERT
 
 function experiente(){
-    ant.style.borderRadius = '100% 20px 20px 100%'
-    ant.style.padding = '5px 8px 8px 30px'
-    ant.innerHTML = 'voltar'
+    backButton.style.borderRadius = '100% 20px 20px 100%'
+    backButton.style.padding = '5px 8px 8px 30px'
+    backButton.innerHTML = 'voltar'
     setTimeout(() => {
         titulo.innerHTML = `Vamos revisar o que é uma <br> Busca Sequencial`
         indents.innerHTML = `
@@ -519,7 +519,7 @@ function experiente(){
 
 function experiente2(){
     setTimeout(() => {
-        ant.style.opacity = 100
+        backButton.style.opacity = 100
         titulo.innerHTML = `Desvantagem`
         indents.innerHTML = `
         <p>
@@ -536,7 +536,7 @@ function experiente2(){
 
 function experiente3(){
     setTimeout(() => {
-        ant.style.opacity = 100
+        backButton.style.opacity = 100
         titulo.innerHTML = `Binary Search`
         indents.innerHTML = `
         <p>
@@ -566,7 +566,7 @@ function experiente3(){
 
 function experiente4(){
     setTimeout(() => {
-        ant.style.opacity = 100
+        backButton.style.opacity = 100
         titulo.innerHTML = `Prática (parte 1/3)`
         indents.innerHTML = `
         <p>
@@ -585,7 +585,7 @@ function experiente4(){
 
 function experiente5(){
     setTimeout(() => {
-        ant.style.opacity = 100
+        backButton.style.opacity = 100
         titulo.innerHTML = `Prática (parte 2/3)`
         indents.innerHTML = `
         <p>
@@ -630,7 +630,7 @@ function experiente5(){
 
 function experiente6(){
     setTimeout(() => {
-        ant.style.opacity = 100
+        backButton.style.opacity = 100
         titulo.innerHTML = `Prática (parte 3/3)`
         indents.innerHTML = `
         <p>
@@ -650,7 +650,7 @@ function experiente6(){
 function experiente7(){
     setTimeout(() => {
         titulo.style.display = 'block'
-        ant.style.opacity = 100
+        backButton.style.opacity = 100
         fowardButton.innerHTML = 'COMEÇAR'
         titulo.innerHTML = `Binary Search`
         indents.innerHTML = `
@@ -687,7 +687,7 @@ function inicio(){
             <br>
             <br>
         </p>`
-        ant.style.display = 'none'
+        backButton.style.display = 'none'
         fowardButton.style.display = 'none'
         resp1.style.display = 'block'
         resp2.style.display = 'block'
@@ -700,9 +700,9 @@ function inicio(){
 
 function pagina1(){
     setTimeout(() => {
-        ant.style.borderRadius = '20px'
-        ant.style.padding = '5px 10px'
-        ant.innerHTML = 'Voltar ao início'
+        backButton.style.borderRadius = '20px'
+        backButton.style.padding = '5px 10px'
+        backButton.innerHTML = 'Voltar ao início'
         titulo.style.display = 'block'
         fowardButton.style.opacity = 100
         fowardButton.innerHTML = "avançar"
@@ -937,7 +937,7 @@ function pagina7(){
 function pagina8(){
     setTimeout(() => {
         fowardButton.style.display = 'none'
-        ant.style.display = 'none'
+        backButton.style.display = 'none'
 
         titulo.innerHTML = `<strong>Procurando...</strong>`
         indents.innerHTML = `
@@ -1002,7 +1002,7 @@ function pagina8(){
 
     setTimeout(() => {
         fowardButton.style.display = 'block'
-        ant.style.display = 'block'
+        backButton.style.display = 'block'
     }, 25000)
 }
 
