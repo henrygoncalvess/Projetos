@@ -2,7 +2,7 @@ var title = document.getElementById('title')
 var indents = document.getElementById('indents')
 var backButton = document.getElementById('backButton')
 var fowardButton = document.getElementById('fowardButton')
-var resp1 = document.getElementById('resposta1')
+var firstOption = document.getElementById('firstOption')
 var resp2 = document.getElementById('resposta2')
 var resp3 = document.getElementById('resposta3')
 var pos = 0
@@ -362,12 +362,12 @@ function voltar() {
 function animar(){
 
     // move o conteúdo pra esquerda <- e soma com os botões
-    resp1.style.translate = '-100px'
+    firstOption.style.translate = '-100px'
     resp2.style.translate = '-100px'
     resp3.style.translate = '-100px'
     title.style.translate = '-100px'
     indents.style.translate = '-100px'
-    resp1.style.opacity = 0
+    firstOption.style.opacity = 0
     resp2.style.opacity = 0
     resp3.style.opacity = 0
     title.style.opacity = 0
@@ -377,7 +377,7 @@ function animar(){
 
     // move o conteúdo pra direita -> pra ele aparecer
     setTimeout(() => {
-        resp1.style.translate = '85px'
+        firstOption.style.translate = '85px'
         resp2.style.translate = '85px'
         resp3.style.translate = '85px'
         title.style.translate = '85px'
@@ -386,10 +386,10 @@ function animar(){
 
     // aparece com o conteúdo e os botões
     setTimeout(() => {
-        resp1.style.display = 'none'
+        firstOption.style.display = 'none'
         resp2.style.display = 'none'
         resp3.style.display = 'none'
-        resp1.style.translate = '0px'
+        firstOption.style.translate = '0px'
         resp2.style.translate = '0px'
         resp3.style.translate = '0px'
         title.style.translate = '0px'
@@ -689,10 +689,10 @@ function inicio(){
         </p>`
         backButton.style.display = 'none'
         fowardButton.style.display = 'none'
-        resp1.style.display = 'block'
+        firstOption.style.display = 'block'
         resp2.style.display = 'block'
         resp3.style.display = 'block'
-        resp1.style.opacity = 100
+        firstOption.style.opacity = 100
         resp2.style.opacity = 100
         resp3.style.opacity = 100
     }, 900);

@@ -124,7 +124,7 @@ span {
 }
 
 /* nível de conhecimento no início da página */
-#resposta1,
+#firstOption,
 #resposta2,
 #resposta3{
     display: block;
@@ -136,7 +136,7 @@ span {
     transition: 800ms;
 }
 
-#resposta1,
+#firstOption,
 #resposta2,
 #resposta3,
 #backButton,
