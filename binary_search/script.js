@@ -1,7 +1,7 @@
 var titulo = document.getElementById('titulo')
 var indents = document.getElementById('indents')
 var ant = document.getElementById('vol')
-var avan = document.getElementById('avan')
+var fowardButton = document.getElementById('fowardButton')
 var resp1 = document.getElementById('resposta1')
 var resp2 = document.getElementById('resposta2')
 var resp3 = document.getElementById('resposta3')
@@ -26,7 +26,7 @@ var contador = 0
 var maior = false
 
 if (pos == 0){
-    avan.style.display = 'none'
+    fowardButton.style.display = 'none'
     ant.style.display = 'none'
 }
 
@@ -59,9 +59,9 @@ function verificar(resposta){
 
 // quando clicar em AVANÇAR
 function trocar() {
-    avan.style.borderRadius = '20px 100% 100% 20px'
-    avan.style.padding = '5px 20px 8px 8px'
-    avan.style.fontSize = '0.7em'
+    fowardButton.style.borderRadius = '20px 100% 100% 20px'
+    fowardButton.style.padding = '5px 20px 8px 8px'
+    fowardButton.style.fontSize = '0.7em'
     ant.style.borderRadius = '100% 20px 20px 100%'
     ant.style.padding = '5px 8px 8px 30px'
     ant.innerHTML = 'voltar'
@@ -122,7 +122,7 @@ function trocar() {
             break
 
         case 9:
-            avan.innerHTML = 'FINALIZAR'
+            fowardButton.innerHTML = 'FINALIZAR'
             pagina9()
             setTimeout(() => {
                 pos = 10
@@ -130,7 +130,7 @@ function trocar() {
             break
 
         case 10:
-            avan.innerHTML = 'COMEÇAR'
+            fowardButton.innerHTML = 'COMEÇAR'
             pagina10()
             setTimeout(() => {
                 pos = 11
@@ -233,10 +233,10 @@ function trocar() {
 
 // quando clicar em VOLTAR
 function voltar() {
-    avan.style.borderRadius = '20px 100% 100% 20px'
-    avan.style.padding = '5px 20px 8px 8px'
-    avan.style.fontSize = '0.7em'
-    avan.innerHTML = 'avançar'
+    fowardButton.style.borderRadius = '20px 100% 100% 20px'
+    fowardButton.style.padding = '5px 20px 8px 8px'
+    fowardButton.style.fontSize = '0.7em'
+    fowardButton.innerHTML = 'avançar'
     animar()
 
     // se a posição não for o início, volta uma página
@@ -289,12 +289,12 @@ function voltar() {
             break
 
         case 10:
-            avan.innerHTML = 'FINALIZAR'
+            fowardButton.innerHTML = 'FINALIZAR'
             pagina9()
             break
 
         case 11:
-            avan.innerHTML = 'COMEÇAR'
+            fowardButton.innerHTML = 'COMEÇAR'
             animando = false
             pagina10()
             break
@@ -373,7 +373,7 @@ function animar(){
     titulo.style.opacity = 0
     indents.style.opacity = 0
     ant.style.opacity = 0
-    avan.style.opacity = 0
+    fowardButton.style.opacity = 0
 
     // move o conteúdo pra direita -> pra ele aparecer
     setTimeout(() => {
@@ -399,9 +399,9 @@ function animar(){
         indents.style.opacity = 100
 
         ant.style.opacity = 100
-        avan.style.opacity = 100
+        fowardButton.style.opacity = 100
         ant.style.display = 'block'
-        avan.style.display = 'block'
+        fowardButton.style.display = 'block'
     }, 900);
     
 }
@@ -473,10 +473,10 @@ function explicar3(){
 
 function explicar4(){
     setTimeout(() => {
-        avan.style.borderRadius = '20px'
-        avan.style.padding = '5px 10px'
+        fowardButton.style.borderRadius = '20px'
+        fowardButton.style.padding = '5px 10px'
 
-        avan.innerHTML = 'VOLTAR AO INÍCIO'
+        fowardButton.innerHTML = 'VOLTAR AO INÍCIO'
         titulo.innerHTML = `Objetivo`
         indents.innerHTML = `
         <p>
@@ -651,7 +651,7 @@ function experiente7(){
     setTimeout(() => {
         titulo.style.display = 'block'
         ant.style.opacity = 100
-        avan.innerHTML = 'COMEÇAR'
+        fowardButton.innerHTML = 'COMEÇAR'
         titulo.innerHTML = `Binary Search`
         indents.innerHTML = `
         <p>
@@ -667,7 +667,7 @@ function experiente7(){
 function inicio(){
     // página inicial com as 3 opções
     setTimeout(() => {
-        avan.innerHTML = 'avançar'
+        fowardButton.innerHTML = 'avançar'
         titulo.style.display = 'block'
         titulo.innerHTML = `Olá Programador!`
         indents.innerHTML = `
@@ -688,7 +688,7 @@ function inicio(){
             <br>
         </p>`
         ant.style.display = 'none'
-        avan.style.display = 'none'
+        fowardButton.style.display = 'none'
         resp1.style.display = 'block'
         resp2.style.display = 'block'
         resp3.style.display = 'block'
@@ -704,8 +704,8 @@ function pagina1(){
         ant.style.padding = '5px 10px'
         ant.innerHTML = 'Voltar ao início'
         titulo.style.display = 'block'
-        avan.style.opacity = 100
-        avan.innerHTML = "avançar"
+        fowardButton.style.opacity = 100
+        fowardButton.innerHTML = "avançar"
         titulo.innerHTML = `O que é <strong>Binary Search</strong> <br> ou <br> <strong>Pesquisa Binária?</strong>`
         indents.innerHTML = 'Para entendermos melhor o que é e como funciona uma <strong>Pesquisa Binária</strong>, vamos começar analizando um algoritmo de <mark>Busca Sequencial</mark>'
     }, 900);
@@ -936,7 +936,7 @@ function pagina7(){
 
 function pagina8(){
     setTimeout(() => {
-        avan.style.display = 'none'
+        fowardButton.style.display = 'none'
         ant.style.display = 'none'
 
         titulo.innerHTML = `<strong>Procurando...</strong>`
@@ -1001,14 +1001,14 @@ function pagina8(){
     }, 900)
 
     setTimeout(() => {
-        avan.style.display = 'block'
+        fowardButton.style.display = 'block'
         ant.style.display = 'block'
     }, 25000)
 }
 
 function pagina9(){
     setTimeout(() => {
-        avan.innerHTML = 'FINALIZAR'
+        fowardButton.innerHTML = 'FINALIZAR'
 
         titulo.innerHTML = `<strong>Agora nós temos :</strong>`
         indents.innerHTML = `
@@ -1066,7 +1066,7 @@ function pagina10(){
 
     setTimeout(() => {
         titulo.style.display = 'block'
-        avan.innerHTML = 'COMEÇAR'
+        fowardButton.innerHTML = 'COMEÇAR'
         titulo.innerHTML = `<strong>A importância de aprender algoritmos</strong>`
         indents.innerHTML = `
         <p>
@@ -1093,9 +1093,9 @@ function pagina11(){
     final = arr.length - 1
 
     setTimeout(() => {
-        avan.style.borderRadius = '20px'
-        avan.style.padding = '5px 10px'
-        avan.innerHTML = 'Voltar ao início'
+        fowardButton.style.borderRadius = '20px'
+        fowardButton.style.padding = '5px 10px'
+        fowardButton.innerHTML = 'Voltar ao início'
         titulo.style.display = `none`
         indents.innerHTML = `
         <p>
