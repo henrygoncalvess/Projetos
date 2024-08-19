@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de um Sistema</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body onload="inicializar()">
+    <h1>SISTEMA DE CLIENTES DA CLINICA</h1>
+
+
+    <section>
+        <h2>Cadastro</h2>
+
+        <form>
+            <h3>Cliente</h3>
+
+            <input type="text" id="cliente" placeholder="Nome do Cliente" required autocomplete="off" oninput="inicializar()">
+
+            <p id="aviso" style="color: #cc0000;"><strong>!Erro! Caracter Inválido</strong></p>
+
+            <hr>
+            <h3>Serviços</h3>
+
+            <label for="manu"><input type="checkbox" id="manu" checked oninput="inicializar(manu.checked, 0)">
+                Manutenção
+            </label>
+
+            <label for="limp"><input type="checkbox" id="limp" oninput="inicializar(limp.checked, 1)">
+                Limpeza
+            </label>
+
+            <label for="remo"><input type="checkbox" id="remo" oninput="inicializar(remo.checked, 2)">
+                Remoção
+            </label>
+            
+            <hr>
+            <h3>Consulta</h3>
+
+            <label for="hoje"><input type="radio" name="consulta" id="hoje" checked>
+                Hoje
+            </label>
+
+            <label for="marcar"><input type="radio" name="consulta" id="marcar">
+                Marcar
+            </label>
+
+            <input type="date" id="agendamento">
+            <input type="time" id="horario">
+
+
+            <hr>
+            <h3>
+                Total:
+                <output id="atualizar">
+                    <mark>
+                        R$60,00
+                    </mark>
+                </output>
+            </h3>
+
+
+            <p onclick="cadastrar()" id="botao">
+                CADASTRAR
+            </p>
+        </form> <br>
+    </section>
+
+
+    <section>
+        <h2>
+            Dados dos Clientes
+
+            <label for="filtro">Filtrar
+                <select id="filtro">
+                    <optgroup label="ORDEM">
+                        <option value="1" selected>A-Z</option>
+                        <option value="2">Z-A</option>
+                        <option value="3">maior preço</option>
+                        <option value="4">menor preço</option>
+                    </optgroup>
+                    <optgroup label="SERVIÇOS">
+                        <option value="5">Manutenção</option>
+                        <option value="6">Limpeza</option>
+                        <option value="7">Remoção</option>
+                    </optgroup>
+                    <optgroup label="DATA">
+                        <option value="8">Recente</option>
+                        <option value="9">Antigo</option>
+                </select>
+            </label>
+        </h2>
+
+        <div id="ficha"></div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
