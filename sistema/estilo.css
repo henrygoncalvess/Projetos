@@ -131,7 +131,14 @@ p#botao{
 }
 
 /* section de clientes */
+.tabelaDados{
+    font-size: 1.3em;
+}
+
+
 label[for="filtro"]{
+    display: inline-block;
+    width: 100%;
     margin-left: 15px;
     font-size: 0.8em;
     color: rgb(85, 85, 85);
@@ -144,7 +151,8 @@ div#ficha p{
 }
 
 strong#nomeTabela{
-    width: calc(100% - 105px);
+    font-size: 0.9em;
+    width: calc(100% - 125px);
     padding-left: 13%;
     display: inline-block;
 }

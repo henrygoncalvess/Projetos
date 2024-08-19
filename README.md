@@ -12,5 +12,6 @@ Mini Projetos:
 1. xx/xx/2024 - - - [Sistema Simples](https://henrygoncalvess.github.io/Projetos/sistema) -- Código **80%** refatorado <br>
 \+ Conceitos básicos de boas práticas de código **Clean Code** <br>
 \+ Paradigma de Programação Orientada a Objeto **POO** <br>
-\+ Utilização de banco de dados **MySQL**
+\+ Utilização de banco de dados **MySQL** <br>
+\+ Site responsivo e HTML + CSS semântico
    - [ ] Aplicar TypeScript
