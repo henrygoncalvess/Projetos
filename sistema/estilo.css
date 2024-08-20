@@ -155,6 +155,7 @@ strong#nomeTabela{
     width: calc(100% - 125px);
     padding-left: 13%;
     display: inline-block;
+    overflow: hidden;
 }
 
 .material-symbols-outlined{
