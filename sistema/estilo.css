@@ -163,6 +163,7 @@ strong#nomeTabela{
     scale: 1.1;
     border-radius: 5px;
     border: 1px solid transparent;
+    overflow: hidden;
 }
 
 .material-symbols-outlined:hover{
