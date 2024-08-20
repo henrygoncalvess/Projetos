@@ -2,15 +2,12 @@ var ficha = document.getElementById('ficha')
 
 var nome = document.getElementById('cliente')
 var checkbox = document.querySelectorAll('input[type="checkbox"]')
-var textoServ = document.querySelectorAll('label')
 var agend = document.getElementById('agendamento')
 var horario = document.getElementById('horario')
 var total = document.getElementById('atualizar')
-var selecionados = []
-var servTotal = 60
 
-const regexNome = /^[a-zA-Zà-úÀ-Ú\s]{0,30}$/i
 var aviso = document.getElementById('aviso')
+const regexNome = /^[a-zA-Zà-úÀ-Ú\s]{0,30}$/i
 
 carregarClientes()
 
@@ -377,13 +374,11 @@ class DataClinica{
 
 
 class Validar{
-    constructor(novoNome, checkbox, posicao){
+    constructor(novoNome){
         this.novoNome = novoNome
-        this.checkbox = checkbox
-        this.posicao = posicao
     }
 
-    RegExp(){
+    caracteres(){
         if (!regexNome.test(this.novoNome)){
             aviso.style.opacity = 1
         }else{
@@ -397,80 +392,36 @@ class Validar{
         }
     }
 
-    servicos(checkbox, posicao){
+    totalServicos(){
         let soma = 0
 
-        if (checkbox === false){
-            selecionados.splice(posicao, 1, false)
-        }else{
-            selecionados.splice(posicao, 1, true)
-        }
-
-        selecionados.forEach((v, pos) => {
-            if (v === true){
-                switch (pos){
-                    case 0:
-                        soma += 60
-                        break
-                    case 1:
-                        soma += 100
-                        break
-                    case 2:
-                        soma += 200
-                        break
-                }
-            }
-        })
+        if (document.getElementById('manu').checked) soma += 60
+        if (document.getElementById('limp').checked) soma += 100
+        if (document.getElementById('remo').checked) soma += 200
 
         total.innerHTML = `
         <mark>R$${soma},00</mark>`
-        servTotal = soma
+
+        if (soma == 0) return false
+        return soma
     }
 
-    validarServicos(){
-        selecionados.forEach((valor, pos) => {
-            if (valor){
-                for (let c = 0; c < selecionados.length; c++){
-                    selecionados[pos] = pos
-                }
-            }
-        })
-    
-        for (let c = 0; c < 2; c++){
-            selecionados.forEach((valor, pos) => {
-                if (valor === false){
-                    selecionados.splice(pos, 1)
-                }
-            })
-        }
-    }
-
-    validarStringServico(){
+    stringServicos(){
         let string = ''
-        
-        selecionados.forEach(v => {
-            switch(v){
-                case 0:
-                    string += `${textoServ[v].innerText.replace(" ", "")}`
-                    break
 
-                case 1:
-                    if (selecionados.length == 2 && selecionados.indexOf(2) != -1 || selecionados.length == 1){
-                        string += `${textoServ[v].innerText.replace(" ", "")}`
-                    }else{
-                        string += `, ${textoServ[v].innerText}`
-                    }
-                    break
+        if (document.getElementById('manu').checked) string += 'Manutenção'
 
-                case 2:
-                    if (selecionados.length > 1){
-                        string += `, ${textoServ[v].innerText}`
-                    }else{
-                        string += `${textoServ[v].innerText.replace(" ", "")}`
-                    }
-                    break
-            }
-        })
+        if (document.getElementById('limp').checked) string += 'Limpeza'
+
+        if (document.getElementById('remo').checked) string += 'Remoção'
+
+        if (!/^Manutenção$/.test(string)){
+            string = string.replace('Manutenção', 'Manutenção, ')
+        }
+
+        if (!/Limpeza$/.test(string)){
+            string = string.replace('Limpeza', 'Limpeza, ')
+        }
 
         return string
     }
@@ -481,35 +432,36 @@ class Validar{
 async function cadastrar() {
     const cadastrarCliente = new Validar(nome.value)
     
-    if (selecionados[0] === false && selecionados[1] === false && selecionados[2] === false){
-        window.alert('ERRO selecione no mínimo 1 serviço')
+    if (cadastrarCliente.preenchimento()){
+        window.alert('Nome com caracter inválido ou campo vazio, corrigir o campo antes de cadastrar')
+        nome.focus()
     }
-
+    
     else{
-        if (cadastrarCliente.preenchimento()){
-            window.alert('Nome com caracter inválido ou campo vazio, corrigir o campo antes de cadastrar')
-            nome.focus()
+        let servicoString = cadastrarCliente.stringServicos()
+        
+        let total = cadastrarCliente.totalServicos()
+
+        if (!total){
+            window.alert('Selecione no mínimo 1 serviço')
         }
         
         else{
-            cadastrarCliente.validarServicos()
-
-            // dados que serão enviados ao banco
-            let servicos_string = cadastrarCliente.validarStringServico()
-
             const novoCliente = new Atualizar(
                 nome.value,
-                servicos_string,
+                servicoString,
                 `${agend.value} ${horario.value}`,
-                servTotal,
+                total,
             )
-
+    
             const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', novoCliente.metodoPOST())
-
+    
             const json = await response.json()
-
+    
             console.log(json)
             RequisicaoGET.criarDescricao(json, 'cadastro')
+    
+            nome.value = ''
         }
     }
 }
@@ -533,13 +485,12 @@ async function carregarClientes(){
 
 
 
-function inicializar(check, posicao){
-    selecionados.push(checkbox[0].checked, checkbox[1].checked, checkbox[2].checked)
-
+function inicializar(){
     // validação de nome e serviços
     let validarCliente = new Validar(nome.value)
-    validarCliente.RegExp()
-    validarCliente.servicos(check, posicao)
+    validarCliente.caracteres()
+    validarCliente.totalServicos()
+    validarCliente.stringServicos()
 
     // validação de data
     let data = new DataClinica(new Date())
@@ -549,5 +500,5 @@ function inicializar(check, posicao){
     // validar o filtro de clientes
     setTimeout(() => {
         Atualizar.filtrarLista()
-    }, 2000);
+    }, 3000);
 }
