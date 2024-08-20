@@ -155,7 +155,6 @@ strong#nomeTabela{
     width: calc(100% - 125px);
     padding-left: 13%;
     display: inline-block;
-    overflow: hidden;
 }
 
 .material-symbols-outlined{
@@ -164,6 +163,7 @@ strong#nomeTabela{
     scale: 1.1;
     border-radius: 5px;
     border: 1px solid transparent;
+    line-height: normal;
     overflow: hidden;
 }
 
