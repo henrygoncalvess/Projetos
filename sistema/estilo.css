@@ -28,6 +28,7 @@ section{
     border: 2px solid black;
     flex: 0 1 800px;
     margin-top: 20px;
+    overflow: hidden;
 }
 
 /* section de cadastro */
