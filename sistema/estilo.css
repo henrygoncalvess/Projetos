@@ -141,7 +141,7 @@ p#botao{
     border-top:  3px solid transparent;
     border-right: 1px solid transparent;
     display: inline-block;
-    margin-left: calc(50% - 50px);
+    margin: 15px calc(50% - 50px);
 }
 
 .tabelaDados{
