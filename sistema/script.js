@@ -10,22 +10,7 @@ var aviso = document.getElementById('aviso')
 const regexNome = /^[a-zA-Zà-úÀ-Ú\s]{0,30}$/i
 
 var circulo = document.getElementById('circulo')
-let rodando = true
-let i = 0
-let id;
-function rodar(){
-    i += 7
-    circulo.style.rotate = `${i}deg`
-
-    if (rodando == false){
-        cancelAnimationFrame(id)
-        i = 0
-    }else{
-        id = requestAnimationFrame(rodar)
-    }
-}
-
-rodar()
+var rodando = true
 
 carregarClientes()
 
@@ -506,6 +491,22 @@ async function carregarClientes(){
 }
 
 
+
+let i = 0
+let id;
+function rodar(){
+    i += 7
+    circulo.style.rotate = `${i}deg`
+
+    if (rodando == false){
+        cancelAnimationFrame(id)
+        i = 0
+    }else{
+        id = requestAnimationFrame(rodar)
+    }
+}
+
+rodar()
 
 function inicializar(){
     // validação de nome e serviços
