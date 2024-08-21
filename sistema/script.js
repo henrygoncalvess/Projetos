@@ -25,6 +25,8 @@ function rodar(){
     }
 }
 
+rodar()
+
 carregarClientes()
 
 class RequisicaoGET{
@@ -488,6 +490,10 @@ async function carregarClientes(){
     try {
         const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa');
         const lista = await response.json()
+
+        rodando = false
+        
+        circulo.style.display = 'none'
 
         lista.forEach((elemento, pos) => {
             RequisicaoGET.criarDescricao(elemento, pos)
