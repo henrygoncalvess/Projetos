@@ -48,7 +48,11 @@ class DataClinica{
     }
 
     hora(){
-        return this.adicionarZero(this.novaData.getHours())
+        if (this.adicionarZero(this.novaData.getHours() + 3) >= 24){
+            return 0
+        }
+        
+        return this.adicionarZero(this.novaData.getHours() + 3)
     }
 
     min(){ 
