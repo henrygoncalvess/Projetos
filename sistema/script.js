@@ -14,314 +14,6 @@ var rodando = true
 
 carregarClientes()
 
-class RequisicaoGET{
-    static nomeCliente(elemento){
-        return `
-        <strong id="nomeTabela">
-            ${elemento.cliente.toUpperCase()}
-        </strong>
-        <span class="material-symbols-outlined" id="setaBaixo">
-            keyboard_arrow_down
-        </span>
-        <span class="material-symbols-outlined" id="lapis">
-            edit
-        </span>
-        <span class="material-symbols-outlined" id="lixo">
-            delete
-        </span>`
-    }
-
-    static infoCliente(elemento, data){
-        return `
-        <div>
-        <strong>Serviços:</strong> <span id="filtroSV">${elemento.servico}</span>
-        <br>
-        <strong>Data da Consulta:</strong> <span id="filtroDT">${data.formatar()}</span>
-        <br>
-        <strong id="editarData">Próxima Consulta: <span id="filtroCS">${data.proximoMes(1)}</span></strong>
-        <br>
-        <strong>Total:</strong>
-            <mark id="tabelaTot">
-            R$${elemento.total},00
-            </mark>
-        </div>`
-    }
-
-    static estadoIcon(lapis, lixo, estado){
-        switch(estado){
-            case 'aberto':
-                lapis.innerText = 'check'
-                lapis.style.color = 'green'
-                lixo.innerText = 'close'
-                lixo.style.color = 'gray'
-                break
-
-            case 'fechado':
-                lapis.innerText = 'edit'
-                lapis.style.color = 'gray'
-                lixo.innerText = 'delete'
-                lixo.style.color = 'red'
-                break
-        }
-    }
-
-    static async removerCliente(nome, pos){
-        try {
-            const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', {
-                method: 'DELETE',
-
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-
-                body: JSON.stringify({
-                    nome: nome
-                })
-            })
-
-            const dados = await response.json()
-            console.log(dados)
-
-            document.querySelectorAll('p')[pos + 2].style.display = 'none'
-        }
-        
-        catch (erro) {
-            console.log(erro)
-        }
-    }
-
-    static async atualizarDataAtual(data, nome){
-        try {
-            const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', {
-                method: 'PUT',
-
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-
-                body: JSON.stringify({
-                    agendamento: data,
-                    nome: nome
-                })
-            })
-
-            const dados = await response.json()
-            console.log(dados)
-        }
-
-        catch (erro){
-            console.log(erro)
-        }
-    }
-
-    static editarDataAtual(elementoData, dataOriginal, estado, consultaAtual, nome){
-        switch(estado){
-            case 'editar':
-                elementoData.innerHTML = `
-                <input type="date" id="alterarData"
-                value="${dataOriginal.ano()}-${dataOriginal.mes(2)}-${dataOriginal.dia()}">
-
-                <input type="time" id="alterarHora"
-                value="${dataOriginal.hora()}:${dataOriginal.min()}">
-                `
-                break
-
-            case 'salvar':
-                this.atualizarDataAtual(
-                    `${document.getElementById('alterarData').value} ${document.getElementById('alterarHora').value}`, nome.innerText
-                )
-
-                let novaDataEditada = new DataClinica(new Date(`
-                    ${document.getElementById('alterarData').value}
-                    ${document.getElementById('alterarHora').value}
-                `))
-
-                elementoData.innerHTML = novaDataEditada.proximoMes(1)
-
-                // dados que serão enviador para a requisição de atualização
-                // this.atualizarDataAtual(novaDataEditada)
-                consultaAtual.innerHTML = novaDataEditada.formatar()
-
-                return novaDataEditada
-
-            case 'fechar':
-                // data no estado anterior
-                elementoData.innerHTML = dataOriginal.proximoMes(1)
-                break
-        }
-    }
-
-
-    static icon(seta, lapis, lixo, elementoData, div, formatoData, consultaAtual, nome, pos){
-        let dataOriginal = new DataClinica(new Date(formatoData))
-
-        seta.addEventListener('click', () => {
-            if (div.style.display == 'none'){
-                div.style.display = 'block'
-                seta.innerText = 'keyboard_arrow_up'
-            }else if (lapis.innerText == 'check'){
-                div.style.display = 'block'
-            }else{
-                div.style.display = 'none'
-                seta.innerText = 'keyboard_arrow_down'
-                this.estadoIcon(lapis, lixo, 'fechado')
-            }
-        })
-
-        lapis.addEventListener('click', () => {
-            if (div.style.display == 'block'){
-                if (lapis.innerText == 'edit'){
-                    this.estadoIcon(lapis, lixo, 'aberto')
-
-                    this.editarDataAtual(elementoData, dataOriginal, 'editar', consultaAtual)
-                }else{
-                    this.estadoIcon(lapis, lixo, 'fechado')
-
-                    dataOriginal = this.editarDataAtual(elementoData, dataOriginal, 'salvar', consultaAtual, nome)
-                }
-            }
-        })
-
-        lixo.addEventListener('click', () => {
-            if (div.style.display == 'block'){
-                if (lixo.innerText == 'close'){
-                    this.estadoIcon(lapis, lixo, 'fechado')
-
-                    this.editarDataAtual(elementoData, dataOriginal, 'fechar', consultaAtual)
-                }else{
-                    this.removerCliente(nome.innerText, pos)
-                }
-            }
-        })
-    }
-
-    static criarDescricao(elemento, pos='cadastro'){
-        if (pos == 'cadastro'){
-            pos = (document.querySelectorAll('#nomeTabela').length)
-        }
-
-        let data = new DataClinica(new Date(elemento.agendamento))
-
-        let p = document.createElement('p')
-        let divInfo = document.createElement('div')
-
-        p.innerHTML = this.nomeCliente(elemento)
-        divInfo.innerHTML = this.infoCliente(elemento, data)
-
-        divInfo.style.display = 'none'
-
-        p.appendChild(divInfo)
-        ficha.appendChild(p)
-
-        let iconSeta = document.querySelectorAll('#setaBaixo')[pos]
-        let lapis = document.querySelectorAll('#lapis')[pos]
-        let lixo = document.querySelectorAll('#lixo')[pos]
-
-        // elemento para editar a data da próxima consulta
-        let proximaConsulta = document.querySelectorAll('#filtroCS')[pos]
-        let consultaAtual = document.querySelectorAll('#filtroDT')[pos]
-
-        // elemento com nome do cliente para deletar
-        let deletarCliente = document.querySelectorAll('#nomeTabela')[pos]
-
-        this.icon(iconSeta, lapis, lixo, proximaConsulta, divInfo, elemento.agendamento, consultaAtual, deletarCliente, pos)
-    }
-}
-
-
-
-class Atualizar{
-    constructor(nome='', escolhas='', data='', total=0){
-        this.nome = nome
-        this.escolhas = escolhas
-        this.data = data
-        this.total = total
-    }
-
-    metodoPOST(){
-        return {
-            method: 'POST',
-
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-
-            body: JSON.stringify({
-                cliente: this.nome,
-                servico: this.escolhas,
-                agendamento: this.data,
-                total: this.total,
-            })
-        }
-    }
-
-    static filtrarLista(){
-        let select = document.querySelectorAll('select')[0]
-        let filtroNome = document.querySelectorAll('#nomeTabela')
-        let filtroServico = document.querySelectorAll('#filtroSV')
-        let filtroData = document.querySelectorAll('#filtroDT')
-        let filtroConsulta = document.querySelectorAll('#filtroCS')
-        let filtroTotal = document.querySelectorAll('#tabelaTot')
-        let p = document.querySelectorAll('p')
-
-        let div = document.querySelectorAll('div [style]')
-        let lapis = document.querySelectorAll('#lapis')
-        let lixo = document.querySelectorAll('#lixo')
-
-        
-        select.addEventListener('change', async () => {
-            const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    filtro: select.value
-                })
-            })
-
-            const json = await response.json()
-
-            for (let c = 0; c < filtroNome.length; c++){
-                if (json[c] === undefined){
-                    p[c + 2].style.display = 'none'
-                }else{
-                    let data = new DataClinica(new Date(json[c].agendamento))
-                    p[c + 2].style.display = 'block'
-
-                    filtroNome[c].innerHTML = json[c].cliente.toUpperCase()
-                    filtroServico[c].innerHTML = json[c].servico
-                    filtroData[c].innerHTML = data.formatar()
-                    filtroConsulta[c].innerHTML = data.proximoMes(1)
-                    filtroTotal[c].innerHTML = `R$${json[c].total},00`
-                    
-                    lapis[c].addEventListener('click', () => {
-                        if (div[c].style.display == 'block'){
-                            if (lapis[c].innerText == 'check'){
-                                RequisicaoGET.editarDataAtual(filtroConsulta[c], data, 'editar', filtroData[c])
-                            }
-                        }
-                    })
-
-                    lixo[c].addEventListener('click', () => {
-                        if (div[c].style.display == 'block'){
-                            if (lixo[c].innerText == 'delete'){
-                                RequisicaoGET.editarDataAtual(filtroConsulta[c], data, 'fechar', filtroData[c])
-                            }else{
-                                data = RequisicaoGET.removerCliente(filtroNome[c].innerText, c)
-                            }
-                        }
-                    })
-                }
-            }
-        })
-    }
-}
-
-
-
 class DataClinica{
     constructor(novaData){
         this.novaData = novaData
@@ -371,6 +63,317 @@ class DataClinica{
         let string = `${this.dia()}/${this.mes(quantidadeMeses + 1)}/${this.ano()} -- ${this.hora()}h${this.min()}`
 
         return string
+    }
+}
+
+
+
+class Criar{
+    static #nomeCliente(elemento){
+        return `
+        <strong id="nomeTabela">
+            ${elemento.cliente.toUpperCase()}
+        </strong>
+        <span class="material-symbols-outlined" id="setaBaixo">
+            keyboard_arrow_down
+        </span>
+        <span class="material-symbols-outlined" id="lapis">
+            edit
+        </span>
+        <span class="material-symbols-outlined" id="lixo">
+            delete
+        </span>`
+    }
+
+    static #infoCliente(elemento, data){
+        return `
+        <div>
+        <strong>Serviços:</strong>
+            <span id="infoServico">
+                ${elemento.servico}
+            </span>
+        <br>
+        <strong>Data da Consulta:</strong>
+            <span id="infoDataAtual">
+                ${data.formatar()}
+            </span>
+        <br>
+        <strong id="editarData">Próxima Consulta:
+            <span id="infoProximaData">
+                ${data.proximoMes(1)}
+            </span>
+        </strong>
+        <br>
+        <strong>Total:</strong>
+            <mark id="tabelaTot">
+            R$${elemento.total},00
+            </mark>
+        </div>`
+    }
+
+    static descricao(elemento){
+        let data = new DataClinica(new Date(elemento.agendamento))
+
+        let p = document.createElement('p')
+        let divInfo = document.createElement('div')
+
+        p.innerHTML = this.#nomeCliente(elemento)
+        divInfo.innerHTML = this.#infoCliente(elemento, data)
+
+        divInfo.style.display = 'none'
+
+        p.appendChild(divInfo)
+        ficha.appendChild(p)
+    }
+
+
+
+    static #estadoIcone(lapis, lixo, estado){
+        switch(estado){
+            case 'aberto':
+                lapis.innerText = 'check'
+                lapis.style.color = 'green'
+                lixo.innerText = 'close'
+                lixo.style.color = 'gray'
+                break
+
+            case 'fechado':
+                lapis.innerText = 'edit'
+                lapis.style.color = 'gray'
+                lixo.innerText = 'delete'
+                lixo.style.color = 'red'
+                break
+        }
+    }
+
+    static animacaoDoIcone(posicao){
+        let div = document.querySelectorAll('div [style="display: none;"]')[posicao]
+
+        let iconeSeta = document.querySelectorAll('#setaBaixo')[posicao]
+        let iconeLapis = document.querySelectorAll('#lapis')[posicao]
+        let iconeLixo = document.querySelectorAll('#lixo')[posicao]
+
+        iconeSeta.addEventListener('click', () => {
+            if (div.style.display == 'none'){
+                div.style.display = 'block'
+                iconeSeta.innerText = 'keyboard_arrow_up'
+            }else if (iconeLapis.innerText == 'check'){
+                div.style.display = 'block'
+            }else{
+                div.style.display = 'none'
+                iconeSeta.innerText = 'keyboard_arrow_down'
+                this.#estadoIcone(iconeLapis, iconeLixo, 'fechado')
+            }
+        })
+
+        iconeLapis.addEventListener('click', () => {
+            if (div.style.display == 'block'){
+                if (iconeLapis.innerText == 'edit'){
+                    this.#estadoIcone(iconeLapis, iconeLixo, 'aberto')
+                }else{
+                    this.#estadoIcone(iconeLapis, iconeLixo, 'fechado')
+                }
+            }
+        })
+
+        iconeLixo.addEventListener('click', () => {
+            if (div.style.display == 'block'){
+                if (iconeLixo.innerText == 'close'){
+                    this.#estadoIcone(iconeLapis, iconeLixo, 'fechado')
+                }else{
+                    Requisicao.DELETE(posicao)
+                }
+            }
+        })
+    }
+}
+
+
+
+class Atribuir_Icone{
+    static edicaoDeData(elemento, posicao){
+        let div = document.querySelectorAll('div [style="display: none;"]')[posicao]
+
+        let dataOriginal = new DataClinica(new Date(elemento.agendamento))
+        let iconeLapis = document.querySelectorAll('#lapis')[posicao]
+        let iconeLixo = document.querySelectorAll('#lixo')[posicao]
+
+        let proximaConsulta = document.querySelectorAll('#infoProximaData')[posicao]
+
+
+        iconeLapis.addEventListener('click', () => {
+            if (div.style.display == 'block'){
+                if (iconeLapis.innerText == 'check'){
+                    proximaConsulta.innerHTML = `
+                    <input type="date" id="alterarData"
+                    value="${dataOriginal.ano()}-${dataOriginal.mes(2)}-${dataOriginal.dia()}">
+
+                    <input type="time" id="alterarHora"
+                    value="${dataOriginal.hora()}:${dataOriginal.min()}">
+                    `
+                }
+            }
+        })
+
+        iconeLixo.addEventListener('click', () => {
+            if (div.style.display == 'block'){
+                if (iconeLixo.innerText == 'delete'){
+                    proximaConsulta.innerHTML = dataOriginal.proximoMes(1)
+                }
+            }
+        })
+    }
+
+    static atualizacaoDeData(posicao){
+        let div = document.querySelectorAll('div [style="display: none;"]')[posicao]
+        
+        let iconeLapis = document.querySelectorAll('#lapis')[posicao]
+        let proximaConsulta = document.querySelectorAll('#infoProximaData')[posicao]
+        let consultaAtual = document.querySelectorAll('#infoDataAtual')[posicao]
+        let nomeCliente = document.querySelectorAll('#nomeTabela')[posicao].innerText
+        
+        iconeLapis.addEventListener('click', () => {
+            if (div.style.display == 'block'){
+                if (iconeLapis.innerText == 'edit'){
+                    Requisicao.PUT(
+                        `${document.getElementById('alterarData').value} ${document.getElementById('alterarHora').value}`, nomeCliente
+                    )
+
+                    let novaDataEditada = new DataClinica(new Date(`
+                        ${document.getElementById('alterarData').value}
+                        ${document.getElementById('alterarHora').value}
+                    `))
+
+                    proximaConsulta.innerHTML = novaDataEditada.proximoMes(1)
+
+                    consultaAtual.innerHTML = novaDataEditada.formatar()
+                }
+            }
+        })
+    }
+}
+
+
+
+class Atualizar{
+    static filtro(){
+        let select = document.querySelectorAll('select')[0]
+
+        select.addEventListener('change', async () => {
+            const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', {
+                method: 'POST',
+
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify({
+                    filtro: select.value
+                })
+            })
+
+            const listaFiltrada = await response.json()
+
+            let quantidadeDeElemento = document.querySelectorAll('#nomeTabela').length
+
+            for (let c = 0; c < quantidadeDeElemento; c++){
+                let p = document.querySelectorAll('p')[c + 2]
+
+                if (listaFiltrada[c] === undefined){
+                    p.style.display = 'none'
+                }else{
+                    p.style.display = 'block'
+                    
+                    let data = new DataClinica(new Date(listaFiltrada[c].agendamento))
+    
+                    document.querySelectorAll('#nomeTabela')[c].innerText = listaFiltrada[c].cliente.toUpperCase()
+    
+                    document.querySelectorAll('#infoServico')[c].innerText = listaFiltrada[c].servico
+
+                    document.querySelectorAll('#infoDataAtual')[c].innerText = data.formatar()
+
+                    document.querySelectorAll('#infoProximaData')[c].innerText = data.proximoMes(1)
+
+                    document.querySelectorAll('#tabelaTot')[c].innerText = `R$${listaFiltrada[c].total},00`
+
+                    Atribuir_Icone.edicaoDeData(listaFiltrada[c], c)
+                }
+            }
+        })
+    }
+}
+
+
+
+class Requisicao{
+    static async DELETE(posicao){
+        let nomeCliente = document.querySelectorAll('#nomeTabela')[posicao].innerText
+
+        try {
+            const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', {
+                method: 'DELETE',
+
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify({
+                    nome: nomeCliente
+                })
+            })
+
+            const dados = await response.json()
+            console.log(dados)
+
+            document.querySelectorAll('p')[posicao + 2].style.display = 'none'
+        }
+        
+        catch (erro) {
+            console.log(erro)
+        }
+    }
+
+    static async PUT(data, nome){
+        try {
+            const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', {
+                method: 'PUT',
+
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify({
+                    agendamento: data,
+                    nome: nome
+                })
+            })
+
+            const dados = await response.json()
+            console.log(dados)
+        }
+
+        catch (erro){
+            console.log(erro)
+        }
+    }
+
+    static POST(nome, escolhas, data, total){
+        return {
+            method: 'POST',
+
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                cliente: nome,
+                servico: escolhas,
+                agendamento: data,
+                total: total,
+            })
+        }
     }
 }
 
@@ -432,6 +435,32 @@ class Validar{
 
 
 
+async function carregarClientes(){
+    try {
+        const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa');
+        const lista = await response.json()
+
+        rodando = false
+        circulo.style.display = 'none'
+
+        Atualizar.filtro()
+
+        lista.forEach((elemento, posicao) => {
+            Criar.descricao(elemento)
+            Criar.animacaoDoIcone(posicao)
+
+            Atribuir_Icone.edicaoDeData(elemento, posicao)
+            Atribuir_Icone.atualizacaoDeData(posicao)
+        })
+    }
+
+    catch (erro) {
+        console.error('Erro ao carregar os clientes:', erro);
+    }
+}
+
+
+
 async function cadastrar() {
     const cadastrarCliente = new Validar(nome.value)
     
@@ -450,43 +479,29 @@ async function cadastrar() {
         }
         
         else{
-            const novoCliente = new Atualizar(
+            const post = Requisicao.POST(
                 nome.value,
                 servicoString,
                 `${agend.value} ${horario.value}`,
-                total,
+                total
             )
-    
-            const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', novoCliente.metodoPOST())
+
+            const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa', post)
     
             const json = await response.json()
     
-            console.log(json)
-            RequisicaoGET.criarDescricao(json, 'cadastro')
+            let posicao = document.querySelectorAll('#nomeTabela').length
+
+            Criar.descricao(json)
+            Criar.animacaoDoIcone(posicao)
+
+            Atribuir_Icone.edicaoDeData(json, posicao)
+            Atribuir_Icone.atualizacaoDeData(posicao)
     
             nome.value = ''
+
+            console.log(json)
         }
-    }
-}
-
-
-
-async function carregarClientes(){
-    try {
-        const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa');
-        const lista = await response.json()
-
-        rodando = false
-        
-        circulo.style.display = 'none'
-
-        lista.forEach((elemento, pos) => {
-            RequisicaoGET.criarDescricao(elemento, pos)
-        })
-    }
-
-    catch (erro) {
-        console.error('Erro ao carregar os clientes:', erro);
     }
 }
 
@@ -508,20 +523,13 @@ function rodar(){
 
 rodar()
 
-function inicializar(){
-    // validação de nome e serviços
+function validacao(){
     let validarCliente = new Validar(nome.value)
     validarCliente.caracteres()
     validarCliente.totalServicos()
     validarCliente.stringServicos()
 
-    // validação de data
     let data = new DataClinica(new Date())
     agend.value = `${data.ano()}-${data.mes()}-${data.dia()}`
     horario.value = `${data.hora()}:${data.min()}`
-
-    // validar o filtro de clientes
-    setTimeout(() => {
-        Atualizar.filtrarLista()
-    }, 3000);
 }

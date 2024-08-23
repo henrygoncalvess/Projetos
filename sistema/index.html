@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
-<body onload="inicializar()">
+<body>
     <h1>SISTEMA DE CLIENTES DA CLINICA</h1>
 
 
@@ -18,22 +18,22 @@
         <form>
             <h3>Cliente</h3>
 
-            <input type="text" id="cliente" placeholder="Nome do Cliente" required autocomplete="off" oninput="inicializar()">
+            <input type="text" id="cliente" placeholder="Nome do Cliente" required autocomplete="off" oninput="validacao()">
 
             <p id="aviso" style="color: #cc0000;"><strong>!Erro! Caracter Inválido</strong></p>
 
             <hr>
             <h3>Serviços</h3>
 
-            <label for="manu"><input type="checkbox" id="manu" checked oninput="inicializar()">
+            <label for="manu"><input type="checkbox" id="manu" checked oninput="validacao()">
                 Manutenção
             </label>
 
-            <label for="limp"><input type="checkbox" id="limp" oninput="inicializar()">
+            <label for="limp"><input type="checkbox" id="limp" oninput="validacao()">
                 Limpeza
             </label>
 
-            <label for="remo"><input type="checkbox" id="remo" oninput="inicializar()">
+            <label for="remo"><input type="checkbox" id="remo" oninput="validacao()">
                 Remoção
             </label>
             

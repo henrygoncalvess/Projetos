@@ -64,6 +64,8 @@ input#cliente{
     font-size: 1em;
 }
 
+p#aviso{ opacity: 0; }
+
 p#aviso,
 label[for="manu"],
 label[for="limp"],
