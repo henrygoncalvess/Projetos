@@ -511,29 +511,34 @@ async function cadastrar() {
 
 
 
-let i = 0
-let id;
-function rodar(){
-    i += 7
-    circulo.style.rotate = `${i}deg`
-
-    if (rodando == false){
-        cancelAnimationFrame(id)
-        i = 0
-    }else{
-        id = requestAnimationFrame(rodar)
-    }
-}
-
-rodar()
-
 function validacao(){
     let validarCliente = new Validar(nome.value)
     validarCliente.caracteres()
     validarCliente.totalServicos()
     validarCliente.stringServicos()
+}
 
+let carregarDocumento = document.querySelectorAll('body').onload = () => {
+    let i = 0
+    let id;
+    function rodar(){
+        i += 7
+        circulo.style.rotate = `${i}deg`
+    
+        if (rodando == false){
+            cancelAnimationFrame(id)
+            i = 0
+        }else{
+            id = requestAnimationFrame(rodar)
+        }
+    }
+
+    rodar()
+
+    
     let data = new DataClinica(new Date())
     agend.value = `${data.ano()}-${data.mes()}-${data.dia()}`
     horario.value = `${data.hora()}:${data.min()}`
 }
+
+carregarDocumento()
