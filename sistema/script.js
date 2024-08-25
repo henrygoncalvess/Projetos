@@ -63,8 +63,8 @@ class DataClinica{
         return `${this.novaData.toLocaleDateString('pt-br')} -- ${this.hora() - retirarHora}h${this.min()}`
     }
 
-    proximoMes(quantidadeMeses){
-        let string = `${this.dia()}/${this.mes(quantidadeMeses + 1)}/${this.ano()} -- ${this.hora()}h${this.min()}`
+    proximoMes(quantidadeMeses, retirarHora=0){
+        let string = `${this.dia()}/${this.mes(quantidadeMeses + 1)}/${this.ano()} -- ${this.hora() - retirarHora}h${this.min()}`
 
         return string
     }
