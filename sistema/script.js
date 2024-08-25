@@ -248,7 +248,7 @@ class Atribuir_Icone{
                         ${document.getElementById('alterarHora').value}
                     `))
 
-                    proximaConsulta.innerHTML = novaDataEditada.proximoMes(1)
+                    proximaConsulta.innerHTML = novaDataEditada.proximoMes(1, 3)
 
                     consultaAtual.innerHTML = novaDataEditada.formatar(3)
                 }
