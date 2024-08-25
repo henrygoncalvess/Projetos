@@ -59,8 +59,8 @@ class DataClinica{
         return this.adicionarZero(this.novaData.getMinutes())
     }
 
-    formatar(){
-        return `${this.novaData.toLocaleDateString('pt-br')} -- ${this.hora()}h${this.min()}`
+    formatar(retirarHora=0){
+        return `${this.novaData.toLocaleDateString('pt-br')} -- ${this.hora() - retirarHora}h${this.min()}`
     }
 
     proximoMes(quantidadeMeses){
