@@ -19,9 +19,9 @@ class DataClinica{
         this.novaData = novaData
     }
 
-    adicionarZero(res){
+    static adicionarZero(res){
         if (!(res < 10)){
-            return res
+            return String(res)
         }
 
         return `0${res}`
@@ -40,31 +40,31 @@ class DataClinica{
             return '01'
         }
 
-        return this.adicionarZero(this.novaData.getMonth() + quantMeses)
+        return DataClinica.adicionarZero(this.novaData.getMonth() + quantMeses)
     }
 
     dia(){
-        return this.adicionarZero(this.novaData.getDate())
+        return DataClinica.adicionarZero(this.novaData.getDate())
     }
 
     hora(){
-        if (this.adicionarZero(this.novaData.getHours() + 3) >= 24){
-            return 0
+        if (DataClinica.adicionarZero(this.novaData.getHours() + 3) > 23){
+            return '00'
         }
         
-        return this.adicionarZero(this.novaData.getHours() + 3)
+        return DataClinica.adicionarZero(this.novaData.getHours())
     }
 
     min(){ 
-        return this.adicionarZero(this.novaData.getMinutes())
+        return DataClinica.adicionarZero(this.novaData.getMinutes())
     }
 
-    formatar(retirarHora=0){
-        return `${this.novaData.toLocaleDateString('pt-br')} -- ${this.hora() - retirarHora}h${this.min()}`
+    formatar(){
+        return `${this.novaData.toLocaleDateString('pt-br')} -- ${this.hora()}h${this.min()}`
     }
 
-    proximoMes(quantidadeMeses, retirarHora=0){
-        let string = `${this.dia()}/${this.mes(quantidadeMeses + 1)}/${this.ano()} -- ${this.hora() - retirarHora}h${this.min()}`
+    proximoMes(quantidadeMeses){
+        let string = `${this.dia()}/${this.mes(quantidadeMeses + 1)}/${this.ano()} -- ${this.hora()}h${this.min()}`
 
         return string
     }
@@ -195,10 +195,17 @@ class Criar{
 
 
 class Atribuir_Icone{
-    static edicaoDeData(elemento, posicao){
+    constructor(dataAtual){
+        this.dataAtual = dataAtual
+    }
+
+    #dataOriginal(){
+        return new DataClinica(new Date(this.dataAtual))
+    }
+
+    edicaoDeData(posicao){
         let div = document.querySelectorAll('div [style="display: none;"]')[posicao]
 
-        let dataOriginal = new DataClinica(new Date(elemento.agendamento))
         let iconeLapis = document.querySelectorAll('#lapis')[posicao]
         let iconeLixo = document.querySelectorAll('#lixo')[posicao]
 
@@ -210,10 +217,10 @@ class Atribuir_Icone{
                 if (iconeLapis.innerText == 'check'){
                     proximaConsulta.innerHTML = `
                     <input type="date" id="alterarData"
-                    value="${dataOriginal.ano()}-${dataOriginal.mes(2)}-${dataOriginal.dia()}">
+                    value="${this.#dataOriginal().ano()}-${this.#dataOriginal().mes(2)}-${this.#dataOriginal().dia()}">
 
                     <input type="time" id="alterarHora"
-                    value="${dataOriginal.hora()}:${dataOriginal.min()}">
+                    value="${this.#dataOriginal().hora()}:${this.#dataOriginal().min()}">
                     `
                 }
             }
@@ -222,13 +229,13 @@ class Atribuir_Icone{
         iconeLixo.addEventListener('click', () => {
             if (div.style.display == 'block'){
                 if (iconeLixo.innerText == 'delete'){
-                    proximaConsulta.innerHTML = dataOriginal.proximoMes(1)
+                    proximaConsulta.innerHTML = this.#dataOriginal().proximoMes(1)
                 }
             }
         })
     }
 
-    static atualizacaoDeData(posicao){
+    atualizacaoDeData(posicao){
         let div = document.querySelectorAll('div [style="display: none;"]')[posicao]
         
         let iconeLapis = document.querySelectorAll('#lapis')[posicao]
@@ -240,17 +247,14 @@ class Atribuir_Icone{
             if (div.style.display == 'block'){
                 if (iconeLapis.innerText == 'edit'){
                     Requisicao.PUT(
-                        `${document.getElementById('alterarData').value} ${document.getElementById('alterarHora').value}`, nomeCliente
+                        `${document.getElementById('alterarData').value} ${DataClinica.adicionarZero(Number(document.getElementById('alterarHora').value.slice(0, 2)) + 3)}:${document.getElementById('alterarHora').value.slice(3)}`, nomeCliente
                     )
 
-                    let novaDataEditada = new DataClinica(new Date(`
-                        ${document.getElementById('alterarData').value}
-                        ${document.getElementById('alterarHora').value}
-                    `))
+                    this.dataAtual = `${document.getElementById('alterarData').value} ${document.getElementById('alterarHora').value}`
 
-                    proximaConsulta.innerHTML = novaDataEditada.proximoMes(1, 3)
+                    proximaConsulta.innerHTML = this.#dataOriginal().proximoMes(1)
 
-                    consultaAtual.innerHTML = novaDataEditada.formatar(3)
+                    consultaAtual.innerHTML = this.#dataOriginal().formatar()
                 }
             }
         })
@@ -301,7 +305,9 @@ class Atualizar{
 
                     document.querySelectorAll('#tabelaTot')[c].innerText = `R$${listaFiltrada[c].total},00`
 
-                    Atribuir_Icone.edicaoDeData(listaFiltrada[c], c)
+                    let dataIcone = new Atribuir_Icone(listaFiltrada[c].agendamento)
+
+                    dataIcone.edicaoDeData(c)
                 }
             }
         })
@@ -443,7 +449,7 @@ async function carregarClientes(){
     try {
         const response = await fetch('https://primeiro-sistema.onrender.com/api/pessoa');
         const lista = await response.json()
-
+        
         rodando = false
         circulo.style.display = 'none'
 
@@ -453,12 +459,15 @@ async function carregarClientes(){
             Criar.descricao(elemento)
             Criar.animacaoDoIcone(posicao)
 
-            Atribuir_Icone.edicaoDeData(elemento, posicao)
-            Atribuir_Icone.atualizacaoDeData(posicao)
+            let dataIcone = new Atribuir_Icone(elemento.agendamento)
+
+            dataIcone.edicaoDeData(posicao)
+            dataIcone.atualizacaoDeData(posicao)
         })
     }
 
     catch (erro) {
+        window.alert('erro no servidor, por favor, tente novamente mais tarde')
         console.error('Erro ao carregar os clientes:', erro);
     }
 }
@@ -483,10 +492,12 @@ async function cadastrar() {
         }
         
         else{
+            let hora = `${DataClinica.adicionarZero(Number(horario.value.slice(0, 2)) + 3)}:${horario.value.slice(3)}`
+
             const post = Requisicao.POST(
                 nome.value,
                 servicoString,
-                `${agend.value} ${horario.value}`,
+                `${agend.value} ${hora}`,
                 total
             )
 
@@ -499,8 +510,10 @@ async function cadastrar() {
             Criar.descricao(json)
             Criar.animacaoDoIcone(posicao)
 
-            Atribuir_Icone.edicaoDeData(json, posicao)
-            Atribuir_Icone.atualizacaoDeData(posicao)
+            let dataIcone = new Atribuir_Icone(json.agendamento)
+
+            dataIcone.edicaoDeData(posicao)
+            dataIcone.atualizacaoDeData(posicao)
     
             nome.value = ''
 
