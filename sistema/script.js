@@ -250,7 +250,7 @@ class Atribuir_Icone{
 
                     proximaConsulta.innerHTML = novaDataEditada.proximoMes(1)
 
-                    consultaAtual.innerHTML = novaDataEditada.formatar()
+                    consultaAtual.innerHTML = novaDataEditada.formatar(3)
                 }
             }
         })
