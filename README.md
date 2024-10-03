@@ -1,7 +1,5 @@
 # Tirando minhas ideias do papel
 
-[-Resolução de Desafios-](https://henrygoncalvess.github.io/Projetos/desafios/desafios)
-
 Mini Projetos:
 
 1. 25/05/2024 - - - [Calculadora](https://henrygoncalvess.github.io/Projetos/calculadora/escola/calc) <br>
